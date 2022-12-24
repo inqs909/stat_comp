@@ -91,6 +91,7 @@ exp(2)
 #### Roots
 
 To take the n-th root of a value, use the `^` operator with the `/` operator to take the n-th root. For example, to take the 5th-root of 32, type `32^(1/5)`:
+
 ```{r}
 32^(1/5)
 ```
@@ -114,13 +115,13 @@ Another important part of R is comparing numbers. When you compare two numbers, 
 To check if one number is less than or greater than another number, you will use the `>` or `<` operators. Try `5>4`:
 
 ```{r}
-5>4
+5 > 4
 ```
 
 Notice that R states it's true. It evaluates the expression and tells you if it's true or not. Try `5<4`:
 
 ```{r}
-5<4
+5 < 4
 ```
 
 Notice that R tells you it is false. 
@@ -129,20 +130,21 @@ Notice that R tells you it is false.
 #### Less than or equal to/Greater than or equal to
 
 To check if one number is less than or equal to/greater than or equal to another number, you will use the `>=` or `<=` operators. Try `5>=5`:
+
 ```{r}
-5>=5
+5 >= 5
 ```
 
 Try `5>=4`:
 
 ```{r}
-5>=4
+5 >= 4
 ```
 
 Try `5<=4`
 
 ```{r}
-5<=4
+5 <= 4
 ```
 
 #### Equals and Not Equals
@@ -150,25 +152,25 @@ Try `5<=4`
 To check if 2 numbers are equal to each other, you can use the `==` operator. Try `3==3`:
 
 ```{r}
-3==3
+3 == 3
 ```
 
 Try `4==3`
 
 ```{r}
-3==4
+3 == 4
 ```
 
 Another way to see if 2 numbers are not equal to each other, you can use the `!=`. Try `3!=4`:
 
 ```{r}
-3!=4
+3 != 4
 ```
 
 Try `3!=3`:
 
 ```{r}
-3!=3
+3 != 3
 ```
 
 You may be asking why use `!=` instead of `==`. They both provides similar results. Well the reason is that you may need the 'TRUE' output for analysis. One is only true when they are equal, while the other is true when they are not equal.
@@ -196,13 +198,13 @@ Notice that when you input an number into R, it automatically changes it to a nu
 A logical class are data where the only value is 'TRUE' or 'FALSE'. Sometimes the data is coded as 1 for 'TRUE' and 0 for 'FALSE'. The data may also be coded as 'T' or 'F'. To check if data belongs in the logical class, you will need the `is.logical()` function. Try `is.logical(3<4)`:
 
 ```{r}
-is.logical(3<4)
+is.logical(3 < 4)
 ```
 
 Remember when we ran `3<4` in the previous section. The output was 'TRUE'. Now R is checking whether the output is of a logical class. Since it it, R returns 'TRUE'. Now try `is.logical(3>4)`:
 
 ```{r}
-is.logical(3>4)
+is.logical(3 > 4)
 ```
 
 The output is 'TRUE' as well even though the condition `3>4` is 'FALSE'. Since the output is a logical data type, it is a logical variable.
@@ -224,7 +226,7 @@ class(Sys.time())
 
 ### Character
 
-A character value is where the data values follow a string format. Examples of characters values are letters, words and even numbers. A character value is any value surrounded by quotation marks. For example, the phrase "Hello World!" is considere as one character value. Another example if you data is coded with the actual words "yes" or "no". To check if you have character data, use the `is.character()` function. Try `is.character("Hello World!")`:
+A character value is where the data values follow a string format. Examples of characters values are letters, words and even numbers. A character value is any value surrounded by quotation marks. For example, the phrase "Hello World!" is considered as one character value. Another example if you data is coded with the actual words "yes" or "no". To check if you have character data, use the `is.character()` function. Try `is.character("Hello World!")`:
 
 ```{r}
 is.character("Hello World!")
@@ -238,7 +240,7 @@ is.character('Hello World!')
 
 ### Integers
 
-Integers are just whole numbers for the most part. To create an interger, type the letter 'L' after a number. To check if you are using integer data, use the `is.integer()` function. Try `is.integer(5L)`:
+Integers are just whole numbers for the most part. To create an integer, type the letter 'L' after a number. To check if you are using integer data, use the `is.integer()` function. Try `is.integer(5L)`:
 
 ```{r}
 is.integer(5L)
@@ -251,13 +253,13 @@ Complex numbers are data values where there is a real component and an imaginary
 To check if a number is complex, use the `is.complex()` function. Try the following to create a complex number `complex(1,4,5)`:
 
 ```{r}
-complex(1,4,5)
+complex(1, 4, 5)
 ```
 
 Now try `is.complex(complex(1,4,5))`:
 
 ```{r}
-is.complex(complex(1,4,5))
+is.complex(complex(1, 4, 5))
 ```
 
 ### Raw
@@ -292,7 +294,7 @@ R objects are where most of the statistical analysis is conducted on. An R objec
 To create an R object, all we need to do is assign data to a variable. The variable is the name of the R object. it can be called anything, but you can only use alphanumeric values, underscore, and periods. To assign a value to a variable, use the `<-` operator. This is known a left assignment. Kinda like an arrow pointing left. Try assigning 9 to 'x' (`x<-9`)`:
 
 ```{r}
-x<-9
+x <- 9
 ```
 
 To see if `x` contains 9, type `x` in the console:
@@ -311,7 +313,7 @@ You can use any mathematical operation from the previous sections. Try some othe
 The output R prints out can be stored in a variable using the asign operator, `<-`. Try storing `x^3` in a variable called `x_cubed`:
 
 ```{r}
-x_cubed<-x^3
+x_cubed <- x^3
 ```
 
 To see what is stored in `x_cubed` you can either type `x_cubed` in the console or use the `print()` function with 'x_cubed' inside the paranthesis.
@@ -333,7 +335,7 @@ is.vector(x)
 
 Now let's create a logical vector that contains 4 elements (have it follow this sequence: T,F,T,F) and assign it to `y`. To create a vector use the `c()` function and type all the values and seperating it with columns. Type `y<-c(T,F,T,F)`:
 ```{r}
-y<-c(T,F,T,F)
+y <- c(T, F, T, F)
 ```
 
 Now, lets see how `y` looks like. Type `y`:
@@ -362,13 +364,13 @@ The `c()` function allows you to put any data type and as many values as you wis
 A matrix can be thought as a square or rectangular grid of data values. This grid can be constructed in any shape. Similar to vectors they must contain the same data type. The size of a matrix is usually denoted as $n\times k$, where $n$ represents the number of rows and $k$ represents the number of columns. To get a rough idea of how a matrix may look like, type `matrix(rep(1,12),nrow=4,ncol=3)`^[The function `rep()` creates a vector by repeating a value for a certain length. `rep(1,12)` creates a vector of length 12 with each element being 1]:
 
 ```{r}
-matrix(rep(1,12),nrow=4,ncol=3)
+matrix(rep(1, 12), nrow = 4, ncol = 3)
 ```
 
-Notice that this is a $4\times 3$ matrix. Each element in the matrix has the value 1. Now try this `matrix(rbinom(12,1.5),nrow=4,ncol=3)`^[The `rbinom()` function generates binomial random variables and stores them in a vector. `rbinom(12,1.5)` This creates 12 random binomial numbers with parameter $n=1$ and $p=0.5$.]:
+Notice that this is a $4\times 3$ matrix. Each element in the matrix has the value 1. Now try this `matrix(rbinom(12,1.5),nrow=4,ncol=3)`^[The `rbinom()` function generates binomial random variables and stores them in a vector. `rbinom(12,1,5)` This creates 12 random binomial numbers with parameter $n=1$ and $p=0.5$.]:
 
 ```{r}
-matrix(rbinom(12,1,.5),nrow=4,ncol=3)
+matrix(rbinom(12, 1, .5), nrow = 4, ncol = 3)
 ```
 
 Your matrix may look different, but that is to be expected. Notice that some elements in a matrix are 0's and some are 1's. Each element in a matrix can hold any value.
@@ -382,13 +384,14 @@ Constructing a matrix can be a bit difficult to do because the data values may n
 Matrices can be considered as a 2-dimensional block of numbers. An array is an n-dimensional block of numbers. While you may never need to use an array for data analysis. It may come in handy when programming by hand. To create an array, use the `array()` function. Below is an example of a $3 \times 3 \times 3$ with the numbers 1, 2, and 3 representing the 3rd dimension stored in an R object called `first_array`^[Notice the code is surrounded by parenthesis. This tells R to store the array and print out the results. You can surround code with parenthesis evertime you create an object to also print what is stored.].
 
 ```{r}
-(first_array <- array(c(rep(1,9),rep(2,9),rep(3,9)),dim=c(3,3,3)))
+(first_array <- array(c(rep(1, 9), rep(2, 9), rep(3, 9)),
+                      dim=c(3,3,3)))
 ```
 
 
 ### Data Frames
 
-Data frames can be thought as the data sets that we normally see in other softwares. You can think about it as an excel spreadsheet. However, you cannot not change the values easily other than coding the changes. In a much general sense, a data frame is just a collection of labeled vectors. To get an idea of what a data frame looks like, try `head(iris)`: 
+Data frames seems like a data set that you may encounter in an excel file. However, there are a couple of differences. First, each row represents an observation, and each column represents a characteristic of the observation. Additionally, each column in a data frame will be the same data type. To get an idea of what a data frame looks like, try `head(iris)`: 
 
 ```{r}
 head(iris)
@@ -412,7 +415,8 @@ To me a list is just a container that you can store practically anything. It is 
 To create a list, use the `list()` function. Create a list compiled of first element with the mtcars data set, second element with a vector of zeros of size 4, and a matrix $3 \times 3$ identity matrix^[An identity matrix is a matrix where the diagonal elements are 1 and the non-diagonal elements are 0]. Store the list in an object called `list_one`:
 
 ```{r}
-list_one<-list(mtcars,rep(0,4),diag(rep(1,3)))
+list_one <- list(mtcars, rep(0, 4),
+                 diag(rep(1, 3)))
 ```
 
 Type `list_one` to see what pops out:
@@ -426,7 +430,9 @@ Each element in the list is labeled as a number. It is more useful to have the e
 
 
 ```{r}
-list_one<-list(mtcars=mtcars,vector=rep(0,4),identity=diag(rep(1,3)))
+list_one <- list(mtcars = mtcars,
+                 vector = rep(0, 4),
+                 identity = diag(rep(1, 3)))
 ```
 
 Here I am creating an object called `list_one`, where the first element is `mtcars` labeled `mtcars`, the second element is a vector of zeros labeled `vector` and the last element is the identity matrix labeled `identity`.'
@@ -434,7 +440,8 @@ Here I am creating an object called `list_one`, where the first element is `mtca
 Now create a new list called `list_two` and store `list_one` labeled as `list_one` and `first_array` labeled as `array`.
 
 ```{r}
-(list_two<-list(list_one=list_one,array=first_array))
+(list_two <- list(list_one = list_one,
+                  array = first_array))
 ```
 
 

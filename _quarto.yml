@@ -15,6 +15,7 @@ book:
         - basics.qmd
         - control_flow.qmd
         - functional.qmd
+        - scripting.qmd
     - part:  da.qmd
       chapters: 
         - importing.qmd
@@ -25,7 +26,6 @@ book:
       chapters: 
         - documents.qmd
         - notebooks.qmd
-        - shiny.qmd
         - presentations.qmd
     - part: efficient.qmd
       chapters: 
@@ -46,6 +46,7 @@ book:
       chapters:
         - parametric.qmd
         - nonparametric.qmd
+
 
   sidebar:
     style: docked
