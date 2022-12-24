@@ -285,7 +285,7 @@ is.na(NA)
 ```
 
 
-## R Objects
+## R Objects {#sec-r-objects}
 
 R objects are where most of the statistical analysis is conducted on. An R object can be thought of as a container of data. For the most part, you will only use a data frame (or tibble) for your data analysis. However, it is always a good idea to to have some basic understanding of the other R objects.
 
@@ -304,6 +304,7 @@ x
 ```
 
 Now `x` can be treated as data and we can perform data analysis on it. For example, try squaring it:
+
 ```{r}
 x^2
 ```
@@ -326,7 +327,7 @@ print(x_cubed)
 
 ### Vectors
 
-A vector is a set data values of a certain leng. The R object `x` is considered as a numerical vector (because it contains a number) with the length 1. To check, try `is.numeric(x)` and `is.vector(x)`:
+A vector is a set data values of a certain length. The R object `x` is considered as a numerical vector (because it contains a number) with the length 1. To check, try `is.numeric(x)` and `is.vector(x)`:
 
 ```{r}
 is.numeric(x)
@@ -334,6 +335,7 @@ is.vector(x)
 ```
 
 Now let's create a logical vector that contains 4 elements (have it follow this sequence: T,F,T,F) and assign it to `y`. To create a vector use the `c()` function and type all the values and seperating it with columns. Type `y<-c(T,F,T,F)`:
+
 ```{r}
 y <- c(T, F, T, F)
 ```
@@ -443,5 +445,23 @@ Now create a new list called `list_two` and store `list_one` labeled as `list_on
 (list_two <- list(list_one = list_one,
                   array = first_array))
 ```
+
+
+## R Packages
+
+
+```{r}
+plot(mtcars$mpg, mtcars$hp)
+  
+## Loading Packages
+library(ggplot2)
+ggplot(mtcars, aes(x=mpg, y=hp)) + geom_point()
+
+## Installing Packages
+#install.packages("rmarkdown")
+
+```
+
+
 
 

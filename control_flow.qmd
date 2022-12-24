@@ -4,11 +4,452 @@ title: "Control Flow"
 
 ## Indexing
 
+In the @sec-r-objects, we discussed about different types of R objects. For example, a vector can be a certain data type with a set number of elements. Here we construct a vector called `x` increasing from -5 to 5 by one unit:
+
+```{r}
+(x <- -5:5)
+```
+
+The vector `x` has 11 elements. If I want to know what the 6th element of `x`, I can index the 6th element from a vector. To do this, we use `[]` square brackets on `x` to index it. For example, we index the 6th element of `x`:
+
+```{r}
+x[6]
+```
+When ever we use `[]` next to an R object, it will print out the data to a specific value inside the square brackets. We can index an R object with multiple values:
+
+```{r}
+x[1:3]
+x[c(3,9)]
+```
+Notice how the second line uses the `c()`. This is necessary when we want to specify non-contiguous elements. Now let's see how we can index a matrix
+
 ## If/Else Statements
 
 ## for Loops
 
+
 ## while Loops
 
 
+```{r}
+# Control Flow: if else statements
+x <- rnorm(1)
+
+## Logical Statements
+
+x > 0 
+
+## if statements
+
+if (x > 0) {
+  print("Positive")
+} 
+
+## else statements
+
+if (x > 0){
+  print("Positive")
+} else {
+  print("Non-Positive")
+}
+
+## Example 2
+y <- rnorm(1)
+
+
+if (y > 0){
+  print("Positive")
+  print(y)
+  mean(y)
+} else {
+  print("Non-Positive")
+  print(y)
+  length(y)
+}
+
+```
+
+```{r}
+# Control Flow: else if statements
+(x <- sample(-1:1,1))
+
+## Logical Statements
+
+x > 0 
+
+## if statements
+
+if (x > 0) {
+  print("Positive")
+} 
+
+## else if statements
+
+if (x > 0) {
+  print("Positive")
+} else if (x < 0) {
+  print("Negative")
+} else {
+  print("Zero")
+}
+
+
+## Example 2
+y <- sample(-1:1,1)
+
+
+if (y > 0){
+  print("Positive")
+} else if (y < 0) {
+  print("Negative")
+} else {
+  print("Zero")  
+}
+
+```
+
+
+
+```{r}
+# Control Flow: break & next function -----
+
+## Function
+err_fx <- function(x){
+  if (x>0){
+    return(x)
+  } else {
+    stop("x is not positive")
+  }
+}
+
+(y <- rnorm(1))
+# err_fx(y)
+
+## Loop Example
+x <- rnorm(100)
+loop <- c()
+for (i in seq_along(x)) {
+  try_err <- try(err_fx(x[i]), silent = T)
+  if (inherits(try_err, "try-error")){
+    loop[i] <- 0
+  } else {
+    loop[i] <- try_err
+  }
+}
+
+
+## Break -----
+x <- rnorm(100)
+loop <- c()
+for (i in seq_along(x)) {
+  try_err <- try(err_fx(x[i]), silent = T)
+  if (inherits(try_err, "try-error")){
+    break
+  } else {
+    loop[i] <- try_err
+  }
+}
+
+## Next -----
+x <- rnorm(100)
+loop <- c()
+for (i in seq_along(x)) {
+  try_err <- try(err_fx(x[i]), silent = T)
+  if (inherits(try_err, "try-error")){
+    next
+  } else {
+    loop[i] <- try_err
+  }
+}
+
+x <- rnorm(100)
+loop <- c()
+for (i in seq_along(x)) {
+  try_err <- try(err_fx(x[i]), silent = T)
+  if (inherits(try_err, "try-error")){
+    next
+  } else {
+    loop <- c(loop, try_err)
+  }
+}
+
+```
+
+
+```{r}
+# Control Flow: try function -----
+
+## Function
+err_fx <- function(x){
+  if (x>0){
+    return(x)
+  } else {
+    stop("x is not positive")
+  }
+}
+
+## Example -----
+(y <- rnorm(1))
+# err_fx(y)
+
+## try function ----
+
+y_err <- try(err_fx(y), silent = T)
+
+## Example ----
+# x <- rnorm(100)
+# loop <- c()
+# for (i in x){
+#   loop[i] <- err_fx(i)
+# }
+
+## Using try
+x <- rnorm(100)
+loop <- c()
+for (i in seq_along(x)) {
+  try_err <- try(err_fx(x[i]), silent = T)
+  if (inherits(try_err, "try-error")){
+    loop[i] <- 0
+  } else {
+    loop[i] <- try_err
+  }
+}
+
+
+```
+
+```{r}
+# Control Flow: Loops ----
+
+# Loops are used to conduct repetitive/iterative tasks
+# Each iteration conducts a task given a set of values
+# The values for each iteration change as the loop moves
+# from one iteration to another
+
+## for Anatomy -----
+
+# for (i in vector) {
+#   Perform Task
+# }
+
+## Printing Example ------
+
+### print number 1 through 5, separately
+
+# We want to do this:
+print(1); print(2); print(3); print(4); print(5)
+
+# We don't want this:
+print(1:5)
+
+### Using a loop
+for (i in 1:5){
+  print(i)
+}
+
+## Printing Letters -----
+### Print all the letters, seperately
+print(letters)
+
+for (i in 1:26){
+  print(letters[i])
+}
+
+## cleaner
+for (i in seq_along(letters)){
+  print(letters[i])
+}
+
+## cleanest
+
+for (i in letters){
+  print(i)
+}
+```
+
+```{r}
+# Control Flow: Nested Loops ----
+library(greekLetters)
+letters_new <- letters[1:3]
+greek_lower <- greek_vector[1:24]
+
+paste(letters_new[1], greek_lower[1], sep = "")
+paste(letters_new[1], greek_lower[2], sep = "")
+
+paste(letters_new[2], greek_lower[1], sep = "")
+paste(letters_new[2], greek_lower[2], sep = "")
+
+paste(letters_new[3], greek_lower[1], sep = "")
+paste(letters_new[3], greek_lower[2], sep = "")
+
+
+## Inefficient way
+for(i in greek_lower){
+  print(paste(letters_new[1], i, sep = ""))
+}
+
+for(i in greek_lower){
+  print(paste(letters_new[2], i, sep = ""))
+}
+
+for(i in greek_lower){
+  print(paste(letters_new[3], i, sep = ""))
+}
+
+for (i in 1:3){
+  for (ii in greek_lower){
+    print(paste(letters_new[i], ii, sep = ""))
+  }
+}
+
+for (i in letters_new){
+  for (ii in greek_lower){
+    print(paste(i, ii, sep = ""))
+  }
+}
+
+# for (i in vector) {
+#   for (ii in vector) {
+#     for (iii in vector) {
+#       for (iiii in vector) {
+#         
+#       }
+#     }
+#   }
+# }
+
+
+```
+
+
+```{r}
+# Control Flow: Loops ----
+
+# for (i in vector) {
+#   Perform Task
+# }
+
+## Vector construction -----
+# x²
+### Method 1
+x <- rnorm(1000)
+x^2
+output <- c()
+for (i in seq_along(x)){
+  output <- c(output, x[i]^2)
+}
+
+### Method 2
+x <- rnorm(1000)
+output <- c()
+for (i in seq_along(x)){
+  output[i] <- x[i]^2
+}
+
+### Method 3
+x <- rnorm(1000)
+output <- vector(length = length(x))
+for (i in seq_along(x)){
+  output[i] <- x[i]^2
+}
+
+```
+
+
+
+```{r}
+# Control Flow: While Loops -----
+x <- -5:5
+plot(x, exp(x), type = "l")
+
+## Asymptotic -----
+abs(exp(-14)-exp(-13))
+
+## while statements -----
+# while (condition) {
+#   
+# }
+
+
+## while loops ----
+x <- 1
+diff <- 1
+while (diff > 1e-20) {
+  old_x <- x
+  x <- x - 1
+  diff <- abs(exp(x) - exp(old_x))
+}
+print(x)
+print(diff)
+
+
+```
+
+```{r}
+# Control Flow: Infinite While Loops -----
+(y <- rnorm(1))
+z <- as.integer(2)
+
+# logical operator &
+is.integer(z) & z > 0
+is.integer(y) & y > 0
+
+x <- -50:50
+plot(x, sin(x), type = "l")
+
+## Asymptotic -----
+abs(exp(13)-exp(12))
+
+## inf while loops ----
+x <- 1
+diff <- 1
+# while (diff > 1e-20) {
+#   old_x <- x
+#   x <- x + 1
+#   diff <- abs(exp(x) - exp(old_x))
+# }
+print(x)
+print(diff)
+
+# x <- 1
+# diff <- 1
+# while (diff > 1e-20) {
+#   old_x <- x
+#   x <- x + 1
+#   diff <- abs(sin(x) - sin(old_x))
+# }
+# print(x)
+# print(diff)
+
+
+
+
+## while loops ----
+x <- 1
+counter <- 0
+diff <- 1
+while (diff > 1e-20 & counter < 30) {
+  old_x <- x
+  x <- x + 1
+  diff <- abs(exp(x) - exp(old_x))
+  counter <- counter + 1
+}
+print(x)
+print(diff)
+print(counter)
+
+x <- 1
+counter <- 0
+diff <- 1
+while (diff > 1e-20 & counter < 10^3) {
+  old_x <- x
+  x <- x + 1
+  diff <- abs(sin(x) - sin(old_x))
+  counter <- counter + 1
+}
+print(x)
+print(diff)
+print(counter)
+
+```
 

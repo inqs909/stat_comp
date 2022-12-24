@@ -1,1 +1,78 @@
+---
+knitr: 
+  opts_chunk: 
+    eval: false
+
+---
+
 # Importing Data
+
+```{r}
+# Reading Data -----
+
+## RData ----
+load("~/x.RData")
+
+## CSV ----
+library(readr)
+data_3_1_csv <- read_csv("student/stat_147/data/data_3_1.csv")
+View(data_3_1_csv)
+
+## Excel ----
+library(readxl)
+data_3_1 <- read_excel("student/stat_147/data/data_3_1.xlsx")
+View(data_3_1)
+
+## txt ----
+library(readr)
+data_3_1_s <- read_table2("student/stat_147/data/data_3_1_s.txt")
+View(data_3_1_s)
+
+## Semi-colon ----
+library(readr)
+data_3_1_sc <- read_delim("student/stat_147/data/data_3_1_sc.txt", ";", escape_double = FALSE, trim_ws = TRUE)
+View(data_3_1_sc)
+## SPSS ----
+library(haven)
+data_3_1 <- read_sav("student/stat_147/data/data_3_1.sav")
+View(data_3_1)
+
+## SAS -----
+library(haven)
+data_3_1 <- read_sas("student/stat_147/data/data_3_1.sas7bdat", NULL)
+View(data_3_1)
+
+## Stata ----
+library(haven)
+data_3_1 <- read_dta("student/stat_147/data/data_3_1.dta")
+View(data_3_1)
+
+data_3_1 <- read.csv("~/student/stat_147/data/data_3_1.csv", header=FALSE)
+View(data_3_1)
+
+
+# Reading Data -----
+setwd("~/Repos/s147/files/Week_2")
+
+## Base R -----
+
+# CSV
+data.csv <- read.csv("data.csv")
+
+# STATA File
+library(foreign)
+read.dta("data.dta")
+
+## RStudio packages
+library(readr)
+read_csv("data.csv")
+
+library(readxl)
+read_excel("data.xlsx")
+
+library(haven)
+read_dta("data.dta")
+
+
+```
+

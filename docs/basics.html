@@ -210,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./scripting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Scripting in R</span></a>
+  <a href="./scripting.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Scripting and Piping in R</span></a>
   </div>
 </li>
       </ul>
@@ -285,7 +285,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./profiling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></a>
+  <a href="./profiling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Efficient Programming and Profiling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -392,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#raw" id="toc-raw" class="nav-link" data-scroll-target="#raw"><span class="toc-section-number">1.3.7</span>  Raw</a></li>
   <li><a href="#missing" id="toc-missing" class="nav-link" data-scroll-target="#missing"><span class="toc-section-number">1.3.8</span>  Missing</a></li>
   </ul></li>
-  <li><a href="#r-objects" id="toc-r-objects" class="nav-link" data-scroll-target="#r-objects"><span class="toc-section-number">1.4</span>  R Objects</a>
+  <li><a href="#sec-r-objects" id="toc-sec-r-objects" class="nav-link" data-scroll-target="#sec-r-objects"><span class="toc-section-number">1.4</span>  R Objects</a>
   <ul class="collapse">
   <li><a href="#assigning-objects" id="toc-assigning-objects" class="nav-link" data-scroll-target="#assigning-objects"><span class="toc-section-number">1.4.1</span>  Assigning objects</a></li>
   <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="toc-section-number">1.4.2</span>  Vectors</a></li>
@@ -401,6 +401,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="toc-section-number">1.4.5</span>  Data Frames</a></li>
   <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="toc-section-number">1.4.6</span>  Lists</a></li>
   </ul></li>
+  <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="toc-section-number">1.5</span>  R Packages</a></li>
   </ul>
 </nav>
     </div>
@@ -663,7 +664,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-12-23 18:14:40 PST"</code></pre>
+<pre><code>[1] "2022-12-24 00:20:22 PST"</code></pre>
 </div>
 </div>
 <p>Now lets check if its of POSIX class, you can use the <code>class()</code> function to figure out which class is it. Try <code>class(Sys.time())</code>:</p>
@@ -746,8 +747,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 </section>
-<section id="r-objects" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="r-objects"><span class="header-section-number">1.4</span> R Objects</h2>
+<section id="sec-r-objects" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="sec-r-objects"><span class="header-section-number">1.4</span> R Objects</h2>
 <p>R objects are where most of the statistical analysis is conducted on. An R object can be thought of as a container of data. For the most part, you will only use a data frame (or tibble) for your data analysis. However, it is always a good idea to to have some basic understanding of the other R objects.</p>
 <section id="assigning-objects" class="level3" data-number="1.4.1">
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="assigning-objects"><span class="header-section-number">1.4.1</span> Assigning objects</h3>
@@ -788,7 +789,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="vectors" class="level3" data-number="1.4.2">
 <h3 data-number="1.4.2" class="anchored" data-anchor-id="vectors"><span class="header-section-number">1.4.2</span> Vectors</h3>
-<p>A vector is a set data values of a certain leng. The R object <code>x</code> is considered as a numerical vector (because it contains a number) with the length 1. To check, try <code>is.numeric(x)</code> and <code>is.vector(x)</code>:</p>
+<p>A vector is a set data values of a certain length. The R object <code>x</code> is considered as a numerical vector (because it contains a number) with the length 1. To check, try <code>is.numeric(x)</code> and <code>is.vector(x)</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.numeric</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -848,9 +849,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">rbinom</span>(<span class="dv">12</span>, <span class="dv">1</span>, .<span class="dv">5</span>), <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
-[1,]    1    1    1
-[2,]    1    1    1
-[3,]    1    0    0
+[1,]    0    0    0
+[2,]    0    0    0
+[3,]    0    1    1
 [4,]    0    0    0</code></pre>
 </div>
 </div>
@@ -1056,9 +1057,27 @@ $array
 [3,]    3    3    3</code></pre>
 </div>
 </div>
-
-
 </section>
+</section>
+<section id="r-packages" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="r-packages"><span class="header-section-number">1.5</span> R Packages</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp)</span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Loading Packages</span></span>
+<span id="cb106-4"><a href="#cb106-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="basics_files/figure-html/unnamed-chunk-53-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x=</span>mpg, <span class="at">y=</span>hp)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="basics_files/figure-html/unnamed-chunk-53-2.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Installing Packages</span></span>
+<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("rmarkdown")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
 </section>
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
