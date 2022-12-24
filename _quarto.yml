@@ -5,7 +5,10 @@ project:
 
 book:
   title: "Statistical Computing"
-  author: "Isaac Quintanilla Salinas"
+  author:   
+  - name: Isaac Quintanilla Salinas
+    url: https://www.inqs.info
+    orcid: 0000-0002-1137-4310
 
   chapters:
     - index.qmd
