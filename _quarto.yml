@@ -62,6 +62,7 @@ format:
     theme: cosmo
   pdf:
     documentclass: scrreprt
+  epub: default
 
 editor: source
 
