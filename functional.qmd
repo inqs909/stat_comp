@@ -1,0 +1,10 @@
+---
+title: "Functional Programming"
+---
+
+## Functions
+
+## *apply Functions
+
+
+

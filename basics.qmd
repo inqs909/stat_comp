@@ -1,0 +1,440 @@
+# Basic R Programming
+
+## Introduction
+
+This chapter focuses on the basics of R programming. While most of your statistical analysis will be done with R functions, it is important to at least have an idea of what is going on. Additionally, we will cover other topics that you may or may not need to know. The topics we will cover are:
+
+1. Basic calculations in R
+
+3. Types of Data
+
+2. R Objects
+
+There are many other topics that should be covered, but it may be unnecessary. If you are interested in those topics, I recommend using the 'swirl' package.
+
+## Basic Calculations
+
+This section focuses the basic calculation that you can do in R. Essentially, we look at how R can be used as a calculator. This is done by using different operators in R. An operator is a symbol that tells R to do something. Some common operators are `+`,`-`, and `*` which corresponds to addition, subtraction, and division.
+
+### Calculator
+
+#### Addition
+
+To add numbers in R, all you need to use the `+` operator. For example 2+2=4. When you type it in R you have:
+
+```{r}
+2+2
+```
+
+When you ask R to perform a task, it prints out the result of the task. As we can see above, R prints out the number 4.
+
+To add more than 2 numbers, you can simply just type it in.
+
+```{r}
+2+2+2
+```
+
+This provides the number 6.
+
+#### Subtraction
+
+To subtract numbers, you need to use the `-` operator. Try `4-2`:
+
+```{r}
+4-2
+```
+
+Try 4-6-4
+
+```{r}
+4-6-4
+```
+
+Notice that you get a negative number.
+
+Now try `4+4-2+8`:
+
+```{r}
+4+4-2+8
+```
+
+#### Multiplication
+
+To multiply numbers, you will need to use the `*` operator. Try `4*4`:
+```{r}
+4*4
+```
+
+
+#### Division
+
+To divide numbers, you can use the `/` operator. Try `9/3`:
+
+```{r}
+9/3
+```
+
+#### Exponents
+
+To exponentiate a number to the power of another number, you can use the `^` operator. Try `2^5`:
+```{r}
+2^5
+```
+
+If you want to take e to the power 2, you will use the `exp()` function. Try `exp(2)`:
+
+```{r}
+exp(2)
+```
+
+
+#### Roots
+
+To take the n-th root of a value, use the `^` operator with the `/` operator to take the n-th root. For example, to take the 5th-root of 32, type `32^(1/5)`:
+```{r}
+32^(1/5)
+```
+
+#### Logarithms
+
+To take the natural logarithm of a value, you will use the `log()` function. Try `log(5)`:
+
+```{r}
+log(5)
+```
+
+If you want to take the logarithm of a different base, you will use the `log()` function with `base` argument. We will discuss this more in section 7 of this chapter.
+
+### Comparing Numbers
+
+Another important part of R is comparing numbers. When you compare two numbers, R will tell you if that is true or false. We will talk about some of the basic comparisons and their operators.
+
+#### Less than/Greater than
+
+To check if one number is less than or greater than another number, you will use the `>` or `<` operators. Try `5>4`:
+
+```{r}
+5>4
+```
+
+Notice that R states it's true. It evaluates the expression and tells you if it's true or not. Try `5<4`:
+
+```{r}
+5<4
+```
+
+Notice that R tells you it is false. 
+
+
+#### Less than or equal to/Greater than or equal to
+
+To check if one number is less than or equal to/greater than or equal to another number, you will use the `>=` or `<=` operators. Try `5>=5`:
+```{r}
+5>=5
+```
+
+Try `5>=4`:
+
+```{r}
+5>=4
+```
+
+Try `5<=4`
+
+```{r}
+5<=4
+```
+
+#### Equals and Not Equals
+
+To check if 2 numbers are equal to each other, you can use the `==` operator. Try `3==3`:
+
+```{r}
+3==3
+```
+
+Try `4==3`
+
+```{r}
+3==4
+```
+
+Another way to see if 2 numbers are not equal to each other, you can use the `!=`. Try `3!=4`:
+
+```{r}
+3!=4
+```
+
+Try `3!=3`:
+
+```{r}
+3!=3
+```
+
+You may be asking why use `!=` instead of `==`. They both provides similar results. Well the reason is that you may need the 'TRUE' output for analysis. One is only true when they are equal, while the other is true when they are not equal.
+
+### Help
+ 
+The last operator we will discuss is the help operator `?`. If you want to know more about anything we talked about you can type `?` in front of a functiona and a help page will pop-up in your browser or in RStudio's 'Help' tab. For example you can type `?Arithmetic` or `?Comparison`, to review what we talked about. For other operators we didn't talk about use `?assignOps` and `?Logic`.
+
+## Types of Data
+
+In R, the type of data, also known as class, that we are using dictates how the programming works. For the most part, users will use 'numeric','logical', 'POSIX' and 'character' data types. Other types of data you may encounter are 'integer', 'complex', and 'raw'. These types of data are rarely used. To obtain more information on them, use the `?` operator.
+
+### Numeric
+
+The numeric class is the data that are numbers. Almost every analysis that you use will be based on the numeric class. To check if you have a numeric class, you just need to use the `is.numeric()` function. For example, try `is.numeric(5)`:
+
+```{r}
+is.numeric(5)
+```
+
+Notice that when you input an number into R, it automatically changes it to a numeric class. R is changes data to the class that it most likely needs to be. Now this is great because you do not need to do anything on your end. Howerver, if you need a different class, you will need to change it.
+
+### Logical
+
+A logical class are data where the only value is 'TRUE' or 'FALSE'. Sometimes the data is coded as 1 for 'TRUE' and 0 for 'FALSE'. The data may also be coded as 'T' or 'F'. To check if data belongs in the logical class, you will need the `is.logical()` function. Try `is.logical(3<4)`:
+
+```{r}
+is.logical(3<4)
+```
+
+Remember when we ran `3<4` in the previous section. The output was 'TRUE'. Now R is checking whether the output is of a logical class. Since it it, R returns 'TRUE'. Now try `is.logical(3>4)`:
+
+```{r}
+is.logical(3>4)
+```
+
+The output is 'TRUE' as well even though the condition `3>4` is 'FALSE'. Since the output is a logical data type, it is a logical variable.
+
+### POSIX
+
+The POSIX class are date-time data. Where the data value is a time component. The POSIX class can be very complex in how it is formatted. IF you would like to learn more  try `?POSIXct` or `?POSIClt`. First, lets run `Sys.time()` to check what is today's data and time:
+
+```{r}
+Sys.time()
+```
+
+Now lets check if its of POSIX class, you can use the `class()` function to figure out which class is it. Try `class(Sys.time())`:
+
+```{r}
+class(Sys.time())
+```
+
+
+### Character
+
+A character value is where the data values follow a string format. Examples of characters values are letters, words and even numbers. A character value is any value surrounded by quotation marks. For example, the phrase "Hello World!" is considere as one character value. Another example if you data is coded with the actual words "yes" or "no". To check if you have character data, use the `is.character()` function. Try `is.character("Hello World!")`:
+
+```{r}
+is.character("Hello World!")
+```
+
+Notice that the output says 'TRUE'. Character values can be created with single quotations. Try `is.character('Hello World!')`:
+
+```{r}
+is.character('Hello World!')
+```
+
+### Integers
+
+Integers are just whole numbers for the most part. To create an interger, type the letter 'L' after a number. To check if you are using integer data, use the `is.integer()` function. Try `is.integer(5L)`:
+
+```{r}
+is.integer(5L)
+```
+
+
+### Complex Numbers
+
+Complex numbers are data values where there is a real component and an imaginary component. The imaginary component is a number multiplied by $i=\sqrt{-1}$. To create a complect number, use the `complex()` function.
+To check if a number is complex, use the `is.complex()` function. Try the following to create a complex number `complex(1,4,5)`:
+
+```{r}
+complex(1,4,5)
+```
+
+Now try `is.complex(complex(1,4,5))`:
+
+```{r}
+is.complex(complex(1,4,5))
+```
+
+### Raw
+
+You will probably never use raw data. I have never used raw data in R. To create a raw value, use the `raw()` or `charToRaw()` functions. Try `charToRaw('Hello World!')`:
+
+```{r}
+charToRaw('Hello World!')
+```
+
+To check if you have raw data, use the `is.raw()` function. Try `is.raw(charToRaw('Hello World!'))`:
+
+```{r}
+is.raw(charToRaw('Hello World!'))
+```
+
+### Missing
+
+The last data class in R is missing data denoted as `NA`. Whenever you see `NA` in any of the analysis you see, it means that the data is missing. To check if you have missing data, use the `is.na()` function. Try `is.na(NA)`:
+
+```{r}
+is.na(NA)
+```
+
+
+## R Objects
+
+R objects are where most of the statistical analysis is conducted on. An R object can be thought of as a container of data. For the most part, you will only use a data frame (or tibble) for your data analysis. However, it is always a good idea to to have some basic understanding of the other R objects.
+
+### Assigning objects
+
+To create an R object, all we need to do is assign data to a variable. The variable is the name of the R object. it can be called anything, but you can only use alphanumeric values, underscore, and periods. To assign a value to a variable, use the `<-` operator. This is known a left assignment. Kinda like an arrow pointing left. Try assigning 9 to 'x' (`x<-9`)`:
+
+```{r}
+x<-9
+```
+
+To see if `x` contains 9, type `x` in the console:
+
+```{r}
+x
+```
+
+Now `x` can be treated as data and we can perform data analysis on it. For example, try squaring it:
+```{r}
+x^2
+```
+
+You can use any mathematical operation from the previous sections. Try some other operations and see what happens.
+
+The output R prints out can be stored in a variable using the asign operator, `<-`. Try storing `x^3` in a variable called `x_cubed`:
+
+```{r}
+x_cubed<-x^3
+```
+
+To see what is stored in `x_cubed` you can either type `x_cubed` in the console or use the `print()` function with 'x_cubed' inside the paranthesis.
+
+```{r}
+x_cubed
+print(x_cubed)
+```
+
+
+### Vectors
+
+A vector is a set data values of a certain leng. The R object `x` is considered as a numerical vector (because it contains a number) with the length 1. To check, try `is.numeric(x)` and `is.vector(x)`:
+
+```{r}
+is.numeric(x)
+is.vector(x)
+```
+
+Now let's create a logical vector that contains 4 elements (have it follow this sequence: T,F,T,F) and assign it to `y`. To create a vector use the `c()` function and type all the values and seperating it with columns. Type `y<-c(T,F,T,F)`:
+```{r}
+y<-c(T,F,T,F)
+```
+
+Now, lets see how `y` looks like. Type `y`:
+
+```{r}
+y
+```
+
+Now lets see if it's a logical vector:
+
+```{r}
+is.logical(y)
+is.vector(y)
+```
+
+Fortunately, this vector is really small to count how many elements it has, but what if the vector is really large? To find out how many elements a vector has, use the `length()` function. Try `length(y)`:
+
+```{r}
+length(y)
+```
+
+The `c()` function allows you to put any data type and as many values as you wish. The only condition of a vector is that it must be the same data type. 
+
+### Matrices
+
+A matrix can be thought as a square or rectangular grid of data values. This grid can be constructed in any shape. Similar to vectors they must contain the same data type. The size of a matrix is usually denoted as $n\times k$, where $n$ represents the number of rows and $k$ represents the number of columns. To get a rough idea of how a matrix may look like, type `matrix(rep(1,12),nrow=4,ncol=3)`^[The function `rep()` creates a vector by repeating a value for a certain length. `rep(1,12)` creates a vector of length 12 with each element being 1]:
+
+```{r}
+matrix(rep(1,12),nrow=4,ncol=3)
+```
+
+Notice that this is a $4\times 3$ matrix. Each element in the matrix has the value 1. Now try this `matrix(rbinom(12,1.5),nrow=4,ncol=3)`^[The `rbinom()` function generates binomial random variables and stores them in a vector. `rbinom(12,1.5)` This creates 12 random binomial numbers with parameter $n=1$ and $p=0.5$.]:
+
+```{r}
+matrix(rbinom(12,1,.5),nrow=4,ncol=3)
+```
+
+Your matrix may look different, but that is to be expected. Notice that some elements in a matrix are 0's and some are 1's. Each element in a matrix can hold any value.
+
+Constructing a matrix can be a bit difficult to do because the data values may need to be arranged in a certain way. Notice that I used the `matrix()` function to create the matrix. The examples above contain other components in the function that we will discuss later.
+
+
+
+### Arrays
+
+Matrices can be considered as a 2-dimensional block of numbers. An array is an n-dimensional block of numbers. While you may never need to use an array for data analysis. It may come in handy when programming by hand. To create an array, use the `array()` function. Below is an example of a $3 \times 3 \times 3$ with the numbers 1, 2, and 3 representing the 3rd dimension stored in an R object called `first_array`^[Notice the code is surrounded by parenthesis. This tells R to store the array and print out the results. You can surround code with parenthesis evertime you create an object to also print what is stored.].
+
+```{r}
+(first_array <- array(c(rep(1,9),rep(2,9),rep(3,9)),dim=c(3,3,3)))
+```
+
+
+### Data Frames
+
+Data frames can be thought as the data sets that we normally see in other softwares. You can think about it as an excel spreadsheet. However, you cannot not change the values easily other than coding the changes. In a much general sense, a data frame is just a collection of labeled vectors. To get an idea of what a data frame looks like, try `head(iris)`: 
+
+```{r}
+head(iris)
+```
+
+The `head()` function just tells R to only print the top few components of the data frame.
+
+Now try `tail(iris)`:
+
+```{r}
+tail(iris)
+```
+
+The `tail()` function provides the last 6 rows of the data frame. 
+
+
+### Lists
+
+To me a list is just a container that you can store practically anything. It is compiled of elements, where each element contains an R object. For example, the first element of a list may contain a data frame, the second element may contain a vector, and the third element may contain another list. It is just a way to store things.
+
+To create a list, use the `list()` function. Create a list compiled of first element with the mtcars data set, second element with a vector of zeros of size 4, and a matrix $3 \times 3$ identity matrix^[An identity matrix is a matrix where the diagonal elements are 1 and the non-diagonal elements are 0]. Store the list in an object called `list_one`:
+
+```{r}
+list_one<-list(mtcars,rep(0,4),diag(rep(1,3)))
+```
+
+Type `list_one` to see what pops out:
+
+```{r}
+list_one
+```
+
+
+Each element in the list is labeled as a number. It is more useful to have the elements named. An element is named by typing the name in quotes followed by the `=` symbol before your object in the `list()` function (`mtcars=mtcars`).
+
+
+```{r}
+list_one<-list(mtcars=mtcars,vector=rep(0,4),identity=diag(rep(1,3)))
+```
+
+Here I am creating an object called `list_one`, where the first element is `mtcars` labeled `mtcars`, the second element is a vector of zeros labeled `vector` and the last element is the identity matrix labeled `identity`.'
+
+Now create a new list called `list_two` and store `list_one` labeled as `list_one` and `first_array` labeled as `array`.
+
+```{r}
+(list_two<-list(list_one=list_one,array=first_array))
+```
+
+
