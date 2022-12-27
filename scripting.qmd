@@ -1,3 +1,36 @@
 # Scripting and Piping in R
 
+## Commenting
 
+A comment is
+
+## Scripting
+
+## Piping
+
+## Keyboard Shortcuts
+
+Below is a list of recommended keyboard shortcuts:
+
+| Shortcut         | Windows/Linux | Mac          |
+|------------------|---------------|--------------|
+| `%>%`            | Ctrl+Shift+M  | Cmd+Shift+M  |
+| Run Current Line | Ctrl+Enter    | Cmd+Return   |
+| Knit Document    | Ctrl+Shift+K  | Cmd+Shift+K  |
+| Add Cursor Below | Ctrl+Alt+Down | Cmd+Alt+Down |
+| Comment Line     | Ctrl+Shift+C  | Cmd+Shift+C  |
+
+I recommend modify these keyboard shortcuts.
+
+| Shortcut | Windows/Linux | Mac         |
+|----------|---------------|-------------|
+| `%in%`   | Ctrl+Shift+I  | Cmd+Shift+I |
+| `%$%`    | Ctrl+Shift+D  | Cmd+Shift+D |
+| `%T>%`   | Ctrl+Shift+T  | Cmd+Shift+T |
+
+Note you will need to install the `extraInserts` package:
+
+```{r}
+#| eval: false
+remotes::install_github('konradzdeb/extraInserts')
+```

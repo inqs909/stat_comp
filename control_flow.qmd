@@ -4,6 +4,8 @@ title: "Control Flow"
 
 ## Indexing
 
+### Vectors
+
 In the @sec-r-objects, we discussed about different types of R objects. For example, a vector can be a certain data type with a set number of elements. Here we construct a vector called `x` increasing from -5 to 5 by one unit:
 
 ```{r}
@@ -15,21 +17,56 @@ The vector `x` has 11 elements. If I want to know what the 6th element of `x`, I
 ```{r}
 x[6]
 ```
+
 When ever we use `[]` next to an R object, it will print out the data to a specific value inside the square brackets. We can index an R object with multiple values:
 
 ```{r}
 x[1:3]
 x[c(3,9)]
 ```
+
 Notice how the second line uses the `c()`. This is necessary when we want to specify non-contiguous elements. Now let's see how we can index a matrix
 
+### Matrices
+
+A matrix can be indexed the same way as a vector using the `[]` brackets. However, since the matrix is a 2-dimensional objects, we will need to include a comma to represent the different dimensions: `[,]`. The first element indexes the row and the second element indexes the columns. To begin, we create the following $4 \times 3$ matrix:
+
+```{r}
+(x <- matrix(1:12, nrow = 4, ncol = 3))
+```
+
+Now to index the element at row 2 and column 3, use `x[2, 3]`:
+
+```{r}
+x[2, 3]
+```
+
+We can also index a specific row and column:
+
+```{r}
+x[2,]
+x[,3]
+```
+
+### Data Frames
+
+There are several ways to index a data frame, since it is in a matrix format, you can index it the same way as a matrix. Here are a couple of examples using the `mtcars` data frame.
+
+```{r}
+mtcars[,2]
+mtcars[2,]
+```
+However, a data frame has labeled components, variables, we can index the data frame with the variable names within the brackets:
+
+```{r}
+mtcars[, "cyl"]
+```
+
+Lastly, a data frame being indexed to a specific variable 
+
+### Lists
+
 ## If/Else Statements
-
-## for Loops
-
-
-## while Loops
-
 
 ```{r}
 # Control Flow: if else statements
@@ -67,9 +104,6 @@ if (y > 0){
   length(y)
 }
 
-```
-
-```{r}
 # Control Flow: else if statements
 (x <- sample(-1:1,1))
 
@@ -108,73 +142,7 @@ if (y > 0){
 
 ```
 
-
-
-```{r}
-# Control Flow: break & next function -----
-
-## Function
-err_fx <- function(x){
-  if (x>0){
-    return(x)
-  } else {
-    stop("x is not positive")
-  }
-}
-
-(y <- rnorm(1))
-# err_fx(y)
-
-## Loop Example
-x <- rnorm(100)
-loop <- c()
-for (i in seq_along(x)) {
-  try_err <- try(err_fx(x[i]), silent = T)
-  if (inherits(try_err, "try-error")){
-    loop[i] <- 0
-  } else {
-    loop[i] <- try_err
-  }
-}
-
-
-## Break -----
-x <- rnorm(100)
-loop <- c()
-for (i in seq_along(x)) {
-  try_err <- try(err_fx(x[i]), silent = T)
-  if (inherits(try_err, "try-error")){
-    break
-  } else {
-    loop[i] <- try_err
-  }
-}
-
-## Next -----
-x <- rnorm(100)
-loop <- c()
-for (i in seq_along(x)) {
-  try_err <- try(err_fx(x[i]), silent = T)
-  if (inherits(try_err, "try-error")){
-    next
-  } else {
-    loop[i] <- try_err
-  }
-}
-
-x <- rnorm(100)
-loop <- c()
-for (i in seq_along(x)) {
-  try_err <- try(err_fx(x[i]), silent = T)
-  if (inherits(try_err, "try-error")){
-    next
-  } else {
-    loop <- c(loop, try_err)
-  }
-}
-
-```
-
+## `try()` Function
 
 ```{r}
 # Control Flow: try function -----
@@ -217,6 +185,82 @@ for (i in seq_along(x)) {
 
 
 ```
+
+## `break`
+
+```{r}
+# Control Flow: break & next function -----
+
+## Function
+err_fx <- function(x){
+  if (x>0){
+    return(x)
+  } else {
+    stop("x is not positive")
+  }
+}
+
+(y <- rnorm(1))
+# err_fx(y)
+
+## Loop Example
+x <- rnorm(100)
+loop <- c()
+for (i in seq_along(x)) {
+  try_err <- try(err_fx(x[i]), silent = T)
+  if (inherits(try_err, "try-error")){
+    loop[i] <- 0
+  } else {
+    loop[i] <- try_err
+  }
+}
+
+
+## Break -----
+x <- rnorm(100)
+loop <- c()
+for (i in seq_along(x)) {
+  try_err <- try(err_fx(x[i]), silent = T)
+  if (inherits(try_err, "try-error")){
+    break
+  } else {
+    loop[i] <- try_err
+  }
+}
+
+```
+
+## `next`
+
+```{r}
+## Next -----
+x <- rnorm(100)
+loop <- c()
+for (i in seq_along(x)) {
+  try_err <- try(err_fx(x[i]), silent = T)
+  if (inherits(try_err, "try-error")){
+    next
+  } else {
+    loop[i] <- try_err
+  }
+}
+
+x <- rnorm(100)
+loop <- c()
+for (i in seq_along(x)) {
+  try_err <- try(err_fx(x[i]), silent = T)
+  if (inherits(try_err, "try-error")){
+    next
+  } else {
+    loop <- c(loop, try_err)
+  }
+}
+
+```
+
+## `for` loops
+
+### Basic `for` loop
 
 ```{r}
 # Control Flow: Loops ----
@@ -261,11 +305,12 @@ for (i in seq_along(letters)){
 }
 
 ## cleanest
-
 for (i in letters){
   print(i)
 }
 ```
+
+### Nested `for` loops
 
 ```{r}
 # Control Flow: Nested Loops ----
@@ -312,7 +357,7 @@ for (i in letters_new){
 #   for (ii in vector) {
 #     for (iii in vector) {
 #       for (iiii in vector) {
-#         
+# 
 #       }
 #     }
 #   }
@@ -322,40 +367,9 @@ for (i in letters_new){
 ```
 
 
-```{r}
-# Control Flow: Loops ----
+## `while` loops
 
-# for (i in vector) {
-#   Perform Task
-# }
-
-## Vector construction -----
-# x²
-### Method 1
-x <- rnorm(1000)
-x^2
-output <- c()
-for (i in seq_along(x)){
-  output <- c(output, x[i]^2)
-}
-
-### Method 2
-x <- rnorm(1000)
-output <- c()
-for (i in seq_along(x)){
-  output[i] <- x[i]^2
-}
-
-### Method 3
-x <- rnorm(1000)
-output <- vector(length = length(x))
-for (i in seq_along(x)){
-  output[i] <- x[i]^2
-}
-
-```
-
-
+### Basic `while` loops
 
 ```{r}
 # Control Flow: While Loops -----
@@ -376,8 +390,8 @@ x <- 1
 diff <- 1
 while (diff > 1e-20) {
   old_x <- x
-  x <- x - 1
-  diff <- abs(exp(x) - exp(old_x))
+  x <- x + 1
+  diff <- abs(1/exp(x) - 1/exp(old_x))
 }
 print(x)
 print(diff)
@@ -385,7 +399,10 @@ print(diff)
 
 ```
 
+### Infinite `while` loops
+
 ```{r}
+#| eval: false
 # Control Flow: Infinite While Loops -----
 (y <- rnorm(1))
 z <- as.integer(2)
@@ -411,19 +428,19 @@ diff <- 1
 print(x)
 print(diff)
 
-# x <- 1
-# diff <- 1
-# while (diff > 1e-20) {
-#   old_x <- x
-#   x <- x + 1
-#   diff <- abs(sin(x) - sin(old_x))
-# }
-# print(x)
-# print(diff)
+x <- 1
+diff <- 1
+while (diff > 1e-20) {
+  old_x <- x
+  x <- x + 1
+  diff <- abs(sin(x) - sin(old_x))
+}
+print(x)
+print(diff)
 
+```
 
-
-
+```{r}
 ## while loops ----
 x <- 1
 counter <- 0
@@ -452,4 +469,3 @@ print(diff)
 print(counter)
 
 ```
-
