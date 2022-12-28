@@ -363,69 +363,56 @@ for (i in seq_along(x)){
 print(x)
 ```
 
-As you can see, the vector contains missing values, these were the iterations that a negative number was simulated.
+As you can see, the vector contains missing values, these were the iterations that a negative number was simulated. 
 
-## `while` loops
+## `while` loop
 
-### Basic `while` loops
+The last loop that we will discuss is a while loop. The while loop is used to keep a loop running until a certain condition is met. To construct a while loop, we will use the `while` statement with a condition attached to it. In general, a while loop will have the following format:
 
-```{r}
-# Control Flow: While Loops -----
-x <- -5:5
-plot(x, exp(x), type = "l")
-
-## Asymptotic -----
-abs(exp(-14)-exp(-13))
-
-## while statements -----
-# while (condition) {
-#   
-# }
-
-
-## while loops ----
-x <- 1
-diff <- 1
-while (diff > 1e-20) {
-  old_x <- x
-  x <- x + 1
-  diff <- abs(1/exp(x) - 1/exp(old_x))
-}
-print(x)
-print(diff)
-
-
-```
-
-### Infinite `while` loops
+:::{.callout-note appearance='default' icon=false}
+## Important Concept
 
 ```{r}
 #| eval: false
-# Control Flow: Infinite While Loops -----
-(y <- rnorm(1))
-z <- as.integer(2)
 
-# logical operator &
-is.integer(z) & z > 0
-is.integer(y) & y > 0
+while (condition) {
+  task
+  update condition
+}
+```
 
-x <- -50:50
-plot(x, sin(x), type = "l")
+:::
 
-## Asymptotic -----
-abs(exp(13)-exp(12))
+Above, we see that the `while` statement is used followed by a condition. Then the loop will complete its task and update the condition. If the condition yields a `FALSE` value, then the loop will stop. Otherwise, it will continue.
 
-## inf while loops ----
-x <- 1
-diff <- 1
-# while (diff > 1e-20) {
-#   old_x <- x
-#   x <- x + 1
-#   diff <- abs(exp(x) - exp(old_x))
-# }
+
+### Basic `while` loops
+
+To implement a basic `while` loop, we will work on the previous example of simulating positive numbers. We want to simulate 30 positive numbers from $N(0,1)$ until we have 30 values. Here, our condition is that we need to have 30 numbers. Therefore we can use the following code to simulate the values:
+
+```{r}
+x <- c()
+size <- 0
+while (size < 30){
+  y <- rnorm(1) 
+  if (y > 0) {
+    x <- c(x, y)
+  }
+  size <- length(x)
+}
+print(size)
 print(x)
-print(diff)
+```
+Notice that we do not use an `else` statement. This is because we do not need R to complete a task if the condition fails.
 
+### Infinite `while` loops
+
+With while loops, we must be weary about potential infinite loops. This occurs when the condition will never yield a `FALSE` value. Therfore, R will never stop the loop because it does not know when to do this. 
+
+For example, let's say we are interest if $y=sin(x)$ will converge to a certain value. As you know it will not converge to a certain value; however, we can construct a while loop: 
+
+```{r}
+#| eval: false
 x <- 1
 diff <- 1
 while (diff > 1e-20) {
@@ -438,21 +425,12 @@ print(diff)
 
 ```
 
-```{r}
-## while loops ----
-x <- 1
-counter <- 0
-diff <- 1
-while (diff > 1e-20 & counter < 30) {
-  old_x <- x
-  x <- x + 1
-  diff <- abs(exp(x) - exp(old_x))
-  counter <- counter + 1
-}
-print(x)
-print(diff)
-print(counter)
+My condition above is to see if the absolute difference between sequential values is smaller than $10^{-20}$. As you may know, the absolute difference will never become that small. Therefore, the loop will continue on without stopping.
 
+
+To prevent an infinite while loop, we can add a counter to the condition statement. This counter will also need to be true for the loop to continue. Therefore, we can arbitrarily stop it when the loop has iterated a certain amount of times.  We just need to make sure to add one to the counter every time it iterates it. Below is the code that adds a counter to the while loop:
+
+```{r}
 x <- 1
 counter <- 0
 diff <- 1

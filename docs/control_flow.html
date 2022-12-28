@@ -392,7 +392,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#break" id="toc-break" class="nav-link" data-scroll-target="#break"><span class="toc-section-number">2.4</span>  <code>break</code></a></li>
   <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next"><span class="toc-section-number">2.5</span>  <code>next</code></a></li>
-  <li><a href="#while-loops" id="toc-while-loops" class="nav-link" data-scroll-target="#while-loops"><span class="toc-section-number">2.6</span>  <code>while</code> loops</a>
+  <li><a href="#while-loop" id="toc-while-loop" class="nav-link" data-scroll-target="#while-loop"><span class="toc-section-number">2.6</span>  <code>while</code> loop</a>
   <ul class="collapse">
   <li><a href="#basic-while-loops" id="toc-basic-while-loops" class="nav-link" data-scroll-target="#basic-while-loops"><span class="toc-section-number">2.6.1</span>  Basic <code>while</code> loops</a></li>
   <li><a href="#infinite-while-loops" id="toc-infinite-while-loops" class="nav-link" data-scroll-target="#infinite-while-loops"><span class="toc-section-number">2.6.2</span>  Infinite <code>while</code> loops</a></li>
@@ -593,7 +593,7 @@ Important Concept
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Non-Positive"</span>)</span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Non-Positive"</code></pre>
+<pre><code>[1] "Positive"</code></pre>
 </div>
 </div>
 <p>What if we want to print the statement ‘negative’ as well if the value is negative? We will then need to add another <code>if</code> statement after the <code>else</code> statement since <code>x &gt; 0</code> only lets us know if the value is positive.</p>
@@ -606,7 +606,7 @@ Important Concept
 <span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Negative"</span>)</span>
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Positive"</code></pre>
+<pre><code>[1] "Negative"</code></pre>
 </div>
 </div>
 <p>Above, we add the <code>if</code> statement with condition <code>(x &lt; 0)</code> indicating if the number is negative. Lastly, if <code>x</code> is ever <span class="math inline">\(0\)</span>, we will want R to let us know it is <span class="math inline">\(0\)</span>. We can achieve this by adding one last <code>else</code> statement:</p>
@@ -822,15 +822,12 @@ Important Concept
 <span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 2.9894995 0.9051010 0.5519152 2.0578752 1.1018845 1.9027167        NA
- [8]        NA        NA        NA        NA        NA        NA        NA
-[15]        NA        NA        NA        NA        NA        NA        NA
-[22]        NA        NA        NA        NA        NA        NA        NA
-[29]        NA        NA</code></pre>
+<pre><code> [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+[26] NA NA NA NA NA</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.549922</code></pre>
+<pre><code>[1] -0.4700714</code></pre>
 </div>
 </div>
 <p>Notice that the vector does not get filled up all the way, that is because the loop will break once a negative number is simulated</p>
@@ -875,134 +872,101 @@ Important Note
 <span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.5466679        NA 1.4569480        NA 1.6527462        NA 2.0117696
- [8] 1.9924000        NA 1.9288489 1.2086869 0.4272684 0.6984884 0.7211923
-[15] 0.5376207        NA 1.9168029        NA 0.4754225 2.2713113 1.2309914
-[22] 1.6974874 1.6298275 0.6069068 0.6436615 2.7639496 0.8545942 3.0336554
-[29]        NA 2.7452721</code></pre>
+<pre><code> [1] 0.36800913 0.91660052 2.85652812 2.32641892 0.09855182 2.67066916
+ [7] 1.87461628 0.49216886 0.32588010         NA         NA 1.03787251
+[13] 2.04947920 0.79356667 0.54294010 2.00519401 0.50512754 2.07697894
+[19] 1.82089824 1.24716326 1.05549263 0.51395860 2.65182978         NA
+[25] 1.52370104 1.10376892 1.31861237 0.83386516 0.93586467         NA</code></pre>
 </div>
 </div>
 <p>As you can see, the vector contains missing values, these were the iterations that a negative number was simulated.</p>
 </section>
-<section id="while-loops" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="while-loops"><span class="header-section-number">2.6</span> <code>while</code> loops</h2>
+<section id="while-loop" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="while-loop"><span class="header-section-number">2.6</span> <code>while</code> loop</h2>
+<p>The last loop that we will discuss is a while loop. The while loop is used to keep a loop running until a certain condition is met. To construct a while loop, we will use the <code>while</code> statement with a condition attached to it. In general, a while loop will have the following format:</p>
+<div class="callout-note callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important Concept
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (condition) {</span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  task</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  update condition</span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Above, we see that the <code>while</code> statement is used followed by a condition. Then the loop will complete its task and update the condition. If the condition yields a <code>FALSE</code> value, then the loop will stop. Otherwise, it will continue.</p>
 <section id="basic-while-loops" class="level3" data-number="2.6.1">
 <h3 data-number="2.6.1" class="anchored" data-anchor-id="basic-while-loops"><span class="header-section-number">2.6.1</span> Basic <code>while</code> loops</h3>
+<p>To implement a basic <code>while</code> loop, we will work on the previous example of simulating positive numbers. We want to simulate 30 positive numbers from <span class="math inline">\(N(0,1)\)</span> until we have 30 values. Here, our condition is that we need to have 30 numbers. Therefore we can use the following code to simulate the values:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Control Flow: While Loops -----</span></span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">exp</span>(x), <span class="at">type =</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="control_flow_files/figure-html/unnamed-chunk-32-1.png" class="img-fluid" width="672"></p>
-</div>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Asymptotic -----</span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">exp</span>(<span class="sc">-</span><span class="dv">14</span>)<span class="sc">-</span><span class="fu">exp</span>(<span class="sc">-</span><span class="dv">13</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.428801e-06</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="do">## while statements -----</span></span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="co"># while (condition) {</span></span>
-<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a><span class="co">#   </span></span>
-<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
-<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-6"><a href="#cb74-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb74-7"><a href="#cb74-7" aria-hidden="true" tabindex="-1"></a><span class="do">## while loops ----</span></span>
-<span id="cb74-8"><a href="#cb74-8" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb74-9"><a href="#cb74-9" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb74-10"><a href="#cb74-10" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span>) {</span>
-<span id="cb74-11"><a href="#cb74-11" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
-<span id="cb74-12"><a href="#cb74-12" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb74-13"><a href="#cb74-13" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">exp</span>(x) <span class="sc">-</span> <span class="dv">1</span><span class="sc">/</span><span class="fu">exp</span>(old_x))</span>
-<span id="cb74-14"><a href="#cb74-14" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb74-15"><a href="#cb74-15" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 47</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 6.65662e-21</code></pre>
-</div>
-</div>
-</section>
-<section id="infinite-while-loops" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="infinite-while-loops"><span class="header-section-number">2.6.2</span> Infinite <code>while</code> loops</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Control Flow: Infinite While Loops -----</span></span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>(y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>))</span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">as.integer</span>(<span class="dv">2</span>)</span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a><span class="co"># logical operator &amp;</span></span>
-<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>(z) <span class="sc">&amp;</span> z <span class="sc">&gt;</span> <span class="dv">0</span></span>
-<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a><span class="fu">is.integer</span>(y) <span class="sc">&amp;</span> y <span class="sc">&gt;</span> <span class="dv">0</span></span>
-<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">50</span><span class="sc">:</span><span class="dv">50</span></span>
-<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, <span class="fu">sin</span>(x), <span class="at">type =</span> <span class="st">"l"</span>)</span>
-<span id="cb78-11"><a href="#cb78-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-12"><a href="#cb78-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Asymptotic -----</span></span>
-<span id="cb78-13"><a href="#cb78-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abs</span>(<span class="fu">exp</span>(<span class="dv">13</span>)<span class="sc">-</span><span class="fu">exp</span>(<span class="dv">12</span>))</span>
-<span id="cb78-14"><a href="#cb78-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-15"><a href="#cb78-15" aria-hidden="true" tabindex="-1"></a><span class="do">## inf while loops ----</span></span>
-<span id="cb78-16"><a href="#cb78-16" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb78-17"><a href="#cb78-17" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb78-18"><a href="#cb78-18" aria-hidden="true" tabindex="-1"></a><span class="co"># while (diff &gt; 1e-20) {</span></span>
-<span id="cb78-19"><a href="#cb78-19" aria-hidden="true" tabindex="-1"></a><span class="co">#   old_x &lt;- x</span></span>
-<span id="cb78-20"><a href="#cb78-20" aria-hidden="true" tabindex="-1"></a><span class="co">#   x &lt;- x + 1</span></span>
-<span id="cb78-21"><a href="#cb78-21" aria-hidden="true" tabindex="-1"></a><span class="co">#   diff &lt;- abs(exp(x) - exp(old_x))</span></span>
-<span id="cb78-22"><a href="#cb78-22" aria-hidden="true" tabindex="-1"></a><span class="co"># }</span></span>
-<span id="cb78-23"><a href="#cb78-23" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span>
-<span id="cb78-24"><a href="#cb78-24" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span>
-<span id="cb78-25"><a href="#cb78-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb78-26"><a href="#cb78-26" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb78-27"><a href="#cb78-27" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb78-28"><a href="#cb78-28" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span>) {</span>
-<span id="cb78-29"><a href="#cb78-29" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
-<span id="cb78-30"><a href="#cb78-30" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb78-31"><a href="#cb78-31" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">sin</span>(x) <span class="sc">-</span> <span class="fu">sin</span>(old_x))</span>
-<span id="cb78-32"><a href="#cb78-32" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb78-33"><a href="#cb78-33" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span>
-<span id="cb78-34"><a href="#cb78-34" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="do">## while loops ----</span></span>
-<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>counter <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb79-5"><a href="#cb79-5" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span> <span class="sc">&amp;</span> counter <span class="sc">&lt;</span> <span class="dv">30</span>) {</span>
-<span id="cb79-6"><a href="#cb79-6" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
-<span id="cb79-7"><a href="#cb79-7" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb79-8"><a href="#cb79-8" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">exp</span>(x) <span class="sc">-</span> <span class="fu">exp</span>(old_x))</span>
-<span id="cb79-9"><a href="#cb79-9" aria-hidden="true" tabindex="-1"></a>  counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb79-10"><a href="#cb79-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb79-11"><a href="#cb79-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 31</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.836238e+13</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(counter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>size <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (size <span class="sc">&lt;</span> <span class="dv">30</span>){</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>) </span>
+<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (y <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">c</span>(x, y)</span>
+<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>  size <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 30</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>counter <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span> <span class="sc">&amp;</span> counter <span class="sc">&lt;</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">3</span>) {</span>
-<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
-<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb85-7"><a href="#cb85-7" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">sin</span>(x) <span class="sc">-</span> <span class="fu">sin</span>(old_x))</span>
-<span id="cb85-8"><a href="#cb85-8" aria-hidden="true" tabindex="-1"></a>  counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb85-9"><a href="#cb85-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb85-10"><a href="#cb85-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 0.03109398 1.44298209 0.40262671 1.54687672 0.89608925 0.34971723
+ [7] 0.08596382 0.62716695 0.90230123 0.03006943 0.52923517 0.47744561
+[13] 1.57272864 0.21911668 1.29438207 1.07106190 1.21826155 0.97878822
+[19] 1.26070720 0.86336149 0.52244567 1.59642364 1.12546301 0.37795167
+[25] 0.30012110 0.31699835 1.00739775 0.28799161 0.72662339 1.69732878</code></pre>
+</div>
+</div>
+<p>Notice that we do not use an <code>else</code> statement. This is because we do not need R to complete a task if the condition fails.</p>
+</section>
+<section id="infinite-while-loops" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="infinite-while-loops"><span class="header-section-number">2.6.2</span> Infinite <code>while</code> loops</h3>
+<p>With while loops, we must be weary about potential infinite loops. This occurs when the condition will never yield a <code>FALSE</code> value. Therfore, R will never stop the loop because it does not know when to do this.</p>
+<p>For example, let’s say we are interest if <span class="math inline">\(y=sin(x)\)</span> will converge to a certain value. As you know it will not converge to a certain value; however, we can construct a while loop:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span>) {</span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">sin</span>(x) <span class="sc">-</span> <span class="fu">sin</span>(old_x))</span>
+<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span>
+<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>My condition above is to see if the absolute difference between sequential values is smaller than <span class="math inline">\(10^{-20}\)</span>. As you may know, the absolute difference will never become that small. Therefore, the loop will continue on without stopping.</p>
+<p>To prevent an infinite while loop, we can add a counter to the condition statement. This counter will also need to be true for the loop to continue. Therefore, we can arbitrarily stop it when the loop has iterated a certain amount of times. We just need to make sure to add one to the counter every time it iterates it. Below is the code that adds a counter to the while loop:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>counter <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span> <span class="sc">&amp;</span> counter <span class="sc">&lt;</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">3</span>) {</span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">sin</span>(x) <span class="sc">-</span> <span class="fu">sin</span>(old_x))</span>
+<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>  counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1001</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.09311106</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(counter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(counter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1000</code></pre>
 </div>
