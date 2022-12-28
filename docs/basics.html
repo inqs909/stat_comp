@@ -398,8 +398,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="toc-section-number">1.5.2</span>  Vectors</a></li>
   <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="toc-section-number">1.5.3</span>  Matrices</a></li>
   <li><a href="#arrays" id="toc-arrays" class="nav-link" data-scroll-target="#arrays"><span class="toc-section-number">1.5.4</span>  Arrays</a></li>
-  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="toc-section-number">1.5.5</span>  Data Frames</a></li>
-  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="toc-section-number">1.5.6</span>  Lists</a></li>
+  <li><a href="#sec-basic-data-frames" id="toc-sec-basic-data-frames" class="nav-link" data-scroll-target="#sec-basic-data-frames"><span class="toc-section-number">1.5.5</span>  Data Frames</a></li>
+  <li><a href="#sec-basics-lists" id="toc-sec-basics-lists" class="nav-link" data-scroll-target="#sec-basics-lists"><span class="toc-section-number">1.5.6</span>  Lists</a></li>
   </ul></li>
   <li><a href="#r-packages" id="toc-r-packages" class="nav-link" data-scroll-target="#r-packages"><span class="toc-section-number">1.6</span>  R Packages</a></li>
   </ul>
@@ -777,7 +777,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2022-12-27 10:12:37 PST"</code></pre>
+<pre><code>[1] "2022-12-27 22:09:45 PST"</code></pre>
 </div>
 </div>
 <p>Now lets check if its of POSIX class, you can use the <code>class()</code> function to figure out which class is it. Try <code>class(Sys.time())</code>:</p>
@@ -1008,10 +1008,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">matrix</span>(<span class="fu">rbinom</span>(<span class="dv">12</span>, <span class="dv">1</span>, .<span class="dv">5</span>), <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     [,1] [,2] [,3]
-[1,]    1    0    1
-[2,]    1    1    1
-[3,]    1    1    0
-[4,]    1    0    0</code></pre>
+[1,]    0    1    0
+[2,]    0    0    1
+[3,]    1    0    0
+[4,]    0    0    1</code></pre>
 </div>
 </div>
 <p>Your matrix may look different, but that is to be expected. Notice that some elements in a matrix are 0’s and some are 1’s. Each element in a matrix can hold any value.</p>
@@ -1087,8 +1087,8 @@ z    9   10   11   12</code></pre>
 </div>
 </div>
 </section>
-<section id="data-frames" class="level3" data-number="1.5.5">
-<h3 data-number="1.5.5" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">1.5.5</span> Data Frames</h3>
+<section id="sec-basic-data-frames" class="level3" data-number="1.5.5">
+<h3 data-number="1.5.5" class="anchored" data-anchor-id="sec-basic-data-frames"><span class="header-section-number">1.5.5</span> Data Frames</h3>
 <p>Data frames are similar to data set that you may encounter in an excel file. However, there are a couple of differences. First, each row represents an observation, and each column represents a characteristic of the observation. Additionally, each column in a data frame will be the same data type. To get an idea of what a data frame looks like, try <code>head(iris)</code> <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(iris)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1133,8 +1133,8 @@ z    9   10   11   12</code></pre>
 </div>
 </div>
 </section>
-<section id="lists" class="level3" data-number="1.5.6">
-<h3 data-number="1.5.6" class="anchored" data-anchor-id="lists"><span class="header-section-number">1.5.6</span> Lists</h3>
+<section id="sec-basics-lists" class="level3" data-number="1.5.6">
+<h3 data-number="1.5.6" class="anchored" data-anchor-id="sec-basics-lists"><span class="header-section-number">1.5.6</span> Lists</h3>
 <p>To me a list is just a container that you can store practically anything. It is compiled of elements, where each element contains an R object. For example, the first element of a list may contain a data frame, the second element may contain a vector, and the third element may contain another list. It is just a way to store things.</p>
 <p>To create a list, use the <code>list()</code> function. Create a list compiled of first element with the mtcars data set, second element with a vector of zeros of size 4, and a matrix <span class="math inline">\(3 \times 3\)</span> identity matrix<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Store the list in an object called <code>list_one</code>:</p>
 <div class="cell">

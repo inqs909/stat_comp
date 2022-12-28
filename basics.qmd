@@ -473,7 +473,7 @@ Matrices can be considered as a 2-dimensional block of numbers. An array is an n
                       dim=c(3,3,3)))
 ```
 
-### Data Frames
+### Data Frames {#sec-basic-data-frames}
 
 Data frames are similar to data set that you may encounter in an excel file. However, there are a couple of differences. First, each row represents an observation, and each column represents a characteristic of the observation. Additionally, each column in a data frame will be the same data type. To get an idea of what a data frame looks like, try `head(iris)` [^basics-5]:
 
@@ -499,7 +499,7 @@ Lastly, if you are interested in viewing a specific variable (column) from a dat
 iris$Sepal.Length
 ```
 
-### Lists
+### Lists {#sec-basics-lists}
 
 To me a list is just a container that you can store practically anything. It is compiled of elements, where each element contains an R object. For example, the first element of a list may contain a data frame, the second element may contain a vector, and the third element may contain another list. It is just a way to store things.
 

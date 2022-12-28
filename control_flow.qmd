@@ -62,310 +62,308 @@ However, a data frame has labeled components, variables, we can index the data f
 mtcars[, "cyl"]
 ```
 
-Lastly, a data frame being indexed to a specific variable 
+Lastly, a data frame can be indexed to a specific variable using the `$` notation as described in @sec-basic-data-frames.
 
 ### Lists
 
-## If/Else Statements
+As described in @sec-basics-lists, lists contain elements holding different R objects. To index a specific element of a list, you will use `[[]]` double brackets. Below is a toy list:
 
 ```{r}
-# Control Flow: if else statements
+toy_list <- list(mtcars = mtcars,
+                 vector = rep(0, 4),
+                 identity = diag(rep(1, 3)))
+```
+
+
+To access the second element, vector element, you can type `toy_list[[2]]`
+
+```{r}
+toy_list[[2]]
+```
+Since the elements are labeled within the list, you can place the label in quotes inside `[[]]`:
+
+```{r}
+toy_list[["vector"]]
+```
+
+The element can be accessed using the `$` notation with a list:
+
+```{r}
+toy_list$vector
+```
+
+Lastly, you can further index the list if needed, we can access the `mpg` variable in `mtcars` from the `toy_list`:
+
+```{r}
+toy_list$mtcars$mpg
+toy_list[["mtcars"]]$mpg
+toy_list$mtcars[,'mpg']
+```
+
+
+## If/Else Statements
+
+
+In R, there are control flow functions that will dictate how a program will be executed.
+The first set of functions we will talk about are `if` and `else` statements. First, the `if` statement will evaluate a task, If the conditions is satisfied, yields `TRUE`, then it will conduct a certain task, if it fails, yields `FALSE`, the `else` statement will guide it to a different task. Below is a general format:
+
+
+
+:::{.callout-note icon="false"}
+## Important Concept
+
+```{r}
+#| eval: false
+
+if (condition) {
+  TRUE task
+} else {
+  FALSE task
+}
+```
+:::
+
+
+
+### Example
+
+Below is an example where we generate `x` from a standard normal distribution and print the statement 'positive' or  'non-positive' based on the condition `x > 0`.
+
+
+```{r}
 x <- rnorm(1)
 
-## Logical Statements
-
-x > 0 
-
 ## if statements
-
-if (x > 0) {
-  print("Positive")
-} 
-
-## else statements
-
 if (x > 0){
   print("Positive")
 } else {
   print("Non-Positive")
 }
+```
 
-## Example 2
-y <- rnorm(1)
+What if we want to print the statement 'negative' as well if the value is negative? We will then need to add another `if` statement after the `else` statement since `x > 0` only lets us know if the value is positive.
 
+```{r}
+x <- rnorm(1)
 
-if (y > 0){
+if (x > 0){
   print("Positive")
-  print(y)
-  mean(y)
-} else {
-  print("Non-Positive")
-  print(y)
-  length(y)
+} else if (x < 0) {
+  print("Negative")
 }
+```
 
-# Control Flow: else if statements
-(x <- sample(-1:1,1))
+Above, we add the `if` statement with condition `(x < 0)` indicating if the number is negative. Lastly, if `x` is ever $0$, we will want R to let us know it is $0$. We can achieve this by adding one last `else` statement:
 
-## Logical Statements
+```{r}
+x <- rnorm(1)
 
-x > 0 
-
-## if statements
-
-if (x > 0) {
-  print("Positive")
-} 
-
-## else if statements
-
-if (x > 0) {
+if (x > 0){
   print("Positive")
 } else if (x < 0) {
   print("Negative")
 } else {
   print("Zero")
 }
-
-
-## Example 2
-y <- sample(-1:1,1)
-
-
-if (y > 0){
-  print("Positive")
-} else if (y < 0) {
-  print("Negative")
-} else {
-  print("Zero")  
-}
-
-```
-
-## `try()` Function
-
-```{r}
-# Control Flow: try function -----
-
-## Function
-err_fx <- function(x){
-  if (x>0){
-    return(x)
-  } else {
-    stop("x is not positive")
-  }
-}
-
-## Example -----
-(y <- rnorm(1))
-# err_fx(y)
-
-## try function ----
-
-y_err <- try(err_fx(y), silent = T)
-
-## Example ----
-# x <- rnorm(100)
-# loop <- c()
-# for (i in x){
-#   loop[i] <- err_fx(i)
-# }
-
-## Using try
-x <- rnorm(100)
-loop <- c()
-for (i in seq_along(x)) {
-  try_err <- try(err_fx(x[i]), silent = T)
-  if (inherits(try_err, "try-error")){
-    loop[i] <- 0
-  } else {
-    loop[i] <- try_err
-  }
-}
-
-
-```
-
-## `break`
-
-```{r}
-# Control Flow: break & next function -----
-
-## Function
-err_fx <- function(x){
-  if (x>0){
-    return(x)
-  } else {
-    stop("x is not positive")
-  }
-}
-
-(y <- rnorm(1))
-# err_fx(y)
-
-## Loop Example
-x <- rnorm(100)
-loop <- c()
-for (i in seq_along(x)) {
-  try_err <- try(err_fx(x[i]), silent = T)
-  if (inherits(try_err, "try-error")){
-    loop[i] <- 0
-  } else {
-    loop[i] <- try_err
-  }
-}
-
-
-## Break -----
-x <- rnorm(100)
-loop <- c()
-for (i in seq_along(x)) {
-  try_err <- try(err_fx(x[i]), silent = T)
-  if (inherits(try_err, "try-error")){
-    break
-  } else {
-    loop[i] <- try_err
-  }
-}
-
-```
-
-## `next`
-
-```{r}
-## Next -----
-x <- rnorm(100)
-loop <- c()
-for (i in seq_along(x)) {
-  try_err <- try(err_fx(x[i]), silent = T)
-  if (inherits(try_err, "try-error")){
-    next
-  } else {
-    loop[i] <- try_err
-  }
-}
-
-x <- rnorm(100)
-loop <- c()
-for (i in seq_along(x)) {
-  try_err <- try(err_fx(x[i]), silent = T)
-  if (inherits(try_err, "try-error")){
-    next
-  } else {
-    loop <- c(loop, try_err)
-  }
-}
-
 ```
 
 ## `for` loops
 
-### Basic `for` loop
+A for `loop` is a way to repeat a task a certain amount of times. Every time a loop repeats a task, we state it is an iteration of the loop. For each iteration, we may change the inputs by a certain way, either from an indexed vector, and repeat the task. The general anatomy of a loop looks like:
+
+
+:::{.callout-note appearance='default' icon=false}
+## Important Concept
 
 ```{r}
-# Control Flow: Loops ----
+#| eval: false
 
-# Loops are used to conduct repetitive/iterative tasks
-# Each iteration conducts a task given a set of values
-# The values for each iteration change as the loop moves
-# from one iteration to another
+for (i in vector){
+  perform task
+}
+```
+:::
 
-## for Anatomy -----
 
-# for (i in vector) {
-#   Perform Task
-# }
+The `for` statement indicates that you will repeat a task inside the brackets. The `i` in the parenthesis controls how the task will be completed. The `in` statement tells R where `i` can look for the values, and `vectorr` is a vector R object that contains the values `i` can be. It also controls how many times the task will be repeated based on the length of the vector.  
 
-## Printing Example ------
+Learning about a loop is quite challenging, my recommendation is to read the section below and break the example code so you can understand how a `for` loop works.
 
-### print number 1 through 5, separately
+### Basic `for` loop
 
-# We want to do this:
+Let's say we want R to print one to five separately. We can achieve this by repeating the `print()` 5 times.
+
+```{r}
 print(1); print(2); print(3); print(4); print(5)
+```
 
-# We don't want this:
-print(1:5)
+However, this takes quite awhile to type up. Let's try to achieve the same task using a `for` loop. 
 
-### Using a loop
+```{r}
 for (i in 1:5){
   print(i)
 }
+```
 
-## Printing Letters -----
-### Print all the letters, seperately
-print(letters)
+Here, `i` will take a value from the vector `1:5`,^[Type this in the console to see what it is.] Then, R will print out what the value of `i` is.
 
-for (i in 1:26){
-  print(letters[i])
+Now, let's try another example with letters. To begin, create a new vector called `letters_10` containing the first 10 letters of the alphabet. Use the vector `letters` to construct the neww vector.
+
+```{r}
+letters_10 <- letters[1:10]
+```
+
+Now, we will use a loop to print out the first 10 letters:
+
+```{r}
+for (i in 1:10) {
+  print(letters_10[i])
 }
+```
 
-## cleaner
-for (i in seq_along(letters)){
-  print(letters[i])
-}
+Here, we have `i` take on the values 1 through 10. Using those values, we will index the vector `letters_10` by `i`. The resulting letter will then be printed. This task repeated 10 times.
 
-## cleanest
-for (i in letters){
+Lastly, we can replace `1:10` by `letters_10` instead:
+
+
+```{r}
+for (i in letters_10){
   print(i)
 }
 ```
 
+This is because `letters_10` are the values that we want to print and `i` takes on the value of `letters_10` each time.
+
 ### Nested `for` loops
 
+A nested `for` loop is a loop that contain a loop within. Below is an example of 3 `for` loops nested within each other. Below is a general example:
+
+
+:::{.callout-note appearance='default' icon="false"}
+## Important Concept
+
 ```{r}
-# Control Flow: Nested Loops ----
-library(greekLetters)
-letters_new <- letters[1:3]
-greek_lower <- greek_vector[1:24]
+#| eval: false
 
-paste(letters_new[1], greek_lower[1], sep = "")
-paste(letters_new[1], greek_lower[2], sep = "")
-
-paste(letters_new[2], greek_lower[1], sep = "")
-paste(letters_new[2], greek_lower[2], sep = "")
-
-paste(letters_new[3], greek_lower[1], sep = "")
-paste(letters_new[3], greek_lower[2], sep = "")
-
-
-## Inefficient way
-for(i in greek_lower){
-  print(paste(letters_new[1], i, sep = ""))
-}
-
-for(i in greek_lower){
-  print(paste(letters_new[2], i, sep = ""))
-}
-
-for(i in greek_lower){
-  print(paste(letters_new[3], i, sep = ""))
-}
-
-for (i in 1:3){
-  for (ii in greek_lower){
-    print(paste(letters_new[i], ii, sep = ""))
+for (i in vector_1) {
+  for (ii in vector_2) {
+    for (iii in vector_3) {
+      perform task
+    }
   }
 }
-
-for (i in letters_new){
-  for (ii in greek_lower){
-    print(paste(i, ii, sep = ""))
-  }
-}
-
-# for (i in vector) {
-#   for (ii in vector) {
-#     for (iii in vector) {
-#       for (iiii in vector) {
-# 
-#       }
-#     }
-#   }
-# }
-
 
 ```
 
+:::
+
+
+As an example, we will use the `greekLetter::`^[`install.packages(greekLetters)`] and use the `greek_vector` vector to obtain greek letters in R. Lastly, create a vector called `greek_10`.
+
+```{r}
+library(greekLetters)
+greek_10 <- greek_vector[1:10]
+```
+
+
+For this example, we want R to print "a" and "$\alpha$" together as demonstrated below^[We will need to use `paste0()` to combine the letters together.]:
+
+```{r}
+print(paste0(letters_10[1], greek_10[1]))
+```
+
+Now let's repeat this process to print all possible combinations of the first 3 letters and 3 greek letters:
+
+```{r}
+for (i in 1:3){
+  for (ii in 1:3){
+    print(paste0(letters_10[i], greek_10[ii]))
+  }
+}
+```
+
+
+## `break`
+
+A `break` statement is used to stop a loop midway if a certain condition is met. A general setup of `break` statement goes as follows: 
+
+:::{.callout-note appearance='default' icon="false"}
+## Important Concept
+
+```{r}
+#| eval: false
+for (i in vector){
+  if (condition) {break}
+  else {
+    task
+  }
+}
+```
+:::
+
+As you can see there is an `if` statement in the loop. This is used to tell R when to break the loop. If the `if` statement was not there, then the loop will break without iterating. 
+
+To demonstrate the break statement, we will simulate from a $N(1,1)$ until we have 30 positive numbers or we simulate a negative number.
+
+
+```{r}
+x <- rep(NA,length = 30)
+
+for (i in seq_along(x)){
+  y <- rnorm(1,1)
+  if (y<0) {
+    break
+  }
+  else {
+    x[i] <- y
+  }
+}
+print(x)
+print(y)
+```
+
+Notice that the vector does not get filled up all the way, that is because the loop will break once a negative number is simulated
+
+## `next`
+
+Similar to the `break` statement, the `next` statement is used in loops that will tell R to move on to the next iteration if a certain condition is met. 
+
+:::{.callout-note appearance='default' icon="false"}
+## Important Note
+
+```{r}
+#| eval: false
+for (i in vector){
+  if (condition) {
+    next
+  } else {
+    task
+  }
+}
+```
+
+:::
+
+The main difference here is that a `next` statement is used instead of a `break` statement.
+
+Going back to simulating positive numbers, we will use the same setup but change it to a `next` statement.
+
+```{r}
+x <- rep(NA,length = 30)
+
+for (i in seq_along(x)){
+  y <- rnorm(1,1)
+  if (y<0) {
+    next
+  }
+  else {
+    x[i] <- y
+  }
+}
+print(x)
+```
+
+As you can see, the vector contains missing values, these were the iterations that a negative number was simulated.
 
 ## `while` loops
 
