@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Computing - 8&nbsp; Graphics</title>
+<title>Statistical Computing - 15&nbsp; Graphics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphics</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -216,7 +216,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./da.html" class="sidebar-item-text sidebar-link">Data Manipulation, Summarization, and Graphics</a>
+            <a href="./permutations.html" class="sidebar-item-text sidebar-link">Randomizations</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -224,97 +224,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./importing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Importing Data</span></a>
+  <a href="./perm_hyp.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Permutation Tests</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_manip.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Data Manipulation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data_summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Summarization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./plot.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphics</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./reporting.html" class="sidebar-item-text sidebar-link">Reporting Data</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Markdown Reports</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Notebooks</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./presentations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Presentations</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./efficient.html" class="sidebar-item-text sidebar-link">Debugging and Efficient Porgramming</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./debugging.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Debugging Code</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./profiling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Efficient Programming and Profiling</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./vectorizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Vectorizing Code</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./rcpp.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Incorporating C++ into R</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./permutations.html" class="sidebar-item-text sidebar-link">Randomizations</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./perm_hyp.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Permutation Tests</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./perm_reg.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Permutation Regression</span></a>
+  <a href="./perm_reg.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Permutation Regression</span></a>
   </div>
 </li>
       </ul>
@@ -322,24 +237,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./mc.html" class="sidebar-item-text sidebar-link">Monte Carlo Methods</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./simulations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></a>
+  <a href="./simulations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mc_int.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></a>
+  <a href="./mc_int.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></a>
+  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></a>
   </div>
 </li>
       </ul>
@@ -347,6 +262,81 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./bootstrapping.html" class="sidebar-item-text sidebar-link">Bootstrapping</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./parametric.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Parametric Bootrapping</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Nonparametric Boostrapping</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./da.html" class="sidebar-item-text sidebar-link">Data Manipulation, Summarization, and Graphics</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./importing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Importing Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_manip.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Manipulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./data_summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Summarization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plot.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./reporting.html" class="sidebar-item-text sidebar-link">Reporting Data</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Markdown Reports</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Notebooks</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./presentations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Presentations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./efficient.html" class="sidebar-item-text sidebar-link">Debugging and Efficient Porgramming</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -354,12 +344,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./parametric.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Parametric Bootrapping</span></a>
+  <a href="./debugging.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Debugging Code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Nonparametric Boostrapping</span></a>
+  <a href="./profiling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Efficient Programming and Profiling</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./vectorizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Vectorizing Code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rcpp.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Incorporating C++ into R</span></a>
   </div>
 </li>
       </ul>
@@ -373,31 +373,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#base-r-plotting" id="toc-base-r-plotting" class="nav-link active" data-scroll-target="#base-r-plotting"><span class="toc-section-number">8.1</span>  Base R Plotting</a>
+  <li><a href="#base-r-plotting" id="toc-base-r-plotting" class="nav-link active" data-scroll-target="#base-r-plotting"><span class="toc-section-number">15.1</span>  Base R Plotting</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="toc-section-number">8.1.1</span>  Introduction</a></li>
-  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents"><span class="toc-section-number">8.1.2</span>  Contents</a></li>
-  <li><a href="#basic-graphics" id="toc-basic-graphics" class="nav-link" data-scroll-target="#basic-graphics"><span class="toc-section-number">8.1.3</span>  Basic Graphics</a></li>
-  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="toc-section-number">8.1.4</span>  Scatter Plot</a></li>
-  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="toc-section-number">8.1.5</span>  Histogram</a></li>
-  <li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot"><span class="toc-section-number">8.1.6</span>  Density Plot</a></li>
-  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots"><span class="toc-section-number">8.1.7</span>  Box Plots</a></li>
-  <li><a href="#bar-chart" id="toc-bar-chart" class="nav-link" data-scroll-target="#bar-chart"><span class="toc-section-number">8.1.8</span>  Bar Chart</a></li>
-  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="toc-section-number">8.1.9</span>  Pie Chart</a></li>
-  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping"><span class="toc-section-number">8.1.10</span>  Grouping</a></li>
-  <li><a href="#tweaking" id="toc-tweaking" class="nav-link" data-scroll-target="#tweaking"><span class="toc-section-number">8.1.11</span>  Tweaking</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="toc-section-number">15.1.1</span>  Introduction</a></li>
+  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents"><span class="toc-section-number">15.1.2</span>  Contents</a></li>
+  <li><a href="#basic-graphics" id="toc-basic-graphics" class="nav-link" data-scroll-target="#basic-graphics"><span class="toc-section-number">15.1.3</span>  Basic Graphics</a></li>
+  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="toc-section-number">15.1.4</span>  Scatter Plot</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="toc-section-number">15.1.5</span>  Histogram</a></li>
+  <li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot"><span class="toc-section-number">15.1.6</span>  Density Plot</a></li>
+  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots"><span class="toc-section-number">15.1.7</span>  Box Plots</a></li>
+  <li><a href="#bar-chart" id="toc-bar-chart" class="nav-link" data-scroll-target="#bar-chart"><span class="toc-section-number">15.1.8</span>  Bar Chart</a></li>
+  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="toc-section-number">15.1.9</span>  Pie Chart</a></li>
+  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping"><span class="toc-section-number">15.1.10</span>  Grouping</a></li>
+  <li><a href="#tweaking" id="toc-tweaking" class="nav-link" data-scroll-target="#tweaking"><span class="toc-section-number">15.1.11</span>  Tweaking</a></li>
   </ul></li>
-  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="toc-section-number">8.2</span>  ggplot2</a>
+  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="toc-section-number">15.2</span>  ggplot2</a>
   <ul class="collapse">
-  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1"><span class="toc-section-number">8.2.1</span>  Introduction</a></li>
-  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="toc-section-number">8.2.2</span>  Basics</a></li>
-  <li><a href="#scatter-plot-2" id="toc-scatter-plot-2" class="nav-link" data-scroll-target="#scatter-plot-2"><span class="toc-section-number">8.2.3</span>  Scatter Plot</a></li>
-  <li><a href="#histogram-and-density-plot" id="toc-histogram-and-density-plot" class="nav-link" data-scroll-target="#histogram-and-density-plot"><span class="toc-section-number">8.2.4</span>  Histogram and Density Plot</a></li>
-  <li><a href="#box-plots-1" id="toc-box-plots-1" class="nav-link" data-scroll-target="#box-plots-1"><span class="toc-section-number">8.2.5</span>  Box Plots</a></li>
-  <li><a href="#bar-charts" id="toc-bar-charts" class="nav-link" data-scroll-target="#bar-charts"><span class="toc-section-number">8.2.6</span>  Bar Charts</a></li>
-  <li><a href="#grouping-1" id="toc-grouping-1" class="nav-link" data-scroll-target="#grouping-1"><span class="toc-section-number">8.2.7</span>  Grouping</a></li>
-  <li><a href="#themestweaking" id="toc-themestweaking" class="nav-link" data-scroll-target="#themestweaking"><span class="toc-section-number">8.2.8</span>  Themes/Tweaking</a></li>
-  <li><a href="#saving-plot" id="toc-saving-plot" class="nav-link" data-scroll-target="#saving-plot"><span class="toc-section-number">8.2.9</span>  Saving plot</a></li>
+  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1"><span class="toc-section-number">15.2.1</span>  Introduction</a></li>
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="toc-section-number">15.2.2</span>  Basics</a></li>
+  <li><a href="#scatter-plot-2" id="toc-scatter-plot-2" class="nav-link" data-scroll-target="#scatter-plot-2"><span class="toc-section-number">15.2.3</span>  Scatter Plot</a></li>
+  <li><a href="#histogram-and-density-plot" id="toc-histogram-and-density-plot" class="nav-link" data-scroll-target="#histogram-and-density-plot"><span class="toc-section-number">15.2.4</span>  Histogram and Density Plot</a></li>
+  <li><a href="#box-plots-1" id="toc-box-plots-1" class="nav-link" data-scroll-target="#box-plots-1"><span class="toc-section-number">15.2.5</span>  Box Plots</a></li>
+  <li><a href="#bar-charts" id="toc-bar-charts" class="nav-link" data-scroll-target="#bar-charts"><span class="toc-section-number">15.2.6</span>  Bar Charts</a></li>
+  <li><a href="#grouping-1" id="toc-grouping-1" class="nav-link" data-scroll-target="#grouping-1"><span class="toc-section-number">15.2.7</span>  Grouping</a></li>
+  <li><a href="#themestweaking" id="toc-themestweaking" class="nav-link" data-scroll-target="#themestweaking"><span class="toc-section-number">15.2.8</span>  Themes/Tweaking</a></li>
+  <li><a href="#saving-plot" id="toc-saving-plot" class="nav-link" data-scroll-target="#saving-plot"><span class="toc-section-number">15.2.9</span>  Saving plot</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -407,7 +407,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Graphics</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></h1>
 </div>
 
 
@@ -423,26 +423,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>Through out this chapter, we use certain notations for different components in R. To begin, when something is in a gray block, <code>_</code>, this indicates that R code is being used. When I am talking about an R Object, it will be displayed as a word. For example, we will be using the R object <code>mtcars</code>. When I am talking about an R function, it will be displayed as a word followed by an open and close parentheses. For example, we will use the mean function denoted as <code>mean()</code> (read this as “mean function”). When I am talking about an R argument for a function, it will be displayed as a word following by an equal sign. For example, we will use the data argument denoted as <code>data=</code> (read this as “data argument”). When I am referencing an R package, I will use <code>::</code> (two colons) after the name. For example, in this tutorial, I will use the <code>ggplot2::</code> (read this as “ggplot2 package”) Lastly, if I am displaying R code for your reference or to run, it will be displayed on its own line. There are many components in R, and my hope is that this will help you understand what components am I talking about.</p>
-<section id="base-r-plotting" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="base-r-plotting"><span class="header-section-number">8.1</span> Base R Plotting</h2>
-<section id="introduction" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">8.1.1</span> Introduction</h3>
+<section id="base-r-plotting" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="base-r-plotting"><span class="header-section-number">15.1</span> Base R Plotting</h2>
+<section id="introduction" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">15.1.1</span> Introduction</h3>
 <p>This tutorial provides an introduction on how to create different graphics in R. For this tutorial, we will focus on plotting different components from the <code>mtcars</code> data set.</p>
 </section>
-<section id="contents" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="contents"><span class="header-section-number">8.1.2</span> Contents</h3>
+<section id="contents" class="level3" data-number="15.1.2">
+<h3 data-number="15.1.2" class="anchored" data-anchor-id="contents"><span class="header-section-number">15.1.2</span> Contents</h3>
 <ol type="1">
 <li><p>Basic</p></li>
 <li><p>Grouping</p></li>
 <li><p>Tweaking</p></li>
 </ol>
 </section>
-<section id="basic-graphics" class="level3" data-number="8.1.3">
-<h3 data-number="8.1.3" class="anchored" data-anchor-id="basic-graphics"><span class="header-section-number">8.1.3</span> Basic Graphics</h3>
+<section id="basic-graphics" class="level3" data-number="15.1.3">
+<h3 data-number="15.1.3" class="anchored" data-anchor-id="basic-graphics"><span class="header-section-number">15.1.3</span> Basic Graphics</h3>
 <p>Here we will use the built-in R functions to create different graphics. The main function that you will use is the <code>plot()</code>. It contains much of the functionality to create many different plots in R. Additionally, it works well for different classes of R objects. It will provide many important plots that you will need for a certain statistical analysis.</p>
 </section>
-<section id="scatter-plot" class="level3" data-number="8.1.4">
-<h3 data-number="8.1.4" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">8.1.4</span> Scatter Plot</h3>
+<section id="scatter-plot" class="level3" data-number="15.1.4">
+<h3 data-number="15.1.4" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">15.1.4</span> Scatter Plot</h3>
 <p>Let’s first create a scatter plot for one variable using the <code>mpg</code> variable. This is done using the <code>plot()</code> and setting the first argument <code>x=</code> to the vector.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -475,8 +475,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Now, let’s change the the axis labels and plot title. This is done by using the arguments <code>main=</code>, <code>xlab=</code>, and <code>ylab</code>. The <code>main=</code> changes the title of the plot.</p>
 </section>
-<section id="histogram" class="level3" data-number="8.1.5">
-<h3 data-number="8.1.5" class="anchored" data-anchor-id="histogram"><span class="header-section-number">8.1.5</span> Histogram</h3>
+<section id="histogram" class="level3" data-number="15.1.5">
+<h3 data-number="15.1.5" class="anchored" data-anchor-id="histogram"><span class="header-section-number">15.1.5</span> Histogram</h3>
 <p>To create a histogram, use the <code>hist()</code>. The <code>hist()</code> only needs <code>x=</code> which is numerical vector. Create a histogram with the <code>mpg</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -499,8 +499,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="density-plot" class="level3" data-number="8.1.6">
-<h3 data-number="8.1.6" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">8.1.6</span> Density Plot</h3>
+<section id="density-plot" class="level3" data-number="15.1.6">
+<h3 data-number="15.1.6" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">15.1.6</span> Density Plot</h3>
 <p>A density plot can be used instead of a histogram. This is done by using the <code>density()</code> to create an object containing the information to create density function. Then, use the <code>plot()</code> to display the plot. The only argument the <code>density()</code> needs is the <code>x=</code> which is the data to be used. Create a density plot the <code>mpg</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(mtcars<span class="sc">$</span>mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -517,8 +517,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="box-plots" class="level3" data-number="8.1.7">
-<h3 data-number="8.1.7" class="anchored" data-anchor-id="box-plots"><span class="header-section-number">8.1.7</span> Box Plots</h3>
+<section id="box-plots" class="level3" data-number="15.1.7">
+<h3 data-number="15.1.7" class="anchored" data-anchor-id="box-plots"><span class="header-section-number">15.1.7</span> Box Plots</h3>
 <p>A commonly used plot to display relevant statistics is the box plot. To create a box plot use the <code>boxplot()</code>. The function only needs the <code>x=</code> which specifies the data to create the box plot. Use the box plot function to create a box plot on for the variable <code>mpg</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -534,8 +534,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="bar-chart" class="level3" data-number="8.1.8">
-<h3 data-number="8.1.8" class="anchored" data-anchor-id="bar-chart"><span class="header-section-number">8.1.8</span> Bar Chart</h3>
+<section id="bar-chart" class="level3" data-number="15.1.8">
+<h3 data-number="15.1.8" class="anchored" data-anchor-id="bar-chart"><span class="header-section-number">15.1.8</span> Bar Chart</h3>
 <p>A histogram shows you the frequency for a continuous variable. A bar chart will show you the frequency of a categorical or discrete variable. To create a bar chart, use the <code>barplot()</code>. The main argument it needs is the <code>height=</code> which needs to an object from the <code>table()</code>. Create a bar chart for the <code>cyl</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -544,8 +544,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="pie-chart" class="level3" data-number="8.1.9">
-<h3 data-number="8.1.9" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">8.1.9</span> Pie Chart</h3>
+<section id="pie-chart" class="level3" data-number="15.1.9">
+<h3 data-number="15.1.9" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">15.1.9</span> Pie Chart</h3>
 <p>While I do not recommend using a pie chart, R is capable of creating one using the <code>pie()</code>. It only needs the <code>x=</code> which is a vector numerical quantities. This could be the output from the <code>table()</code>. Create a pie chart with the <code>cyl</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -554,19 +554,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="grouping" class="level3" data-number="8.1.10">
-<h3 data-number="8.1.10" class="anchored" data-anchor-id="grouping"><span class="header-section-number">8.1.10</span> Grouping</h3>
+<section id="grouping" class="level3" data-number="15.1.10">
+<h3 data-number="15.1.10" class="anchored" data-anchor-id="grouping"><span class="header-section-number">15.1.10</span> Grouping</h3>
 <p>Similar to obtaining statistics for certain groups, plots can be grouped to reveal certain trends. We will look at a couple of methods to visualize different groups.</p>
-<section id="one-variable-grouping" class="level4" data-number="8.1.10.1">
-<h4 data-number="8.1.10.1" class="anchored" data-anchor-id="one-variable-grouping"><span class="header-section-number">8.1.10.1</span> One Variable Grouping</h4>
+<section id="one-variable-grouping" class="level4" data-number="15.1.10.1">
+<h4 data-number="15.1.10.1" class="anchored" data-anchor-id="one-variable-grouping"><span class="header-section-number">15.1.10.1</span> One Variable Grouping</h4>
 <p>Two ways to display groups is by using color coding or panels. I will show you what I think is the best way to group variables. There may be better ways to do this, such as using the ggplot2 package. Before we begin, create three new R objects that are a subset of the <code>mtcars</code> data set into 3 different data sets with for the three different values of the <code>cyl</code> variable: “4”, “6”, and “8”. use the <code>subset()</code> to create the different data sets. Name the new R objects <code>mtcars_4</code>, <code>mtcars_6</code>, and <code>mtcars_8</code>, respectively.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mtcars_4 <span class="ot">&lt;-</span> <span class="fu">subset</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">4</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>mtcars_6 <span class="ot">&lt;-</span> <span class="fu">subset</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">6</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>mtcars_8 <span class="ot">&lt;-</span> <span class="fu">subset</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="scatter-plot-1" class="level5" data-number="8.1.10.1.1">
-<h5 data-number="8.1.10.1.1" class="anchored" data-anchor-id="scatter-plot-1"><span class="header-section-number">8.1.10.1.1</span> Scatter Plot</h5>
+<section id="scatter-plot-1" class="level5" data-number="15.1.10.1.1">
+<h5 data-number="15.1.10.1.1" class="anchored" data-anchor-id="scatter-plot-1"><span class="header-section-number">15.1.10.1.1</span> Scatter Plot</h5>
 <p>To create different colors points for their respective label associated <code>cyl</code> variable. First create a base scatter plot using the <code>plot()</code> to set up the plot. Then one by one, overlay a set of new points on the base plot using the <code>points()</code>. The first two arguments should be the vectors of data from their respective R object subset. Also, use the <code>col=</code> to change the color of the points. The <code>col=</code> takes either a string or a number.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>disp)</span>
@@ -578,8 +578,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="histogram-1" class="level5" data-number="8.1.10.1.2">
-<h5 data-number="8.1.10.1.2" class="anchored" data-anchor-id="histogram-1"><span class="header-section-number">8.1.10.1.2</span> Histogram</h5>
+<section id="histogram-1" class="level5" data-number="15.1.10.1.2">
+<h5 data-number="15.1.10.1.2" class="anchored" data-anchor-id="histogram-1"><span class="header-section-number">15.1.10.1.2</span> Histogram</h5>
 <p>Now, it us more difficult to overlay histograms on a plot to different colors. Therefore, a panel approach may be more beneficial. This can be done by setting up R to plot a grid of plots. To do this, use the <code>par()</code> to tell R how to set up the grid. Then use the <code>mfrow=</code>, which is a vector of length two, to set up a grid. The <code>mfrow=</code> usually has an input of <code>c(ROWS,COLS)</code> which states the number of rows and the number of columns. Once this is done, the next plots you create will be used to populate the grid.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
@@ -592,8 +592,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Every time you use the <code>par()</code>, it will change how graphics are created in an R session. Therefore, all your plots will follow the new graphic parameters. You will need to reset it by typing <code>dev.off()</code>.</p>
 </section>
-<section id="bar-chart-1" class="level5" data-number="8.1.10.1.3">
-<h5 data-number="8.1.10.1.3" class="anchored" data-anchor-id="bar-chart-1"><span class="header-section-number">8.1.10.1.3</span> Bar Chart</h5>
+<section id="bar-chart-1" class="level5" data-number="15.1.10.1.3">
+<h5 data-number="15.1.10.1.3" class="anchored" data-anchor-id="bar-chart-1"><span class="header-section-number">15.1.10.1.3</span> Bar Chart</h5>
 <p>To visualize two categorical variables, we can use a color-coded bar chart to compare the frequencies of the categories. This is simple to do with the <code>barplot()</code>. First, use the <code>table()</code> to create a cross-tabulation of the frequencies for two variables. Then use the <code>boxplot()</code> to visualize both variables. Then use <code>legend=</code> to create a label when the bar chart is color-coded. Additionally, use the <code>beside=</code> argument to change how the plot looks. Use the code below to compare the variables <code>cyl</code> and <code>am</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>am), <span class="at">beside =</span> <span class="cn">TRUE</span>, <span class="at">legend =</span> <span class="fu">rownames</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>am)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -605,10 +605,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 </section>
 </section>
-<section id="tweaking" class="level3" data-number="8.1.11">
-<h3 data-number="8.1.11" class="anchored" data-anchor-id="tweaking"><span class="header-section-number">8.1.11</span> Tweaking</h3>
-<section id="labels" class="level4" data-number="8.1.11.1">
-<h4 data-number="8.1.11.1" class="anchored" data-anchor-id="labels"><span class="header-section-number">8.1.11.1</span> Labels</h4>
+<section id="tweaking" class="level3" data-number="15.1.11">
+<h3 data-number="15.1.11" class="anchored" data-anchor-id="tweaking"><span class="header-section-number">15.1.11</span> Tweaking</h3>
+<section id="labels" class="level4" data-number="15.1.11.1">
+<h4 data-number="15.1.11.1" class="anchored" data-anchor-id="labels"><span class="header-section-number">15.1.11.1</span> Labels</h4>
 <p>The main tweaking of plots I will talk about is changing the the axis label and titles. For the most part, each function allows you to use the <code>main=</code>, <code>xlab=</code>, and <code>ylab=</code>. The <code>main=</code> allows you to change the title. The <code>xlab=</code> and <code>ylab=</code> allow you to change the labels for the x-axis and y-axis, respectively. Create a scatter plot for the variables <code>mpg</code> and <code>disp</code> and change the labels.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>disp, <span class="at">main =</span> <span class="st">"MPG vs Displacement"</span>, <span class="at">xlab =</span> <span class="st">"MPG"</span>, <span class="at">ylab =</span> <span class="st">"Displacement"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -619,13 +619,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 </section>
 </section>
-<section id="ggplot2" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">8.2</span> ggplot2</h2>
-<section id="introduction-1" class="level3" data-number="8.2.1">
-<h3 data-number="8.2.1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">8.2.1</span> Introduction</h3>
+<section id="ggplot2" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">15.2</span> ggplot2</h2>
+<section id="introduction-1" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">15.2.1</span> Introduction</h3>
 <p>The <code>ggplot2::</code> provides a set of functions to create different graphics. For more information on plotting in <code>ggplot2::</code>, please visit the this excellent <a href="https://ggplot2.tidyverse.org/">resource</a>. Here we will discuss some of the basics to the <code>ggplot2::``. To me,</code>ggplot2::`<code>creates a plot by adding layers to a base plot. The syntax is designed for you to change different components of a plot in an intuitive manner. For this tutorial, we will focus on plotting different components from the</code>mpg` data set.</p>
-<section id="contents-1" class="level4" data-number="8.2.1.1">
-<h4 data-number="8.2.1.1" class="anchored" data-anchor-id="contents-1"><span class="header-section-number">8.2.1.1</span> Contents</h4>
+<section id="contents-1" class="level4" data-number="15.2.1.1">
+<h4 data-number="15.2.1.1" class="anchored" data-anchor-id="contents-1"><span class="header-section-number">15.2.1.1</span> Contents</h4>
 <ol type="1">
 <li><p>Basic</p></li>
 <li><p>Grouping</p></li>
@@ -633,8 +633,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 </section>
 </section>
-<section id="basics" class="level3" data-number="8.2.2">
-<h3 data-number="8.2.2" class="anchored" data-anchor-id="basics"><span class="header-section-number">8.2.2</span> Basics</h3>
+<section id="basics" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="basics"><span class="header-section-number">15.2.2</span> Basics</h3>
 <p>To begin, the <code>ggplot2::</code> really works well when you are using data frames. If you have any output that you want to plot, convert into to a data frame. Once we have our data set, the first thing you would want to do is specify the main components of your base plot. This will be what will be plotted on your x-axis, and what will be plotted on your y-axis. Next, you will create the the type of plot. Lastly, you will add different layers to tweak the plot for your needs. This can be changing the layout or even overlaying another plot. The `ggplot2::`` provides you with tools to do almost everything you need to create a plot easily.</p>
 <p>Before we begin plotting, load the <code>ggplot2::</code> in R.</p>
 <div class="cell">
@@ -651,8 +651,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>This base plot is now used to create certain plots. Plots are created by adding functions to the base plot. This is done by using the <code>+</code> operator and then a specific <code>ggplot2::</code> function. Below we will go over some of the functions necessary.</p>
 </section>
-<section id="scatter-plot-2" class="level3" data-number="8.2.3">
-<h3 data-number="8.2.3" class="anchored" data-anchor-id="scatter-plot-2"><span class="header-section-number">8.2.3</span> Scatter Plot</h3>
+<section id="scatter-plot-2" class="level3" data-number="15.2.3">
+<h3 data-number="15.2.3" class="anchored" data-anchor-id="scatter-plot-2"><span class="header-section-number">15.2.3</span> Scatter Plot</h3>
 <p>To create a scatter plot in <code>ggplot2::</code>, add the <code>geom_point()</code> to the base plot. You do not need to specify any arguments in the function. Create a scatter plot to <code>gg_1</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>gg_1 <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -686,8 +686,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="histogram-and-density-plot" class="level3" data-number="8.2.4">
-<h3 data-number="8.2.4" class="anchored" data-anchor-id="histogram-and-density-plot"><span class="header-section-number">8.2.4</span> Histogram and Density Plot</h3>
+<section id="histogram-and-density-plot" class="level3" data-number="15.2.4">
+<h3 data-number="15.2.4" class="anchored" data-anchor-id="histogram-and-density-plot"><span class="header-section-number">15.2.4</span> Histogram and Density Plot</h3>
 <p>To create a histogram and density plots, create a base plot and specify the variable of interest in the <code>aes()</code>, only specify one variable. Create a base plot using the <code>mtcars</code> data set and the <code>mpg</code> variable. Assign it to <code>gg_3</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>gg_3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -709,8 +709,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="plot_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="density-plot-1" class="level4" data-number="8.2.4.1">
-<h4 data-number="8.2.4.1" class="anchored" data-anchor-id="density-plot-1"><span class="header-section-number">8.2.4.1</span> Density Plot</h4>
+<section id="density-plot-1" class="level4" data-number="15.2.4.1">
+<h4 data-number="15.2.4.1" class="anchored" data-anchor-id="density-plot-1"><span class="header-section-number">15.2.4.1</span> Density Plot</h4>
 <p>To create a density plot, use the <code>geom_density()</code>. Create a density plot for the <code>mpg</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>gg_3 <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -719,8 +719,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="both" class="level4" data-number="8.2.4.2">
-<h4 data-number="8.2.4.2" class="anchored" data-anchor-id="both"><span class="header-section-number">8.2.4.2</span> Both</h4>
+<section id="both" class="level4" data-number="15.2.4.2">
+<h4 data-number="15.2.4.2" class="anchored" data-anchor-id="both"><span class="header-section-number">15.2.4.2</span> Both</h4>
 <p>Similar to adding lines and points in the same plot, you can add a histogram and a density plot by adding both the <code>geom_histogram()</code> and <code>geom_density()</code>. However, in the <code>geom_histogram()</code>, you must add <code>aes(y=..density..)</code> to create a frequency histogram. Create a plot with a histogram and a density plot.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>gg_3 <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..),<span class="at">bins=</span><span class="dv">7</span>) <span class="sc">+</span></span>
@@ -735,8 +735,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 </section>
-<section id="box-plots-1" class="level3" data-number="8.2.5">
-<h3 data-number="8.2.5" class="anchored" data-anchor-id="box-plots-1"><span class="header-section-number">8.2.5</span> Box Plots</h3>
+<section id="box-plots-1" class="level3" data-number="15.2.5">
+<h3 data-number="15.2.5" class="anchored" data-anchor-id="box-plots-1"><span class="header-section-number">15.2.5</span> Box Plots</h3>
 <p>If you need to create a box plot, use the <code>stat_boxplot()</code>. Create a boxplot for the variable <code>mpg</code>. All you need to do is add <code>stat_boxplot()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>gg_3 <span class="sc">+</span> <span class="fu">stat_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -745,8 +745,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="bar-charts" class="level3" data-number="8.2.6">
-<h3 data-number="8.2.6" class="anchored" data-anchor-id="bar-charts"><span class="header-section-number">8.2.6</span> Bar Charts</h3>
+<section id="bar-charts" class="level3" data-number="15.2.6">
+<h3 data-number="15.2.6" class="anchored" data-anchor-id="bar-charts"><span class="header-section-number">15.2.6</span> Bar Charts</h3>
 <p>Creating a bar chart is similar to create a box plot. All you need to do is use the <code>stat_count()</code>. First create a base plot using the <code>mtcars</code> data sets and the <code>cyl</code> variable for the mapping and assign it to <code>gg_4</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gg_4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(cyl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -759,13 +759,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="grouping-1" class="level3" data-number="8.2.7">
-<h3 data-number="8.2.7" class="anchored" data-anchor-id="grouping-1"><span class="header-section-number">8.2.7</span> Grouping</h3>
+<section id="grouping-1" class="level3" data-number="15.2.7">
+<h3 data-number="15.2.7" class="anchored" data-anchor-id="grouping-1"><span class="header-section-number">15.2.7</span> Grouping</h3>
 <p>The `ggplot2::`` easily allows you to create plots from different groups. We will go over some of the arguments and functions to do this.</p>
-<section id="one-variable-grouping-1" class="level4" data-number="8.2.7.1">
-<h4 data-number="8.2.7.1" class="anchored" data-anchor-id="one-variable-grouping-1"><span class="header-section-number">8.2.7.1</span> One Variable Grouping</h4>
-<section id="scatter-plot-3" class="level5" data-number="8.2.7.1.1">
-<h5 data-number="8.2.7.1.1" class="anchored" data-anchor-id="scatter-plot-3"><span class="header-section-number">8.2.7.1.1</span> Scatter Plot</h5>
+<section id="one-variable-grouping-1" class="level4" data-number="15.2.7.1">
+<h4 data-number="15.2.7.1" class="anchored" data-anchor-id="one-variable-grouping-1"><span class="header-section-number">15.2.7.1</span> One Variable Grouping</h4>
+<section id="scatter-plot-3" class="level5" data-number="15.2.7.1.1">
+<h5 data-number="15.2.7.1.1" class="anchored" data-anchor-id="scatter-plot-3"><span class="header-section-number">15.2.7.1.1</span> Scatter Plot</h5>
 <p>To begin, we want to specify the grouping variable within the <code>aes()</code> with the <code>color=</code>. Additionally, the argument works best with a factor variable, so use the <code>factor()</code> to create a factor variable. Create a base plot from the <code>mtcars</code> data set using <code>mpg</code> and <code>disp</code> for the x and y axis, respectively, and set the <code>color=</code> equal to the <code>factor(cyl)</code>. Assign it the R object <code>gg_5</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>gg_5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, disp, <span class="at">color=</span><span class="fu">factor</span>(cyl)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -786,8 +786,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="histograms" class="level5" data-number="8.2.7.1.2">
-<h5 data-number="8.2.7.1.2" class="anchored" data-anchor-id="histograms"><span class="header-section-number">8.2.7.1.2</span> Histograms</h5>
+<section id="histograms" class="level5" data-number="15.2.7.1.2">
+<h5 data-number="15.2.7.1.2" class="anchored" data-anchor-id="histograms"><span class="header-section-number">15.2.7.1.2</span> Histograms</h5>
 <p>Histograms can be grouped by different colors. This is done by using the <code>fill=</code> within the <code>aes()</code> in the base plot. Assign it the R object <code>gg_7</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>gg_7 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, <span class="at">fill =</span> <span class="fu">factor</span>(cyl)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -810,8 +810,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="density-plot-2" class="level5" data-number="8.2.7.1.3">
-<h5 data-number="8.2.7.1.3" class="anchored" data-anchor-id="density-plot-2"><span class="header-section-number">8.2.7.1.3</span> Density Plot</h5>
+<section id="density-plot-2" class="level5" data-number="15.2.7.1.3">
+<h5 data-number="15.2.7.1.3" class="anchored" data-anchor-id="density-plot-2"><span class="header-section-number">15.2.7.1.3</span> Density Plot</h5>
 <p>Similar to histograms, density plots can be grouped by variables the same way. Using <code>gg_7</code>, create color-coded density plots. All you need to do is add <code>geom_density()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>gg_7 <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -827,8 +827,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="bar-chart-2" class="level5" data-number="8.2.7.1.4">
-<h5 data-number="8.2.7.1.4" class="anchored" data-anchor-id="bar-chart-2"><span class="header-section-number">8.2.7.1.4</span> Bar Chart</h5>
+<section id="bar-chart-2" class="level5" data-number="15.2.7.1.4">
+<h5 data-number="15.2.7.1.4" class="anchored" data-anchor-id="bar-chart-2"><span class="header-section-number">15.2.7.1.4</span> Bar Chart</h5>
 <p>To create a side by side bar plot, you can use the <code>facet_wrap()</code> with a grouping variable. Using <code>gg_4</code>, create a side by side bar plot using <code>vs</code> as the grouping variable. Remember to add <code>stat_count()</code> as well.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>gg_4 <span class="sc">+</span> <span class="fu">stat_count</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>vs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -857,8 +857,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 </section>
 </section>
-<section id="themestweaking" class="level3" data-number="8.2.8">
-<h3 data-number="8.2.8" class="anchored" data-anchor-id="themestweaking"><span class="header-section-number">8.2.8</span> Themes/Tweaking</h3>
+<section id="themestweaking" class="level3" data-number="15.2.8">
+<h3 data-number="15.2.8" class="anchored" data-anchor-id="themestweaking"><span class="header-section-number">15.2.8</span> Themes/Tweaking</h3>
 <p>In this section, we will talk about the basic tweaks and themes to <code>ggplot2::</code>. However. <code>ggplot2::</code> is much more powerful and can do much more. Before we begin, lets look at object <code>gg_9</code> to understand the plot. To view a plot, use the <code>plot()</code>.</p>
 <div class="cell">
 
@@ -869,8 +869,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="plot_files/figure-html/unnamed-chunk-48-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<section id="title" class="level4" data-number="8.2.8.1">
-<h4 data-number="8.2.8.1" class="anchored" data-anchor-id="title"><span class="header-section-number">8.2.8.1</span> Title</h4>
+<section id="title" class="level4" data-number="15.2.8.1">
+<h4 data-number="15.2.8.1" class="anchored" data-anchor-id="title"><span class="header-section-number">15.2.8.1</span> Title</h4>
 <p>To change the title, add the <code>ggtitle()</code> to the plot. Put the new title in quotes as the first argument. Change the title for <code>gg_9</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>gg_9 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Scatter Plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -879,8 +879,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="axis" class="level4" data-number="8.2.8.2">
-<h4 data-number="8.2.8.2" class="anchored" data-anchor-id="axis"><span class="header-section-number">8.2.8.2</span> Axis</h4>
+<section id="axis" class="level4" data-number="15.2.8.2">
+<h4 data-number="15.2.8.2" class="anchored" data-anchor-id="axis"><span class="header-section-number">15.2.8.2</span> Axis</h4>
 <p>Changing the labels for a plot, add the <code>xlab()</code> and <code>ylab()</code>, respectively. The first argument contains the phrase for the axis. Change the axis labels for <code>gg_9</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>gg_9 <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"MPG"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Displacement"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -889,8 +889,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="themes" class="level4" data-number="8.2.8.3">
-<h4 data-number="8.2.8.3" class="anchored" data-anchor-id="themes"><span class="header-section-number">8.2.8.3</span> Themes</h4>
+<section id="themes" class="level4" data-number="15.2.8.3">
+<h4 data-number="15.2.8.3" class="anchored" data-anchor-id="themes"><span class="header-section-number">15.2.8.3</span> Themes</h4>
 <p>If you don’t like how the plot looks, <code>ggplot2::</code> has custom themes you can add to the plot to change it. These functions usually are formatted as <code>theme_*()</code>, where the <code>*</code> indicates different possibilities. I personally like how <code>theme_bw()</code> looks. Change the theme of <code>gg_9</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>gg_9 <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -901,8 +901,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Additionally, you can change certain part of the theme using the <code>theme()</code>. I encourage you to look at what are other possibilities.</p>
 </section>
 </section>
-<section id="saving-plot" class="level3" data-number="8.2.9">
-<h3 data-number="8.2.9" class="anchored" data-anchor-id="saving-plot"><span class="header-section-number">8.2.9</span> Saving plot</h3>
+<section id="saving-plot" class="level3" data-number="15.2.9">
+<h3 data-number="15.2.9" class="anchored" data-anchor-id="saving-plot"><span class="header-section-number">15.2.9</span> Saving plot</h3>
 <p>If you want to save the plot, use the <code>ggsave()</code>. Read the help documentation for the functions capabilities.</p>
 
 
@@ -1046,7 +1046,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./data_summary.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Data Summarization</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Summarization</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

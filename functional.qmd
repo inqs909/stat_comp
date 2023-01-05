@@ -1,10 +1,61 @@
----
-title: "Functional Programming"
----
+# Functional Programming
 
 ## Functions
 
+The functionality in R is what makes it completely powerful compared to other statistical software. There are several pre-built functions, and you can extend R's functionality further with the use of R Packages. 
+
+### Built-in Functions
+
+There are several available functions in R to conduct specific statistical methods. The table below provides a set of commonly used functions:
+
+| Functions | Description |
+|:--|:--|
+| `aov()` | Fits an ANOVA Model |
+| `lm()`  | Fits a linear model |
+| `glm()` | Fits a general linear model |
+| `t.test()` | Conducts a t-test |
+
+Several of these functions have help documentation that provide the following sections:
+
+| Section | Description |
+|:--|:--|
+| Description | Provides a brief introduction of the function |
+| Usage | Provides potential usage of the function |
+| Arguments | Arguments that the function can take |
+| Details | An in depth description of the function |
+| Value | Provides information of the output produced by the function |
+| Notes | Any need to know information about the function |
+| Authors | Developers of the function |
+| References | References to the model and function |
+| See Also | Provide information of supporting functions |
+| Examples | Examples of the  function |
+
+To obtain the help documentation of each function, use the `?` operator and function name in the console pane.
+
+
+
+### Generic Functions
+
+Commonly used functions, such as `summary()` and `plot()`, are considered generic functions where their functionality is determined by the class of an R object. For example, the `summary()` is a generic for several types of functions: `summary.aov()`, `summary.lm()`, `summary.glm()`, and many more. Therefore, the appropriate function is needed depending the type of R object. This is where generic functions come in. We can use a generic function, ie `summary()`, to read the type of object and then apply to correct procedure to the object. 
+
+
+### User-built Functions
+
+
+
+
 ## *apply Functions
 
+### `apply()`
+
+### `sapply()`
+
+### `lapply()`
+
+### `mapply()`
+
+### `tapply()`
+
+## Anonymous Functions
 
 

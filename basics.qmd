@@ -319,7 +319,7 @@ The last data class in R is missing data. The table below provides a brief intro
 
 ## R Functions {#sec-r-functions}
 
-An R function is a procedure that tells R to do certain tasks. For example, the `log(x)` is an R function. It takes the value `x` and provides you the natural logarithm. Here `x` is known as an argument which needs to be specified to us the `log()` function. Find the `log(x = 5)`
+An R function is the procedure that R will execute to certain data. For example, the `log(x)` is an R function. It takes the value `x` and provides you the natural logarithm. Here `x` is known as an argument which needs to be specified to us the `log()` function. Find the `log(x = 5)`
 
 ```{r}
 log(x = 5)
@@ -534,6 +534,7 @@ Now create a new list called `list_two` and store `list_one` labeled as `list_on
 (list_two <- list(list_one = list_one,
                   array = first_array))
 ```
+
 
 ## R Packages
 

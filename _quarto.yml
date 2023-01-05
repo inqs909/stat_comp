@@ -19,6 +19,19 @@ book:
         - control_flow.qmd
         - functional.qmd
         - scripting.qmd
+    - part: permutations.qmd
+      chapters:
+        - perm_hyp.qmd
+        - perm_reg.qmd
+    - part: mc.qmd
+      chapters:
+        - simulations.qmd
+        - mc_int.qmd
+        - mc_testing.qmd
+    - part: bootstrapping.qmd
+      chapters:
+        - parametric.qmd
+        - nonparametric.qmd
     - part:  da.qmd
       chapters: 
         - importing.qmd
@@ -36,19 +49,7 @@ book:
         - profiling.qmd
         - vectorizing.qmd
         - rcpp.qmd
-    - part: permutations.qmd
-      chapters:
-        - perm_hyp.qmd
-        - perm_reg.qmd
-    - part: mc.qmd
-      chapters:
-        - simulations.qmd
-        - mc_int.qmd
-        - mc_testing.qmd
-    - part: bootstrapping.qmd
-      chapters:
-        - parametric.qmd
-        - nonparametric.qmd
+
 
 
   sidebar:
