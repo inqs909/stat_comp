@@ -71,7 +71,4 @@ format:
 editor: source
 
 comments:
-  hypothesis: 
-    theme: clean
-
-
+  hypothesis: true
