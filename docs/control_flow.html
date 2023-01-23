@@ -123,6 +123,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -822,14 +828,12 @@ Important Concept
 <span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1.271763       NA       NA       NA       NA       NA       NA       NA
- [9]       NA       NA       NA       NA       NA       NA       NA       NA
-[17]       NA       NA       NA       NA       NA       NA       NA       NA
-[25]       NA       NA       NA       NA       NA       NA</code></pre>
+<pre><code> [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
+[26] NA NA NA NA NA</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.1419944</code></pre>
+<pre><code>[1] -0.2718636</code></pre>
 </div>
 </div>
 <p>Notice that the vector does not get filled up all the way, that is because the loop will break once a negative number is simulated</p>
@@ -874,11 +878,11 @@ Important Note
 <span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 2.3319730 0.4905938 1.4054323 2.1937845 1.2443654 1.0093017 0.3720851
- [8] 0.4003018        NA 1.0037553 3.2552005 1.3009804 0.6162566        NA
-[15] 0.1229661 3.5653388 1.8729658 2.8857326 1.0577941        NA 1.3679479
-[22] 0.5833042 2.4074398 1.3125905 2.3504965        NA 0.9920884 2.5153730
-[29] 2.4169799 1.4501984</code></pre>
+<pre><code> [1] 2.3666656 1.2908947 0.4268457 3.0011058 0.9674087 1.6364633        NA
+ [8] 0.9282445 0.9314077 1.7503841 0.7228874 2.5376394 0.2839080 1.2058787
+[15] 1.8753454 0.3235702 1.2186948 0.3876981 0.7117671 2.6371276        NA
+[22] 0.7488607 0.9762140 0.1263525        NA        NA 2.1503068        NA
+[29]        NA 0.6548381</code></pre>
 </div>
 </div>
 <p>As you can see, the vector contains missing values, these were the iterations that a negative number was simulated.</p>
@@ -924,11 +928,11 @@ Important Concept
 </div>
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.25078056 0.06497194 0.44104836 0.24151397 0.49391698 0.75098648
- [7] 0.44562581 0.75172849 1.13251908 0.67434164 1.09146188 1.44621513
-[13] 0.66790697 0.56199828 0.65320818 0.06931756 0.65136191 2.40829872
-[19] 0.07854168 0.41174043 1.38584727 0.01809022 0.07760350 0.83485440
-[25] 0.18272090 1.31623324 0.95097296 1.13008334 1.45819959 0.29289348</code></pre>
+<pre><code> [1] 1.03404955 2.92870614 0.12037942 1.07495627 0.96375995 1.84356253
+ [7] 1.01348191 0.14442137 0.79050224 2.01966673 0.10241774 0.92887861
+[13] 0.97410764 0.14601237 0.39207367 0.51448851 0.36922719 0.03109713
+[19] 0.88846906 0.93060007 0.28034285 1.65461185 0.40089944 1.31959278
+[25] 0.93359871 1.48865650 0.10441898 1.80617567 0.79450698 0.97872332</code></pre>
 </div>
 </div>
 <p>Notice that we do not use an <code>else</code> statement. This is because we do not need R to complete a task if the condition fails.</p>

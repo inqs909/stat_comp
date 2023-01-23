@@ -33,7 +33,6 @@ Several of these functions have help documentation that provide the following se
 To obtain the help documentation of each function, use the `?` operator and function name in the console pane.
 
 
-
 ### Generic Functions
 
 Commonly used functions, such as `summary()` and `plot()`, are considered generic functions where their functionality is determined by the class of an R object. For example, the `summary()` is a generic for several types of functions: `summary.aov()`, `summary.lm()`, `summary.glm()`, and many more. Therefore, the appropriate function is needed depending the type of R object. This is where generic functions come in. We can use a generic function, ie `summary()`, to read the type of object and then apply to correct procedure to the object. 
@@ -41,20 +40,107 @@ Commonly used functions, such as `summary()` and `plot()`, are considered generi
 
 ### User-built Functions
 
+While R has many capable functions that can be used to analyze your data, you may need to create a custom function for specific needs. For example, if you find yourself writing the same to repeat a task, you can wrap the code into a user-built function and use it for analysis. 
+
+To create a user-built function, you will using the `function()` to create an R object that is a function. To use the function Inside the `funtion()` parantheses, write the arguments that need to specified for your function. 
+
+#### Anatomy
+
+In general function we construct a function with the following anatomy:
+
+
+```{r}
+#| eval: false
+
+name_of_function <- function(data_1, data_2 = NULL, 
+                             argument_1, argument_2 = TRUE, argument_3 = NULL,
+                             ...){
+  # Conduct Task
+  # Conduct Task
+  output_object <- Tasks
+  return(output_object)
+}
+
+```
+
+Here, we are creating an R function called `name_of_function` that will take the following arguments: `data_1`, `data_2`, `argument_1`, `argument_2`, `argument_3`, and `...`. From this function, it requires us to supply data for `data_1` and `argument_1`. Arguments `data_2` and `argument_3` are not required, but can be utilized in the function if necessary. Argument `argument_2` is also required for the function, but it it has a default setting (in this case `TRUE`) if it is not specified. Lastly, the `...` argument allows you to pass other arguments to R built in functions if they are present. For example, we may use the `plot()` to create graphics and want to manipulate the output plot further, but do not want to specify the arguments in the user-based function. 
+
+In the function itself, we will complete the necessary tasks and then use the `return()` to return the output.
+
+#### Example
+
+To begin, let's create a function that squares any value:
+
+```{r}
+x_square <- function(x){x^2}
+```
+
+Above, I am creating a new function called `x_square` and it will take values of `x` and square it. Here are a couple of examples of `x_square()`:
+
+```{r}
+x_square(4)
+x_square(5)
+```
+
+The `mtcars` data set has several numeric variables that can be used for analysis. Let's say we want to apply a function (`x_square()`) to the sum of a specific variable and return the value. Then let's further complicate the function by allowing the sum of 2 variables, take the log of the sum and dividing the value if necessary. Below is the code for such function called `summing`:
+
+
+```{r}
+summing <- function(vec1, vec2 = NULL, FUN, log_val = FALSE, divisor_val = NULL){
+  FUN <- match.fun(FUN)
+  wk_vec <- c(vec1, vec2)
+  fun_sum_val <- FUN(sum(wk_vec))
+  lval <- NULL
+  if (isTRUE(log_val)){
+    lval <- log(fun_sum_val)
+  } else {
+    lval <- fun_sum_val
+  }
+  if (!is.null(divisor_val)){
+    dval <- divisor_val
+  } else {dval <- 1}
+  output <- lval/dval
+  return(output)
+}
+```
+
+Now let's try obtaining the 
+
+```{r}
+sum(mtcars$mpg)^2
+summing(mtcars$mpg, FUN = x_square)
+log(sum(c(mtcars$mpg,mtcars$disp))^2)
+summing(mtcars$mpg, mtcars$disp, x_square, T)
+log(sum(c(mtcars$mpg,mtcars$disp))^2)/5
+summing(mtcars$mpg, mtcars$disp, x_square, T, 5)
+```
 
 
 
 ## *apply Functions
 
+*apply functions are used to iterate a function through a set of elements in a vector, matrix, or list. This will then return a vector or list depending on what is requested.
+
 ### `apply()`
+
+The `apply()` is used to apply a function to the margins of an array or matrix. It will iterate between the elements, apply a function to the data, and return a vector, array or list if necessary. To use the `apply()`, you will need to specify three arguments, `X` or the array, `MARGIN` which margin to apply the function on, and `FUN` the function.
+
+Below we calculate the row means and column means using the apply function for a $5 \times 4$ matrix containing the elements 1 through 20:
+
+```{r}
+x <- matrix(1:20, nrow = 5, ncol = 4)
+
+# Row Means
+apply(x, 1, mean)
+
+# Col Means
+apply(x, 2, mean)
+```
+
 
 ### `sapply()`
 
 ### `lapply()`
-
-### `mapply()`
-
-### `tapply()`
 
 ## Anonymous Functions
 

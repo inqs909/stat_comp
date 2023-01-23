@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -60,7 +123,14 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -321,8 +391,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#apply" id="toc-apply" class="nav-link" data-scroll-target="#apply"><span class="toc-section-number">3.2.1</span>  <code>apply()</code></a></li>
   <li><a href="#sapply" id="toc-sapply" class="nav-link" data-scroll-target="#sapply"><span class="toc-section-number">3.2.2</span>  <code>sapply()</code></a></li>
   <li><a href="#lapply" id="toc-lapply" class="nav-link" data-scroll-target="#lapply"><span class="toc-section-number">3.2.3</span>  <code>lapply()</code></a></li>
-  <li><a href="#mapply" id="toc-mapply" class="nav-link" data-scroll-target="#mapply"><span class="toc-section-number">3.2.4</span>  <code>mapply()</code></a></li>
-  <li><a href="#tapply" id="toc-tapply" class="nav-link" data-scroll-target="#tapply"><span class="toc-section-number">3.2.5</span>  <code>tapply()</code></a></li>
   </ul></li>
   <li><a href="#anonymous-functions" id="toc-anonymous-functions" class="nav-link" data-scroll-target="#anonymous-functions"><span class="toc-section-number">3.3</span>  Anonymous Functions</a></li>
   </ul>
@@ -439,24 +507,117 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="user-built-functions" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="user-built-functions"><span class="header-section-number">3.1.3</span> User-built Functions</h3>
+<p>While R has many capable functions that can be used to analyze your data, you may need to create a custom function for specific needs. For example, if you find yourself writing the same to repeat a task, you can wrap the code into a user-built function and use it for analysis.</p>
+<p>To create a user-built function, you will using the <code>function()</code> to create an R object that is a function. To use the function Inside the <code>funtion()</code> parantheses, write the arguments that need to specified for your function.</p>
+<section id="anatomy" class="level4" data-number="3.1.3.1">
+<h4 data-number="3.1.3.1" class="anchored" data-anchor-id="anatomy"><span class="header-section-number">3.1.3.1</span> Anatomy</h4>
+<p>In general function we construct a function with the following anatomy:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>name_of_function <span class="ot">&lt;-</span> <span class="cf">function</span>(data_1, <span class="at">data_2 =</span> <span class="cn">NULL</span>, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                             argument_1, <span class="at">argument_2 =</span> <span class="cn">TRUE</span>, <span class="at">argument_3 =</span> <span class="cn">NULL</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                             ...){</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Conduct Task</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Conduct Task</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  output_object <span class="ot">&lt;-</span> Tasks</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output_object)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Here, we are creating an R function called <code>name_of_function</code> that will take the following arguments: <code>data_1</code>, <code>data_2</code>, <code>argument_1</code>, <code>argument_2</code>, <code>argument_3</code>, and <code>...</code>. From this function, it requires us to supply data for <code>data_1</code> and <code>argument_1</code>. Arguments <code>data_2</code> and <code>argument_3</code> are not required, but can be utilized in the function if necessary. Argument <code>argument_2</code> is also required for the function, but it it has a default setting (in this case <code>TRUE</code>) if it is not specified. Lastly, the <code>...</code> argument allows you to pass other arguments to R built in functions if they are present. For example, we may use the <code>plot()</code> to create graphics and want to manipulate the output plot further, but do not want to specify the arguments in the user-based function.</p>
+<p>In the function itself, we will complete the necessary tasks and then use the <code>return()</code> to return the output.</p>
+</section>
+<section id="example" class="level4" data-number="3.1.3.2">
+<h4 data-number="3.1.3.2" class="anchored" data-anchor-id="example"><span class="header-section-number">3.1.3.2</span> Example</h4>
+<p>To begin, let’s create a function that squares any value:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x_square <span class="ot">&lt;-</span> <span class="cf">function</span>(x){x<span class="sc">^</span><span class="dv">2</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Above, I am creating a new function called <code>x_square</code> and it will take values of <code>x</code> and square it. Here are a couple of examples of <code>x_square()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">x_square</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 16</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">x_square</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 25</code></pre>
+</div>
+</div>
+<p>The <code>mtcars</code> data set has several numeric variables that can be used for analysis. Let’s say we want to apply a function (<code>x_square()</code>) to the sum of a specific variable and return the value. Then let’s further complicate the function by allowing the sum of 2 variables, take the log of the sum and dividing the value if necessary. Below is the code for such function called <code>summing</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>summing <span class="ot">&lt;-</span> <span class="cf">function</span>(vec1, <span class="at">vec2 =</span> <span class="cn">NULL</span>, FUN, <span class="at">log_val =</span> <span class="cn">FALSE</span>, <span class="at">divisor_val =</span> <span class="cn">NULL</span>){</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  FUN <span class="ot">&lt;-</span> <span class="fu">match.fun</span>(FUN)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  wk_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(vec1, vec2)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  fun_sum_val <span class="ot">&lt;-</span> <span class="fu">FUN</span>(<span class="fu">sum</span>(wk_vec))</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  lval <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">isTRUE</span>(log_val)){</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    lval <span class="ot">&lt;-</span> <span class="fu">log</span>(fun_sum_val)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    lval <span class="ot">&lt;-</span> fun_sum_val</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.null</span>(divisor_val)){</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    dval <span class="ot">&lt;-</span> divisor_val</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {dval <span class="ot">&lt;-</span> <span class="dv">1</span>}</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  output <span class="ot">&lt;-</span> lval<span class="sc">/</span>dval</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Now let’s try obtaining the</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(mtcars<span class="sc">$</span>mpg)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 413320.4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summing</span>(mtcars<span class="sc">$</span>mpg, <span class="at">FUN =</span> x_square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 413320.4</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">c</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>disp))<span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17.98088</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summing</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>disp, x_square, T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 17.98088</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(<span class="fu">sum</span>(<span class="fu">c</span>(mtcars<span class="sc">$</span>mpg,mtcars<span class="sc">$</span>disp))<span class="sc">^</span><span class="dv">2</span>)<span class="sc">/</span><span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.596177</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summing</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>disp, x_square, T, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.596177</code></pre>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="apply-functions" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="apply-functions"><span class="header-section-number">3.2</span> *apply Functions</h2>
+<p>*apply functions are used to iterate a function through a set of elements in a vector, matrix, or list. This will then return a vector or list depending on what is requested.</p>
 <section id="apply" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="apply"><span class="header-section-number">3.2.1</span> <code>apply()</code></h3>
+<p>The <code>apply()</code> is used to apply a function to the margins of an array or matrix. It will iterate between the elements, apply a function to the data, and return a vector, array or list if necessary. To use the <code>apply()</code>, you will need to specify three arguments, <code>X</code> or the array, <code>MARGIN</code> which margin to apply the function on, and <code>FUN</code> the function.</p>
+<p>Below we calculate the row means and column means using the apply function for a <span class="math inline">\(5 \times 4\)</span> matrix containing the elements 1 through 20:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">4</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Row Means</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">1</span>, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  8.5  9.5 10.5 11.5 12.5</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Col Means</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">2</span>, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  3  8 13 18</code></pre>
+</div>
+</div>
 </section>
 <section id="sapply" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="sapply"><span class="header-section-number">3.2.2</span> <code>sapply()</code></h3>
 </section>
 <section id="lapply" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="lapply"><span class="header-section-number">3.2.3</span> <code>lapply()</code></h3>
-</section>
-<section id="mapply" class="level3" data-number="3.2.4">
-<h3 data-number="3.2.4" class="anchored" data-anchor-id="mapply"><span class="header-section-number">3.2.4</span> <code>mapply()</code></h3>
-</section>
-<section id="tapply" class="level3" data-number="3.2.5">
-<h3 data-number="3.2.5" class="anchored" data-anchor-id="tapply"><span class="header-section-number">3.2.5</span> <code>tapply()</code></h3>
 </section>
 </section>
 <section id="anonymous-functions" class="level2" data-number="3.3">
