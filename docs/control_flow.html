@@ -599,7 +599,7 @@ Important Concept
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Non-Positive"</span>)</span>
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Non-Positive"</code></pre>
+<pre><code>[1] "Positive"</code></pre>
 </div>
 </div>
 <p>What if we want to print the statement ‘negative’ as well if the value is negative? We will then need to add another <code>if</code> statement after the <code>else</code> statement since <code>x &gt; 0</code> only lets us know if the value is positive.</p>
@@ -627,7 +627,7 @@ Important Concept
 <span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Zero"</span>)</span>
 <span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Positive"</code></pre>
+<pre><code>[1] "Negative"</code></pre>
 </div>
 </div>
 </section>
@@ -828,12 +828,15 @@ Important Concept
 <span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA NA
-[26] NA NA NA NA NA</code></pre>
+<pre><code> [1] 1.7562861 0.8509542        NA        NA        NA        NA        NA
+ [8]        NA        NA        NA        NA        NA        NA        NA
+[15]        NA        NA        NA        NA        NA        NA        NA
+[22]        NA        NA        NA        NA        NA        NA        NA
+[29]        NA        NA</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.2718636</code></pre>
+<pre><code>[1] -0.8764345</code></pre>
 </div>
 </div>
 <p>Notice that the vector does not get filled up all the way, that is because the loop will break once a negative number is simulated</p>
@@ -878,11 +881,11 @@ Important Note
 <span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 2.3666656 1.2908947 0.4268457 3.0011058 0.9674087 1.6364633        NA
- [8] 0.9282445 0.9314077 1.7503841 0.7228874 2.5376394 0.2839080 1.2058787
-[15] 1.8753454 0.3235702 1.2186948 0.3876981 0.7117671 2.6371276        NA
-[22] 0.7488607 0.9762140 0.1263525        NA        NA 2.1503068        NA
-[29]        NA 0.6548381</code></pre>
+<pre><code> [1] 2.8039037 1.1991500        NA 2.1009015 0.9124120 0.6422770        NA
+ [8] 2.1120299 0.7032155 1.8667951        NA 2.1695542 0.4974836 0.5174558
+[15] 1.3786689        NA 1.4918741 0.3435853 1.6084495 0.2220537        NA
+[22] 1.5869378 2.0552793 0.1294870 2.1776311 1.7722896 0.3779657 0.2430708
+[29] 1.3807361 1.4937348</code></pre>
 </div>
 </div>
 <p>As you can see, the vector contains missing values, these were the iterations that a negative number was simulated.</p>
@@ -928,11 +931,11 @@ Important Concept
 </div>
 <div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1.03404955 2.92870614 0.12037942 1.07495627 0.96375995 1.84356253
- [7] 1.01348191 0.14442137 0.79050224 2.01966673 0.10241774 0.92887861
-[13] 0.97410764 0.14601237 0.39207367 0.51448851 0.36922719 0.03109713
-[19] 0.88846906 0.93060007 0.28034285 1.65461185 0.40089944 1.31959278
-[25] 0.93359871 1.48865650 0.10441898 1.80617567 0.79450698 0.97872332</code></pre>
+<pre><code> [1] 1.51232851 1.47993072 0.83775219 2.31131341 0.93768194 1.64458179
+ [7] 0.12417511 1.43473236 0.35569659 0.72499722 0.92049355 0.62956949
+[13] 1.26790734 0.78220476 1.33364504 0.92521233 0.93206868 2.01423168
+[19] 2.89619719 0.81599888 1.07118780 1.65159769 0.09707775 1.03129012
+[25] 1.01875203 1.14095762 0.28085717 0.82674162 0.34084557 0.54716323</code></pre>
 </div>
 </div>
 <p>Notice that we do not use an <code>else</code> statement. This is because we do not need R to complete a task if the condition fails.</p>

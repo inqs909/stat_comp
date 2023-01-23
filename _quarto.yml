@@ -64,12 +64,14 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-    comments:
-      hypothesis: 
-        theme: clean
   pdf:
     documentclass: scrreprt
   epub: default
 
 editor: source
+
+comments:
+  hypothesis: 
+    theme: clean
+
 
