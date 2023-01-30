@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -307,7 +370,33 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">13.1</span>  Introduction</a></li>
+  <li><a href="#tidyverse" id="toc-tidyverse" class="nav-link" data-scroll-target="#tidyverse"><span class="toc-section-number">13.2</span>  Tidyverse</a></li>
+  <li><a href="#loading-data" id="toc-loading-data" class="nav-link" data-scroll-target="#loading-data"><span class="toc-section-number">13.3</span>  Loading Data</a></li>
+  <li><a href="#the-pipe-operator" id="toc-the-pipe-operator" class="nav-link" data-scroll-target="#the-pipe-operator"><span class="toc-section-number">13.4</span>  The Pipe Operator <code>%&gt;%</code></a></li>
+  <li><a href="#data-transformation" id="toc-data-transformation" class="nav-link" data-scroll-target="#data-transformation"><span class="toc-section-number">13.5</span>  Data Transformation</a>
+  <ul class="collapse">
+  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link" data-scroll-target="#summarizing-data"><span class="toc-section-number">13.5.1</span>  Summarizing Data</a></li>
+  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping"><span class="toc-section-number">13.5.2</span>  Grouping</a></li>
+  <li><a href="#subsets" id="toc-subsets" class="nav-link" data-scroll-target="#subsets"><span class="toc-section-number">13.5.3</span>  Subsets</a></li>
+  <li><a href="#creating-variables" id="toc-creating-variables" class="nav-link" data-scroll-target="#creating-variables"><span class="toc-section-number">13.5.4</span>  Creating Variables</a></li>
+  <li><a href="#merging-datasets" id="toc-merging-datasets" class="nav-link" data-scroll-target="#merging-datasets"><span class="toc-section-number">13.5.5</span>  Merging Datasets</a></li>
+  </ul></li>
+  <li><a href="#reshaping-data" id="toc-reshaping-data" class="nav-link" data-scroll-target="#reshaping-data"><span class="toc-section-number">13.6</span>  Reshaping Data</a>
+  <ul class="collapse">
+  <li><a href="#wide-to-long-data" id="toc-wide-to-long-data" class="nav-link" data-scroll-target="#wide-to-long-data"><span class="toc-section-number">13.6.1</span>  Wide to Long Data</a></li>
+  <li><a href="#long-to-wide" id="toc-long-to-wide" class="nav-link" data-scroll-target="#long-to-wide"><span class="toc-section-number">13.6.2</span>  Long to Wide</a></li>
+  <li><a href="#spliting-variables" id="toc-spliting-variables" class="nav-link" data-scroll-target="#spliting-variables"><span class="toc-section-number">13.6.3</span>  Spliting Variables</a></li>
+  <li><a href="#splitting-rows" id="toc-splitting-rows" class="nav-link" data-scroll-target="#splitting-rows"><span class="toc-section-number">13.6.4</span>  Splitting Rows</a></li>
+  <li><a href="#merging-rows" id="toc-merging-rows" class="nav-link" data-scroll-target="#merging-rows"><span class="toc-section-number">13.6.5</span>  Merging Rows</a></li>
+  </ul></li>
+  <li><a href="#applied-example" id="toc-applied-example" class="nav-link" data-scroll-target="#applied-example"><span class="toc-section-number">13.7</span>  Applied Example</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -329,8 +418,666 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="introduction" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">13.1</span> Introduction</h2>
+</section>
+<section id="tidyverse" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="tidyverse"><span class="header-section-number">13.2</span> Tidyverse</h2>
+<p>Tidyverse is a set of packages that makes data manipulation much easier. These are functions that many individuals from the R community find useful to use for data analysis. In my opinion, once you have understand how the Tidyverse packages function, it makes it much easier to work with than Base R. Many of the functions are descriptively named for easy remembrance. For the most part you can do almost everything that Base R. There are just a few things you can’t do, but it is rare that you will use them. One last thing is that the output from tidyverse is always formatted as tibble class, the Tidyverse version of the data frame. This can have some ups and downs. However, think of a tibble as a lazier data frame.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
+✔ tibble  3.1.8      ✔ dplyr   1.0.10
+✔ tidyr   1.2.1      ✔ stringr 1.5.0 
+✔ readr   2.1.3      ✔ forcats 0.5.2 
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()</code></pre>
+</div>
+</div>
+<p>This will load the main Tidyverse packages: <code>ggplot2::</code>, <code>tibble::</code>, <code>tidyr::</code>, <code>readr::</code>, <code>purr::</code>, <code>dplyr::</code>, <code>stringr::</code>, and <code>forcats::</code>.</p>
+</section>
+<section id="loading-data" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="loading-data"><span class="header-section-number">13.3</span> Loading Data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data1<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data/data_3_1.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1000 Columns: 10
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): ID1, cat1, cat2
+dbl (7): var1, var2, var3, var4, var5, var6, var7
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data2<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data/data_3_2.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1000 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): ID1, ID_1, ID_2
+dbl (2): va1, va2
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data3<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data/data_3_3.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1000 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (3): ID1, ID_1, ID_2
+dbl (2): v1, v2
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>data4<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data/data_3_6.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1000 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): ID1
+dbl (4): X1, X2, X3, X4
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data5<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data/data_3_7.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 4000 Columns: 3
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): ID1, measurement
+dbl (1): value
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data6<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data/data_3_5.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1000 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): ID1, merge
+dbl (2): X3, X4
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>data7<span class="ot">&lt;-</span><span class="fu">read_csv</span>(<span class="st">"data/data_3_4.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 1000 Columns: 13
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr  (1): ID1
+dbl (12): v1/mean, v1/sd, v1/median, v2/mean, v2/sd, v2/median, v3/mean, v3/...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+</section>
+<section id="the-pipe-operator" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="the-pipe-operator"><span class="header-section-number">13.4</span> The Pipe Operator <code>%&gt;%</code></h2>
+<p>The main benefit of the pipe operator is to make the code easier to read. The pipe operator is from the <code>magrittr::</code>. It is usually loaded when you load the <code>tidyverse::</code>. What the pipe operator, <code>%&gt;%</code>, does is that it will take the output from a previous function and it will use it as an input for the next function. This prevents us from nesting functions together and overwhelm us with numerous parentheses and commas. To practice, pipe <code>data</code> into the <code>glimpse()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,000
+Columns: 10
+$ ID1  &lt;chr&gt; "A2b6115fd", "Ac51c9cf1", "A7534d3a0", "A73fc5642", "Ae020e4bd", …
+$ cat1 &lt;chr&gt; "A", "A", "A", "A", "C", "A", "A", "C", "B", "C", "B", "B", "A", …
+$ cat2 &lt;chr&gt; "E", "D", "F", "F", "E", "D", "E", "F", "E", "E", "F", "E", "E", …
+$ var1 &lt;dbl&gt; 1.1541672, -0.3667030, -0.4203357, -2.0006336, 0.6970417, 0.46690…
+$ var2 &lt;dbl&gt; 4, 3, 6, 5, 3, 4, 5, 0, 5, 3, 3, 8, 4, 5, 2, 5, 7, 7, 5, 1, 4, 3,…
+$ var3 &lt;dbl&gt; 2.87981553, 0.06397162, -1.04021753, -0.31355281, 0.52613439, 2.4…
+$ var4 &lt;dbl&gt; 3.53845785, 1.07279559, 0.22632480, 0.02128418, 2.97936180, 1.853…
+$ var5 &lt;dbl&gt; -3.1827969, -3.1827969, -3.1827969, -3.1827969, 6.0601967, -3.182…
+$ var6 &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,…
+$ var7 &lt;dbl&gt; 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1,…</code></pre>
+</div>
+</div>
+<p>The <code>glimpse()</code> then provides basic variable information about <code>data1</code>. I recommend practice reading the code in plain English to help you understand how these functions.</p>
+</section>
+<section id="data-transformation" class="level2" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="data-transformation"><span class="header-section-number">13.5</span> Data Transformation</h2>
+<p>This section focuses on manipulating the data to obtain basic statistics, such as obtaining the mean for different categories. Many of the functions used here are from the <code>dplyr::</code>.</p>
+<section id="summarizing-data" class="level3" data-number="13.5.1">
+<h3 data-number="13.5.1" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">13.5.1</span> Summarizing Data</h3>
+<p>Summarizing Data is one of the most important thing in statistics. First, let’s get the mean for all the variables in <code>data1</code>. This is done by using the <code>summarize_all()</code>. All you need to do is provide the function you want R to provide. Pipe <code>data1</code> into the <code>summarize_all()</code> and specify <code>mean</code> in the function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">summarise_all</span>(mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(ID1): argument is not numeric or logical: returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(cat1): argument is not numeric or logical: returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(cat2): argument is not numeric or logical: returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 10
+    ID1  cat1  cat2    var1  var2  var3  var4  var5  var6  var7
+  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1    NA    NA    NA -0.0335  4.94 0.936  1.96 0.774     0 0.394</code></pre>
+</div>
+</div>
+<p>Notice how some values are <code>NA</code>, this is because the variables are character data types. Therefore, it will not be able to compute the mean. Now find the standard deviation for the data set.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span>  <span class="fu">summarise_all</span>(sd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm =
+na.rm): NAs introduced by coercion
+
+Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm =
+na.rm): NAs introduced by coercion
+
+Warning in var(if (is.vector(x) || is.factor(x)) x else as.double(x), na.rm =
+na.rm): NAs introduced by coercion</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 10
+    ID1  cat1  cat2  var1  var2  var3  var4  var5  var6  var7
+  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1    NA    NA    NA  1.00  2.22  1.02  1.00  3.93     0 0.489</code></pre>
+</div>
+</div>
+<p>Now lets create a frequency table for the <code>cat1</code> variable in <code>data1</code>. use the <code>count()</code> and specify the variable you are interested in:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">count</span>(cat1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  cat1      n
+  &lt;chr&gt; &lt;int&gt;
+1 A       332
+2 B       328
+3 C       340</code></pre>
+</div>
+</div>
+<p>Now, repeat for <code>cat2</code> in <code>data1</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span>  <span class="fu">count</span>(cat2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  cat2      n
+  &lt;chr&gt; &lt;int&gt;
+1 D       322
+2 E       337
+3 F       341</code></pre>
+</div>
+</div>
+</section>
+<section id="grouping" class="level3" data-number="13.5.2">
+<h3 data-number="13.5.2" class="anchored" data-anchor-id="grouping"><span class="header-section-number">13.5.2</span> Grouping</h3>
+<p>Summarizing data is great, but sometimes you may want to group data and obtain summary statistics for those groups. This is done by using the <code>group_by()</code> and specify which variable you want to group. Try grouping <code>data1</code> by <code>cat1</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cat1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 10
+# Groups:   cat1 [3]
+   ID1       cat1  cat2    var1  var2    var3   var4   var5  var6  var7
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 A2b6115fd A     E      1.15      4  2.88   3.54   -3.18      0     1
+ 2 Ac51c9cf1 A     D     -0.367     3  0.0640 1.07   -3.18      0     0
+ 3 A7534d3a0 A     F     -0.420     6 -1.04   0.226  -3.18      0     0
+ 4 A73fc5642 A     F     -2.00      5 -0.314  0.0213 -3.18      0     0
+ 5 Ae020e4bd C     E      0.697     3  0.526  2.98    6.06      0     0
+ 6 Ac0d3b0fe A     D      0.467     4  2.45   1.85   -3.18      0     0
+ 7 A2edfed41 A     E      1.36      5  0.514  0.529  -3.18      0     1
+ 8 Ad38a4bbe C     F      0.369     0  1.98   2.36    6.06      0     1
+ 9 A5ee0f97f B     E      1.80      5  0.147  2.22   -0.701     0     0
+10 Ad791c03d C     E      1.25      3 -1.05   0.0289  6.06      0     1
+# … with 990 more rows</code></pre>
+</div>
+</div>
+<p>Great! You now have grouped data; however, this is not helpful. We can use this output and summarize the groups. All we need to do is pipe the output to the <code>summarise_all()</code>. Group <code>data1</code> by <code>cat1</code> and find the mean:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cat1) <span class="sc">%&gt;%</span> <span class="fu">summarise_all</span>(mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(cat2): argument is not numeric or logical: returning NA
+
+Warning in mean.default(cat2): argument is not numeric or logical: returning NA
+
+Warning in mean.default(cat2): argument is not numeric or logical: returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 10
+  cat1    ID1  cat2    var1  var2  var3  var4   var5  var6  var7
+  &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 A        NA    NA -0.0369  4.79 0.877  1.97 -3.18      0 0.401
+2 B        NA    NA -0.0345  4.98 1.01   1.97 -0.701     0 0.390
+3 C        NA    NA -0.0292  5.05 0.922  1.94  6.06      0 0.391</code></pre>
+</div>
+</div>
+<p>If we want to group by two variables, all we need to do is specify both variables in the <code>group_by()</code>. Group <code>data1</code> by <code>cat1</code> and <code>cat2</code> then find the mean:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cat1,cat2) <span class="sc">%&gt;%</span> <span class="fu">summarise_all</span>(mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA
+
+Warning in mean.default(ID1): argument is not numeric or logical: returning NA</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 10
+# Groups:   cat1 [3]
+  cat1  cat2    ID1      var1  var2  var3  var4   var5  var6  var7
+  &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 A     D        NA -0.0186    4.87 0.858  1.93 -3.18      0 0.374
+2 A     E        NA -0.0265    4.70 0.882  1.94 -3.18      0 0.393
+3 A     F        NA -0.0661    4.79 0.890  2.03 -3.18      0 0.436
+4 B     D        NA -0.152     5.21 1.01   1.96 -0.701     0 0.333
+5 B     E        NA  0.0890    5.04 1.04   1.94 -0.701     0 0.417
+6 B     F        NA -0.0659    4.72 0.979  2.03 -0.701     0 0.411
+7 C     D        NA -0.160     5.01 0.927  1.87  6.06      0 0.378
+8 C     E        NA -0.000228  5.07 0.910  2.00  6.06      0 0.345
+9 C     F        NA  0.0662    5.07 0.930  1.94  6.06      0 0.445</code></pre>
+</div>
+</div>
+<p>Now, instead of finding the mean for all variables in a data set, we are only interested in viewing <code>var1</code>. We can use the <code>summarise()</code> and type the R code for finding the mean for the particular variable. Group <code>data1</code> by <code>cat1</code> and find the mean for <code>var1</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cat1) <span class="sc">%&gt;%</span> <span class="fu">summarise</span>(<span class="fu">mean</span>(var1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  cat1  `mean(var1)`
+  &lt;chr&gt;        &lt;dbl&gt;
+1 A          -0.0369
+2 B          -0.0345
+3 C          -0.0292</code></pre>
+</div>
+</div>
+</section>
+<section id="subsets" class="level3" data-number="13.5.3">
+<h3 data-number="13.5.3" class="anchored" data-anchor-id="subsets"><span class="header-section-number">13.5.3</span> Subsets</h3>
+<p>On occasion, you may need to create a subset of your data. You may only want to work with one part of your data. To create a subset of your data, use the <code>filter()</code> to create the subset. This will select the rows that satisfy a certain condition. Create a subset of <code>data1</code> where only the positive values of <code>var1</code> are present. Use the <code>filter()</code> and state <code>var1&gt;0</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(var1<span class="sc">&gt;</span><span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 484 × 10
+   ID1       cat1  cat2   var1  var2    var3   var4   var5  var6  var7
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 A2b6115fd A     E     1.15      4  2.88   3.54   -3.18      0     1
+ 2 Ae020e4bd C     E     0.697     3  0.526  2.98    6.06      0     0
+ 3 Ac0d3b0fe A     D     0.467     4  2.45   1.85   -3.18      0     0
+ 4 A2edfed41 A     E     1.36      5  0.514  0.529  -3.18      0     1
+ 5 Ad38a4bbe C     F     0.369     0  1.98   2.36    6.06      0     1
+ 6 A5ee0f97f B     E     1.80      5  0.147  2.22   -0.701     0     0
+ 7 Ad791c03d C     E     1.25      3 -1.05   0.0289  6.06      0     1
+ 8 Af88d3ab5 B     E     2.10      8  3.07   3.29   -0.701     0     1
+ 9 A429b65a6 A     E     1.46      4  0.0638 2.36   -3.18      0     0
+10 A3638155a A     F     0.429     5  1.76   1.55   -3.18      0     1
+# … with 474 more rows</code></pre>
+</div>
+</div>
+<p>If you know which rows you want, you can use the <code>slice()</code> and specify the rows as a vector. Create a subset of <code>data1</code> and select the rows 100 to 200 and 300 to 400.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="fu">c</span>(<span class="dv">100</span><span class="sc">:</span><span class="dv">200</span>,<span class="dv">300</span><span class="sc">:</span><span class="dv">400</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 202 × 10
+   ID1       cat1  cat2    var1  var2   var3    var4   var5  var6  var7
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 A568e9a48 A     E      1.88      6  2.59  4.02    -3.18      0     1
+ 2 Aa77dca83 B     D      1.32      5  0.889 3.12    -0.701     0     1
+ 3 A901d56c2 C     F     -0.406     6  0.496 3.67     6.06      0     0
+ 4 Ad66ce513 A     D      1.04      2  0.331 0.00523 -3.18      0     0
+ 5 A897a230d B     E     -0.616     9  1.61  3.08    -0.701     0     0
+ 6 Afbc693a4 B     F     -0.404     7 -0.604 0.149   -0.701     0     1
+ 7 Ae7269323 C     F     -0.176     4  1.06  2.26     6.06      0     0
+ 8 A182729af A     D      1.11      7 -0.297 1.45    -3.18      0     1
+ 9 A1a06950b C     E     -1.29      5  1.78  3.07     6.06      0     1
+10 A569c9d81 A     F      1.28      6  0.683 1.53    -3.18      0     0
+# … with 192 more rows</code></pre>
+</div>
+</div>
+<p>If you need random sample of your <code>data1</code>, use the <code>sample_n()</code> and specify the number you want. It will create a data set of randomly selected rows. Create a random sample of <code>data1</code> of 100 rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span>  <span class="fu">sample_n</span>(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 100 × 10
+   ID1       cat1  cat2      var1  var2   var3  var4   var5  var6  var7
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 Cc0d3b0fe A     E      0.672       3  1.08   1.61 -3.18      0     0
+ 2 A01f2556f C     E      0.00759     3  1.47   2.58  6.06      0     0
+ 3 D2a8d1b6b B     F     -0.135       8 -0.616  1.20 -0.701     0     1
+ 4 Cc8042ac7 B     D      0.974       6  0.123  1.28 -0.701     0     0
+ 5 B94facbad C     F      0.874       6  0.322  1.59  6.06      0     0
+ 6 B50a09695 B     D     -1.22        9  1.38   3.26 -0.701     0     0
+ 7 Cfd7b14fe C     F     -0.972       5  1.25   3.01  6.06      0     0
+ 8 C93f7aa1b B     E      0.599       6  1.34   2.02 -0.701     0     1
+ 9 D25ec059e B     F      1.99        4  1.53   1.95 -0.701     0     1
+10 Cca80d7e8 B     E      0.324       4  2.12   3.17 -0.701     0     0
+# … with 90 more rows</code></pre>
+</div>
+</div>
+<p>If you want a random sample that is proportion of your original data size, use the <code>sample_frac()</code>. Specify the proportion that you want from the data. Create a random sample of <code>data1</code> that is only 2/7th of the original size.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">sample_frac</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 286 × 10
+   ID1       cat1  cat2    var1  var2  var3  var4   var5  var6  var7
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 D3beff8c6 C     F      0.326     2 2.33  2.94   6.06      0     0
+ 2 D10c8e0a7 B     F      0.821     3 1.14  1.57  -0.701     0     0
+ 3 A3ed9037c A     D      0.251     7 1.86  2.63  -3.18      0     1
+ 4 B177b3f3c C     F     -1.77      5 0.994 2.97   6.06      0     0
+ 5 Aa20de630 C     F     -0.723     7 1.15  0.722  6.06      0     0
+ 6 Daeac5e8c C     F     -1.70      7 0.246 1.72   6.06      0     0
+ 7 D4ebc2da4 B     E     -0.340     4 0.478 1.16  -0.701     0     0
+ 8 B897a230d B     E      0.808     7 0.412 1.65  -0.701     0     1
+ 9 D901d56c2 A     E     -0.313     7 1.93  2.41  -3.18      0     1
+10 Cd0f3116e C     E      1.15      5 0.370 2.32   6.06      0     1
+# … with 276 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-variables" class="level3" data-number="13.5.4">
+<h3 data-number="13.5.4" class="anchored" data-anchor-id="creating-variables"><span class="header-section-number">13.5.4</span> Creating Variables</h3>
+<p>Some times you may need to transform variables to a new variable. This can be done by using the <code>mutate()</code> where you specify the name of the new variable and set equal to the transformation of other variables. Using the <code>data2</code> data set, create a new variable called <code>logvar1</code> and set that to the log of <code>va1</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">logvar1 =</span> <span class="fu">log</span>(va1))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 6
+   ID1       ID_1     ID_2      va1    va2 logvar1
+   &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+ 1 A2b6115fd 2b6115fd A     0.458   81.4    -0.782
+ 2 Ac51c9cf1 c51c9cf1 A     0.236   -1.15   -1.44 
+ 3 A7534d3a0 7534d3a0 A     0.254    1.16   -1.37 
+ 4 A73fc5642 73fc5642 A     0.0411  -1.21   -3.19 
+ 5 Ae020e4bd e020e4bd A     0.266   -2.31   -1.32 
+ 6 Ac0d3b0fe c0d3b0fe A     0.00992 -0.882  -4.61 
+ 7 A2edfed41 2edfed41 A     0.293   -0.375  -1.23 
+ 8 Ad38a4bbe d38a4bbe A     0.261   -1.09   -1.34 
+ 9 A5ee0f97f 5ee0f97f A     0.186   -6.14   -1.68 
+10 Ad791c03d d791c03d A     0.0368  -0.258  -3.30 
+# … with 990 more rows</code></pre>
+</div>
+</div>
+<p>The <code>mutate()</code> allows you to create multiple new variables at once. Id addition to <code>logvar1</code>, create a new variable called <code>sqrtvar2</code> and set that equal to the square root of <code>va2</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">logvar1 =</span> <span class="fu">log</span>(va1), <span class="at">sqrtvar2 =</span> <span class="fu">sqrt</span>(va2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in sqrt(va2): NaNs produced</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 7
+   ID1       ID_1     ID_2      va1    va2 logvar1 sqrtvar2
+   &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+ 1 A2b6115fd 2b6115fd A     0.458   81.4    -0.782     9.02
+ 2 Ac51c9cf1 c51c9cf1 A     0.236   -1.15   -1.44    NaN   
+ 3 A7534d3a0 7534d3a0 A     0.254    1.16   -1.37      1.08
+ 4 A73fc5642 73fc5642 A     0.0411  -1.21   -3.19    NaN   
+ 5 Ae020e4bd e020e4bd A     0.266   -2.31   -1.32    NaN   
+ 6 Ac0d3b0fe c0d3b0fe A     0.00992 -0.882  -4.61    NaN   
+ 7 A2edfed41 2edfed41 A     0.293   -0.375  -1.23    NaN   
+ 8 Ad38a4bbe d38a4bbe A     0.261   -1.09   -1.34    NaN   
+ 9 A5ee0f97f 5ee0f97f A     0.186   -6.14   -1.68    NaN   
+10 Ad791c03d d791c03d A     0.0368  -0.258  -3.30    NaN   
+# … with 990 more rows</code></pre>
+</div>
+</div>
+<p>If you want to create categorical variables, use the <code>mutate()</code> and the <code>if_else()</code>. The <code>if_else()</code> requires three arguments: <code>condition=</code>, <code>true=</code>, and <code>false=</code>. The first argument requires a condition that will return a logical value. If true, then R will assign what is stated in the <code>true=</code>, otherwise R will assign what is in the <code>false=</code>. To begin, find the median of <code>va1</code> from <code>data2</code> and assign it to <code>medval</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>medval <span class="ot">&lt;-</span> data2<span class="sc">$</span>va1 <span class="sc">%&gt;%</span> <span class="fu">median</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>No create a new variable called <code>diva1</code> where if <code>va1</code> is greater than the median of <code>va1</code>, assign it “A”, otherwise assign it “B”.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>data2 <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">diva1=</span><span class="fu">if_else</span>(va1<span class="sc">&gt;</span>medval,<span class="st">"A"</span>,<span class="st">"B"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 6
+   ID1       ID_1     ID_2      va1    va2 diva1
+   &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;
+ 1 A2b6115fd 2b6115fd A     0.458   81.4   A    
+ 2 Ac51c9cf1 c51c9cf1 A     0.236   -1.15  B    
+ 3 A7534d3a0 7534d3a0 A     0.254    1.16  B    
+ 4 A73fc5642 73fc5642 A     0.0411  -1.21  B    
+ 5 Ae020e4bd e020e4bd A     0.266   -2.31  B    
+ 6 Ac0d3b0fe c0d3b0fe A     0.00992 -0.882 B    
+ 7 A2edfed41 2edfed41 A     0.293   -0.375 A    
+ 8 Ad38a4bbe d38a4bbe A     0.261   -1.09  B    
+ 9 A5ee0f97f 5ee0f97f A     0.186   -6.14  B    
+10 Ad791c03d d791c03d A     0.0368  -0.258 B    
+# … with 990 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="merging-datasets" class="level3" data-number="13.5.5">
+<h3 data-number="13.5.5" class="anchored" data-anchor-id="merging-datasets"><span class="header-section-number">13.5.5</span> Merging Datasets</h3>
+<p>One of the last thing is to go over how to merge data sets together. To merge the data sets, we use the <code>full_join()</code>. The <code>full_join()</code> needs two data sets (separated by commas) and the <code>by=</code> which provides the variables needed (must be the same name for each data set) to merge the data sets. Merge <code>data1</code> and <code>data2</code> with the variable <code>ID1</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(data1, data2, <span class="at">by =</span> <span class="st">"ID1"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 14
+   ID1    cat1  cat2    var1  var2    var3   var4   var5  var6  var7 ID_1  ID_2 
+   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+ 1 A2b61… A     E      1.15      4  2.88   3.54   -3.18      0     1 2b61… A    
+ 2 Ac51c… A     D     -0.367     3  0.0640 1.07   -3.18      0     0 c51c… A    
+ 3 A7534… A     F     -0.420     6 -1.04   0.226  -3.18      0     0 7534… A    
+ 4 A73fc… A     F     -2.00      5 -0.314  0.0213 -3.18      0     0 73fc… A    
+ 5 Ae020… C     E      0.697     3  0.526  2.98    6.06      0     0 e020… A    
+ 6 Ac0d3… A     D      0.467     4  2.45   1.85   -3.18      0     0 c0d3… A    
+ 7 A2edf… A     E      1.36      5  0.514  0.529  -3.18      0     1 2edf… A    
+ 8 Ad38a… C     F      0.369     0  1.98   2.36    6.06      0     1 d38a… A    
+ 9 A5ee0… B     E      1.80      5  0.147  2.22   -0.701     0     0 5ee0… A    
+10 Ad791… C     E      1.25      3 -1.05   0.0289  6.06      0     1 d791… A    
+# … with 990 more rows, and 2 more variables: va1 &lt;dbl&gt;, va2 &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>The <code>full_join()</code> allows you to merge data sets using two variables instead of one. All you need to do is specify <code>by=</code> with a vector specifying the arguments. Merge <code>data2</code> and <code>data3</code> by <code>ID_1</code> and <code>ID_2</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">full_join</span>(data2, data3, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"ID_1"</span>,<span class="st">"ID_2"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 8
+   ID1.x     ID_1     ID_2      va1    va2 ID1.y         v1     v2
+   &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;
+ 1 A2b6115fd 2b6115fd A     0.458   81.4   A2b6115fd 0.361  0.278 
+ 2 Ac51c9cf1 c51c9cf1 A     0.236   -1.15  Ac51c9cf1 0.273  2.64  
+ 3 A7534d3a0 7534d3a0 A     0.254    1.16  A7534d3a0 1.17   0.119 
+ 4 A73fc5642 73fc5642 A     0.0411  -1.21  A73fc5642 0.879  0.705 
+ 5 Ae020e4bd e020e4bd A     0.266   -2.31  Ae020e4bd 0.0268 0.297 
+ 6 Ac0d3b0fe c0d3b0fe A     0.00992 -0.882 Ac0d3b0fe 1.18   3.16  
+ 7 A2edfed41 2edfed41 A     0.293   -0.375 A2edfed41 0.356  0.174 
+ 8 Ad38a4bbe d38a4bbe A     0.261   -1.09  Ad38a4bbe 0.430  0.130 
+ 9 A5ee0f97f 5ee0f97f A     0.186   -6.14  A5ee0f97f 0.643  0.0231
+10 Ad791c03d d791c03d A     0.0368  -0.258 Ad791c03d 0.183  0.311 
+# … with 990 more rows</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="reshaping-data" class="level2" data-number="13.6">
+<h2 data-number="13.6" class="anchored" data-anchor-id="reshaping-data"><span class="header-section-number">13.6</span> Reshaping Data</h2>
+<p>This section focuses on reshaping the data to prepare it for analysis. For example, to conduct longitudinal data analysis, you will need to have long data. Reshaping data may be with converting data from wide to long, converting back from long to wide, splitting variables, splitting rows and merging variable. The functions used in this lesson are from the <code>tidy::</code></p>
+<section id="wide-to-long-data" class="level3" data-number="13.6.1">
+<h3 data-number="13.6.1" class="anchored" data-anchor-id="wide-to-long-data"><span class="header-section-number">13.6.1</span> Wide to Long Data</h3>
+<p>Converting data from wide to long is necessary when the data looks like <code>data4</code>, view <code>data4</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>data4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 5
+   ID1           X1     X2    X3    X4
+   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 Ad9131ee9  0.800  4.68   1.46  5.35
+ 2 A9c5988ea  1.17   1.50   4.83  3.75
+ 3 A28a5479d  1.85   2.64   2.39  4.34
+ 4 Aaf5537cc  1.55   2.28   3.35  3.76
+ 5 A370958bd -1.36   2.48   2.06  4.70
+ 6 Aea997e13  2.37   3.27   3.11  3.31
+ 7 A3563646f  2.10  -0.902  2.49  2.75
+ 8 A9b3cfdba -0.513  0.271  2.97  2.97
+ 9 A32b6737a  1.28   2.02   3.48  4.87
+10 A30e96748  1.30   1.72   2.11  2.04
+# … with 990 more rows</code></pre>
+</div>
+</div>
+<p>Let’s say <code>data4</code> represents biomarker data. Variable <code>ID1</code> represents a unique identifier for the participant. Then <code>X1</code>, <code>X2</code>, <code>X3</code>, and <code>X4</code> represents a value collected for a participant at different time point. This is know as repeated measurements. This data is considered wide because the repeated measurements are on the same row. To make it long, the repeated measurements must be on the same column.</p>
+<p>To convert data from long to wide, we will use the <code>pivot_longer()</code> with the first argument taking variables of the repeated measurements, <code>c(X1:X4)</code> or <code>X1:X4</code>, the second argument asks for the name for the variable that contains the stored repeated measurements, the variable names, and the last variable asks for the name for all the values, the data collected. Convert the <code>data4</code> to long and name the variable names column <code>"measurement"</code>, and values column <code>"value"</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>data4 <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(X1<span class="sc">:</span>X4, <span class="st">"measurement"</span>, <span class="st">"value"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4,000 × 3
+   ID1       measurement value
+   &lt;chr&gt;     &lt;chr&gt;       &lt;dbl&gt;
+ 1 Ad9131ee9 X1          0.800
+ 2 Ad9131ee9 X2          4.68 
+ 3 Ad9131ee9 X3          1.46 
+ 4 Ad9131ee9 X4          5.35 
+ 5 A9c5988ea X1          1.17 
+ 6 A9c5988ea X2          1.50 
+ 7 A9c5988ea X3          4.83 
+ 8 A9c5988ea X4          3.75 
+ 9 A28a5479d X1          1.85 
+10 A28a5479d X2          2.64 
+# … with 3,990 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="long-to-wide" class="level3" data-number="13.6.2">
+<h3 data-number="13.6.2" class="anchored" data-anchor-id="long-to-wide"><span class="header-section-number">13.6.2</span> Long to Wide</h3>
+<p>If you need to convert data from long to wide, use the <code>pivot_wider()</code>. You will need to specify the <code>names_from=</code> which specifies the variable names for the wide data set, and you will need to specify the <code>values_from=</code> that specifies variable that contains the values in the long data set. Convert <code>data5</code> from long to wide data. Note, you must specify the arguments for this function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>data5 <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> measurement, <span class="at">values_from =</span> value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 5
+   ID1           X1     X2    X3    X4
+   &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 Ad9131ee9  0.800  4.68   1.46  5.35
+ 2 A9c5988ea  1.17   1.50   4.83  3.75
+ 3 A28a5479d  1.85   2.64   2.39  4.34
+ 4 Aaf5537cc  1.55   2.28   3.35  3.76
+ 5 A370958bd -1.36   2.48   2.06  4.70
+ 6 Aea997e13  2.37   3.27   3.11  3.31
+ 7 A3563646f  2.10  -0.902  2.49  2.75
+ 8 A9b3cfdba -0.513  0.271  2.97  2.97
+ 9 A32b6737a  1.28   2.02   3.48  4.87
+10 A30e96748  1.30   1.72   2.11  2.04
+# … with 990 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="spliting-variables" class="level3" data-number="13.6.3">
+<h3 data-number="13.6.3" class="anchored" data-anchor-id="spliting-variables"><span class="header-section-number">13.6.3</span> Spliting Variables</h3>
+<p>Before we begin, look at <code>data6</code>:</p>
+<p>Notice how the <code>merge</code> variable has two values separated by “/”. If we need to split the variable into two variables, we need to specify the <code>separate()</code>. All you need to specify is the variable you need to split, the name of the 2 new variables, in a character vector, and how to split the variable <code>"/"</code>. Split the variable <code>merge</code> in <code>data6</code> to two new variables called <code>X1</code> and <code>X2</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>data6 <span class="sc">%&gt;%</span> <span class="fu">separate</span>(merge, <span class="fu">c</span>(<span class="st">"X1"</span>, <span class="st">"X2"</span>), <span class="st">"/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 5
+   ID1       X1    X2       X3    X4
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 Ad9131ee9 -1.23 2.64   2.12  3.56
+ 2 A9c5988ea 1.74  3.02   4.09  4.88
+ 3 A28a5479d 0.87  3.56   3.47  4.47
+ 4 Aaf5537cc 1.05  2.01   3.61  5.03
+ 5 A370958bd -1.47 1.26   3.98  6.59
+ 6 Aea997e13 1.66  3.51   1.65  2.72
+ 7 A3563646f 1.81  1.7    4.29  3.13
+ 8 A9b3cfdba 1.8   2.26   1.94  5.23
+ 9 A32b6737a 2.38  1.68   3.06  3.3 
+10 A30e96748 1     2.17   2.59  3.03
+# … with 990 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="splitting-rows" class="level3" data-number="13.6.4">
+<h3 data-number="13.6.4" class="anchored" data-anchor-id="splitting-rows"><span class="header-section-number">13.6.4</span> Splitting Rows</h3>
+<p>The variable <code>merge</code> in <code>data6</code> was split into different variables before, now instead of variables, let’s split it into different rows instead. To do this, use the <code>separate_rows()</code>. All you need to specify the variable name and the <code>sep=</code> (must state the argument). Split the <code>merge</code> variable from <code>data6</code> into different rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>data6 <span class="sc">%&gt;%</span> <span class="fu">separate_rows</span>(merge, <span class="at">sep =</span> <span class="st">"/"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2,000 × 4
+   ID1       merge    X3    X4
+   &lt;chr&gt;     &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 Ad9131ee9 -1.23  2.12  3.56
+ 2 Ad9131ee9 2.64   2.12  3.56
+ 3 A9c5988ea 1.74   4.09  4.88
+ 4 A9c5988ea 3.02   4.09  4.88
+ 5 A28a5479d 0.87   3.47  4.47
+ 6 A28a5479d 3.56   3.47  4.47
+ 7 Aaf5537cc 1.05   3.61  5.03
+ 8 Aaf5537cc 2.01   3.61  5.03
+ 9 A370958bd -1.47  3.98  6.59
+10 A370958bd 1.26   3.98  6.59
+# … with 1,990 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="merging-rows" class="level3" data-number="13.6.5">
+<h3 data-number="13.6.5" class="anchored" data-anchor-id="merging-rows"><span class="header-section-number">13.6.5</span> Merging Rows</h3>
+<p>If you need to merge variables together, similar to the <code>merge</code> variable, use the <code>unite()</code>. All you need to do is specify the variables to merge, the <code>col=</code> which specifies the name of the new variable (as a character), and the <code>sep=</code> which indicates the symbol for separate value, as a character. Note, you need to specify the bot the <code>col=</code> and <code>sep=</code>. Merge variable <code>X3</code> and <code>X4</code> in <code>data6</code> to a new variable called <code>merge2</code> and have the separator be a hyphen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>data6 <span class="sc">%&gt;%</span> <span class="fu">unite</span>(X3, X4, <span class="at">col =</span> <span class="st">"merge2"</span>, <span class="at">sep=</span><span class="st">"-"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 3
+   ID1       merge      merge2   
+   &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;    
+ 1 Ad9131ee9 -1.23/2.64 2.12-3.56
+ 2 A9c5988ea 1.74/3.02  4.09-4.88
+ 3 A28a5479d 0.87/3.56  3.47-4.47
+ 4 Aaf5537cc 1.05/2.01  3.61-5.03
+ 5 A370958bd -1.47/1.26 3.98-6.59
+ 6 Aea997e13 1.66/3.51  1.65-2.72
+ 7 A3563646f 1.81/1.7   4.29-3.13
+ 8 A9b3cfdba 1.8/2.26   1.94-5.23
+ 9 A32b6737a 2.38/1.68  3.06-3.3 
+10 A30e96748 1/2.17     2.59-3.03
+# … with 990 more rows</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="applied-example" class="level2" data-number="13.7">
+<h2 data-number="13.7" class="anchored" data-anchor-id="applied-example"><span class="header-section-number">13.7</span> Applied Example</h2>
+<p>Here is an applied example where you will use what you learned from the previous lesson and convert <code>data7</code> into <code>data8</code>. <code>data7</code> has a wide data format which contains time points labeled as <code>vX</code>, where <code>X</code> represents the time point number. At each time point, the mean, sd, and median was taken. You will need to convert the data to long where each row represents a new time point, and each row will have 3 variables representing the mean, sd, and median. View both <code>data7</code> and <code>data8</code> to have a better idea on what is going on. Remember you need to convert <code>data7</code> to <code>data8</code>.</p>
+<p>Now that you viewed the data set, type the code to convert <code>data7</code> to <code>data8</code>. Try working it out before you look at the solution.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>data7 <span class="sc">%&gt;%</span> <span class="fu">pivot_longer</span>(<span class="st">`</span><span class="at">v1/mean</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">v4/median</span><span class="st">`</span>,<span class="st">"measurement"</span>,<span class="st">"value"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>          <span class="fu">separate</span>(measurement,<span class="fu">c</span>(<span class="st">"time"</span>,<span class="st">"stat"</span>),<span class="at">sep=</span><span class="st">"/"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>          <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> stat,<span class="at">values_from =</span> value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4,000 × 5
+   ID1       time    mean     sd  median
+   &lt;chr&gt;     &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Ad9131ee9 v1     3.11   2.86   4.50  
+ 2 Ad9131ee9 v2     1.93   3.21   3.27  
+ 3 Ad9131ee9 v3     2.65  -0.383  3.23  
+ 4 Ad9131ee9 v4     0.605  0.883  4.65  
+ 5 A9c5988ea v1     2.03   2.90   2.08  
+ 6 A9c5988ea v2     0.709  2.27   4.13  
+ 7 A9c5988ea v3     1.45   2.01   2.84  
+ 8 A9c5988ea v4     0.710  3.03  -0.0898
+ 9 A28a5479d v1    -0.415  2.42   2.47  
+10 A28a5479d v2     2.38  -0.820  1.22  
+# … with 3,990 more rows</code></pre>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
