@@ -1,12 +1,33 @@
-# Data Manipulation
+---
+knitr: 
+  opts_chunk: 
+    message: false
+    warning: false
+---
 
+# Data Manipulation
 
 ## Introduction
 
+Data manipulation consists of transforming a data set to be analyzed. Certain statistical methods require data sets to be formatted in a certain way before you can apply a certain function^[Linear Mixed-Effects Models.]. Other times, you will need to transform the data set to present to stakeholder. Therefore, being able to transform a data set is essential.
+
+:::{.callout-note collapse=false appearance='default' icon=true}
+## Warnings Suppressed
+
+In order to keep the page concise, the warning messages have been suppressed. These warnings were produced because functions were applied to incorrect inputs, ie $\sqrt{A}$. Therefore, you may see `NA` as the output. There is nothing wrong with the code, it is just that the input was not valid, but R still completed the task. 
+:::
+
+
 ## Tidyverse
 
-Tidyverse is a set of packages that makes data manipulation much easier. These are functions that many individuals from the R community find useful to use for data analysis. In my opinion, once you have understand how the Tidyverse packages function, it makes it much easier to work with than Base R. Many of the functions are descriptively named for easy remembrance. For the most part you can do almost everything that Base R. There are just a few things you can't do, but it is rare that you will use them. One last thing is that the output from tidyverse is always formatted as tibble class, the Tidyverse version of the data frame. This can have some ups and downs. However, think of a tibble as a lazier data frame. 
+Tidyverse is a set of packages that make data manipulation much easier. These are functions that many individuals from the R community find useful to use for data analysis. In my opinion, once you have understand how Tidyverse packages function, it makes it much easier to work with than Base R. Many of the functions are descriptively named for easy remembrance. For the most part, you can do almost everything that Base R can do. There are just a few things you can't do, but it is rare that you will use them. One last thing is that the output from tidyverse is always formatted as a tibble class, the Tidyverse version of the data frame. This can have some ups and downs. However, think of a tibble as a lazier data frame. If you haven't done so, install tidyverse:
 
+```{r}
+#| eval: false
+install.packages("tidyverse")
+```
+
+Then load tidyverse into R:
 
 ```{r}
 library(tidyverse)
@@ -17,26 +38,28 @@ This will load the main Tidyverse packages: `ggplot2::`, `tibble::`, `tidyr::`, 
 
 ## Loading Data
 
+
+
 ```{r}
-data1<-read_csv("data/data_3_1.csv")
-data2<-read_csv("data/data_3_2.csv")
-data3<-read_csv("data/data_3_3.csv")
-data4<-read_csv("data/data_3_6.csv")
-data5<-read_csv("data/data_3_7.csv")
-data6<-read_csv("data/data_3_5.csv")
-data7<-read_csv("data/data_3_4.csv")
+data1 <- read_csv("data/data_3_1.csv")
+data2 <- read_csv("data/data_3_2.csv")
+data3 <- read_csv("data/data_3_3.csv")
+data4 <- read_csv("data/data_3_6.csv")
+data5 <- read_csv("data/data_3_7.csv")
+data6 <- read_csv("data/data_3_5.csv")
+data7 <- read_csv("data/data_3_4.csv")
 ```
 
 
 ## The Pipe Operator `%>%`
 
-The main benefit of the pipe operator is to make the code easier to read. The pipe operator is from the `magrittr::`. It is usually loaded when you load the `tidyverse::`. What the pipe operator, `%>%`, does is that it will take the output from a previous function and it will use it as an input for the next function. This prevents us from nesting functions together and overwhelm us with numerous parentheses and commas. To practice, pipe `data` into the `glimpse()`.
+The main benefit of the pipe operator is to make the code easier to read. The pipe operator is from the `magrittr::`. It is usually loaded when you load the `tidyverse::`. What the pipe operator, `%>%`, does is that it will take the output from a previous function and it will use it as the input for the next function. This prevents us from nesting functions together and overwhelm us with numerous parentheses and commas. To practice, pipe `data` into the `glimpse()`.
 
 ```{r pipe-solution}
 data1 %>% glimpse()
 ```
 
-The `glimpse()` then provides basic variable information about `data1`. I recommend practice reading the code in plain English to help you understand how these functions. 
+The `glimpse()` provides basic variable information about `data1`. I recommend practice reading the code in plain English to help you understand how these functions. 
 
 
 ## Data Transformation
@@ -54,7 +77,7 @@ data1 %>% summarise_all(mean)
 Notice how some values are `NA`, this is because the variables are character data types. Therefore, it will not be able to compute the mean. Now find the standard deviation for the data set.
 
 ```{r}
-data1 %>%  summarise_all(sd)
+data1 %>% summarise_all(sd)
 ```
 
 Now lets create a frequency table for the `cat1` variable in `data1`. use the `count()` and specify the variable you are interested in:
@@ -66,7 +89,7 @@ data1 %>% count(cat1)
 Now, repeat for `cat2` in `data1`:
 
 ```{r}
-data1 %>%  count(cat2)
+data1 %>% count(cat2)
 ```
 
 
@@ -110,7 +133,7 @@ data1 %>% filter(var1>0)
 If you know which rows you want, you can use the `slice()` and specify the rows as a vector. Create a subset of `data1` and select the rows 100 to 200 and 300 to 400.
 
 ```{r}
-data1 %>% slice(c(100:200,300:400))
+data1 %>% slice(c(100:200, 300:400))
 ```
 
 If you need random sample of your `data1`, use the `sample_n()` and specify the number you want. It will create a data set of randomly selected rows. Create a random sample of `data1` of 100 rows.
@@ -181,7 +204,7 @@ The functions used in this lesson are from the `tidy::`
 
 Converting data from wide to long is necessary when the data looks like `data4`, view `data4`:
 
-```{r wl_1}
+```{r}
 data4
 ```
 
@@ -200,7 +223,8 @@ data4 %>% pivot_longer(X1:X4, "measurement", "value")
 If you need to convert data from long to wide, use the `pivot_wider()`. You will need to specify the `names_from=` which specifies the variable names for the wide data set, and you will need to specify the `values_from=` that specifies variable that contains the values in the long data set. Convert `data5` from long to wide data. Note, you must specify the arguments for this function.
 
 ```{r}
-data5 %>% pivot_wider(names_from = measurement, values_from = value)
+data5 %>% pivot_wider(names_from = measurement, 
+                      values_from = value)
 ```
 
 
