@@ -58,13 +58,15 @@ A CSV file is a type of text file that where the values are separated from comma
 
 #### Base R
 
-```
+```{r}
+#| eval: false
 read.csv("FILE_NAME_AND_LOCATION")
 ```
 
 #### `readr::`
 
-```
+```{r}
+#| eval: false
 read_csv("FILE_NAME_AND_LOCATION")
 ```
 
@@ -90,7 +92,7 @@ Make sure to change the file location as needed.
 
 The main benefit of the pipe operator is to make the code easier to read. The pipe operator is from the `magrittr::`. It is usually loaded when you load the `tidyverse::`. What the pipe operator, `%>%`, does is that it will take the output from a previous function and it will use it as the input for the next function. This prevents us from nesting functions together and overwhelm us with numerous parentheses and commas. To practice, pipe `data` into the `glimpse()`.
 
-```{r pipe-solution}
+```{r}
 data1 %>% glimpse()
 ```
 
@@ -267,6 +269,10 @@ data5 %>% pivot_wider(names_from = measurement,
 
 Before we begin, look at `data6`:
 
+```{r}
+data6
+```
+
 Notice how the `merge` variable has two values separated by "/". If we need to split the variable into two variables, we need to specify the `separate()`. All you need to specify is the variable you need to split, the name of the 2 new variables, in a character vector, and how to split the variable `"/"`. Split the variable `merge` in `data6` to two new variables called `X1` and `X2`.
 
 ```{r}
@@ -295,6 +301,23 @@ data6 %>% unite(X3, X4, col = "merge2", sep="-")
 ## Applied Example
 
 Here is an applied example where you will use what you learned from the previous lesson and convert `data7` into `data8`. `data7` has a wide data format which contains time points labeled as `vX`, where `X` represents the time point number. At each time point, the mean, sd, and median was taken. You will need to convert the data to long where each row represents a new time point, and each row will have 3 variables representing the mean, sd, and median. View both `data7` and `data8` to have a better idea on what is going on. Remember you need to convert `data7` to `data8`. 
+
+```{r}
+#| include: false
+
+data8 <- data7 %>% pivot_longer(`v1/mean`:`v4/median`,
+                                "measurement","value") %>% 
+          separate(measurement,c("time","stat"),sep="/") %>% 
+          pivot_wider(names_from = stat,values_from = value)
+
+```
+
+
+```{r}
+data7
+data8
+```
+
 
 Now that you viewed the data set, type the code to convert `data7` to `data8`. Try working it out before you look at the solution.
 
