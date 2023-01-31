@@ -11,6 +11,8 @@ knitr:
 
 Data manipulation consists of transforming a data set to be analyzed. Certain statistical methods require data sets to be formatted in a certain way before you can apply a certain function^[Linear Mixed-Effects Models.]. Other times, you will need to transform the data set to present to stakeholder. Therefore, being able to transform a data set is essential.
 
+### Notes
+
 :::{.callout-note collapse=false appearance='default' icon=true}
 ## Warnings Suppressed
 
@@ -38,7 +40,39 @@ This will load the main Tidyverse packages: `ggplot2::`, `tibble::`, `tidyr::`, 
 
 ## Loading Data
 
+There are three methods to load a data set in R: using base R, using Tidyverse, or using RStudio. While it is important to understand how the code works to load a data set, I recommend using RStudio to import the data. It does all the work for you. Additionally, if you decide to use Tidyverse packages, RStudio will provide corresponding code for a particular file.
 
+To import a data set using RStudio, head over to the environment tab (usually in the upper right hand pane) and click on the Import Dataset button. A pop-up window should look something like below.
+
+
+```{r fig1, echo = FALSE, out.width = "50%"}
+knitr::include_graphics("img/import.png")
+```
+
+Notice how there are several options to load a data set. Depending on the format, you may want to choose one of those options. Next, notice how there are 2 "From Text". This is because it will load text data using either Base R packages or the `readr::` package from tidyverse. Either works, but the `readr::` package provides the necessary code to load the data set in the window. The other one provides the code in the console. 
+
+
+### CSV Files 
+
+A CSV file is a type of text file that where the values are separated from commas. It is very common file that you will work with. Here I will provide the code necessary to import a CSV file using either Base R or `readr::` code.
+
+#### Base R
+
+```
+read.csv("FILE_NAME_AND_LOCATION")
+```
+
+#### `readr::`
+
+```
+read_csv("FILE_NAME_AND_LOCATION")
+```
+
+Notice that the functions are virtually the same. 
+
+### For This Chapter
+
+You will need to download and extract this zip [file](https://www.inqs.info/stat_comp/files/data.zip) to conduct the analysis in the chapter. The code below will load the data sets you need:
 
 ```{r}
 data1 <- read_csv("data/data_3_1.csv")
@@ -50,6 +84,7 @@ data6 <- read_csv("data/data_3_5.csv")
 data7 <- read_csv("data/data_3_4.csv")
 ```
 
+Make sure to change the file location as needed.
 
 ## The Pipe Operator `%>%`
 

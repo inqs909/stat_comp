@@ -7,6 +7,10 @@ knitr:
 
 # Importing Data
 
+## Directories
+
+## Importing Data
+
 ```{r}
 # Reading Data -----
 
