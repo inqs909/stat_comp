@@ -759,18 +759,18 @@ Warning in mean.default(ID1): argument is not numeric or logical: returning NA</
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span>  <span class="fu">sample_n</span>(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 100 × 10
-   ID1       cat1  cat2      var1  var2   var3  var4   var5  var6  var7
-   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1 Cc0d3b0fe A     E      0.672       3  1.08   1.61 -3.18      0     0
- 2 A01f2556f C     E      0.00759     3  1.47   2.58  6.06      0     0
- 3 D2a8d1b6b B     F     -0.135       8 -0.616  1.20 -0.701     0     1
- 4 Cc8042ac7 B     D      0.974       6  0.123  1.28 -0.701     0     0
- 5 B94facbad C     F      0.874       6  0.322  1.59  6.06      0     0
- 6 B50a09695 B     D     -1.22        9  1.38   3.26 -0.701     0     0
- 7 Cfd7b14fe C     F     -0.972       5  1.25   3.01  6.06      0     0
- 8 C93f7aa1b B     E      0.599       6  1.34   2.02 -0.701     0     1
- 9 D25ec059e B     F      1.99        4  1.53   1.95 -0.701     0     1
-10 Cca80d7e8 B     E      0.324       4  2.12   3.17 -0.701     0     0
+   ID1       cat1  cat2    var1  var2     var3   var4   var5  var6  var7
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 A769ca92e B     D      1.69      7  1.29     2.00  -0.701     0     1
+ 2 C252a021b A     F     -0.584     1  0.262    1.68  -3.18      0     0
+ 3 Af1f6019b A     F      0.130     3  2.12     1.75  -3.18      0     0
+ 4 Ac2070f5f C     F     -0.284     4  1.35     2.83   6.06      0     0
+ 5 Ac3922a23 C     E     -1.70      4  1.14     2.66   6.06      0     1
+ 6 B96e34b9e A     E      1.34      4 -0.00273 -0.205 -3.18      0     0
+ 7 Cc0c51702 B     F     -0.645     4 -0.431    2.13  -0.701     0     0
+ 8 Dc5e3a2f3 C     D      1.37      4  0.871    1.41   6.06      0     0
+ 9 A89eb02a1 A     F      1.78      8  0.967    2.42  -3.18      0     1
+10 Af6d785e6 A     F      1.59      7 -1.16    -0.908 -3.18      0     0
 # … with 90 more rows</code></pre>
 </div>
 </div>
@@ -779,18 +779,18 @@ Warning in mean.default(ID1): argument is not numeric or logical: returning NA</
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">sample_frac</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 286 × 10
-   ID1       cat1  cat2    var1  var2  var3  var4   var5  var6  var7
-   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1 D3beff8c6 C     F      0.326     2 2.33  2.94   6.06      0     0
- 2 D10c8e0a7 B     F      0.821     3 1.14  1.57  -0.701     0     0
- 3 A3ed9037c A     D      0.251     7 1.86  2.63  -3.18      0     1
- 4 B177b3f3c C     F     -1.77      5 0.994 2.97   6.06      0     0
- 5 Aa20de630 C     F     -0.723     7 1.15  0.722  6.06      0     0
- 6 Daeac5e8c C     F     -1.70      7 0.246 1.72   6.06      0     0
- 7 D4ebc2da4 B     E     -0.340     4 0.478 1.16  -0.701     0     0
- 8 B897a230d B     E      0.808     7 0.412 1.65  -0.701     0     1
- 9 D901d56c2 A     E     -0.313     7 1.93  2.41  -3.18      0     1
-10 Cd0f3116e C     E      1.15      5 0.370 2.32   6.06      0     1
+   ID1       cat1  cat2    var1  var2    var3  var4   var5  var6  var7
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 A30c73efd A     F     -0.246     5  1.24   2.80  -3.18      0     1
+ 2 Df4715df8 B     E      1.22      3  0.680  1.34  -0.701     0     0
+ 3 D7325ee0a B     F     -0.505     5  1.50   2.08  -0.701     0     1
+ 4 D47c16587 B     D      0.144     5  2.38   3.19  -0.701     0     0
+ 5 Ce271903d B     D      1.03      3  0.561  1.66  -0.701     0     0
+ 6 A3be8e904 C     F     -0.412     8  0.0601 0.174  6.06      0     0
+ 7 Ab0399f70 B     E      0.515     7 -0.0426 1.52  -0.701     0     1
+ 8 Be271903d A     E     -1.75      5 -0.422  0.875 -3.18      0     0
+ 9 B5de49801 B     F      0.805     5  0.0701 1.46  -0.701     0     0
+10 C5106490c C     F      0.685     2 -0.120  3.40   6.06      0     0
 # … with 276 more rows</code></pre>
 </div>
 </div>
