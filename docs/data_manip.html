@@ -689,18 +689,18 @@ $ var7 &lt;dbl&gt; 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span>  <span class="fu">sample_n</span>(<span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 100 × 10
-   ID1       cat1  cat2      var1  var2     var3  var4   var5  var6  var7
-   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1 A5718bd3f B     E     -0.0941      3 -0.00532 0.140 -0.701     0     0
- 2 D9a648d3b A     E     -1.19        6  0.537   2.27  -3.18      0     1
- 3 Dd0c4853c B     D     -0.00246     2  0.914   2.49  -0.701     0     0
- 4 Cc3922a23 B     D     -2.05        4  1.88    2.55  -0.701     0     0
- 5 Ccd05b624 A     D      0.247       4  1.89    3.98  -3.18      0     0
- 6 D236afd5d B     D     -1.43        8  0.0510  1.76  -0.701     0     1
- 7 Ac0d3b0fe A     D      0.467       4  2.45    1.85  -3.18      0     0
- 8 Bf4715df8 A     F     -0.0854      6  2.12    1.51  -3.18      0     1
- 9 Bc2070f5f B     D     -0.00827     4  1.27    2.60  -0.701     0     0
-10 Ad312ce7a C     F      1.35        7 -1.59    0.469  6.06      0     1
+   ID1       cat1  cat2     var1  var2    var3   var4   var5  var6  var7
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 Ce2341c24 B     F     -0.658      7  0.658   1.23  -0.701     0     0
+ 2 C76241ad7 A     D     -0.237     10  0.567   2.20  -3.18      0     0
+ 3 A4a568ff4 B     F     -0.785      4  0.880   2.20  -0.701     0     0
+ 4 C429b65a6 B     F     -0.0590     4  0.0552  2.40  -0.701     0     1
+ 5 D29813c1e B     F      0.375      5  3.62    3.85  -0.701     0     0
+ 6 Cff01dea3 A     E     -0.0534     7  1.41    3.22  -3.18      0     1
+ 7 Bd54fca43 B     D     -2.57       6  0.0270  1.53  -0.701     0     0
+ 8 A2d35e45c C     D      1.45       4 -0.214  -0.449  6.06      0     1
+ 9 D5de49801 A     D     -0.195      5  0.810   1.14  -3.18      0     1
+10 Bd0c4853c C     E      0.206      8  0.631   2.68   6.06      0     1
 # … with 90 more rows</code></pre>
 </div>
 </div>
@@ -709,18 +709,18 @@ $ var7 &lt;dbl&gt; 1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>data1 <span class="sc">%&gt;%</span> <span class="fu">sample_frac</span>(<span class="dv">2</span><span class="sc">/</span><span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 286 × 10
-   ID1       cat1  cat2    var1  var2    var3  var4   var5  var6  var7
-   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
- 1 C93f7aa1b B     E      0.599     6  1.34   2.02  -0.701     0     1
- 2 A983642cd B     F      0.401     6  0.744  3.63  -0.701     0     1
- 3 Cd0f3116e C     E      1.15      5  0.370  2.32   6.06      0     1
- 4 Adec8db56 B     F      0.529     5  1.47   1.85  -0.701     0     1
- 5 C055f348b C     F      1.68      6  1.64   3.11   6.06      0     0
- 6 C177b3f3c B     E     -0.827     3 -0.604  1.55  -0.701     0     0
- 7 B5de49801 B     F      0.805     5  0.0701 1.46  -0.701     0     0
- 8 Ad8f63a79 A     E      1.05      4 -0.0774 2.04  -3.18      0     0
- 9 B3e115ac3 B     D     -2.20      5 -0.362  0.255 -0.701     0     0
-10 D895472ca B     D     -1.38      7  0.710  1.36  -0.701     0     0
+   ID1       cat1  cat2     var1  var2  var3  var4  var5  var6  var7
+   &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1 B7112e21b A     E      1.79       5 0.764  2.20 -3.18     0     0
+ 2 A39e0959a A     F      0.151      3 0.340  2.80 -3.18     0     0
+ 3 B31d46904 A     D     -0.885      9 1.67   2.21 -3.18     0     0
+ 4 D252a021b C     D      0.0727     6 1.80   3.56  6.06     0     1
+ 5 B716ec591 A     D     -0.649      1 1.80   2.48 -3.18     0     1
+ 6 Ccd05b624 A     D      0.247      4 1.89   3.98 -3.18     0     0
+ 7 Af1f6019b A     F      0.130      3 2.12   1.75 -3.18     0     0
+ 8 Be1e7585e A     E     -1.45       1 0.501  1.91 -3.18     0     1
+ 9 Aa839f68e C     F     -0.814      8 3.31   3.90  6.06     0     0
+10 De413c9a9 C     D     -1.71       6 0.863  1.50  6.06     0     0
 # … with 276 more rows</code></pre>
 </div>
 </div>

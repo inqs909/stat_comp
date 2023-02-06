@@ -138,9 +138,14 @@ apply(x, 2, mean)
 ```
 
 
+### `lapply()` 
+
+The `lapply()` is used to apply a function to all elements in a vector or list. The `lapply()` function will then return a list as the output. 
+
 ### `sapply()`
 
-### `lapply()`
+The `sapply()` is used to apply a function to all elements in a vector or list. Afterwards, the `sapply()` will return a "simplified" version of the list format. This could be a vector, matrix, or array.
+
 
 ## Anonymous Functions
 
