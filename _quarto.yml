@@ -4,7 +4,8 @@ project:
   resources:
     - "files"
 
-  
+execute:
+  freeze: auto
 
 book:
   title: "Statistical Computing"
@@ -22,15 +23,20 @@ book:
         - control_flow.qmd
         - functional.qmd
         - scripting.qmd
+    - part: simulations.qmd
+        - rv.qmd
+        - models.qmd
     - part: permutations.qmd
       chapters:
         - perm_hyp.qmd
         - perm_reg.qmd
     - part: mc.qmd
       chapters:
-        - simulations.qmd
         - mc_int.qmd
         - mc_testing.qmd
+        - mc_case_1.qmd
+        - mc_case_2.qmd
+        - mc_case_3.qmd
     - part: bootstrapping.qmd
       chapters:
         - parametric.qmd
@@ -44,7 +50,6 @@ book:
     - part: reporting.qmd
       chapters: 
         - documents.qmd
-        - notebooks.qmd
         - presentations.qmd
     - part: efficient.qmd
       chapters: 

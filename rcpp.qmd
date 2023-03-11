@@ -1,1 +1,1 @@
-# Incorporating C++ into R
+# Introduction to Rcpp

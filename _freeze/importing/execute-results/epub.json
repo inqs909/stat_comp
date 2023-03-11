@@ -1,0 +1,20 @@
+{
+  "hash": "e9c606fd2d88ed84ef2503cc89bc5ab0",
+  "result": {
+    "markdown": "---\nknitr: \n  opts_chunk: \n    eval: false\n\n---\n\n\n\n\n# Importing Data\n\n## Directories\n\n## Importing Data\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# Reading Data -----\n\n## RData ----\nload(\"~/x.RData\")\n\n## CSV ----\nlibrary(readr)\ndata_3_1_csv <- read_csv(\"student/stat_147/data/data_3_1.csv\")\nView(data_3_1_csv)\n\n## Excel ----\nlibrary(readxl)\ndata_3_1 <- read_excel(\"student/stat_147/data/data_3_1.xlsx\")\nView(data_3_1)\n\n## txt ----\nlibrary(readr)\ndata_3_1_s <- read_table2(\"student/stat_147/data/data_3_1_s.txt\")\nView(data_3_1_s)\n\n## Semi-colon ----\nlibrary(readr)\ndata_3_1_sc <- read_delim(\"student/stat_147/data/data_3_1_sc.txt\", \";\", escape_double = FALSE, trim_ws = TRUE)\nView(data_3_1_sc)\n## SPSS ----\nlibrary(haven)\ndata_3_1 <- read_sav(\"student/stat_147/data/data_3_1.sav\")\nView(data_3_1)\n\n## SAS -----\nlibrary(haven)\ndata_3_1 <- read_sas(\"student/stat_147/data/data_3_1.sas7bdat\", NULL)\nView(data_3_1)\n\n## Stata ----\nlibrary(haven)\ndata_3_1 <- read_dta(\"student/stat_147/data/data_3_1.dta\")\nView(data_3_1)\n\ndata_3_1 <- read.csv(\"~/student/stat_147/data/data_3_1.csv\", header=FALSE)\nView(data_3_1)\n\n\n# Reading Data -----\nsetwd(\"~/Repos/s147/files/Week_2\")\n\n## Base R -----\n\n# CSV\ndata.csv <- read.csv(\"data.csv\")\n\n# STATA File\nlibrary(foreign)\nread.dta(\"data.dta\")\n\n## RStudio packages\nlibrary(readr)\nread_csv(\"data.csv\")\n\nlibrary(readxl)\nread_excel(\"data.xlsx\")\n\nlibrary(haven)\nread_dta(\"data.dta\")\n```\n:::\n",
+    "supporting": [
+      "importing_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {
+      "knitr": [
+        "{\"type\":\"list\",\"attributes\":{},\"value\":[]}"
+      ]
+    },
+    "preserve": null,
+    "postProcess": false
+  }
+}

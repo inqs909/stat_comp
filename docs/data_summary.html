@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Computing - 14&nbsp; Data Summarization</title>
+<title>Statistical Computing - 16&nbsp; Data Summarization</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,7 +135,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Summarization</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Data Summarization</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -217,13 +217,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">simulations.qmd - rv.qmd - models.qmd</span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./permutations.html" class="sidebar-item-text sidebar-link">Randomizations</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./perm_hyp.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Permutation Tests</span></a>
@@ -239,31 +242,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./mc.html" class="sidebar-item-text sidebar-link">Monte Carlo Methods</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./simulations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Monte Carlo Simulations</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mc_int.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./bootstrapping.html" class="sidebar-item-text sidebar-link">Bootstrapping</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -271,19 +249,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./parametric.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Parametric Bootrapping</span></a>
+  <a href="./mc_int.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Nonparametric Boostrapping</span></a>
+  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_case_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Monte Carlo Methods Case Study 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_case_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Monte Carlo Methods Case Study 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_case_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monte Carlo Methods Case Study 3</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./da.html" class="sidebar-item-text sidebar-link">Data Manipulation, Summarization, and Graphics</a>
+            <a href="./bootstrapping.html" class="sidebar-item-text sidebar-link">Bootstrapping</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -291,29 +284,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./importing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Importing Data</span></a>
+  <a href="./parametric.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Parametric Bootrapping</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_manip.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Manipulation</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data_summary.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Summarization</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./plot.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></a>
+  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Nonparametric Boostrapping</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./reporting.html" class="sidebar-item-text sidebar-link">Reporting Data</a>
+            <a href="./da.html" class="sidebar-item-text sidebar-link">Data Manipulation, Summarization, and Graphics</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -321,24 +304,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Markdown Reports</span></a>
+  <a href="./importing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Importing Data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./notebooks.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Notebooks</span></a>
+  <a href="./data_manip.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Manipulation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./presentations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Presentations</span></a>
+  <a href="./data_summary.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Data Summarization</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./plot.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Graphics</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./efficient.html" class="sidebar-item-text sidebar-link">Debugging and Efficient Porgramming</a>
+            <a href="./reporting.html" class="sidebar-item-text sidebar-link">Reporting Data</a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -346,22 +334,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./debugging.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Debugging Code</span></a>
+  <a href="./documents.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Markdown Reports</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./profiling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Efficient Programming and Profiling</span></a>
+  <a href="./presentations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Presentations</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./efficient.html" class="sidebar-item-text sidebar-link">Debugging and Efficient Porgramming</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./debugging.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Debugging Code</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./vectorizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Vectorizing Code</span></a>
+  <a href="./profiling.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Efficient Programming and Profiling</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rcpp.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Incorporating C++ into R</span></a>
+  <a href="./vectorizing.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Vectorizing Code</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rcpp.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Introduction to Rcpp</span></a>
   </div>
 </li>
       </ul>
@@ -375,13 +383,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link active" data-scroll-target="#descriptive-statistics"><span class="toc-section-number">14.1</span>  Descriptive Statistics</a>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link active" data-scroll-target="#descriptive-statistics"><span class="toc-section-number">16.1</span>  Descriptive Statistics</a>
   <ul class="collapse">
-  <li><a href="#point-estimates" id="toc-point-estimates" class="nav-link" data-scroll-target="#point-estimates"><span class="toc-section-number">14.1.1</span>  Point Estimates</a></li>
-  <li><a href="#variability" id="toc-variability" class="nav-link" data-scroll-target="#variability"><span class="toc-section-number">14.1.2</span>  Variability</a></li>
-  <li><a href="#associations" id="toc-associations" class="nav-link" data-scroll-target="#associations"><span class="toc-section-number">14.1.3</span>  Associations</a></li>
+  <li><a href="#point-estimates" id="toc-point-estimates" class="nav-link" data-scroll-target="#point-estimates"><span class="toc-section-number">16.1.1</span>  Point Estimates</a></li>
+  <li><a href="#variability" id="toc-variability" class="nav-link" data-scroll-target="#variability"><span class="toc-section-number">16.1.2</span>  Variability</a></li>
+  <li><a href="#associations" id="toc-associations" class="nav-link" data-scroll-target="#associations"><span class="toc-section-number">16.1.3</span>  Associations</a></li>
   </ul></li>
-  <li><a href="#summarizing-with-tidyverse" id="toc-summarizing-with-tidyverse" class="nav-link" data-scroll-target="#summarizing-with-tidyverse"><span class="toc-section-number">14.2</span>  Summarizing with Tidyverse</a></li>
+  <li><a href="#summarizing-with-tidyverse" id="toc-summarizing-with-tidyverse" class="nav-link" data-scroll-target="#summarizing-with-tidyverse"><span class="toc-section-number">16.2</span>  Summarizing with Tidyverse</a></li>
   </ul>
 </nav>
     </div>
@@ -390,7 +398,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Summarization</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Data Summarization</span></h1>
 </div>
 
 
@@ -405,8 +413,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="descriptive-statistics" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">14.1</span> Descriptive Statistics</h2>
+<section id="descriptive-statistics" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">16.1</span> Descriptive Statistics</h2>
 <p>Here, we will go over some of the basic syntax to obtain basic statistics. We will use the variables <code>mpg</code> and <code>cyl</code> from the <code>mtcars</code> data set. To view the data set use the <code>head()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -421,11 +429,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 <p>The variable <code>mpg</code> would be used as a continuous variable, and the variable <code>cyl</code> would be used as a categorical variable.</p>
-<section id="point-estimates" class="level3" data-number="14.1.1">
-<h3 data-number="14.1.1" class="anchored" data-anchor-id="point-estimates"><span class="header-section-number">14.1.1</span> Point Estimates</h3>
+<section id="point-estimates" class="level3" data-number="16.1.1">
+<h3 data-number="16.1.1" class="anchored" data-anchor-id="point-estimates"><span class="header-section-number">16.1.1</span> Point Estimates</h3>
 <p>The first basic statistic you can compute are point estimates. These are your means, medians, etc. Here we will calculate these estimates.</p>
-<section id="mean" class="level4" data-number="14.1.1.1">
-<h4 data-number="14.1.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">14.1.1.1</span> Mean</h4>
+<section id="mean" class="level4" data-number="16.1.1.1">
+<h4 data-number="16.1.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">16.1.1.1</span> Mean</h4>
 <p>To obtain the mean, use the <code>mean()</code>, you only need to specify <code>x=</code> for the data to compute the mean:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -434,8 +442,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="median" class="level4" data-number="14.1.1.2">
-<h4 data-number="14.1.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">14.1.1.2</span> Median</h4>
+<section id="median" class="level4" data-number="16.1.1.2">
+<h4 data-number="16.1.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">16.1.1.2</span> Median</h4>
 <p>To obtain the median, use the <code>median()</code>, you only need to specify <code>x=</code> for the data to compute the median:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -444,8 +452,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="frequency" class="level4" data-number="14.1.1.3">
-<h4 data-number="14.1.1.3" class="anchored" data-anchor-id="frequency"><span class="header-section-number">14.1.1.3</span> Frequency</h4>
+<section id="frequency" class="level4" data-number="16.1.1.3">
+<h4 data-number="16.1.1.3" class="anchored" data-anchor-id="frequency"><span class="header-section-number">16.1.1.3</span> Frequency</h4>
 <p>To obtain a frequency table, use the <code>table()</code>, you only need to specify the data as the first argument to compute the frequency table:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>cyl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -456,8 +464,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="proportion" class="level4" data-number="14.1.1.4">
-<h4 data-number="14.1.1.4" class="anchored" data-anchor-id="proportion"><span class="header-section-number">14.1.1.4</span> Proportion</h4>
+<section id="proportion" class="level4" data-number="16.1.1.4">
+<h4 data-number="16.1.1.4" class="anchored" data-anchor-id="proportion"><span class="header-section-number">16.1.1.4</span> Proportion</h4>
 <p>To obtain a the proportions for the frequency table, use the <code>prop.table()</code>. However the first argument must be the results from the <code>table()</code>. Use the <code>table()</code> inside the <code>prop.table()</code> to get the proportions:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -469,11 +477,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </section>
 </section>
-<section id="variability" class="level3" data-number="14.1.2">
-<h3 data-number="14.1.2" class="anchored" data-anchor-id="variability"><span class="header-section-number">14.1.2</span> Variability</h3>
+<section id="variability" class="level3" data-number="16.1.2">
+<h3 data-number="16.1.2" class="anchored" data-anchor-id="variability"><span class="header-section-number">16.1.2</span> Variability</h3>
 <p>In addition to point estimates, variability is an important statistic to report to let a user know about the spread of the data. Here we will calculate certain variability statistics.</p>
-<section id="variance" class="level4" data-number="14.1.2.1">
-<h4 data-number="14.1.2.1" class="anchored" data-anchor-id="variance"><span class="header-section-number">14.1.2.1</span> Variance</h4>
+<section id="variance" class="level4" data-number="16.1.2.1">
+<h4 data-number="16.1.2.1" class="anchored" data-anchor-id="variance"><span class="header-section-number">16.1.2.1</span> Variance</h4>
 <p>To obtain the variance, use the <code>var()</code>, you only need to specify <code>x=</code> for the data to compute the variance:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -482,8 +490,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="standard-deviation" class="level4" data-number="14.1.2.2">
-<h4 data-number="14.1.2.2" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">14.1.2.2</span> Standard deviation</h4>
+<section id="standard-deviation" class="level4" data-number="16.1.2.2">
+<h4 data-number="16.1.2.2" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">16.1.2.2</span> Standard deviation</h4>
 <p>To obtain the standard deviation, use the <code>sd()</code>, you only need to specify <code>x=</code> for the data to compute the standard deviation:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -492,8 +500,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="max-and-min" class="level4" data-number="14.1.2.3">
-<h4 data-number="14.1.2.3" class="anchored" data-anchor-id="max-and-min"><span class="header-section-number">14.1.2.3</span> Max and Min</h4>
+<section id="max-and-min" class="level4" data-number="16.1.2.3">
+<h4 data-number="16.1.2.3" class="anchored" data-anchor-id="max-and-min"><span class="header-section-number">16.1.2.3</span> Max and Min</h4>
 <p>To obtain the max and min, use the <code>max()</code> and <code>min()</code>, respectively. You only need to specify the data as the first argument to compute the max and min:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -506,8 +514,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="q1-and-q3" class="level4" data-number="14.1.2.4">
-<h4 data-number="14.1.2.4" class="anchored" data-anchor-id="q1-and-q3"><span class="header-section-number">14.1.2.4</span> Q1 and Q3</h4>
+<section id="q1-and-q3" class="level4" data-number="16.1.2.4">
+<h4 data-number="16.1.2.4" class="anchored" data-anchor-id="q1-and-q3"><span class="header-section-number">16.1.2.4</span> Q1 and Q3</h4>
 <p>To obtain the Q1 and Q3, use the <code>quantile()</code> and specify the desired quantile with <code>probs=</code>. You only need to specify the data as the first argument and <code>probs=</code> (as a decimal) to compute the Q1 and Q3:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(mtcars<span class="sc">$</span>mpg, .<span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -523,11 +531,11 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </section>
 </section>
-<section id="associations" class="level3" data-number="14.1.3">
-<h3 data-number="14.1.3" class="anchored" data-anchor-id="associations"><span class="header-section-number">14.1.3</span> Associations</h3>
+<section id="associations" class="level3" data-number="16.1.3">
+<h3 data-number="16.1.3" class="anchored" data-anchor-id="associations"><span class="header-section-number">16.1.3</span> Associations</h3>
 <p>In statistics, we may be interested on how different variables are related to each other. These associations can be represented in a numerical value.</p>
-<section id="continuous-and-continuous" class="level4" data-number="14.1.3.1">
-<h4 data-number="14.1.3.1" class="anchored" data-anchor-id="continuous-and-continuous"><span class="header-section-number">14.1.3.1</span> Continuous and Continuous</h4>
+<section id="continuous-and-continuous" class="level4" data-number="16.1.3.1">
+<h4 data-number="16.1.3.1" class="anchored" data-anchor-id="continuous-and-continuous"><span class="header-section-number">16.1.3.1</span> Continuous and Continuous</h4>
 <p>When we measure the association between to continuous variables, we tend to use a correlation statistic. This statistic tells us how linearly associated are the variables are to each other. Essentially, as one variable increases, what happens to the other variable? Does it increase (positive association) or does it decrease (negative association). To find the correlation in R, use the <code>cor()</code>. You will need to specify the <code>x=</code> and <code>y=</code> which represents vectors for each variable. Find the correlation between <code>mpg</code> and <code>hp</code> from the <code>mtcars</code> data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -536,8 +544,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="categorical-and-continuous" class="level4" data-number="14.1.3.2">
-<h4 data-number="14.1.3.2" class="anchored" data-anchor-id="categorical-and-continuous"><span class="header-section-number">14.1.3.2</span> Categorical and Continuous</h4>
+<section id="categorical-and-continuous" class="level4" data-number="16.1.3.2">
+<h4 data-number="16.1.3.2" class="anchored" data-anchor-id="categorical-and-continuous"><span class="header-section-number">16.1.3.2</span> Categorical and Continuous</h4>
 <p>When comparing categorical variables, it becomes a bit more nuanced in how to report associations. Most of time you will discuss key differences in certain groups. Here, we will talk about how to get the means for different groups of data. Our continuous variable is the <code>mpg</code> variable, and our categorical variable is the <code>cyl</code> variable. Both are from the <code>mtcars</code> data set. The <code>tapply()</code> allows us to split the data into different groups and then calculate different statistics. We only need to specify <code>X=</code> of the R object to split, <code>INDEX=</code> which is a list of factors or categories indicating how to split the data set, and <code>FUN=</code> which is the function that needs to be computed. Use the <code>tapply()</code> and find the mean <code>mpg</code> for each <code>cyl</code> group: 4, 5, and 6.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(mtcars<span class="sc">$</span>mpg, <span class="fu">list</span>(mtcars<span class="sc">$</span>cyl), mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -547,8 +555,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </div>
 </div>
 </section>
-<section id="categorical-and-categorical" class="level4" data-number="14.1.3.3">
-<h4 data-number="14.1.3.3" class="anchored" data-anchor-id="categorical-and-categorical"><span class="header-section-number">14.1.3.3</span> Categorical and Categorical</h4>
+<section id="categorical-and-categorical" class="level4" data-number="16.1.3.3">
+<h4 data-number="16.1.3.3" class="anchored" data-anchor-id="categorical-and-categorical"><span class="header-section-number">16.1.3.3</span> Categorical and Categorical</h4>
 <p>Reporting the association between two categorical variables is may be challenging. If you have a <span class="math inline">\(2\times 2\)</span> table, you can report a ratio of association. However, any other case may be challenging. You can report a hypothesis test to indicate an association, but it does not provide much information about the effect of each variable. You can also report row, column, or table proportions. Here we will talk about creating cross tables and report these proportions. To create a cross table, use the <code>table()</code> and use the first two arguments to specify the two categorical variables. Create a cross tabulation between <code>cyl</code> and <code>carb</code> from the <code>mtcars</code> data set.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>carb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -598,8 +606,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 </section>
 </section>
 </section>
-<section id="summarizing-with-tidyverse" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="summarizing-with-tidyverse"><span class="header-section-number">14.2</span> Summarizing with Tidyverse</h2>
+<section id="summarizing-with-tidyverse" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="summarizing-with-tidyverse"><span class="header-section-number">16.2</span> Summarizing with Tidyverse</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -626,8 +634,8 @@ Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre
 <pre><code># A tibble: 2 × 6
   expression      min   median `itr/sec` mem_alloc `gc/sec`
   &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 f(1)        407.4µs  431.6µs    2260.   134.23KB    16.9 
-2 g(1)         11.6ms   11.7ms      83.2    3.65MB     9.00</code></pre>
+1 f(1)        404.4µs  434.7µs    2242.   134.23KB    16.9 
+2 g(1)         11.7ms   11.8ms      82.8    3.65MB     8.95</code></pre>
 </div>
 </div>
 
@@ -771,12 +779,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./data_manip.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data Manipulation</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Manipulation</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./plot.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Graphics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
