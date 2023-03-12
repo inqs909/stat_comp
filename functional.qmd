@@ -141,10 +141,10 @@ The `sapply()` function is used to apply a function to all elements in a vector 
 
 Anonymous functions are functions that R temporarily creates to conduct a task. They are commonly used in the \*apply functions, piping or within functions. To create an anonymous function, we use the `function()` to create a function .
 
-For example, let `x` be a vector with the values 1 through 40. Let's say we want to apply the function $f(x) = x^2+\ln(x) + e^x/x!$. We can evaluate the function as the expression in the function:
+For example, let `x` be a vector with the values 1 through 15. Let's say we want to apply the function $f(x) = x^2+\ln(x) + e^x/x!$. We can evaluate the function as the expression in the function:
 
 ```{r}
-x <- 1:40
+x <- 1:15
 x^2 + log(x) + exp(x)/factorial(x)
 ```
 

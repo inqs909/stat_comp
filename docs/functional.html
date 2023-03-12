@@ -648,54 +648,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="anonymous-functions" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="anonymous-functions"><span class="header-section-number">3.3</span> Anonymous Functions</h2>
 <p>Anonymous functions are functions that R temporarily creates to conduct a task. They are commonly used in the *apply functions, piping or within functions. To create an anonymous function, we use the <code>function()</code> to create a function .</p>
-<p>For example, let <code>x</code> be a vector with the values 1 through 40. Let’s say we want to apply the function <span class="math inline">\(f(x) = x^2+\ln(x) + e^x/x!\)</span>. We can evaluate the function as the expression in the function:</p>
+<p>For example, let <code>x</code> be a vector with the values 1 through 15. Let’s say we want to apply the function <span class="math inline">\(f(x) = x^2+\ln(x) + e^x/x!\)</span>. We can evaluate the function as the expression in the function:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">40</span></span>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">15</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">log</span>(x) <span class="sc">+</span> <span class="fu">exp</span>(x)<span class="sc">/</span><span class="fu">factorial</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]    3.718282    8.387675   13.446202   19.661217   27.846214   38.352077
- [7]   51.163496   66.153374   83.219555  102.308655  123.399395  146.485246
-[13]  171.565020  198.639071  227.708053  258.772589  291.833213  326.890372
-[19]  363.944439  402.995732  444.044522  487.091042  532.135494  579.178054
-[25]  628.218876  679.258097  732.295837  787.332205  844.367296  903.401197
-[31]  964.433987 1027.465736 1092.496508 1159.526361 1228.555348 1299.583519
-[37] 1372.610918 1447.637586 1524.663562 1603.688879</code></pre>
+<pre><code> [1]   3.718282   8.387675  13.446202  19.661217  27.846214  38.352077
+ [7]  51.163496  66.153374  83.219555 102.308655 123.399395 146.485246
+[13] 171.565020 198.639071 227.708053</code></pre>
 </div>
 </div>
 <p>Let’s say we could not do that, we need to evaluate the function for each value of <code>x</code>. We can use the <code>sapply()</code> function with an anonymous function:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(x, <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">log</span>(x) <span class="sc">+</span> <span class="fu">exp</span>(x) <span class="sc">/</span> <span class="fu">factorial</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]    3.718282    8.387675   13.446202   19.661217   27.846214   38.352077
- [7]   51.163496   66.153374   83.219555  102.308655  123.399395  146.485246
-[13]  171.565020  198.639071  227.708053  258.772589  291.833213  326.890372
-[19]  363.944439  402.995732  444.044522  487.091042  532.135494  579.178054
-[25]  628.218876  679.258097  732.295837  787.332205  844.367296  903.401197
-[31]  964.433987 1027.465736 1092.496508 1159.526361 1228.555348 1299.583519
-[37] 1372.610918 1447.637586 1524.663562 1603.688879</code></pre>
+<pre><code> [1]   3.718282   8.387675  13.446202  19.661217  27.846214  38.352077
+ [7]  51.163496  66.153374  83.219555 102.308655 123.399395 146.485246
+[13] 171.565020 198.639071 227.708053</code></pre>
 </div>
 </div>
 <p>In R 4.1.0, developers introduce a shortcut approach to create functions. You can create a function using <code>\()</code> expression, and specify the arguments for your function within the parenthesis. Reworking the previous code, we can use <code>\()</code> instead of <code>function()</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(x, \(x) x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">log</span>(x) <span class="sc">+</span> <span class="fu">exp</span>(x)<span class="sc">/</span><span class="fu">factorial</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]    3.718282    8.387675   13.446202   19.661217   27.846214   38.352077
- [7]   51.163496   66.153374   83.219555  102.308655  123.399395  146.485246
-[13]  171.565020  198.639071  227.708053  258.772589  291.833213  326.890372
-[19]  363.944439  402.995732  444.044522  487.091042  532.135494  579.178054
-[25]  628.218876  679.258097  732.295837  787.332205  844.367296  903.401197
-[31]  964.433987 1027.465736 1092.496508 1159.526361 1228.555348 1299.583519
-[37] 1372.610918 1447.637586 1524.663562 1603.688879</code></pre>
+<pre><code> [1]   3.718282   8.387675  13.446202  19.661217  27.846214  38.352077
+ [7]  51.163496  66.153374  83.219555 102.308655 123.399395 146.485246
+[13] 171.565020 198.639071 227.708053</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(x, \(.) .<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">log</span>(.) <span class="sc">+</span> <span class="fu">exp</span>(.)<span class="sc">/</span><span class="fu">factorial</span>(.))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]    3.718282    8.387675   13.446202   19.661217   27.846214   38.352077
- [7]   51.163496   66.153374   83.219555  102.308655  123.399395  146.485246
-[13]  171.565020  198.639071  227.708053  258.772589  291.833213  326.890372
-[19]  363.944439  402.995732  444.044522  487.091042  532.135494  579.178054
-[25]  628.218876  679.258097  732.295837  787.332205  844.367296  903.401197
-[31]  964.433987 1027.465736 1092.496508 1159.526361 1228.555348 1299.583519
-[37] 1372.610918 1447.637586 1524.663562 1603.688879</code></pre>
+<pre><code> [1]   3.718282   8.387675  13.446202  19.661217  27.846214  38.352077
+ [7]  51.163496  66.153374  83.219555 102.308655 123.399395 146.485246
+[13] 171.565020 198.639071 227.708053</code></pre>
 </div>
 </div>
 <p>Notice that the argument in the anonymous function can be anything.</p>
