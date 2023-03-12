@@ -88,6 +88,12 @@ When choosing between Base or magrittr's pipes, I recommend using magrittr's pip
 
 Lastly, when using the pipe, I recommend only stringing a limited amount of functions (\~10) to maintain code readability and conciseness. Any more functions may make the code incoherent.
 
+If you plan to use magrittr's pipe, I recommend loading `magrittr::` package instead of `tidyverse::` package.
+
+```{r}
+library(magrittr)
+```
+
 ### `|>`
 
 The base pipe will use the output from the first function and use it as the input of the first argument in the second function. Below, we obtain the `mpg` variable from `mtcars` and pipe it in the `mean()` function.
