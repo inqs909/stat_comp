@@ -123,7 +123,7 @@
     "href": "scripting.html#commenting",
     "title": "4  Scripting and Piping in R",
     "section": "4.1 Commenting",
-    "text": "4.1 Commenting\nA comment is"
+    "text": "4.1 Commenting\nA comment is used to describe your code within the"
   },
   {
     "objectID": "scripting.html#scripting",
@@ -133,18 +133,18 @@
     "text": "4.2 Scripting"
   },
   {
-    "objectID": "scripting.html#piping",
-    "href": "scripting.html#piping",
+    "objectID": "scripting.html#pipes",
+    "href": "scripting.html#pipes",
     "title": "4  Scripting and Piping in R",
-    "section": "4.3 Piping",
-    "text": "4.3 Piping"
+    "section": "4.3 Pipes",
+    "text": "4.3 Pipes\nIn R, pipes are used to transfer the output from one function to the input of another function. Piping will then allow you to chain functions to run an analysis. Since R 4.1.0, there are two version of pipes, the base R pipe and the pipes from the magrittr package. The table below provides a brief description of each type pipes\n\n\n\n\n\n\n\n\n\nPipe\nName\nPackage\nDescription\n\n\n\n\n|>\nR Pipe\nBase\nThis pipe will use the output of the previous function as the input for the first argument following function.\n\n\n%>%\nForward Pipe\nmagrittr\nThe forward pipe will use the output of the previous function as the input of the following function.\n\n\n%$5\nExposition Pipe\nmagrittr\nThe exposition function will expose the named elements of an R object (or output) to the following function.\n\n\n%T>%\nTee Pipe\nmagrittr\nThe Tee pipe will evaluate the next function using the output of the previous function, but it will not retain the output of the next function and utilize the output of the previous function.\n\n\n%<>%\nAssignment Pipe\nmagrittr\nThe assignment pipe will rewrite the object that is being piped into the next function.\n\n\n%!>%\nEager Pipe\nmagrittr\nThe eager pipe will execute the previous function before it pipes the results to the next function.\n\n\n\nWhen choosing between Base or magrittr’s pipes, I recommend using magrittr’s pipes due to the extended functionality. However, when writing production code or developing an R package, I recommend using the Base R pipe.\n\n4.3.1 |>\n\n\n4.3.2 %>%\n\n\n4.3.3 %$%\n\n\n4.3.4 %T>%\n\n\n4.3.5 %!>%\nWhen using pipes, we write the code below:\n\\[\nx \\rightarrow h \\rightarrow g \\rightarrow f\n\\]\nWe will pipe \\(x\\) into \\(h\\), the \\(g\\), and finally \\(f\\). However, R will evaluate it as this\n\\[\nf(g(h(x)))\n\\]\nIt will evaluate \\(f\\) first, then \\(g\\), then \\(h\\) on \\(x\\). However, we may need to execute function \\(h\\) first. We can achieve this by utilizing the eager pipe (%!>%) from the magrittr package.\n\nurl(\"https://www.inqs.info/stat_comp/data/data_2.RData\") %>% load %>% head\n\nError in url(\"https://www.inqs.info/stat_comp/data/data_2.RData\") %>% : could not find function \"%>%\"\n\n\n\n#url(\"https://www.inqs.info/stat_comp/data/data_2.RData\") %!>% load %>% head"
   },
   {
     "objectID": "scripting.html#keyboard-shortcuts",
     "href": "scripting.html#keyboard-shortcuts",
     "title": "4  Scripting and Piping in R",
     "section": "4.4 Keyboard Shortcuts",
-    "text": "4.4 Keyboard Shortcuts\nBelow is a list of recommended keyboard shortcuts:\n\n\n\nShortcut\nWindows/Linux\nMac\n\n\n\n\n%>%\nCtrl+Shift+M\nCmd+Shift+M\n\n\nRun Current Line\nCtrl+Enter\nCmd+Return\n\n\nKnit Document\nCtrl+Shift+K\nCmd+Shift+K\n\n\nAdd Cursor Below\nCtrl+Alt+Down\nCmd+Alt+Down\n\n\nComment Line\nCtrl+Shift+C\nCmd+Shift+C\n\n\n\nI recommend modify these keyboard shortcuts.\n\n\n\nShortcut\nWindows/Linux\nMac\n\n\n\n\n%in%\nCtrl+Shift+I\nCmd+Shift+I\n\n\n%$%\nCtrl+Shift+D\nCmd+Shift+D\n\n\n%T>%\nCtrl+Shift+T\nCmd+Shift+T\n\n\n\nNote you will need to install the extraInserts package:\n\nremotes::install_github('konradzdeb/extraInserts')"
+    "text": "4.4 Keyboard Shortcuts\nBelow is a list of recommended keyboard shortcuts:\n\n\n\nShortcut\nWindows/Linux\nMac\n\n\n\n\n%>%\nCtrl+Shift+M\nCmd+Shift+M\n\n\nRun Current Line\nCtrl+Enter\nCmd+Return\n\n\nRun Current Chunk\nCtrl+Shift+Enter\nCmd+Shift+Enter\n\n\nKnit Document\nCtrl+Shift+K\nCmd+Shift+K\n\n\nAdd Cursor Below\nCtrl+Alt+Down\nCmd+Alt+Down\n\n\nComment Line\nCtrl+Shift+C\nCmd+Shift+C\n\n\n\nI recommend modify these keyboard shortcuts in RStudio\n\n\n\nShortcut\nWindows/Linux\nMac\n\n\n\n\n%in%\nCtrl+Shift+I\nCmd+Shift+I\n\n\n%$%\nCtrl+Shift+D\nCmd+Shift+D\n\n\n%!>%\nCtrl+Shift+W\nCmd+Shift+W\n\n\n%T>%\nCtrl+Shift+T\nCmd+Shift+T\n\n\n\nNote you will need to install the extraInserts package:\n\nremotes::install_github('konradzdeb/extraInserts')"
   },
   {
     "objectID": "da.html#resources",

@@ -2,30 +2,81 @@
 
 ## Commenting
 
-A comment is
+A comment is used to describe your code within the
 
 ## Scripting
 
-## Piping
+## Pipes
+
+In R, pipes are used to transfer the output from one function to the input of another function. Piping will then allow you to chain functions to run an analysis. Since R 4.1.0, there are two version of pipes, the base R pipe and the pipes from the [magrittr](https://magrittr.tidyverse.org/) package. The table below provides a brief description of each type pipes
+
+| Pipe   | Name            | Package  | Description                                                                                                                                                                                     |
+|-----|-------------|--------|-----------------------------------------------|
+| `|>`   | R Pipe          | Base     | This pipe will use the output of the previous function as the input for the first argument following function.                                                                                  |
+| `%>%`  | Forward Pipe    | magrittr | The forward pipe will use the output of the previous function as the input of the following function.                                                                                           |
+| `%$5`  | Exposition Pipe | magrittr | The exposition function will expose the named elements of an R object (or output) to the following function.                                                                                    |
+| `%T>%` | Tee Pipe        | magrittr | The Tee pipe will evaluate the next function using the output of the previous function, but it will not retain the output of the next function and utilize the output of the previous function. |
+| `%<>%` | Assignment Pipe | magrittr | The assignment pipe will rewrite the object that is being piped into the next function.                                                                                                         |
+| `%!>%` | Eager Pipe      | magrittr | The eager pipe will execute the previous function before it pipes the results to the next function.                                                                                             |
+
+When choosing between Base or magrittr's pipes, I recommend using magrittr's pipes due to the extended functionality. However, when writing production code or developing an R package, I recommend using the Base R pipe.
+
+### `|>`
+
+### `%>%`
+
+### `%$%`
+
+### `%T>%`
+
+### `%!>%`
+
+When using pipes, we write the code below:
+
+$$
+x \rightarrow h \rightarrow g \rightarrow f
+$$
+
+We will pipe $x$ into $h$, the $g$, and finally $f$. However, R will evaluate it as this
+
+$$
+f(g(h(x)))
+$$
+
+It will evaluate $f$ first, then $g$, then $h$ on $x$. However, we may need to execute function $h$ first. We can achieve this by utilizing the eager pipe (`%!>%`) from the magrittr package.
+
+```{r}
+#| error: true
+
+url("https://www.inqs.info/stat_comp/data/data_2.RData") %>% load %>% head
+
+```
+
+```{r}
+
+#url("https://www.inqs.info/stat_comp/data/data_2.RData") %!>% load %>% head
+```
 
 ## Keyboard Shortcuts
 
 Below is a list of recommended keyboard shortcuts:
 
-| Shortcut         | Windows/Linux | Mac          |
-|------------------|---------------|--------------|
-| `%>%`            | Ctrl+Shift+M  | Cmd+Shift+M  |
-| Run Current Line | Ctrl+Enter    | Cmd+Return   |
-| Knit Document    | Ctrl+Shift+K  | Cmd+Shift+K  |
-| Add Cursor Below | Ctrl+Alt+Down | Cmd+Alt+Down |
-| Comment Line     | Ctrl+Shift+C  | Cmd+Shift+C  |
+| Shortcut          | Windows/Linux    | Mac             |
+|-------------------|------------------|-----------------|
+| `%>%`             | Ctrl+Shift+M     | Cmd+Shift+M     |
+| Run Current Line  | Ctrl+Enter       | Cmd+Return      |
+| Run Current Chunk | Ctrl+Shift+Enter | Cmd+Shift+Enter |
+| Knit Document     | Ctrl+Shift+K     | Cmd+Shift+K     |
+| Add Cursor Below  | Ctrl+Alt+Down    | Cmd+Alt+Down    |
+| Comment Line      | Ctrl+Shift+C     | Cmd+Shift+C     |
 
-I recommend modify these keyboard shortcuts.
+I recommend modify these keyboard shortcuts in RStudio
 
 | Shortcut | Windows/Linux | Mac         |
 |----------|---------------|-------------|
 | `%in%`   | Ctrl+Shift+I  | Cmd+Shift+I |
 | `%$%`    | Ctrl+Shift+D  | Cmd+Shift+D |
+| `%!>%`   | Ctrl+Shift+W  | Cmd+Shift+W |
 | `%T>%`   | Ctrl+Shift+T  | Cmd+Shift+T |
 
 Note you will need to install the `extraInserts` package:

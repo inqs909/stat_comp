@@ -125,6 +125,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 }</script>
 <script async="" src="https://hypothes.is/embed.js"></script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -384,7 +385,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#commenting" id="toc-commenting" class="nav-link active" data-scroll-target="#commenting"><span class="toc-section-number">4.1</span>  Commenting</a></li>
   <li><a href="#scripting" id="toc-scripting" class="nav-link" data-scroll-target="#scripting"><span class="toc-section-number">4.2</span>  Scripting</a></li>
-  <li><a href="#piping" id="toc-piping" class="nav-link" data-scroll-target="#piping"><span class="toc-section-number">4.3</span>  Piping</a></li>
+  <li><a href="#pipes" id="toc-pipes" class="nav-link" data-scroll-target="#pipes"><span class="toc-section-number">4.3</span>  Pipes</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="toc-section-number">4.3.1</span>  <code>|&gt;</code></a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="toc-section-number">4.3.2</span>  <code>%&gt;%</code></a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"><span class="toc-section-number">4.3.3</span>  <code>%$%</code></a></li>
+  <li><a href="#t" id="toc-t" class="nav-link" data-scroll-target="#t"><span class="toc-section-number">4.3.4</span>  <code>%T&gt;%</code></a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"><span class="toc-section-number">4.3.5</span>  <code>%!&gt;%</code></a></li>
+  </ul></li>
   <li><a href="#keyboard-shortcuts" id="toc-keyboard-shortcuts" class="nav-link" data-scroll-target="#keyboard-shortcuts"><span class="toc-section-number">4.4</span>  Keyboard Shortcuts</a></li>
   </ul>
 </nav>
@@ -411,13 +419,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <section id="commenting" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="commenting"><span class="header-section-number">4.1</span> Commenting</h2>
-<p>A comment is</p>
+<p>A comment is used to describe your code within the</p>
 </section>
 <section id="scripting" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="scripting"><span class="header-section-number">4.2</span> Scripting</h2>
 </section>
-<section id="piping" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="piping"><span class="header-section-number">4.3</span> Piping</h2>
+<section id="pipes" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="pipes"><span class="header-section-number">4.3</span> Pipes</h2>
+<p>In R, pipes are used to transfer the output from one function to the input of another function. Piping will then allow you to chain functions to run an analysis. Since R 4.1.0, there are two version of pipes, the base R pipe and the pipes from the <a href="https://magrittr.tidyverse.org/">magrittr</a> package. The table below provides a brief description of each type pipes</p>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 17%">
+<col style="width: 10%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pipe</th>
+<th>Name</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>|&gt;</code></td>
+<td>R Pipe</td>
+<td>Base</td>
+<td>This pipe will use the output of the previous function as the input for the first argument following function.</td>
+</tr>
+<tr class="even">
+<td><code>%&gt;%</code></td>
+<td>Forward Pipe</td>
+<td>magrittr</td>
+<td>The forward pipe will use the output of the previous function as the input of the following function.</td>
+</tr>
+<tr class="odd">
+<td><code>%$5</code></td>
+<td>Exposition Pipe</td>
+<td>magrittr</td>
+<td>The exposition function will expose the named elements of an R object (or output) to the following function.</td>
+</tr>
+<tr class="even">
+<td><code>%T&gt;%</code></td>
+<td>Tee Pipe</td>
+<td>magrittr</td>
+<td>The Tee pipe will evaluate the next function using the output of the previous function, but it will not retain the output of the next function and utilize the output of the previous function.</td>
+</tr>
+<tr class="odd">
+<td><code>%&lt;&gt;%</code></td>
+<td>Assignment Pipe</td>
+<td>magrittr</td>
+<td>The assignment pipe will rewrite the object that is being piped into the next function.</td>
+</tr>
+<tr class="even">
+<td><code>%!&gt;%</code></td>
+<td>Eager Pipe</td>
+<td>magrittr</td>
+<td>The eager pipe will execute the previous function before it pipes the results to the next function.</td>
+</tr>
+</tbody>
+</table>
+<p>When choosing between Base or magrittr’s pipes, I recommend using magrittr’s pipes due to the extended functionality. However, when writing production code or developing an R package, I recommend using the Base R pipe.</p>
+<section id="section" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="section"><span class="header-section-number">4.3.1</span> <code>|&gt;</code></h3>
+</section>
+<section id="section-1" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="section-1"><span class="header-section-number">4.3.2</span> <code>%&gt;%</code></h3>
+</section>
+<section id="section-2" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="section-2"><span class="header-section-number">4.3.3</span> <code>%$%</code></h3>
+</section>
+<section id="t" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="t"><span class="header-section-number">4.3.4</span> <code>%T&gt;%</code></h3>
+</section>
+<section id="section-3" class="level3" data-number="4.3.5">
+<h3 data-number="4.3.5" class="anchored" data-anchor-id="section-3"><span class="header-section-number">4.3.5</span> <code>%!&gt;%</code></h3>
+<p>When using pipes, we write the code below:</p>
+<p><span class="math display">\[
+x \rightarrow h \rightarrow g \rightarrow f
+\]</span></p>
+<p>We will pipe <span class="math inline">\(x\)</span> into <span class="math inline">\(h\)</span>, the <span class="math inline">\(g\)</span>, and finally <span class="math inline">\(f\)</span>. However, R will evaluate it as this</p>
+<p><span class="math display">\[
+f(g(h(x)))
+\]</span></p>
+<p>It will evaluate <span class="math inline">\(f\)</span> first, then <span class="math inline">\(g\)</span>, then <span class="math inline">\(h\)</span> on <span class="math inline">\(x\)</span>. However, we may need to execute function <span class="math inline">\(h\)</span> first. We can achieve this by utilizing the eager pipe (<code>%!&gt;%</code>) from the magrittr package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">url</span>(<span class="st">"https://www.inqs.info/stat_comp/data/data_2.RData"</span>) <span class="sc">%&gt;%</span> load <span class="sc">%&gt;%</span> head</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in url("https://www.inqs.info/stat_comp/data/data_2.RData") %&gt;% : could not find function "%&gt;%"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#url("https://www.inqs.info/stat_comp/data/data_2.RData") %!&gt;% load %&gt;% head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 <section id="keyboard-shortcuts" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="keyboard-shortcuts"><span class="header-section-number">4.4</span> Keyboard Shortcuts</h2>
@@ -442,23 +539,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>Cmd+Return</td>
 </tr>
 <tr class="odd">
+<td>Run Current Chunk</td>
+<td>Ctrl+Shift+Enter</td>
+<td>Cmd+Shift+Enter</td>
+</tr>
+<tr class="even">
 <td>Knit Document</td>
 <td>Ctrl+Shift+K</td>
 <td>Cmd+Shift+K</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Add Cursor Below</td>
 <td>Ctrl+Alt+Down</td>
 <td>Cmd+Alt+Down</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Comment Line</td>
 <td>Ctrl+Shift+C</td>
 <td>Cmd+Shift+C</td>
 </tr>
 </tbody>
 </table>
-<p>I recommend modify these keyboard shortcuts.</p>
+<p>I recommend modify these keyboard shortcuts in RStudio</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -479,6 +581,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td>Cmd+Shift+D</td>
 </tr>
 <tr class="odd">
+<td><code>%!&gt;%</code></td>
+<td>Ctrl+Shift+W</td>
+<td>Cmd+Shift+W</td>
+</tr>
+<tr class="even">
 <td><code>%T&gt;%</code></td>
 <td>Ctrl+Shift+T</td>
 <td>Cmd+Shift+T</td>
@@ -487,7 +594,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>Note you will need to install the <code>extraInserts</code> package:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'konradzdeb/extraInserts'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'konradzdeb/extraInserts'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
