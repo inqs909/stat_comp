@@ -2,52 +2,49 @@
 
 ## Functions
 
-The functionality in R is what makes it completely powerful compared to other statistical software. There are several pre-built functions, and you can extend R's functionality further with the use of R Packages. 
+The functionality in R is what makes it completely powerful compared to other statistical software. There are several pre-built functions, and you can extend R's functionality further with the use of R Packages.
 
 ### Built-in Functions
 
 There are several available functions in R to conduct specific statistical methods. The table below provides a set of commonly used functions:
 
-| Functions | Description |
-|:--|:--|
-| `aov()` | Fits an ANOVA Model |
-| `lm()`  | Fits a linear model |
-| `glm()` | Fits a general linear model |
-| `t.test()` | Conducts a t-test |
+| Functions  | Description                 |
+|:-----------|:----------------------------|
+| `aov()`    | Fits an ANOVA Model         |
+| `lm()`     | Fits a linear model         |
+| `glm()`    | Fits a general linear model |
+| `t.test()` | Conducts a t-test           |
 
 Several of these functions have help documentation that provide the following sections:
 
-| Section | Description |
-|:--|:--|
-| Description | Provides a brief introduction of the function |
-| Usage | Provides potential usage of the function |
-| Arguments | Arguments that the function can take |
-| Details | An in depth description of the function |
-| Value | Provides information of the output produced by the function |
-| Notes | Any need to know information about the function |
-| Authors | Developers of the function |
-| References | References to the model and function |
-| See Also | Provide information of supporting functions |
-| Examples | Examples of the  function |
+| Section     | Description                                                 |
+|:------------|:------------------------------------------------------------|
+| Description | Provides a brief introduction of the function               |
+| Usage       | Provides potential usage of the function                    |
+| Arguments   | Arguments that the function can take                        |
+| Details     | An in depth description of the function                     |
+| Value       | Provides information of the output produced by the function |
+| Notes       | Any need to know information about the function             |
+| Authors     | Developers of the function                                  |
+| References  | References to the model and function                        |
+| See Also    | Provide information of supporting functions                 |
+| Examples    | Examples of the function                                    |
 
 To obtain the help documentation of each function, use the `?` operator and function name in the console pane.
 
-
 ### Generic Functions
 
-Commonly used functions, such as `summary()` and `plot()`, are considered generic functions where their functionality is determined by the class of an R object. For example, the `summary()` is a generic for several types of functions: `summary.aov()`, `summary.lm()`, `summary.glm()`, and many more. Therefore, the appropriate function is needed depending the type of R object. This is where generic functions come in. We can use a generic function, ie `summary()`, to read the type of object and then apply to correct procedure to the object. 
-
+Commonly used functions, such as `summary()` and `plot()` functions, are considered generic functions where their functionality is determined by the class of an R object. For example, the `summary()` function is a generic function for several types of functions: `summary.aov()`, `summary.lm()`, `summary.glm()`, and many more. Therefore, the appropriate function is needed depending the type of R object. This is where generic functions come in. We can use a generic function, ie `summary()`, to read the type of object and then apply to correct procedure to the object.
 
 ### User-built Functions
 
-While R has many capable functions that can be used to analyze your data, you may need to create a custom function for specific needs. For example, if you find yourself writing the same to repeat a task, you can wrap the code into a user-built function and use it for analysis. 
+While R has many capable functions that can be used to analyze your data, you may need to create a custom function for specific needs. For example, if you find yourself writing the same to repeat a task, you can wrap the code into a user-built function and use it for analysis.
 
-To create a user-built function, you will using the `function()` to create an R object that is a function. To use the function Inside the `funtion()` parantheses, write the arguments that need to specified for your function. 
+To create a user-built function, you will using the `function()` to create an R object that is a function. To use the function Inside the `funtion()` parentheses, write the arguments that need to specified for your function. These are arguments you choose for the function.
 
 #### Anatomy
 
 In general function we construct a function with the following anatomy:
-
 
 ```{r}
 #| eval: false
@@ -63,9 +60,7 @@ name_of_function <- function(data_1, data_2 = NULL,
 
 ```
 
-Here, we are creating an R function called `name_of_function` that will take the following arguments: `data_1`, `data_2`, `argument_1`, `argument_2`, `argument_3`, and `...`. From this function, it requires us to supply data for `data_1` and `argument_1`. Arguments `data_2` and `argument_3` are not required, but can be utilized in the function if necessary. Argument `argument_2` is also required for the function, but it it has a default setting (in this case `TRUE`) if it is not specified. Lastly, the `...` argument allows you to pass other arguments to R built in functions if they are present. For example, we may use the `plot()` to create graphics and want to manipulate the output plot further, but do not want to specify the arguments in the user-based function. 
-
-In the function itself, we will complete the necessary tasks and then use the `return()` to return the output.
+Here, we are creating an R function called `name_of_function` that will take the following arguments: `data_1`, `data_2`, `argument_1`, `argument_2`, `argument_3`, and `...`. From this function, it requires us to supply data for `data_1` and `argument_1`. Arguments `data_2` and `argument_3` are not required, but can be utilized in the function if necessary. Argument `argument_2` is also required for the function, but it it has a default setting (in this case `TRUE`) if it is not specified. Lastly, the `...` argument allows you to pass other arguments to R built in functions if they are present. For example, we may use the `plot()` to create graphics and want to manipulate the output plot further, but do not want to specify the arguments in the user-based function. In the function itself, we will complete the necessary tasks and then use the `return()` to return the output.
 
 #### Example
 
@@ -83,7 +78,6 @@ x_square(5)
 ```
 
 The `mtcars` data set has several numeric variables that can be used for analysis. Let's say we want to apply a function (`x_square()`) to the sum of a specific variable and return the value. Then let's further complicate the function by allowing the sum of 2 variables, take the log of the sum and dividing the value if necessary. Below is the code for such function called `summing`:
-
 
 ```{r}
 summing <- function(vec1, vec2 = NULL, FUN, log_val = FALSE, divisor_val = NULL){
@@ -104,7 +98,7 @@ summing <- function(vec1, vec2 = NULL, FUN, log_val = FALSE, divisor_val = NULL)
 }
 ```
 
-Now let's try obtaining the 
+Now let's try obtaining the
 
 ```{r}
 sum(mtcars$mpg)^2
@@ -115,15 +109,13 @@ log(sum(c(mtcars$mpg,mtcars$disp))^2)/5
 summing(mtcars$mpg, mtcars$disp, x_square, T, 5)
 ```
 
+## \*apply Functions
 
-
-## *apply Functions
-
-*apply functions are used to iterate a function through a set of elements in a vector, matrix, or list. This will then return a vector or list depending on what is requested.
+\*apply functions are used to iterate a function through a set of elements in a vector, matrix, or list. This will then return a vector or list depending on what is requested.
 
 ### `apply()`
 
-The `apply()` is used to apply a function to the margins of an array or matrix. It will iterate between the elements, apply a function to the data, and return a vector, array or list if necessary. To use the `apply()`, you will need to specify three arguments, `X` or the array, `MARGIN` which margin to apply the function on, and `FUN` the function.
+The `apply()` function is used to apply a function to the margins of an array or matrix. It will iterate between the elements, apply a function to the data, and return a vector, array or list if necessary. To use the `apply()` function, you will need to specify three arguments, `X` or the array, `MARGIN` which margin to apply the function on, and `FUN` the function.
 
 Below we calculate the row means and column means using the apply function for a $5 \times 4$ matrix containing the elements 1 through 20:
 
@@ -137,16 +129,36 @@ apply(x, 1, mean)
 apply(x, 2, mean)
 ```
 
+### `lapply()`
 
-### `lapply()` 
-
-The `lapply()` is used to apply a function to all elements in a vector or list. The `lapply()` function will then return a list as the output. 
+The `lapply()` function is used to apply a function to all elements in a vector or list. The `lapply()` function will then return a list as the output.
 
 ### `sapply()`
 
-The `sapply()` is used to apply a function to all elements in a vector or list. Afterwards, the `sapply()` will return a "simplified" version of the list format. This could be a vector, matrix, or array.
-
+The `sapply()` function is used to apply a function to all elements in a vector or list. Afterwards, the `sapply()` will return a "simplified" version of the list format. This could be a vector, matrix, or array.
 
 ## Anonymous Functions
 
+Anonymous functions are functions that R temporarily creates to conduct a task. They are commonly used in the \*apply functions, piping or within functions. To create an anonymous function, we use the `function()` to create a function .
 
+For example, let `x` be a vector with the values 1 through 40. Let's say we want to apply the function $f(x) = x^2+\ln(x) + e^x/x!$. We can evaluate the function as the expression in the function:
+
+```{r}
+x <- 1:40
+x^2 + log(x) + exp(x)/factorial(x)
+```
+
+Let's say we could not do that, we need to evaluate the function for each value of `x`. We can use the `sapply()` function with an anonymous function:
+
+```{r}
+sapply(x, function(x) x^2 + log(x) + exp(x) / factorial(x))
+```
+
+In R 4.1.0, developers introduce a shortcut approach to create functions. You can create a function using `\()` expression, and specify the arguments for your function within the parenthesis. Reworking the previous code, we can use `\()` instead of `function()`:
+
+```{r}
+sapply(x, \(x) x^2 + log(x) + exp(x)/factorial(x))
+sapply(x, \(.) .^2 + log(.) + exp(.)/factorial(.))
+```
+
+Notice that the argument in the anonymous function can be anything.

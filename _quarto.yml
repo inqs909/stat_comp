@@ -25,6 +25,7 @@ book:
         - functional.qmd
         - scripting.qmd
     - part: simulations.qmd
+      chapters: 
         - rv.qmd
         - models.qmd
     - part: permutations.qmd

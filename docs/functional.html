@@ -453,6 +453,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>Several of these functions have help documentation that provide the following sections:</p>
 <table class="table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 82%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Section</th>
@@ -506,12 +510,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="generic-functions" class="level3" data-number="3.1.2">
 <h3 data-number="3.1.2" class="anchored" data-anchor-id="generic-functions"><span class="header-section-number">3.1.2</span> Generic Functions</h3>
-<p>Commonly used functions, such as <code>summary()</code> and <code>plot()</code>, are considered generic functions where their functionality is determined by the class of an R object. For example, the <code>summary()</code> is a generic for several types of functions: <code>summary.aov()</code>, <code>summary.lm()</code>, <code>summary.glm()</code>, and many more. Therefore, the appropriate function is needed depending the type of R object. This is where generic functions come in. We can use a generic function, ie <code>summary()</code>, to read the type of object and then apply to correct procedure to the object.</p>
+<p>Commonly used functions, such as <code>summary()</code> and <code>plot()</code> functions, are considered generic functions where their functionality is determined by the class of an R object. For example, the <code>summary()</code> function is a generic function for several types of functions: <code>summary.aov()</code>, <code>summary.lm()</code>, <code>summary.glm()</code>, and many more. Therefore, the appropriate function is needed depending the type of R object. This is where generic functions come in. We can use a generic function, ie <code>summary()</code>, to read the type of object and then apply to correct procedure to the object.</p>
 </section>
 <section id="user-built-functions" class="level3" data-number="3.1.3">
 <h3 data-number="3.1.3" class="anchored" data-anchor-id="user-built-functions"><span class="header-section-number">3.1.3</span> User-built Functions</h3>
 <p>While R has many capable functions that can be used to analyze your data, you may need to create a custom function for specific needs. For example, if you find yourself writing the same to repeat a task, you can wrap the code into a user-built function and use it for analysis.</p>
-<p>To create a user-built function, you will using the <code>function()</code> to create an R object that is a function. To use the function Inside the <code>funtion()</code> parantheses, write the arguments that need to specified for your function.</p>
+<p>To create a user-built function, you will using the <code>function()</code> to create an R object that is a function. To use the function Inside the <code>funtion()</code> parentheses, write the arguments that need to specified for your function. These are arguments you choose for the function.</p>
 <section id="anatomy" class="level4" data-number="3.1.3.1">
 <h4 data-number="3.1.3.1" class="anchored" data-anchor-id="anatomy"><span class="header-section-number">3.1.3.1</span> Anatomy</h4>
 <p>In general function we construct a function with the following anatomy:</p>
@@ -525,8 +529,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(output_object)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Here, we are creating an R function called <code>name_of_function</code> that will take the following arguments: <code>data_1</code>, <code>data_2</code>, <code>argument_1</code>, <code>argument_2</code>, <code>argument_3</code>, and <code>...</code>. From this function, it requires us to supply data for <code>data_1</code> and <code>argument_1</code>. Arguments <code>data_2</code> and <code>argument_3</code> are not required, but can be utilized in the function if necessary. Argument <code>argument_2</code> is also required for the function, but it it has a default setting (in this case <code>TRUE</code>) if it is not specified. Lastly, the <code>...</code> argument allows you to pass other arguments to R built in functions if they are present. For example, we may use the <code>plot()</code> to create graphics and want to manipulate the output plot further, but do not want to specify the arguments in the user-based function.</p>
-<p>In the function itself, we will complete the necessary tasks and then use the <code>return()</code> to return the output.</p>
+<p>Here, we are creating an R function called <code>name_of_function</code> that will take the following arguments: <code>data_1</code>, <code>data_2</code>, <code>argument_1</code>, <code>argument_2</code>, <code>argument_3</code>, and <code>...</code>. From this function, it requires us to supply data for <code>data_1</code> and <code>argument_1</code>. Arguments <code>data_2</code> and <code>argument_3</code> are not required, but can be utilized in the function if necessary. Argument <code>argument_2</code> is also required for the function, but it it has a default setting (in this case <code>TRUE</code>) if it is not specified. Lastly, the <code>...</code> argument allows you to pass other arguments to R built in functions if they are present. For example, we may use the <code>plot()</code> to create graphics and want to manipulate the output plot further, but do not want to specify the arguments in the user-based function. In the function itself, we will complete the necessary tasks and then use the <code>return()</code> to return the output.</p>
 </section>
 <section id="example" class="level4" data-number="3.1.3.2">
 <h4 data-number="3.1.3.2" class="anchored" data-anchor-id="example"><span class="header-section-number">3.1.3.2</span> Example</h4>
@@ -599,7 +602,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>*apply functions are used to iterate a function through a set of elements in a vector, matrix, or list. This will then return a vector or list depending on what is requested.</p>
 <section id="apply" class="level3" data-number="3.2.1">
 <h3 data-number="3.2.1" class="anchored" data-anchor-id="apply"><span class="header-section-number">3.2.1</span> <code>apply()</code></h3>
-<p>The <code>apply()</code> is used to apply a function to the margins of an array or matrix. It will iterate between the elements, apply a function to the data, and return a vector, array or list if necessary. To use the <code>apply()</code>, you will need to specify three arguments, <code>X</code> or the array, <code>MARGIN</code> which margin to apply the function on, and <code>FUN</code> the function.</p>
+<p>The <code>apply()</code> function is used to apply a function to the margins of an array or matrix. It will iterate between the elements, apply a function to the data, and return a vector, array or list if necessary. To use the <code>apply()</code> function, you will need to specify three arguments, <code>X</code> or the array, <code>MARGIN</code> which margin to apply the function on, and <code>FUN</code> the function.</p>
 <p>Below we calculate the row means and column means using the apply function for a <span class="math inline">\(5 \times 4\)</span> matrix containing the elements 1 through 20:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, <span class="at">nrow =</span> <span class="dv">5</span>, <span class="at">ncol =</span> <span class="dv">4</span>)</span>
@@ -618,15 +621,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="lapply" class="level3" data-number="3.2.2">
 <h3 data-number="3.2.2" class="anchored" data-anchor-id="lapply"><span class="header-section-number">3.2.2</span> <code>lapply()</code></h3>
-<p>The <code>lapply()</code> is used to apply a function to all elements in a vector or list. The <code>lapply()</code> function will then return a list as the output.</p>
+<p>The <code>lapply()</code> function is used to apply a function to all elements in a vector or list. The <code>lapply()</code> function will then return a list as the output.</p>
 </section>
 <section id="sapply" class="level3" data-number="3.2.3">
 <h3 data-number="3.2.3" class="anchored" data-anchor-id="sapply"><span class="header-section-number">3.2.3</span> <code>sapply()</code></h3>
-<p>The <code>sapply()</code> is used to apply a function to all elements in a vector or list. Afterwards, the <code>sapply()</code> will return a “simplified” version of the list format. This could be a vector, matrix, or array.</p>
+<p>The <code>sapply()</code> function is used to apply a function to all elements in a vector or list. Afterwards, the <code>sapply()</code> will return a “simplified” version of the list format. This could be a vector, matrix, or array.</p>
 </section>
 </section>
 <section id="anonymous-functions" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="anonymous-functions"><span class="header-section-number">3.3</span> Anonymous Functions</h2>
+<p>Anonymous functions are functions that R temporarily creates to conduct a task. They are commonly used in the *apply functions, piping or within functions. To create an anonymous function, we use the <code>function()</code> to create a function .</p>
+<p>For example, let <code>x</code> be a vector with the values 1 through 40. Let’s say we want to apply the function <span class="math inline">\(f(x) = x^2+\ln(x) + e^x/x!\)</span>. We can evaluate the function as the expression in the function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">40</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">log</span>(x) <span class="sc">+</span> <span class="fu">exp</span>(x)<span class="sc">/</span><span class="fu">factorial</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]    3.718282    8.387675   13.446202   19.661217   27.846214   38.352077
+ [7]   51.163496   66.153374   83.219555  102.308655  123.399395  146.485246
+[13]  171.565020  198.639071  227.708053  258.772589  291.833213  326.890372
+[19]  363.944439  402.995732  444.044522  487.091042  532.135494  579.178054
+[25]  628.218876  679.258097  732.295837  787.332205  844.367296  903.401197
+[31]  964.433987 1027.465736 1092.496508 1159.526361 1228.555348 1299.583519
+[37] 1372.610918 1447.637586 1524.663562 1603.688879</code></pre>
+</div>
+</div>
+<p>Let’s say we could not do that, we need to evaluate the function for each value of <code>x</code>. We can use the <code>sapply()</code> function with an anonymous function:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(x, <span class="cf">function</span>(x) x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">log</span>(x) <span class="sc">+</span> <span class="fu">exp</span>(x) <span class="sc">/</span> <span class="fu">factorial</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]    3.718282    8.387675   13.446202   19.661217   27.846214   38.352077
+ [7]   51.163496   66.153374   83.219555  102.308655  123.399395  146.485246
+[13]  171.565020  198.639071  227.708053  258.772589  291.833213  326.890372
+[19]  363.944439  402.995732  444.044522  487.091042  532.135494  579.178054
+[25]  628.218876  679.258097  732.295837  787.332205  844.367296  903.401197
+[31]  964.433987 1027.465736 1092.496508 1159.526361 1228.555348 1299.583519
+[37] 1372.610918 1447.637586 1524.663562 1603.688879</code></pre>
+</div>
+</div>
+<p>In R 4.1.0, developers introduce a shortcut approach to create functions. You can create a function using <code>\()</code> expression, and specify the arguments for your function within the parenthesis. Reworking the previous code, we can use <code>\()</code> instead of <code>function()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(x, \(x) x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">log</span>(x) <span class="sc">+</span> <span class="fu">exp</span>(x)<span class="sc">/</span><span class="fu">factorial</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]    3.718282    8.387675   13.446202   19.661217   27.846214   38.352077
+ [7]   51.163496   66.153374   83.219555  102.308655  123.399395  146.485246
+[13]  171.565020  198.639071  227.708053  258.772589  291.833213  326.890372
+[19]  363.944439  402.995732  444.044522  487.091042  532.135494  579.178054
+[25]  628.218876  679.258097  732.295837  787.332205  844.367296  903.401197
+[31]  964.433987 1027.465736 1092.496508 1159.526361 1228.555348 1299.583519
+[37] 1372.610918 1447.637586 1524.663562 1603.688879</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(x, \(.) .<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">log</span>(.) <span class="sc">+</span> <span class="fu">exp</span>(.)<span class="sc">/</span><span class="fu">factorial</span>(.))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]    3.718282    8.387675   13.446202   19.661217   27.846214   38.352077
+ [7]   51.163496   66.153374   83.219555  102.308655  123.399395  146.485246
+[13]  171.565020  198.639071  227.708053  258.772589  291.833213  326.890372
+[19]  363.944439  402.995732  444.044522  487.091042  532.135494  579.178054
+[25]  628.218876  679.258097  732.295837  787.332205  844.367296  903.401197
+[31]  964.433987 1027.465736 1092.496508 1159.526361 1228.555348 1299.583519
+[37] 1372.610918 1447.637586 1524.663562 1603.688879</code></pre>
+</div>
+</div>
+<p>Notice that the argument in the anonymous function can be anything.</p>
 
 
 </section>
