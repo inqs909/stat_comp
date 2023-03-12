@@ -433,7 +433,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 data-number="2.1" class="anchored" data-anchor-id="indexing"><span class="header-section-number">2.1</span> Indexing</h2>
 <section id="vectors" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="vectors"><span class="header-section-number">2.1.1</span> Vectors</h3>
-<p>In the <a href="basics.html#sec-r-objects"><span>Section&nbsp;1.5</span></a>, we discussed about different types of R objects. For example, a vector can be a certain data type with a set number of elements. Here we construct a vector called <code>x</code> increasing from -5 to 5 by one unit:</p>
+<p>In the <a href="#sec-r-objects"><span class="quarto-unresolved-ref">sec-r-objects</span></a>, we discussed about different types of R objects. For example, a vector can be a certain data type with a set number of elements. Here we construct a vector called <code>x</code> increasing from -5 to 5 by one unit:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -513,11 +513,11 @@ Mazda RX4 Wag  21   6  160 110  3.9 2.875 17.02  0  1    4    4</code></pre>
 <pre><code> [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
 </div>
 </div>
-<p>Lastly, a data frame can be indexed to a specific variable using the <code>$</code> notation as described in <a href="basics.html#sec-basic-data-frames"><span>Section&nbsp;1.5.5</span></a>.</p>
+<p>Lastly, a data frame can be indexed to a specific variable using the <code>$</code> notation as described in <a href="#sec-basic-data-frames"><span class="quarto-unresolved-ref">sec-basic-data-frames</span></a>.</p>
 </section>
 <section id="lists" class="level3" data-number="2.1.4">
 <h3 data-number="2.1.4" class="anchored" data-anchor-id="lists"><span class="header-section-number">2.1.4</span> Lists</h3>
-<p>As described in <a href="basics.html#sec-basics-lists"><span>Section&nbsp;1.5.6</span></a>, lists contain elements holding different R objects. To index a specific element of a list, you will use <code>[[]]</code> double brackets. Below is a toy list:</p>
+<p>As described in <a href="#sec-basics-lists"><span class="quarto-unresolved-ref">sec-basics-lists</span></a>, lists contain elements holding different R objects. To index a specific element of a list, you will use <code>[[]]</code> double brackets. Below is a toy list:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>toy_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">mtcars =</span> mtcars,</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">vector =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>),</span>
