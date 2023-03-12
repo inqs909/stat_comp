@@ -6,6 +6,10 @@ A comment is used to describe your code within the
 
 ## Scripting
 
+```{r}
+library(magrittr)
+```
+
 ## Pipes
 
 In R, pipes are used to transfer the output from one function to the input of another function. Piping will then allow you to chain functions to run an analysis. Since R 4.1.0, there are two version of pipes, the base R pipe and the pipes from the [magrittr](https://magrittr.tidyverse.org/) package. The table below provides a brief description of each type pipes

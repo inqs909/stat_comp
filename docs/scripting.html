@@ -423,6 +423,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="scripting" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="scripting"><span class="header-section-number">4.2</span> Scripting</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="pipes" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="pipes"><span class="header-section-number">4.3</span> Pipes</h2>
@@ -506,13 +509,18 @@ f(g(h(x)))
 \]</span></p>
 <p>It will evaluate <span class="math inline">\(f\)</span> first, then <span class="math inline">\(g\)</span>, then <span class="math inline">\(h\)</span> on <span class="math inline">\(x\)</span>. However, we may need to execute function <span class="math inline">\(h\)</span> first. We can achieve this by utilizing the eager pipe (<code>%!&gt;%</code>) from the magrittr package.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">url</span>(<span class="st">"https://www.inqs.info/stat_comp/data/data_2.RData"</span>) <span class="sc">%&gt;%</span> load <span class="sc">%&gt;%</span> head</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">url</span>(<span class="st">"https://www.inqs.info/stat_comp/data/data_2.RData"</span>) <span class="sc">%&gt;%</span> load <span class="sc">%&gt;%</span> head</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in load(.): cannot open URL
+'https://www.inqs.info/stat_comp/data/data_2.RData': HTTP status was '404 Not
+Found'</code></pre>
+</div>
 <div class="cell-output cell-output-error">
-<pre><code>Error in url("https://www.inqs.info/stat_comp/data/data_2.RData") %&gt;% : could not find function "%&gt;%"</code></pre>
+<pre><code>Error in load(.): cannot open the connection to 'https://www.inqs.info/stat_comp/data/data_2.RData'</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#url("https://www.inqs.info/stat_comp/data/data_2.RData") %!&gt;% load %&gt;% head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#url("https://www.inqs.info/stat_comp/data/data_2.RData") %!&gt;% load %&gt;% head</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -594,7 +602,7 @@ f(g(h(x)))
 </table>
 <p>Note you will need to install the <code>extraInserts</code> package:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'konradzdeb/extraInserts'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'konradzdeb/extraInserts'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
