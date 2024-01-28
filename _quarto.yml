@@ -51,7 +51,7 @@ book:
         - plot.qmd
     - part: reporting.qmd
       chapters: 
-        - documents.qmd
+        - document.qmd
         - presentations.qmd
     - part: efficient.qmd
       chapters: 
@@ -82,3 +82,5 @@ editor: source
 
 comments:
   hypothesis: true
+  
+citation: true
