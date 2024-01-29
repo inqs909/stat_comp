@@ -1,2 +1,10 @@
-# Welcome {.unnumbered}
+
+Welcome to Statistical Computing! A book designed to give undergraduate students exposure to several topics related to computational statistics and programming in R.
+
+::: callout-note
+This book is a work in progress and will contain several grammatical errors and unfinished chapters. The final product is expected to be ready by the 2025-26 Academic Year.
+:::
+
+This work is published under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license. 
+
 

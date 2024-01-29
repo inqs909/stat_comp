@@ -1,0 +1,15 @@
+{
+  "hash": "7b52549934ce3b56d5cf5610403d8266",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Preface {.unnumbered}\n\nThis is a book created to be used for a statistical computing course at the undergraduate level.\n\n## Installing R\n\n[R](https://www.r-project.org/) is an open-source programming language used to conduct statistical analysis.\nYou can freely download and install R [here](https://cloud.r-project.org/).\n\n## Installing RStudio\n\n[RStudio](https://posit.co/products/open-source/rstudio/) is an Integrated Development Environment ([IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)) used for data science.\nIt contains several tools needed to extend your programming and project management skills. \n\nYou can download and install the open-source (free) version of RStudio [here](https://posit.co/downloads/).\n\n## Installing Quarto\n\n[Quarto](https://quarto.org/) is a technical documentation system that allows you to embed narrative, code, and output in one document.\nQuarto should come automatically install from RStudio; however, you can update (or install) it [here](https://quarto.org/docs/get-started/).\n\n## Installing R Packages\n\nR Packages extends the functionality from the base functions in R. R packages contain extra functions to conduct uncommon statistical models.\n\nAs of right now, the [tidyverse](https://www.tidyverse.org/) is a set of comprehensive packages to prepare and analyze data. To install tidyverse, use the following line in the console:\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\ninstall.packages(\"tidyverse\")\n```\n:::\n\n\n\n## Topics\n\n|Topic | Description |\n|:-|:-|\n|R Programming | Provide with a brief introduction to R programming. Topics include basic computations, control flow statements, functional programming, and scripting tips and tricks. |\n|Simulations | Explore different algorithms to generate random variables. |\n|Randomizations | Learn how to implement different permutation tests. |\n|Monte Carlo Methods | Implement Monte Carlo methods to approximate integrals and distributions. |\n|Bootstrapping | Conduct different bootstrapping techniques to construct confidence intervals. |\n| Data Manipulation, Summarization, and Graphics| Learn how to analyze real-world data |\n| Reporting Data | Learn how to use Quarto to generate reports and presentations. |\n| Debugging and Efficient Programming | Learn how write efficient R code and implement Rcpp into your programs. |\n \n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
