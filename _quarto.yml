@@ -24,6 +24,7 @@ book:
         - control_flow.qmd
         - functional.qmd
         - scripting.qmd
+        - resources.qmd
     - part: simulations.qmd
       chapters: 
         - rv.qmd
@@ -53,12 +54,6 @@ book:
       chapters: 
         - document.qmd
         - presentations.qmd
-    - part: efficient.qmd
-      chapters: 
-        - debugging.qmd
-        - profiling.qmd
-        - vectorizing.qmd
-        - rcpp.qmd
 
 
 

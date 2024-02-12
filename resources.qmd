@@ -1,0 +1,35 @@
+# Further Resources
+
+## R Resources
+
+### Programming
+
+[Advanced R](https://adv-r.hadley.nz/index.html)
+[Efficient Prograaming in R](https://csgillespie.github.io/efficientR/)
+
+
+### Reticulate and Python
+
+[Reticulate](https://rstudio.github.io/reticulate/)
+
+### Rcpp
+
+[Rcpp Website](https://www.rcpp.org/)
+
+## Bayesian Programs
+
+### JAGS
+
+[JAGS](https://mcmc-jags.sourceforge.io/)
+[rjags](https://cran.r-project.org/web/packages/rjags/index.html)
+
+### Stan
+
+[Stan](https://mc-stan.org/)
+[cmdstanr](https://mc-stan.org/cmdstanr/)
+
+## Misc
+
+### [Missing Semester](https://missing.csail.mit.edu/)
+
+This is a great website containing basic information that you may need to know.
