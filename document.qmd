@@ -285,7 +285,7 @@ Creating a `.bib` file is tedious; however, there are reference managers that ca
 
 ## Math
 
-Quarto is capable of writing mathematical formulas using LaTeX code. A mathematical symbol can be written inline using single `$` signs. For example, `$\alpha$` is viewed as $\alpha$ in a document. To write mathematical formulas on its own line use either `$$` or `\[\]`. For example, `$$Y=mX+b$$` is viewed as $$Y=mX+b$$ or `\[Y=mX+b\]` is viewed as $$Y=mX+b.$$
+Quarto is capable of writing mathematical formulas using LaTeX code. A mathematical symbol can be written inline using single `$` signs. For example, `$\alpha$` is viewed as $\alpha$ in a document. To write mathematical formulas on its own line use `$$`. For example, `$$Y=mX+b$$` is viewed as $$Y=mX+b$$.
 
 ### Mathematical Notation
 
