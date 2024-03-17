@@ -88,7 +88,7 @@ When choosing between Base or magrittr's pipes, I recommend using magrittr's pip
 
 Lastly, when using the pipe, I recommend only stringing a limited amount of functions (\~10) to maintain code readability and conciseness. Any more functions may make the code incoherent.
 
-If you plan to use magrittr's pipe, I recommend loading `magrittr::` package instead of `tidyverse::` package.
+If you plan to use magrittr's pipe, I recommend loading `magrittr` package instead of `tidyverse` package.
 
 ```{r}
 library(magrittr)

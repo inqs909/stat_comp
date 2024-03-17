@@ -7,13 +7,10 @@ knitr:
 
 # Data Manipulation
 
-## Introduction
-
 Data manipulation consists of transforming a data set to be analyzed. Certain statistical methods require data sets to be formatted in a certain way before you can apply a certain function^[Linear Mixed-Effects Models.]. Other times, you will need to transform the data set to present to stakeholder. Therefore, being able to transform a data set is essential.
 
-### Notes
 
-:::{.callout-note collapse=false appearance='default' icon=true}
+:::{.callout-important collapse=false appearance='default' icon=true}
 ## Warnings Suppressed
 
 In order to keep the page concise, the warning messages have been suppressed. These warnings were produced because functions were applied to incorrect inputs, ie $\sqrt{A}$. Therefore, you may see `NA` as the output. There is nothing wrong with the code, it is just that the input was not valid, but R still completed the task. 
@@ -35,7 +32,7 @@ Then load tidyverse into R:
 library(tidyverse)
 ```
 
-This will load the main Tidyverse packages: `ggplot2::`, `tibble::`, `tidyr::`, `readr::`, `purr::`, `dplyr::`, `stringr::`, and `forcats::`.
+This will load the main Tidyverse packages: `ggplot2`, `tibble`, `tidyr`, `readr`, `purr`, `dplyr`, `stringr`, and `forcats`.
 
 
 ## Loading Data
@@ -49,12 +46,12 @@ To import a data set using RStudio, head over to the environment tab (usually in
 knitr::include_graphics("img/import.png")
 ```
 
-Notice how there are several options to load a data set. Depending on the format, you may want to choose one of those options. Next, notice how there are 2 "From Text". This is because it will load text data using either Base R packages or the `readr::` package from tidyverse. Either works, but the `readr::` package provides the necessary code to load the data set in the window. The other one provides the code in the console. 
+Notice how there are several options to load a data set. Depending on the format, you may want to choose one of those options. Next, notice how there are 2 "From Text". This is because it will load text data using either Base R packages or the `readr` package from tidyverse. Either works, but the `readr` package provides the necessary code to load the data set in the window. The other one provides the code in the console. 
 
 
 ### CSV Files 
 
-A CSV file is a type of text file that where the values are separated from commas. It is very common file that you will work with. Here I will provide the code necessary to import a CSV file using either Base R or `readr::` code.
+A CSV file is a type of text file that where the values are separated from commas. It is very common file that you will work with. Here I will provide the code necessary to import a CSV file using either Base R or `readr` package code.
 
 #### Base R
 
@@ -63,7 +60,7 @@ A CSV file is a type of text file that where the values are separated from comma
 read.csv("FILE_NAME_AND_LOCATION")
 ```
 
-#### `readr::`
+#### `readr` package
 
 ```{r}
 #| eval: false
@@ -88,12 +85,12 @@ data7 <- read_csv("data/data_3_4.csv")
 
 Make sure to change the file location as needed.
 
-## The Pipe Operator `%>%`
+## The Pipe Operator `|>`
 
-The main benefit of the pipe operator is to make the code easier to read. The pipe operator is from the `magrittr::`. It is usually loaded when you load the `tidyverse::`. What the pipe operator, `%>%`, does is that it will take the output from a previous function and it will use it as the input for the next function. This prevents us from nesting functions together and overwhelm us with numerous parentheses and commas. To practice, pipe `data` into the `glimpse()`.
+The main benefit of the pipe operator is to make the code easier to read. The base pipe `|>` was added in R 4.0. What the pipe operator, `|>`, does is that it will take the output from a previous function and it will use it as the input for the next function. This prevents us from nesting functions together and overwhelm us with numerous parentheses and commas. To practice, pipe `data` into the `glimpse()`.
 
 ```{r}
-data1 %>% glimpse()
+data1 |> glimpse()
 ```
 
 The `glimpse()` provides basic variable information about `data1`. I recommend practice reading the code in plain English to help you understand how these functions. 
@@ -101,32 +98,32 @@ The `glimpse()` provides basic variable information about `data1`. I recommend p
 
 ## Data Transformation
 
-This section focuses on manipulating the data to obtain basic statistics, such as obtaining the mean for different categories. Many of the functions used here are from the `dplyr::`.
+This section focuses on manipulating the data to obtain basic statistics, such as obtaining the mean for different categories. Many of the functions used here are from the `dplyr` package.
 
 ### Summarizing Data
 
 Summarizing Data is one of the most important thing in statistics. First, let's get the mean for all the variables in `data1`. This is done by using the `summarize_all()`. All you need to do is provide the function you want R to provide. Pipe `data1` into the `summarize_all()` and specify `mean` in the function.
 
 ```{r}
-data1 %>% summarise_all(mean)
+data1 |> summarise_all(mean)
 ```
 
 Notice how some values are `NA`, this is because the variables are character data types. Therefore, it will not be able to compute the mean. Now find the standard deviation for the data set.
 
 ```{r}
-data1 %>% summarise_all(sd)
+data1 |> summarise_all(sd)
 ```
 
 Now lets create a frequency table for the `cat1` variable in `data1`. use the `count()` and specify the variable you are interested in:
 
 ```{r}
-data1 %>% count(cat1)
+data1 |> count(cat1)
 ```
 
 Now, repeat for `cat2` in `data1`:
 
 ```{r}
-data1 %>% count(cat2)
+data1 |> count(cat2)
 ```
 
 
@@ -135,26 +132,26 @@ data1 %>% count(cat2)
 Summarizing data is great, but sometimes you may want to group data and obtain summary statistics for those groups. This is done by using the `group_by()` and specify which variable you want to group. Try grouping `data1` by `cat1`:
 
 ```{r}
-data1 %>% group_by(cat1)
+data1 |> group_by(cat1)
 ```
 
 Great! You now have grouped data; however, this is not helpful. We can use this output and summarize the groups. All we need to do is pipe the output to the `summarise_all()`. Group `data1` by `cat1` and find the mean:
 
 ```{r}
-data1 %>% group_by(cat1) %>% summarise_all(mean)
+data1 |> group_by(cat1) |> summarise_all(mean)
 ```
 
 
 If we want to group by two variables, all we need to do is specify both variables in the `group_by()`. Group `data1` by `cat1` and `cat2` then find the mean:
 
 ```{r}
-data1 %>% group_by(cat1,cat2) %>% summarise_all(mean)
+data1 |> group_by(cat1,cat2) |> summarise_all(mean)
 ```
 
 Now, instead of finding the mean for all variables in a data set, we are only interested in viewing `var1`. We can use the `summarise()` and type the R code for finding the mean for the particular variable. Group `data1` by `cat1` and find the mean for `var1`:
 
 ```{r}
-data1 %>% group_by(cat1) %>% summarise(mean(var1))
+data1 |> group_by(cat1) |> summarise(mean(var1))
 ```
 
 ### Subsets
@@ -163,27 +160,27 @@ On occasion, you may need to create a subset of your data. You may only want to 
 
 
 ```{r}
-data1 %>% filter(var1>0)
+data1 |> filter(var1>0)
 ```
 
 
 If you know which rows you want, you can use the `slice()` and specify the rows as a vector. Create a subset of `data1` and select the rows 100 to 200 and 300 to 400.
 
 ```{r}
-data1 %>% slice(c(100:200, 300:400))
+data1 |> slice(c(100:200, 300:400))
 ```
 
-If you need random sample of your `data1`, use the `sample_n()` and specify the number you want. It will create a data set of randomly selected rows. Create a random sample of `data1` of 100 rows.
+If you need random sample of your `data1`, use the `slice_sample(n = N)` and specify the number you want. It will create a data set of randomly selected rows. Create a random sample of `data1` of 100 rows.
 
 ```{r}
-data1 %>%  sample_n(100)
+data1 |>  slice_sample(n = 100)
 ```
 
-If you want a random sample that is proportion of your original data size, use the `sample_frac()`. Specify the proportion that you want from the data. Create a random sample of `data1` that is only 2/7th of the original size.
+If you want a random sample that is proportion of your original data size, use the `slice_sample(prop = X)`. Specify the proportion that you want from the data. Create a random sample of `data1` that is only 2/7th of the original size.
 
 
 ```{r}
-data1 %>% sample_frac(2/7)
+data1 |> slice_sample(prop = 2/7)
 ```
 
 ### Creating Variables
@@ -192,41 +189,42 @@ Some times you may need to transform variables to a new variable. This can be do
 
 
 ```{r}
-data2 %>% mutate(logvar1 = log(va1))
+data2 |> mutate(logvar1 = log(va1))
 ```
 
 The `mutate()` allows you to create multiple new variables at once. Id addition to `logvar1`, create a new variable called `sqrtvar2` and set that equal to the square root of `va2`.
 
 ```{r}
-data2 %>% mutate(logvar1 = log(va1), sqrtvar2 = sqrt(va2))
+data2 |> mutate(logvar1 = log(va1), 
+                sqrtvar2 = sqrt(va2))
 ```
 
 
-If you want to create categorical variables, use the `mutate()` and the `if_else()`.  The `if_else()` requires three arguments:  `condition=`, `true=`, and `false=`. The first argument requires a condition that will return a logical value. If true, then R will assign what is stated in the `true=`, otherwise R will assign what is in the `false=`. To begin, find the median of `va1` from `data2` and assign it to `medval`.
+If you want to create categorical variables, use the `mutate()` and the `if_else()`.  The `if_else()` requires three arguments:  `condition` argument, `true` argument, and `false` argument. The first argument requires a condition that will return a logical value. If true, then R will assign what is stated in the `true` argument, otherwise R will assign what is in the `false` argument. To begin, find the median of `va1` from `data2` and assign it to `medval`.
 
 
 ```{r}
-medval <- data2$va1 %>% median() 
+medval <- data2$va1 |> median() 
 ```
 
 No create a  new variable called `diva1` where if `va1` is greater than the median of `va1`,  assign it "A", otherwise assign it "B".
 
 
 ```{r}
-data2 %>% mutate(diva1=if_else(va1>medval,"A","B"))
+data2 |> mutate(diva1=if_else(va1>medval,"A","B"))
 ```
 
 
 ### Merging Datasets
 
-One of the last thing is to go over how to merge data sets together.  To merge the data sets, we use the `full_join()`. The `full_join()` needs two data sets (separated by commas) and the `by=` which provides the variables needed (must be the same name for each data set) to merge the data sets. Merge `data1` and `data2` with the variable `ID1`.
+One of the last thing is to go over how to merge data sets together.  To merge the data sets, we use the `full_join()`. The `full_join()` needs two data sets (separated by commas) and the `by` argument which provides the variables needed (must be the same name for each data set) to merge the data sets. Merge `data1` and `data2` with the variable `ID1`.
 
 
 ```{r}
 full_join(data1, data2, by = "ID1")
 ```
 
-The `full_join()` allows you to merge data sets using two variables instead of one. All you need to do is specify `by=` with a vector specifying the arguments. Merge `data2` and `data3` by `ID_1` and `ID_2`.
+The `full_join()` allows you to merge data sets using two variables instead of one. All you need to do is specify `by` argument with a vector specifying the arguments. Merge `data2` and `data3` by `ID_1` and `ID_2`.
 
 ```{r j_2-solution}
 full_join(data2, data3, by = c("ID_1","ID_2"))
@@ -235,7 +233,7 @@ full_join(data2, data3, by = c("ID_1","ID_2"))
 ## Reshaping Data
 
 This section focuses on reshaping the data to prepare it for analysis. For example, to conduct longitudinal data analysis, you will need to have long data. Reshaping data may be with converting data from wide to long, converting back from long to wide, splitting variables, splitting rows and merging variable.
-The functions used in this lesson are from the `tidy::`
+The functions used in this lesson are from the `tidy` package
 
 ### Wide to Long Data
 
@@ -248,20 +246,22 @@ data4
  
 Let's say `data4` represents biomarker data. Variable `ID1` represents a unique identifier for the participant. Then `X1`, `X2`, `X3`, and `X4` represents a value collected for a participant at different time point. This is know as repeated measurements. This data is considered wide because the repeated measurements are on the same row. To make it long, the repeated measurements must be on the same column.
 
-To convert data from long to wide, we will use the `pivot_longer()` with the first argument taking variables of the repeated measurements, `c(X1:X4)` or `X1:X4`, the second argument asks for the name for the variable that contains the stored repeated measurements, the variable names, and the last variable asks for the name for all the values, the data collected. Convert the `data4` to long and name the variable names column `"measurement"`, and values column `"value"`.
+To convert data from long to wide, we will use the `pivot_longer()` with the first argument taking variables of the repeated measurements, `c(X1:X4)` or `X1:X4`, second you will need to specify the `names_to` argument which specifies the variable name to store the long variables, lastly you will need to specify the `values_to` argument that specifies variable to store the values in the long data set. Convert the `data4` to long and name the variable names column `"measurement"`, and values column `"value"`.
 
 
 ```{r}
-data4 %>% pivot_longer(X1:X4, "measurement", "value")
+data4 |> pivot_longer(X1:X4, 
+                      names_to = "measurement", 
+                      values_to = "value")
 ```
 
 ### Long to Wide
 
-If you need to convert data from long to wide, use the `pivot_wider()`. You will need to specify the `names_from=` which specifies the variable names for the wide data set, and you will need to specify the `values_from=` that specifies variable that contains the values in the long data set. Convert `data5` from long to wide data. Note, you must specify the arguments for this function.
+If you need to convert data from long to wide, use the `pivot_wider()`. You will need to specify the `names_from` argument which specifies the variable names for the wide data set, and you will need to specify the `values_from` argument that specifies variable that contains the values in the long data set. Convert `data5` from long to wide data. Note, you must specify the arguments for this function.
 
 ```{r}
-data5 %>% pivot_wider(names_from = measurement, 
-                      values_from = value)
+data5 |> pivot_wider(names_from = measurement, 
+                     values_from = value)
 ```
 
 
@@ -276,25 +276,25 @@ data6
 Notice how the `merge` variable has two values separated by "/". If we need to split the variable into two variables, we need to specify the `separate()`. All you need to specify is the variable you need to split, the name of the 2 new variables, in a character vector, and how to split the variable `"/"`. Split the variable `merge` in `data6` to two new variables called `X1` and `X2`.
 
 ```{r}
-data6 %>% separate(merge, c("X1", "X2"), "/")
+data6 |> separate(merge, c("X1", "X2"), "/")
 ```
 
 ### Splitting Rows
 
-The variable `merge` in `data6` was split into different variables before, now instead of variables, let's split it into different rows instead. To do this, use the `separate_rows()`. All you need to specify the variable name and the `sep=` (must state the argument). Split the `merge` variable from `data6` into different rows.
+The variable `merge` in `data6` was split into different variables before, now instead of variables, let's split it into different rows instead. To do this, use the `separate_rows()`. All you need to specify the variable name and the `sep` argument (must state the argument). Split the `merge` variable from `data6` into different rows.
 
 
 ```{r}
-data6 %>% separate_rows(merge, sep = "/")
+data6 |> separate_rows(merge, sep = "/")
 ```
 
 ### Merging Rows
 
-If you need to merge variables together, similar to the `merge` variable, use the `unite()`. All you need to do is specify the variables to merge, the `col=` which specifies the name of the new variable (as a character), and the `sep=` which indicates the symbol for separate value, as a character. Note, you need to specify the bot the `col=` and `sep=`.  Merge variable `X3` and `X4` in `data6` to a new variable called `merge2` and have the separator be a hyphen.
+If you need to merge variables together, similar to the `merge` variable, use the `unite()`. All you need to do is specify the variables to merge, the `col` argument which specifies the name of the new variable (as a character), and the `sep` argument which indicates the symbol for separate value, as a character. Note, you need to specify the bot the `col` argument and `sep` argument.  Merge variable `X3` and `X4` in `data6` to a new variable called `merge2` and have the separator be a hyphen.
 
 
 ```{r}
-data6 %>% unite(X3, X4, col = "merge2", sep="-")
+data6 |> unite(X3, X4, col = "merge2", sep="-")
 ```
 
 
@@ -305,9 +305,10 @@ Here is an applied example where you will use what you learned from the previous
 ```{r}
 #| include: false
 
-data8 <- data7 %>% pivot_longer(`v1/mean`:`v4/median`,
-                                "measurement","value") %>% 
-          separate(measurement,c("time","stat"),sep="/") %>% 
+data8 <- data7 |> pivot_longer(`v1/mean`:`v4/median`,
+                               names_to = "measurement",
+                               values_to = "value") |> 
+          separate(measurement,c("time","stat"),sep="/") |> 
           pivot_wider(names_from = stat,values_from = value)
 
 ```
@@ -322,7 +323,9 @@ data8
 Now that you viewed the data set, type the code to convert `data7` to `data8`. Try working it out before you look at the solution.
 
 ```{r}
-data7 %>% pivot_longer(`v1/mean`:`v4/median`,"measurement","value") %>% 
-          separate(measurement,c("time","stat"),sep="/") %>% 
-          pivot_wider(names_from = stat,values_from = value)
+data7 |> pivot_longer(`v1/mean`:`v4/median`,
+                      names_to = "measurement",
+                      values_to = "value") |> 
+          separate(measurement, c("time","stat"), sep="/") |> 
+          pivot_wider(names_from = stat, values_from = value)
 ```

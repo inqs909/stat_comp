@@ -1,1 +1,50 @@
 # Random Variables
+
+## Random Experiments
+
+## Probability
+
+## Independence
+
+## Random Variables
+
+### Discrete RV
+
+#### Probability Mass Functions
+
+#### Expectation
+
+#### Variance
+
+#### Moment-Generating Functions
+
+### Continuous RV
+
+#### Probability Density Functions
+
+#### Expectation
+
+#### Variance
+
+#### Moment-Generating Functions
+
+## Joint Distributions
+
+### Joint Probability Density Function
+
+### Conditional Density Functions
+
+### Marginal Density Functions
+
+### Independence and Covariance
+
+## Functions of Random Variables
+
+### Method of Distribution Functions
+
+### Method of Transformations
+
+### Method of Moment-Generating Functions
+
+
+

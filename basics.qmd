@@ -194,6 +194,8 @@ Try `3 != 3`:
 
 You may be asking why use `!=` instead of `==`. They both provides similar results. Well the reason is that you may need the `TRUE` output for analysis. One is only true when they are equal, while the other is true when they are not equal.
 
+In general, the `!` operator means not or opposite. It can be used to change an `TRUE` to a `FALSE` and vice-versa.
+
 ### Help
 
 The last operator we will discuss is the help operator `?`. If you want to know more about anything we talked about you can type `?` in front of a function and a help page will pop-up in your browser or in RStudio's 'Help' tab. For example you can type `?Arithmetic` or `?Comparison`, to review what we talked about. For other operators we didn't talk about use `?assignOps` and `?Logic`.

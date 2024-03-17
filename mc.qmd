@@ -1,3 +1,15 @@
----
-title: "Monte Carlo Methods"
----
+# Monte Carlo Methods
+
+Monte Carlo Methods are used to determine the 
+
+## Probability Inverse Transformation
+
+## Composition Method
+
+## Acceptance-Rejection Method
+
+
+
+
+## Box-Muller Methods
+

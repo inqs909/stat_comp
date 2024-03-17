@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Computing - 24&nbsp; Data Summarization</title>
+<title>Statistical Computing - 9&nbsp; Random Number Generator</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./plot.html" rel="next">
-<link href="./data_manip.html" rel="prev">
+<link href="./mc.html" rel="next">
+<link href="./models.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -108,8 +74,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   });
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -122,7 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./da.html">Data Manipulation, Summarization, and Graphics</a></li><li class="breadcrumb-item"><a href="./data_summary.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Data Summarization</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simulations.html">Random Variables and Simulations</a></li><li class="breadcrumb-item"><a href="./rng.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Number Generator</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -243,7 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./rng.html" class="sidebar-item-text sidebar-link">
+  <a href="./rng.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Number Generator</span></span></a>
   </div>
 </li>
@@ -377,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data_summary.html" class="sidebar-item-text sidebar-link active">
+  <a href="./data_summary.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Data Summarization</span></span></a>
   </div>
 </li>
@@ -422,22 +386,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link active" data-scroll-target="#descriptive-statistics"><span class="header-section-number">24.1</span> Descriptive Statistics</a>
+  <li><a href="#random-number-generation" id="toc-random-number-generation" class="nav-link active" data-scroll-target="#random-number-generation"><span class="header-section-number">9.1</span> Random Number Generation</a></li>
+  <li><a href="#computer-random-number-generation" id="toc-computer-random-number-generation" class="nav-link" data-scroll-target="#computer-random-number-generation"><span class="header-section-number">9.2</span> Computer Random Number Generation</a>
   <ul class="collapse">
-  <li><a href="#point-estimates" id="toc-point-estimates" class="nav-link" data-scroll-target="#point-estimates"><span class="header-section-number">24.1.1</span> Point Estimates</a></li>
-  <li><a href="#variability" id="toc-variability" class="nav-link" data-scroll-target="#variability"><span class="header-section-number">24.1.2</span> Variability</a></li>
-  <li><a href="#associations" id="toc-associations" class="nav-link" data-scroll-target="#associations"><span class="header-section-number">24.1.3</span> Associations</a></li>
+  <li><a href="#linear-congruential-generators" id="toc-linear-congruential-generators" class="nav-link" data-scroll-target="#linear-congruential-generators"><span class="header-section-number">9.2.1</span> Linear Congruential Generators</a></li>
+  <li><a href="#multiple-recursive-generators" id="toc-multiple-recursive-generators" class="nav-link" data-scroll-target="#multiple-recursive-generators"><span class="header-section-number">9.2.2</span> Multiple Recursive Generators</a></li>
+  <li><a href="#modulo-2-linear-generators" id="toc-modulo-2-linear-generators" class="nav-link" data-scroll-target="#modulo-2-linear-generators"><span class="header-section-number">9.2.3</span> Modulo 2 Linear Generators</a></li>
   </ul></li>
-  <li><a href="#summarizing-with-tidyverse" id="toc-summarizing-with-tidyverse" class="nav-link" data-scroll-target="#summarizing-with-tidyverse"><span class="header-section-number">24.2</span> Summarizing with Tidyverse</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./da.html">Data Manipulation, Summarization, and Graphics</a></li><li class="breadcrumb-item"><a href="./data_summary.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Data Summarization</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./simulations.html">Random Variables and Simulations</a></li><li class="breadcrumb-item"><a href="./rng.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Number Generator</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Data Summarization</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Random Number Generator</span></h1>
 </div>
 
 
@@ -454,233 +418,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="descriptive-statistics" class="level2" data-number="24.1">
-<h2 data-number="24.1" class="anchored" data-anchor-id="descriptive-statistics"><span class="header-section-number">24.1</span> Descriptive Statistics</h2>
-<p>Here, we will go over some of the basic syntax to obtain basic statistics. We will use the variables <code>mpg</code> and <code>cyl</code> from the <code>mtcars</code> data set. To view the data set use the <code>head()</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
-Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
-Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
-Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
-Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
-Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
-Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
-</div>
-</div>
-<p>The variable <code>mpg</code> would be used as a continuous variable, and the variable <code>cyl</code> would be used as a categorical variable.</p>
-<section id="point-estimates" class="level3" data-number="24.1.1">
-<h3 data-number="24.1.1" class="anchored" data-anchor-id="point-estimates"><span class="header-section-number">24.1.1</span> Point Estimates</h3>
-<p>The first basic statistic you can compute are point estimates. These are your means, medians, etc. Here we will calculate these estimates.</p>
-<section id="mean" class="level4" data-number="24.1.1.1">
-<h4 data-number="24.1.1.1" class="anchored" data-anchor-id="mean"><span class="header-section-number">24.1.1.1</span> Mean</h4>
-<p>To obtain the mean, use the <code>mean()</code>, you only need to specify <code>x=</code> for the data to compute the mean:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 20.09062</code></pre>
-</div>
-</div>
+<section id="random-number-generation" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="random-number-generation"><span class="header-section-number">9.1</span> Random Number Generation</h2>
 </section>
-<section id="median" class="level4" data-number="24.1.1.2">
-<h4 data-number="24.1.1.2" class="anchored" data-anchor-id="median"><span class="header-section-number">24.1.1.2</span> Median</h4>
-<p>To obtain the median, use the <code>median()</code>, you only need to specify <code>x=</code> for the data to compute the median:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 19.2</code></pre>
-</div>
-</div>
+<section id="computer-random-number-generation" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="computer-random-number-generation"><span class="header-section-number">9.2</span> Computer Random Number Generation</h2>
+<section id="linear-congruential-generators" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="linear-congruential-generators"><span class="header-section-number">9.2.1</span> Linear Congruential Generators</h3>
 </section>
-<section id="frequency" class="level4" data-number="24.1.1.3">
-<h4 data-number="24.1.1.3" class="anchored" data-anchor-id="frequency"><span class="header-section-number">24.1.1.3</span> Frequency</h4>
-<p>To obtain a frequency table, use the <code>table()</code>, you only need to specify the data as the first argument to compute the frequency table:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>cyl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
- 4  6  8 
-11  7 14 </code></pre>
-</div>
-</div>
+<section id="multiple-recursive-generators" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="multiple-recursive-generators"><span class="header-section-number">9.2.2</span> Multiple Recursive Generators</h3>
 </section>
-<section id="proportion" class="level4" data-number="24.1.1.4">
-<h4 data-number="24.1.1.4" class="anchored" data-anchor-id="proportion"><span class="header-section-number">24.1.1.4</span> Proportion</h4>
-<p>To obtain a the proportions for the frequency table, use the <code>prop.table()</code>. However the first argument must be the results from the <code>table()</code>. Use the <code>table()</code> inside the <code>prop.table()</code> to get the proportions:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-      4       6       8 
-0.34375 0.21875 0.43750 </code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="variability" class="level3" data-number="24.1.2">
-<h3 data-number="24.1.2" class="anchored" data-anchor-id="variability"><span class="header-section-number">24.1.2</span> Variability</h3>
-<p>In addition to point estimates, variability is an important statistic to report to let a user know about the spread of the data. Here we will calculate certain variability statistics.</p>
-<section id="variance" class="level4" data-number="24.1.2.1">
-<h4 data-number="24.1.2.1" class="anchored" data-anchor-id="variance"><span class="header-section-number">24.1.2.1</span> Variance</h4>
-<p>To obtain the variance, use the <code>var()</code>, you only need to specify <code>x=</code> for the data to compute the variance:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 36.3241</code></pre>
-</div>
-</div>
-</section>
-<section id="standard-deviation" class="level4" data-number="24.1.2.2">
-<h4 data-number="24.1.2.2" class="anchored" data-anchor-id="standard-deviation"><span class="header-section-number">24.1.2.2</span> Standard deviation</h4>
-<p>To obtain the standard deviation, use the <code>sd()</code>, you only need to specify <code>x=</code> for the data to compute the standard deviation:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 6.026948</code></pre>
-</div>
-</div>
-</section>
-<section id="max-and-min" class="level4" data-number="24.1.2.3">
-<h4 data-number="24.1.2.3" class="anchored" data-anchor-id="max-and-min"><span class="header-section-number">24.1.2.3</span> Max and Min</h4>
-<p>To obtain the max and min, use the <code>max()</code> and <code>min()</code>, respectively. You only need to specify the data as the first argument to compute the max and min:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 33.9</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 10.4</code></pre>
-</div>
-</div>
-</section>
-<section id="q1-and-q3" class="level4" data-number="24.1.2.4">
-<h4 data-number="24.1.2.4" class="anchored" data-anchor-id="q1-and-q3"><span class="header-section-number">24.1.2.4</span> Q1 and Q3</h4>
-<p>To obtain the Q1 and Q3, use the <code>quantile()</code> and specify the desired quantile with <code>probs=</code>. You only need to specify the data as the first argument and <code>probs=</code> (as a decimal) to compute the Q1 and Q3:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(mtcars<span class="sc">$</span>mpg, .<span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   25% 
-15.425 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(mtcars<span class="sc">$</span>mpg, .<span class="dv">75</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> 75% 
-22.8 </code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="associations" class="level3" data-number="24.1.3">
-<h3 data-number="24.1.3" class="anchored" data-anchor-id="associations"><span class="header-section-number">24.1.3</span> Associations</h3>
-<p>In statistics, we may be interested on how different variables are related to each other. These associations can be represented in a numerical value.</p>
-<section id="continuous-and-continuous" class="level4" data-number="24.1.3.1">
-<h4 data-number="24.1.3.1" class="anchored" data-anchor-id="continuous-and-continuous"><span class="header-section-number">24.1.3.1</span> Continuous and Continuous</h4>
-<p>When we measure the association between to continuous variables, we tend to use a correlation statistic. This statistic tells us how linearly associated are the variables are to each other. Essentially, as one variable increases, what happens to the other variable? Does it increase (positive association) or does it decrease (negative association). To find the correlation in R, use the <code>cor()</code>. You will need to specify the <code>x=</code> and <code>y=</code> which represents vectors for each variable. Find the correlation between <code>mpg</code> and <code>hp</code> from the <code>mtcars</code> data set.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>hp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.7761684</code></pre>
-</div>
-</div>
-</section>
-<section id="categorical-and-continuous" class="level4" data-number="24.1.3.2">
-<h4 data-number="24.1.3.2" class="anchored" data-anchor-id="categorical-and-continuous"><span class="header-section-number">24.1.3.2</span> Categorical and Continuous</h4>
-<p>When comparing categorical variables, it becomes a bit more nuanced in how to report associations. Most of time you will discuss key differences in certain groups. Here, we will talk about how to get the means for different groups of data. Our continuous variable is the <code>mpg</code> variable, and our categorical variable is the <code>cyl</code> variable. Both are from the <code>mtcars</code> data set. The <code>tapply()</code> allows us to split the data into different groups and then calculate different statistics. We only need to specify <code>X=</code> of the R object to split, <code>INDEX=</code> which is a list of factors or categories indicating how to split the data set, and <code>FUN=</code> which is the function that needs to be computed. Use the <code>tapply()</code> and find the mean <code>mpg</code> for each <code>cyl</code> group: 4, 5, and 6.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tapply</span>(mtcars<span class="sc">$</span>mpg, <span class="fu">list</span>(mtcars<span class="sc">$</span>cyl), mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       4        6        8 
-26.66364 19.74286 15.10000 </code></pre>
-</div>
-</div>
-</section>
-<section id="categorical-and-categorical" class="level4" data-number="24.1.3.3">
-<h4 data-number="24.1.3.3" class="anchored" data-anchor-id="categorical-and-categorical"><span class="header-section-number">24.1.3.3</span> Categorical and Categorical</h4>
-<p>Reporting the association between two categorical variables is may be challenging. If you have a <span class="math inline">\(2\times 2\)</span> table, you can report a ratio of association. However, any other case may be challenging. You can report a hypothesis test to indicate an association, but it does not provide much information about the effect of each variable. You can also report row, column, or table proportions. Here we will talk about creating cross tables and report these proportions. To create a cross table, use the <code>table()</code> and use the first two arguments to specify the two categorical variables. Create a cross tabulation between <code>cyl</code> and <code>carb</code> from the <code>mtcars</code> data set.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>carb)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   
-    1 2 3 4 6 8
-  4 5 6 0 0 0 0
-  6 2 0 0 4 1 0
-  8 0 4 3 6 0 1</code></pre>
-</div>
-</div>
-<p>Notice how the first argument is represented in the rows and the second argument is in the columns. Now create table proportions using both of the variables. You first need to create the table and store it in a variable and then use the <code>prop.table()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>carb))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   
-          1       2       3       4       6       8
-  4 0.15625 0.18750 0.00000 0.00000 0.00000 0.00000
-  6 0.06250 0.00000 0.00000 0.12500 0.03125 0.00000
-  8 0.00000 0.12500 0.09375 0.18750 0.00000 0.03125</code></pre>
-</div>
-</div>
-<p>To get the row proportions, use the argument <code>margin = 1</code> within the <code>prop.table()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>carb), </span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">margin =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   
-             1          2          3          4          6          8
-  4 0.45454545 0.54545455 0.00000000 0.00000000 0.00000000 0.00000000
-  6 0.28571429 0.00000000 0.00000000 0.57142857 0.14285714 0.00000000
-  8 0.00000000 0.28571429 0.21428571 0.42857143 0.00000000 0.07142857</code></pre>
-</div>
-</div>
-<p>To get the column proportions, use the argument <code>margin = 2</code> within the <code>prop.table()</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>carb), </span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">margin =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   
-            1         2         3         4         6         8
-  4 0.7142857 0.6000000 0.0000000 0.0000000 0.0000000 0.0000000
-  6 0.2857143 0.0000000 0.0000000 0.4000000 1.0000000 0.0000000
-  8 0.0000000 0.4000000 1.0000000 0.6000000 0.0000000 1.0000000</code></pre>
-</div>
-</div>
-</section>
-</section>
-</section>
-<section id="summarizing-with-tidyverse" class="level2" data-number="24.2">
-<h2 data-number="24.2" class="anchored" data-anchor-id="summarizing-with-tidyverse"><span class="header-section-number">24.2</span> Summarizing with Tidyverse</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
-✔ ggplot2 3.4.0      ✔ purrr   1.0.0 
-✔ tibble  3.1.8      ✔ dplyr   1.0.10
-✔ tidyr   1.2.1      ✔ stringr 1.5.0 
-✔ readr   2.1.3      ✔ forcats 0.5.2 
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ tidyr::extract()   masks magrittr::extract()
-✖ dplyr::filter()    masks stats::filter()
-✖ dplyr::lag()       masks stats::lag()
-✖ purrr::set_names() masks magrittr::set_names()</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  mtcars <span class="sc">%&gt;%</span> <span class="fu">split</span>(<span class="sc">~</span>.<span class="sc">$</span>cyl) <span class="sc">%&gt;%</span> <span class="fu">map</span>(<span class="sc">~</span><span class="fu">shapiro.test</span>(.<span class="sc">$</span>mpg)) </span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span>)}</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  mtcars <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span> <span class="fu">nest</span>() <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">shapiro =</span> <span class="fu">map</span>(data, <span class="sc">~</span><span class="fu">shapiro.test</span>(.<span class="sc">$</span>mpg)))</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="dv">1</span>)}</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>bench<span class="sc">::</span><span class="fu">mark</span>(<span class="fu">f</span>(<span class="dv">1</span>),<span class="fu">g</span>(<span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 6
-  expression      min   median `itr/sec` mem_alloc `gc/sec`
-  &lt;bch:expr&gt; &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
-1 f(1)        404.4µs  434.7µs    2242.   134.23KB    16.9 
-2 g(1)         11.7ms   11.8ms      82.8    3.65MB     8.95</code></pre>
-</div>
-</div>
+<section id="modulo-2-linear-generators" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="modulo-2-linear-generators"><span class="header-section-number">9.2.3</span> Modulo 2 Linear Generators</h3>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -1083,13 +836,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./data_manip.html" class="pagination-link  aria-label=" &lt;span="" manipulation&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Data Manipulation</span></span>
+      <a href="./models.html" class="pagination-link  aria-label=" &lt;span="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Models</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./plot.html" class="pagination-link" aria-label="<span class='chapter-number'>25</span>&nbsp; <span class='chapter-title'>Graphics</span>">
-        <span class="nav-page-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Graphics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./mc.html" class="pagination-link" aria-label="<span class='chapter-number'>10</span>&nbsp; <span class='chapter-title'>Monte Carlo Methods</span>">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Monte Carlo Methods</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

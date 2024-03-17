@@ -1,13 +1,82 @@
 # Models
 
-## Normal Model
+## Bernoulli Model
+
+### Distribution Functions
+
+### Expected Value
+
+### Variance
 
 ## Binomial Model
 
+### Distribution Functions
+
+### Expected Value
+
+### Variance
+
 ## Poisson Model
+
+### Distribution Functions
+
+### Expected Value
+
+### Variance
+
+## Negative Binomial Model
+
+### Distribution Functions
+
+### Expected Value
+
+### Variance
+
+## Multinomial Model
+
+### Distribution Functions
+
+### Expected Value
+
+### Variance
+
+## Uniform Model
+
+### Distribution Functions
+
+### Expected Value
+
+### Variance
+
+## Normal Model
+
+### Distribution Functions
+
+### Expected Value
+
+### Variance
 
 ## Gamma Model
 
-## Survival Model
+### Distribution Functions
 
+### Expected Value
+
+### Variance
+
+## Beta Model
+
+### Distribution Functions
+
+### Expected Value
+
+### Variance
+
+## Weibull Model
+
+### Distribution Functions
+
+### Expected Value
+
+### Variance
 
