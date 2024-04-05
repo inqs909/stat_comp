@@ -1,5 +1,5 @@
 
-# {.unnumbered}
+# Statistical Computing {.unnumbered}
 
 Welcome to Statistical Computing! A book designed to give undergraduate students exposure to several topics related to computational statistics and programming in R.
 
@@ -9,4 +9,55 @@ This book is a work in progress and will contain several grammatical errors and 
 
 This work is published under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license. 
 
+
+## Preface
+
+This is a book created to be used for a statistical computing course at the undergraduate level.
+
+### Installing R
+
+[R](https://www.r-project.org/) is an open-source programming language used to conduct statistical analysis.
+You can freely download and install R [here](https://cloud.r-project.org/).
+
+### Installing RStudio
+
+[RStudio](https://posit.co/products/open-source/rstudio/) is an Integrated Development Environment ([IDE](https://en.wikipedia.org/wiki/Integrated_development_environment)) used for data science.
+It contains several tools needed to extend your programming and project management skills. 
+
+You can download and install the open-source (free) version of RStudio [here](https://posit.co/downloads/).
+
+### Installing Quarto
+
+[Quarto](https://quarto.org/) is a technical documentation system that allows you to embed narrative, code, and output in one document.
+Quarto should come automatically install from RStudio; however, you can update (or install) it [here](https://quarto.org/docs/get-started/).
+
+### Installing R Packages
+
+R Packages extends the functionality from the base functions in R. R packages contain extra functions to conduct uncommon statistical models.
+
+As of right now, the [tidyverse](https://www.tidyverse.org/) is a set of comprehensive packages to prepare and analyze data. To install tidyverse, use the following line in the console:
+
+
+```{r}
+#| echo: true
+#| eval: false
+
+install.packages("tidyverse")
+
+```
+
+
+### Topics
+
+|Topic | Description |
+|:-|:-|
+|R Programming | Provide with a brief introduction to R programming. Topics include basic computations, control flow statements, functional programming, and scripting tips and tricks. |
+|Simulations | Explore different algorithms to generate random variables. |
+|Randomizations | Learn how to implement different permutation tests. |
+|Monte Carlo Methods | Implement Monte Carlo methods to approximate integrals and distributions. |
+|Bootstrapping | Conduct different bootstrapping techniques to construct confidence intervals. |
+| Data Manipulation, Summarization, and Graphics| Learn how to analyze real-world data |
+| Reporting Data | Learn how to use Quarto to generate reports and presentations. |
+| Debugging and Efficient Programming | Learn how write efficient R code and implement Rcpp into your programs. |
+ 
 

@@ -16,7 +16,7 @@ book:
     orcid: 0000-0002-1137-4310
 
   chapters:
-    - preface.qmd
+    - index.qmd
     - part: r.qmd
       chapters: 
         - basics.qmd
