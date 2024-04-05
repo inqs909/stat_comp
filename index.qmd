@@ -1,4 +1,3 @@
-
 # Statistical Computing {.unnumbered}
 
 Welcome to Statistical Computing! A book designed to give undergraduate students exposure to several topics related to computational statistics and programming in R.
