@@ -16,7 +16,6 @@ book:
     orcid: 0000-0002-1137-4310
 
   chapters:
-    - index.qmd
     - preface.qmd
     - part: r.qmd
       chapters: 
