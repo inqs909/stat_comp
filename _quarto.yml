@@ -17,46 +17,35 @@ book:
 
   chapters:
     - index.qmd
-    - part: r.qmd
-      chapters: 
-        - basics.qmd
-        - control_flow.qmd
-        - functional.qmd
-        - scripting.qmd
-        - resources.qmd
-    - part: simulations.qmd
+    - part: monte_carlo.qmd
       chapters: 
         - rv.qmd
         - models.qmd
-        - rng.qmd
         - mc.qmd
         - mcmc.qmd
+        - mc_int.qmd
     - part: permutations.qmd
       chapters:
         - perm_hyp.qmd
         - perm_reg.qmd
-    - part: monte_carlo.qmd
-      chapters:
-        - mc_int.qmd
-        - mc_testing.qmd
-        - mc_optim.qmd
-        - mc_case_1.qmd
-        - mc_case_2.qmd
-        - mc_case_3.qmd
     - part: bootstrapping.qmd
       chapters:
         - parametric.qmd
         - nonparametric.qmd
-    - part:  da.qmd
+    - part: simulations.qmd
+      chapters:
+        - mc_testing.qmd
+        - mc_sim_studies.qmd
+        - mc_power.qmd
+    - part: r.qmd
       chapters: 
-        - importing.qmd
-        - data_manip.qmd
+        - basics.qmd
         - data_summary.qmd
         - plot.qmd
-    - part: reporting.qmd
-      chapters: 
-        - document.qmd
-        - presentations.qmd
+        - control_flow.qmd
+        - functional.qmd
+        - scripting.qmd
+        - resources.qmd
 
 
 

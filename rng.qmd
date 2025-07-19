@@ -11,6 +11,3 @@ title: "Random Number Generator"
 ### Multiple Recursive Generators
 
 ### Modulo 2 Linear Generators
-
-
-

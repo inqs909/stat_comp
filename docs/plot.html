@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.506">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Computing - 24&nbsp; Graphics</title>
+<title>15&nbsp; Graphics – Statistical Computing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,8 +21,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -64,17 +65,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./reporting.html" rel="next">
+<link href="./control_flow.html" rel="next">
 <link href="./data_summary.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9e4e246ad1a9bfa6005dc7158d2e8e91.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -96,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -111,19 +114,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./da.html">Data Manipulation, Summarization, and Graphics</a></li><li class="breadcrumb-item"><a href="./plot.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Graphics</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./plot.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -139,17 +142,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <div class="sidebar-tools-main">
     <a href="https://github.com/inqs909/stat_comp/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
     <div class="dropdown">
-      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download"><i class="bi bi-download"></i></a>
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
       <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Statistical-Computing.pdf">
-              <i class="bi bi-bi-file-pdf pe-1"></i>
+              <i class="bi bi-file-pdf pe-1"></i>
             Download PDF
             </a>
           </li>
           <li>
             <a class="dropdown-item sidebar-tools-main-item" href="./Statistical-Computing.epub">
-              <i class="bi bi-bi-journal pe-1"></i>
+              <i class="bi bi-journal pe-1"></i>
             Download ePub
             </a>
           </li>
@@ -173,82 +176,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">R Programming</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <a href="./monte_carlo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monte Carlo Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Basic R Programming</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./control_flow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Control Flow</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./functional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Functional Programming</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./scripting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Scripting and Piping in R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Further Resources</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Random Variables and Simulations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./rv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Random Variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Models</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./rng.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Random Number Generator</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Monte Carlo Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Monte Carlo Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mcmc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Markov Chain Monte Carlo Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Markov Chain Monte Carlo Methods</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_int.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -257,68 +219,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./permutations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Randomizations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./perm_hyp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Permutation Tests</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Permutation Tests</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./perm_reg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Permutation Regression</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./monte_carlo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Monte Carlo Methods</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mc_int.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mc_optim.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Monte Carlo Optimization</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mc_case_1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Monte Carlo Methods Case Study 1</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mc_case_2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Monte Carlo Methods Case Study 2</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./mc_case_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Monte Carlo Methods Case Study 3</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Permutation Regression</span></span></a>
   </div>
 </li>
       </ul>
@@ -327,79 +242,103 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="sidebar-item-container"> 
             <a href="./bootstrapping.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bootstrapping</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./parametric.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parametric Bootrapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nonparametric Boostrapping</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./simulations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulations-based Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_sim_studies.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monte Carlo Methods for Generalized/Linear Models</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_power.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Monte Carlo Power Analysis</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Programming</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./parametric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Parametric Bootrapping</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Nonparametric Boostrapping</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./da.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data Manipulation, Summarization, and Graphics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./importing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Importing Data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./data_manip.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Data Manipulation</span></span></a>
+  <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Basic R Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Data Summarization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Summarization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plot.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Graphics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./reporting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reporting Data</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./document.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Quarto Documents</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./presentations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Presentations</span></span></a>
+  <a href="./control_flow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control Flow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./functional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Functional Programming</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./scripting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Scripting and Piping in R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Further Resources</span></span></a>
   </div>
 </li>
       </ul>
@@ -414,31 +353,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#base-r-plotting" id="toc-base-r-plotting" class="nav-link active" data-scroll-target="#base-r-plotting"><span class="header-section-number">24.1</span> Base R Plotting</a>
+  <li><a href="#base-r-plotting" id="toc-base-r-plotting" class="nav-link active" data-scroll-target="#base-r-plotting"><span class="header-section-number">15.1</span> Base R Plotting</a>
   <ul class="collapse">
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">24.1.1</span> Introduction</a></li>
-  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents"><span class="header-section-number">24.1.2</span> Contents</a></li>
-  <li><a href="#basic-graphics" id="toc-basic-graphics" class="nav-link" data-scroll-target="#basic-graphics"><span class="header-section-number">24.1.3</span> Basic Graphics</a></li>
-  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">24.1.4</span> Scatter Plot</a></li>
-  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">24.1.5</span> Histogram</a></li>
-  <li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot"><span class="header-section-number">24.1.6</span> Density Plot</a></li>
-  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots"><span class="header-section-number">24.1.7</span> Box Plots</a></li>
-  <li><a href="#bar-chart" id="toc-bar-chart" class="nav-link" data-scroll-target="#bar-chart"><span class="header-section-number">24.1.8</span> Bar Chart</a></li>
-  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="header-section-number">24.1.9</span> Pie Chart</a></li>
-  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping"><span class="header-section-number">24.1.10</span> Grouping</a></li>
-  <li><a href="#tweaking" id="toc-tweaking" class="nav-link" data-scroll-target="#tweaking"><span class="header-section-number">24.1.11</span> Tweaking</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">15.1.1</span> Introduction</a></li>
+  <li><a href="#contents" id="toc-contents" class="nav-link" data-scroll-target="#contents"><span class="header-section-number">15.1.2</span> Contents</a></li>
+  <li><a href="#basic-graphics" id="toc-basic-graphics" class="nav-link" data-scroll-target="#basic-graphics"><span class="header-section-number">15.1.3</span> Basic Graphics</a></li>
+  <li><a href="#scatter-plot" id="toc-scatter-plot" class="nav-link" data-scroll-target="#scatter-plot"><span class="header-section-number">15.1.4</span> Scatter Plot</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">15.1.5</span> Histogram</a></li>
+  <li><a href="#density-plot" id="toc-density-plot" class="nav-link" data-scroll-target="#density-plot"><span class="header-section-number">15.1.6</span> Density Plot</a></li>
+  <li><a href="#box-plots" id="toc-box-plots" class="nav-link" data-scroll-target="#box-plots"><span class="header-section-number">15.1.7</span> Box Plots</a></li>
+  <li><a href="#bar-chart" id="toc-bar-chart" class="nav-link" data-scroll-target="#bar-chart"><span class="header-section-number">15.1.8</span> Bar Chart</a></li>
+  <li><a href="#pie-chart" id="toc-pie-chart" class="nav-link" data-scroll-target="#pie-chart"><span class="header-section-number">15.1.9</span> Pie Chart</a></li>
+  <li><a href="#grouping" id="toc-grouping" class="nav-link" data-scroll-target="#grouping"><span class="header-section-number">15.1.10</span> Grouping</a></li>
+  <li><a href="#tweaking" id="toc-tweaking" class="nav-link" data-scroll-target="#tweaking"><span class="header-section-number">15.1.11</span> Tweaking</a></li>
   </ul></li>
-  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="header-section-number">24.2</span> ggplot2</a>
+  <li><a href="#ggplot2" id="toc-ggplot2" class="nav-link" data-scroll-target="#ggplot2"><span class="header-section-number">15.2</span> ggplot2</a>
   <ul class="collapse">
-  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1"><span class="header-section-number">24.2.1</span> Introduction</a></li>
-  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="header-section-number">24.2.2</span> Basics</a></li>
-  <li><a href="#scatter-plot-2" id="toc-scatter-plot-2" class="nav-link" data-scroll-target="#scatter-plot-2"><span class="header-section-number">24.2.3</span> Scatter Plot</a></li>
-  <li><a href="#histogram-and-density-plot" id="toc-histogram-and-density-plot" class="nav-link" data-scroll-target="#histogram-and-density-plot"><span class="header-section-number">24.2.4</span> Histogram and Density Plot</a></li>
-  <li><a href="#box-plots-1" id="toc-box-plots-1" class="nav-link" data-scroll-target="#box-plots-1"><span class="header-section-number">24.2.5</span> Box Plots</a></li>
-  <li><a href="#bar-charts" id="toc-bar-charts" class="nav-link" data-scroll-target="#bar-charts"><span class="header-section-number">24.2.6</span> Bar Charts</a></li>
-  <li><a href="#grouping-1" id="toc-grouping-1" class="nav-link" data-scroll-target="#grouping-1"><span class="header-section-number">24.2.7</span> Grouping</a></li>
-  <li><a href="#themestweaking" id="toc-themestweaking" class="nav-link" data-scroll-target="#themestweaking"><span class="header-section-number">24.2.8</span> Themes/Tweaking</a></li>
-  <li><a href="#saving-plot" id="toc-saving-plot" class="nav-link" data-scroll-target="#saving-plot"><span class="header-section-number">24.2.9</span> Saving plot</a></li>
+  <li><a href="#introduction-1" id="toc-introduction-1" class="nav-link" data-scroll-target="#introduction-1"><span class="header-section-number">15.2.1</span> Introduction</a></li>
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics"><span class="header-section-number">15.2.2</span> Basics</a></li>
+  <li><a href="#scatter-plot-2" id="toc-scatter-plot-2" class="nav-link" data-scroll-target="#scatter-plot-2"><span class="header-section-number">15.2.3</span> Scatter Plot</a></li>
+  <li><a href="#histogram-and-density-plot" id="toc-histogram-and-density-plot" class="nav-link" data-scroll-target="#histogram-and-density-plot"><span class="header-section-number">15.2.4</span> Histogram and Density Plot</a></li>
+  <li><a href="#box-plots-1" id="toc-box-plots-1" class="nav-link" data-scroll-target="#box-plots-1"><span class="header-section-number">15.2.5</span> Box Plots</a></li>
+  <li><a href="#bar-charts" id="toc-bar-charts" class="nav-link" data-scroll-target="#bar-charts"><span class="header-section-number">15.2.6</span> Bar Charts</a></li>
+  <li><a href="#grouping-1" id="toc-grouping-1" class="nav-link" data-scroll-target="#grouping-1"><span class="header-section-number">15.2.7</span> Grouping</a></li>
+  <li><a href="#themestweaking" id="toc-themestweaking" class="nav-link" data-scroll-target="#themestweaking"><span class="header-section-number">15.2.8</span> Themes/Tweaking</a></li>
+  <li><a href="#saving-plot" id="toc-saving-plot" class="nav-link" data-scroll-target="#saving-plot"><span class="header-section-number">15.2.9</span> Saving plot</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -446,9 +385,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./da.html">Data Manipulation, Summarization, and Graphics</a></li><li class="breadcrumb-item"><a href="./plot.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Graphics</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./plot.html"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Graphics</span></h1>
+<h1 class="title"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></h1>
 </div>
 
 
@@ -466,26 +405,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Through out this chapter, we use certain notations for different components in R. To begin, when something is in a gray block, <code>_</code>, this indicates that R code is being used. When I am talking about an R Object, it will be displayed as a word. For example, we will be using the R object <code>mtcars</code>. When I am talking about an R function, it will be displayed as a word followed by an open and close parentheses. For example, we will use the mean function denoted as <code>mean()</code> (read this as “mean function”). When I am talking about an R argument for a function, it will be displayed as a word following by an equal sign. For example, we will use the data argument denoted as <code>data=</code> (read this as “data argument”). When I am referencing an R package, I will use <code>::</code> (two colons) after the name. For example, in this tutorial, I will use the <code>ggplot2::</code> (read this as “ggplot2 package”) Lastly, if I am displaying R code for your reference or to run, it will be displayed on its own line. There are many components in R, and my hope is that this will help you understand what components am I talking about.</p>
-<section id="base-r-plotting" class="level2" data-number="24.1">
-<h2 data-number="24.1" class="anchored" data-anchor-id="base-r-plotting"><span class="header-section-number">24.1</span> Base R Plotting</h2>
-<section id="introduction" class="level3" data-number="24.1.1">
-<h3 data-number="24.1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">24.1.1</span> Introduction</h3>
+<section id="base-r-plotting" class="level2" data-number="15.1">
+<h2 data-number="15.1" class="anchored" data-anchor-id="base-r-plotting"><span class="header-section-number">15.1</span> Base R Plotting</h2>
+<section id="introduction" class="level3" data-number="15.1.1">
+<h3 data-number="15.1.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">15.1.1</span> Introduction</h3>
 <p>This tutorial provides an introduction on how to create different graphics in R. For this tutorial, we will focus on plotting different components from the <code>mtcars</code> data set.</p>
 </section>
-<section id="contents" class="level3" data-number="24.1.2">
-<h3 data-number="24.1.2" class="anchored" data-anchor-id="contents"><span class="header-section-number">24.1.2</span> Contents</h3>
+<section id="contents" class="level3" data-number="15.1.2">
+<h3 data-number="15.1.2" class="anchored" data-anchor-id="contents"><span class="header-section-number">15.1.2</span> Contents</h3>
 <ol type="1">
 <li><p>Basic</p></li>
 <li><p>Grouping</p></li>
 <li><p>Tweaking</p></li>
 </ol>
 </section>
-<section id="basic-graphics" class="level3" data-number="24.1.3">
-<h3 data-number="24.1.3" class="anchored" data-anchor-id="basic-graphics"><span class="header-section-number">24.1.3</span> Basic Graphics</h3>
+<section id="basic-graphics" class="level3" data-number="15.1.3">
+<h3 data-number="15.1.3" class="anchored" data-anchor-id="basic-graphics"><span class="header-section-number">15.1.3</span> Basic Graphics</h3>
 <p>Here we will use the built-in R functions to create different graphics. The main function that you will use is the <code>plot()</code>. It contains much of the functionality to create many different plots in R. Additionally, it works well for different classes of R objects. It will provide many important plots that you will need for a certain statistical analysis.</p>
 </section>
-<section id="scatter-plot" class="level3" data-number="24.1.4">
-<h3 data-number="24.1.4" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">24.1.4</span> Scatter Plot</h3>
+<section id="scatter-plot" class="level3" data-number="15.1.4">
+<h3 data-number="15.1.4" class="anchored" data-anchor-id="scatter-plot"><span class="header-section-number">15.1.4</span> Scatter Plot</h3>
 <p>Let’s first create a scatter plot for one variable using the <code>mpg</code> variable. This is done using the <code>plot()</code> and setting the first argument <code>x=</code> to the vector.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -534,8 +473,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Now, let’s change the the axis labels and plot title. This is done by using the arguments <code>main=</code>, <code>xlab=</code>, and <code>ylab</code>. The <code>main=</code> changes the title of the plot.</p>
 </section>
-<section id="histogram" class="level3" data-number="24.1.5">
-<h3 data-number="24.1.5" class="anchored" data-anchor-id="histogram"><span class="header-section-number">24.1.5</span> Histogram</h3>
+<section id="histogram" class="level3" data-number="15.1.5">
+<h3 data-number="15.1.5" class="anchored" data-anchor-id="histogram"><span class="header-section-number">15.1.5</span> Histogram</h3>
 <p>To create a histogram, use the <code>hist()</code>. The <code>hist()</code> only needs <code>x=</code> which is numerical vector. Create a histogram with the <code>mpg</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -570,8 +509,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="density-plot" class="level3" data-number="24.1.6">
-<h3 data-number="24.1.6" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">24.1.6</span> Density Plot</h3>
+<section id="density-plot" class="level3" data-number="15.1.6">
+<h3 data-number="15.1.6" class="anchored" data-anchor-id="density-plot"><span class="header-section-number">15.1.6</span> Density Plot</h3>
 <p>A density plot can be used instead of a histogram. This is done by using the <code>density()</code> to create an object containing the information to create density function. Then, use the <code>plot()</code> to display the plot. The only argument the <code>density()</code> needs is the <code>x=</code> which is the data to be used. Create a density plot the <code>mpg</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">density</span>(mtcars<span class="sc">$</span>mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -596,8 +535,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="box-plots" class="level3" data-number="24.1.7">
-<h3 data-number="24.1.7" class="anchored" data-anchor-id="box-plots"><span class="header-section-number">24.1.7</span> Box Plots</h3>
+<section id="box-plots" class="level3" data-number="15.1.7">
+<h3 data-number="15.1.7" class="anchored" data-anchor-id="box-plots"><span class="header-section-number">15.1.7</span> Box Plots</h3>
 <p>A commonly used plot to display relevant statistics is the box plot. To create a box plot use the <code>boxplot()</code>. The function only needs the <code>x=</code> which specifies the data to create the box plot. Use the box plot function to create a box plot on for the variable <code>mpg</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(mtcars<span class="sc">$</span>mpg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -621,8 +560,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="bar-chart" class="level3" data-number="24.1.8">
-<h3 data-number="24.1.8" class="anchored" data-anchor-id="bar-chart"><span class="header-section-number">24.1.8</span> Bar Chart</h3>
+<section id="bar-chart" class="level3" data-number="15.1.8">
+<h3 data-number="15.1.8" class="anchored" data-anchor-id="bar-chart"><span class="header-section-number">15.1.8</span> Bar Chart</h3>
 <p>A histogram shows you the frequency for a continuous variable. A bar chart will show you the frequency of a categorical or discrete variable. To create a bar chart, use the <code>barplot()</code>. The main argument it needs is the <code>height=</code> which needs to an object from the <code>table()</code>. Create a bar chart for the <code>cyl</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -635,8 +574,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="pie-chart" class="level3" data-number="24.1.9">
-<h3 data-number="24.1.9" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">24.1.9</span> Pie Chart</h3>
+<section id="pie-chart" class="level3" data-number="15.1.9">
+<h3 data-number="15.1.9" class="anchored" data-anchor-id="pie-chart"><span class="header-section-number">15.1.9</span> Pie Chart</h3>
 <p>While I do not recommend using a pie chart, R is capable of creating one using the <code>pie()</code>. It only needs the <code>x=</code> which is a vector numerical quantities. This could be the output from the <code>table()</code>. Create a pie chart with the <code>cyl</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -649,19 +588,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="grouping" class="level3" data-number="24.1.10">
-<h3 data-number="24.1.10" class="anchored" data-anchor-id="grouping"><span class="header-section-number">24.1.10</span> Grouping</h3>
+<section id="grouping" class="level3" data-number="15.1.10">
+<h3 data-number="15.1.10" class="anchored" data-anchor-id="grouping"><span class="header-section-number">15.1.10</span> Grouping</h3>
 <p>Similar to obtaining statistics for certain groups, plots can be grouped to reveal certain trends. We will look at a couple of methods to visualize different groups.</p>
-<section id="one-variable-grouping" class="level4" data-number="24.1.10.1">
-<h4 data-number="24.1.10.1" class="anchored" data-anchor-id="one-variable-grouping"><span class="header-section-number">24.1.10.1</span> One Variable Grouping</h4>
+<section id="one-variable-grouping" class="level4" data-number="15.1.10.1">
+<h4 data-number="15.1.10.1" class="anchored" data-anchor-id="one-variable-grouping"><span class="header-section-number">15.1.10.1</span> One Variable Grouping</h4>
 <p>Two ways to display groups is by using color coding or panels. I will show you what I think is the best way to group variables. There may be better ways to do this, such as using the ggplot2 package. Before we begin, create three new R objects that are a subset of the <code>mtcars</code> data set into 3 different data sets with for the three different values of the <code>cyl</code> variable: “4”, “6”, and “8”. use the <code>subset()</code> to create the different data sets. Name the new R objects <code>mtcars_4</code>, <code>mtcars_6</code>, and <code>mtcars_8</code>, respectively.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>mtcars_4 <span class="ot">&lt;-</span> <span class="fu">subset</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">4</span>)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>mtcars_6 <span class="ot">&lt;-</span> <span class="fu">subset</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">6</span>)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>mtcars_8 <span class="ot">&lt;-</span> <span class="fu">subset</span>(mtcars, cyl <span class="sc">==</span> <span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="scatter-plot-1" class="level5" data-number="24.1.10.1.1">
-<h5 data-number="24.1.10.1.1" class="anchored" data-anchor-id="scatter-plot-1"><span class="header-section-number">24.1.10.1.1</span> Scatter Plot</h5>
+<section id="scatter-plot-1" class="level5" data-number="15.1.10.1.1">
+<h5 data-number="15.1.10.1.1" class="anchored" data-anchor-id="scatter-plot-1"><span class="header-section-number">15.1.10.1.1</span> Scatter Plot</h5>
 <p>To create different colors points for their respective label associated <code>cyl</code> variable. First create a base scatter plot using the <code>plot()</code> to set up the plot. Then one by one, overlay a set of new points on the base plot using the <code>points()</code>. The first two arguments should be the vectors of data from their respective R object subset. Also, use the <code>col=</code> to change the color of the points. The <code>col=</code> takes either a string or a number.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>disp)</span>
@@ -677,8 +616,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="histogram-1" class="level5" data-number="24.1.10.1.2">
-<h5 data-number="24.1.10.1.2" class="anchored" data-anchor-id="histogram-1"><span class="header-section-number">24.1.10.1.2</span> Histogram</h5>
+<section id="histogram-1" class="level5" data-number="15.1.10.1.2">
+<h5 data-number="15.1.10.1.2" class="anchored" data-anchor-id="histogram-1"><span class="header-section-number">15.1.10.1.2</span> Histogram</h5>
 <p>Now, it us more difficult to overlay histograms on a plot to different colors. Therefore, a panel approach may be more beneficial. This can be done by setting up R to plot a grid of plots. To do this, use the <code>par()</code> to tell R how to set up the grid. Then use the <code>mfrow=</code>, which is a vector of length two, to set up a grid. The <code>mfrow=</code> usually has an input of <code>c(ROWS,COLS)</code> which states the number of rows and the number of columns. Once this is done, the next plots you create will be used to populate the grid.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>))</span>
@@ -695,8 +634,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Every time you use the <code>par()</code>, it will change how graphics are created in an R session. Therefore, all your plots will follow the new graphic parameters. You will need to reset it by typing <code>dev.off()</code>.</p>
 </section>
-<section id="bar-chart-1" class="level5" data-number="24.1.10.1.3">
-<h5 data-number="24.1.10.1.3" class="anchored" data-anchor-id="bar-chart-1"><span class="header-section-number">24.1.10.1.3</span> Bar Chart</h5>
+<section id="bar-chart-1" class="level5" data-number="15.1.10.1.3">
+<h5 data-number="15.1.10.1.3" class="anchored" data-anchor-id="bar-chart-1"><span class="header-section-number">15.1.10.1.3</span> Bar Chart</h5>
 <p>To visualize two categorical variables, we can use a color-coded bar chart to compare the frequencies of the categories. This is simple to do with the <code>barplot()</code>. First, use the <code>table()</code> to create a cross-tabulation of the frequencies for two variables. Then use the <code>boxplot()</code> to visualize both variables. Then use <code>legend=</code> to create a label when the bar chart is color-coded. Additionally, use the <code>beside=</code> argument to change how the plot looks. Use the code below to compare the variables <code>cyl</code> and <code>am</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>am), <span class="at">beside =</span> <span class="cn">TRUE</span>, <span class="at">legend =</span> <span class="fu">rownames</span>(<span class="fu">table</span>(mtcars<span class="sc">$</span>cyl, mtcars<span class="sc">$</span>am)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -712,10 +651,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 </section>
-<section id="tweaking" class="level3" data-number="24.1.11">
-<h3 data-number="24.1.11" class="anchored" data-anchor-id="tweaking"><span class="header-section-number">24.1.11</span> Tweaking</h3>
-<section id="labels" class="level4" data-number="24.1.11.1">
-<h4 data-number="24.1.11.1" class="anchored" data-anchor-id="labels"><span class="header-section-number">24.1.11.1</span> Labels</h4>
+<section id="tweaking" class="level3" data-number="15.1.11">
+<h3 data-number="15.1.11" class="anchored" data-anchor-id="tweaking"><span class="header-section-number">15.1.11</span> Tweaking</h3>
+<section id="labels" class="level4" data-number="15.1.11.1">
+<h4 data-number="15.1.11.1" class="anchored" data-anchor-id="labels"><span class="header-section-number">15.1.11.1</span> Labels</h4>
 <p>The main tweaking of plots I will talk about is changing the the axis label and titles. For the most part, each function allows you to use the <code>main=</code>, <code>xlab=</code>, and <code>ylab=</code>. The <code>main=</code> allows you to change the title. The <code>xlab=</code> and <code>ylab=</code> allow you to change the labels for the x-axis and y-axis, respectively. Create a scatter plot for the variables <code>mpg</code> and <code>disp</code> and change the labels.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mtcars<span class="sc">$</span>mpg, mtcars<span class="sc">$</span>disp, <span class="at">main =</span> <span class="st">"MPG vs Displacement"</span>, <span class="at">xlab =</span> <span class="st">"MPG"</span>, <span class="at">ylab =</span> <span class="st">"Displacement"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -730,13 +669,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 </section>
-<section id="ggplot2" class="level2" data-number="24.2">
-<h2 data-number="24.2" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">24.2</span> ggplot2</h2>
-<section id="introduction-1" class="level3" data-number="24.2.1">
-<h3 data-number="24.2.1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">24.2.1</span> Introduction</h3>
+<section id="ggplot2" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="ggplot2"><span class="header-section-number">15.2</span> ggplot2</h2>
+<section id="introduction-1" class="level3" data-number="15.2.1">
+<h3 data-number="15.2.1" class="anchored" data-anchor-id="introduction-1"><span class="header-section-number">15.2.1</span> Introduction</h3>
 <p>The <code>ggplot2::</code> provides a set of functions to create different graphics. For more information on plotting in <code>ggplot2::</code>, please visit the this excellent <a href="https://ggplot2.tidyverse.org/">resource</a>. Here we will discuss some of the basics to the <code>ggplot2::``. To me,</code>ggplot2::`<code>creates a plot by adding layers to a base plot. The syntax is designed for you to change different components of a plot in an intuitive manner. For this tutorial, we will focus on plotting different components from the</code>mpg` data set.</p>
-<section id="contents-1" class="level4" data-number="24.2.1.1">
-<h4 data-number="24.2.1.1" class="anchored" data-anchor-id="contents-1"><span class="header-section-number">24.2.1.1</span> Contents</h4>
+<section id="contents-1" class="level4" data-number="15.2.1.1">
+<h4 data-number="15.2.1.1" class="anchored" data-anchor-id="contents-1"><span class="header-section-number">15.2.1.1</span> Contents</h4>
 <ol type="1">
 <li><p>Basic</p></li>
 <li><p>Grouping</p></li>
@@ -744,8 +683,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </section>
 </section>
-<section id="basics" class="level3" data-number="24.2.2">
-<h3 data-number="24.2.2" class="anchored" data-anchor-id="basics"><span class="header-section-number">24.2.2</span> Basics</h3>
+<section id="basics" class="level3" data-number="15.2.2">
+<h3 data-number="15.2.2" class="anchored" data-anchor-id="basics"><span class="header-section-number">15.2.2</span> Basics</h3>
 <p>To begin, the <code>ggplot2::</code> really works well when you are using data frames. If you have any output that you want to plot, convert into to a data frame. Once we have our data set, the first thing you would want to do is specify the main components of your base plot. This will be what will be plotted on your x-axis, and what will be plotted on your y-axis. Next, you will create the the type of plot. Lastly, you will add different layers to tweak the plot for your needs. This can be changing the layout or even overlaying another plot. The `ggplot2::`` provides you with tools to do almost everything you need to create a plot easily.</p>
 <p>Before we begin plotting, load the <code>ggplot2::</code> in R.</p>
 <div class="cell">
@@ -762,8 +701,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This base plot is now used to create certain plots. Plots are created by adding functions to the base plot. This is done by using the <code>+</code> operator and then a specific <code>ggplot2::</code> function. Below we will go over some of the functions necessary.</p>
 </section>
-<section id="scatter-plot-2" class="level3" data-number="24.2.3">
-<h3 data-number="24.2.3" class="anchored" data-anchor-id="scatter-plot-2"><span class="header-section-number">24.2.3</span> Scatter Plot</h3>
+<section id="scatter-plot-2" class="level3" data-number="15.2.3">
+<h3 data-number="15.2.3" class="anchored" data-anchor-id="scatter-plot-2"><span class="header-section-number">15.2.3</span> Scatter Plot</h3>
 <p>To create a scatter plot in <code>ggplot2::</code>, add the <code>geom_point()</code> to the base plot. You do not need to specify any arguments in the function. Create a scatter plot to <code>gg_1</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>gg_1 <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -813,8 +752,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="histogram-and-density-plot" class="level3" data-number="24.2.4">
-<h3 data-number="24.2.4" class="anchored" data-anchor-id="histogram-and-density-plot"><span class="header-section-number">24.2.4</span> Histogram and Density Plot</h3>
+<section id="histogram-and-density-plot" class="level3" data-number="15.2.4">
+<h3 data-number="15.2.4" class="anchored" data-anchor-id="histogram-and-density-plot"><span class="header-section-number">15.2.4</span> Histogram and Density Plot</h3>
 <p>To create a histogram and density plots, create a base plot and specify the variable of interest in the <code>aes()</code>, only specify one variable. Create a base plot using the <code>mtcars</code> data set and the <code>mpg</code> variable. Assign it to <code>gg_3</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>gg_3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -844,8 +783,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="density-plot-1" class="level4" data-number="24.2.4.1">
-<h4 data-number="24.2.4.1" class="anchored" data-anchor-id="density-plot-1"><span class="header-section-number">24.2.4.1</span> Density Plot</h4>
+<section id="density-plot-1" class="level4" data-number="15.2.4.1">
+<h4 data-number="15.2.4.1" class="anchored" data-anchor-id="density-plot-1"><span class="header-section-number">15.2.4.1</span> Density Plot</h4>
 <p>To create a density plot, use the <code>geom_density()</code>. Create a density plot for the <code>mpg</code> variable.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>gg_3 <span class="sc">+</span> <span class="fu">geom_density</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -858,8 +797,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="both" class="level4" data-number="24.2.4.2">
-<h4 data-number="24.2.4.2" class="anchored" data-anchor-id="both"><span class="header-section-number">24.2.4.2</span> Both</h4>
+<section id="both" class="level4" data-number="15.2.4.2">
+<h4 data-number="15.2.4.2" class="anchored" data-anchor-id="both"><span class="header-section-number">15.2.4.2</span> Both</h4>
 <p>Similar to adding lines and points in the same plot, you can add a histogram and a density plot by adding both the <code>geom_histogram()</code> and <code>geom_density()</code>. However, in the <code>geom_histogram()</code>, you must add <code>aes(y=..density..)</code> to create a frequency histogram. Create a plot with a histogram and a density plot.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>gg_3 <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span>..density..),<span class="at">bins=</span><span class="dv">7</span>) <span class="sc">+</span></span>
@@ -878,8 +817,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="box-plots-1" class="level3" data-number="24.2.5">
-<h3 data-number="24.2.5" class="anchored" data-anchor-id="box-plots-1"><span class="header-section-number">24.2.5</span> Box Plots</h3>
+<section id="box-plots-1" class="level3" data-number="15.2.5">
+<h3 data-number="15.2.5" class="anchored" data-anchor-id="box-plots-1"><span class="header-section-number">15.2.5</span> Box Plots</h3>
 <p>If you need to create a box plot, use the <code>stat_boxplot()</code>. Create a boxplot for the variable <code>mpg</code>. All you need to do is add <code>stat_boxplot()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>gg_3 <span class="sc">+</span> <span class="fu">stat_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -892,8 +831,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="bar-charts" class="level3" data-number="24.2.6">
-<h3 data-number="24.2.6" class="anchored" data-anchor-id="bar-charts"><span class="header-section-number">24.2.6</span> Bar Charts</h3>
+<section id="bar-charts" class="level3" data-number="15.2.6">
+<h3 data-number="15.2.6" class="anchored" data-anchor-id="bar-charts"><span class="header-section-number">15.2.6</span> Bar Charts</h3>
 <p>Creating a bar chart is similar to create a box plot. All you need to do is use the <code>stat_count()</code>. First create a base plot using the <code>mtcars</code> data sets and the <code>cyl</code> variable for the mapping and assign it to <code>gg_4</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>gg_4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(cyl))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -910,13 +849,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="grouping-1" class="level3" data-number="24.2.7">
-<h3 data-number="24.2.7" class="anchored" data-anchor-id="grouping-1"><span class="header-section-number">24.2.7</span> Grouping</h3>
+<section id="grouping-1" class="level3" data-number="15.2.7">
+<h3 data-number="15.2.7" class="anchored" data-anchor-id="grouping-1"><span class="header-section-number">15.2.7</span> Grouping</h3>
 <p>The `ggplot2::`` easily allows you to create plots from different groups. We will go over some of the arguments and functions to do this.</p>
-<section id="one-variable-grouping-1" class="level4" data-number="24.2.7.1">
-<h4 data-number="24.2.7.1" class="anchored" data-anchor-id="one-variable-grouping-1"><span class="header-section-number">24.2.7.1</span> One Variable Grouping</h4>
-<section id="scatter-plot-3" class="level5" data-number="24.2.7.1.1">
-<h5 data-number="24.2.7.1.1" class="anchored" data-anchor-id="scatter-plot-3"><span class="header-section-number">24.2.7.1.1</span> Scatter Plot</h5>
+<section id="one-variable-grouping-1" class="level4" data-number="15.2.7.1">
+<h4 data-number="15.2.7.1" class="anchored" data-anchor-id="one-variable-grouping-1"><span class="header-section-number">15.2.7.1</span> One Variable Grouping</h4>
+<section id="scatter-plot-3" class="level5" data-number="15.2.7.1.1">
+<h5 data-number="15.2.7.1.1" class="anchored" data-anchor-id="scatter-plot-3"><span class="header-section-number">15.2.7.1.1</span> Scatter Plot</h5>
 <p>To begin, we want to specify the grouping variable within the <code>aes()</code> with the <code>color=</code>. Additionally, the argument works best with a factor variable, so use the <code>factor()</code> to create a factor variable. Create a base plot from the <code>mtcars</code> data set using <code>mpg</code> and <code>disp</code> for the x and y axis, respectively, and set the <code>color=</code> equal to the <code>factor(cyl)</code>. Assign it the R object <code>gg_5</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>gg_5 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, disp, <span class="at">color=</span><span class="fu">factor</span>(cyl)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -945,8 +884,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="histograms" class="level5" data-number="24.2.7.1.2">
-<h5 data-number="24.2.7.1.2" class="anchored" data-anchor-id="histograms"><span class="header-section-number">24.2.7.1.2</span> Histograms</h5>
+<section id="histograms" class="level5" data-number="15.2.7.1.2">
+<h5 data-number="15.2.7.1.2" class="anchored" data-anchor-id="histograms"><span class="header-section-number">15.2.7.1.2</span> Histograms</h5>
 <p>Histograms can be grouped by different colors. This is done by using the <code>fill=</code> within the <code>aes()</code> in the base plot. Assign it the R object <code>gg_7</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>gg_7 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(mpg, <span class="at">fill =</span> <span class="fu">factor</span>(cyl)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -977,8 +916,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="density-plot-2" class="level5" data-number="24.2.7.1.3">
-<h5 data-number="24.2.7.1.3" class="anchored" data-anchor-id="density-plot-2"><span class="header-section-number">24.2.7.1.3</span> Density Plot</h5>
+<section id="density-plot-2" class="level5" data-number="15.2.7.1.3">
+<h5 data-number="15.2.7.1.3" class="anchored" data-anchor-id="density-plot-2"><span class="header-section-number">15.2.7.1.3</span> Density Plot</h5>
 <p>Similar to histograms, density plots can be grouped by variables the same way. Using <code>gg_7</code>, create color-coded density plots. All you need to do is add <code>geom_density()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>gg_7 <span class="sc">+</span> <span class="fu">geom_density</span>(<span class="at">alpha=</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1002,8 +941,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="bar-chart-2" class="level5" data-number="24.2.7.1.4">
-<h5 data-number="24.2.7.1.4" class="anchored" data-anchor-id="bar-chart-2"><span class="header-section-number">24.2.7.1.4</span> Bar Chart</h5>
+<section id="bar-chart-2" class="level5" data-number="15.2.7.1.4">
+<h5 data-number="15.2.7.1.4" class="anchored" data-anchor-id="bar-chart-2"><span class="header-section-number">15.2.7.1.4</span> Bar Chart</h5>
 <p>To create a side by side bar plot, you can use the <code>facet_wrap()</code> with a grouping variable. Using <code>gg_4</code>, create a side by side bar plot using <code>vs</code> as the grouping variable. Remember to add <code>stat_count()</code> as well.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>gg_4 <span class="sc">+</span> <span class="fu">stat_count</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>vs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1044,8 +983,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 </section>
-<section id="themestweaking" class="level3" data-number="24.2.8">
-<h3 data-number="24.2.8" class="anchored" data-anchor-id="themestweaking"><span class="header-section-number">24.2.8</span> Themes/Tweaking</h3>
+<section id="themestweaking" class="level3" data-number="15.2.8">
+<h3 data-number="15.2.8" class="anchored" data-anchor-id="themestweaking"><span class="header-section-number">15.2.8</span> Themes/Tweaking</h3>
 <p>In this section, we will talk about the basic tweaks and themes to <code>ggplot2::</code>. However. <code>ggplot2::</code> is much more powerful and can do much more. Before we begin, lets look at object <code>gg_9</code> to understand the plot. To view a plot, use the <code>plot()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(gg_9)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1057,8 +996,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<section id="title" class="level4" data-number="24.2.8.1">
-<h4 data-number="24.2.8.1" class="anchored" data-anchor-id="title"><span class="header-section-number">24.2.8.1</span> Title</h4>
+<section id="title" class="level4" data-number="15.2.8.1">
+<h4 data-number="15.2.8.1" class="anchored" data-anchor-id="title"><span class="header-section-number">15.2.8.1</span> Title</h4>
 <p>To change the title, add the <code>ggtitle()</code> to the plot. Put the new title in quotes as the first argument. Change the title for <code>gg_9</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>gg_9 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">"Scatter Plot"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1071,8 +1010,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="axis" class="level4" data-number="24.2.8.2">
-<h4 data-number="24.2.8.2" class="anchored" data-anchor-id="axis"><span class="header-section-number">24.2.8.2</span> Axis</h4>
+<section id="axis" class="level4" data-number="15.2.8.2">
+<h4 data-number="15.2.8.2" class="anchored" data-anchor-id="axis"><span class="header-section-number">15.2.8.2</span> Axis</h4>
 <p>Changing the labels for a plot, add the <code>xlab()</code> and <code>ylab()</code>, respectively. The first argument contains the phrase for the axis. Change the axis labels for <code>gg_9</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>gg_9 <span class="sc">+</span> <span class="fu">xlab</span>(<span class="st">"MPG"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Displacement"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1085,8 +1024,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="themes" class="level4" data-number="24.2.8.3">
-<h4 data-number="24.2.8.3" class="anchored" data-anchor-id="themes"><span class="header-section-number">24.2.8.3</span> Themes</h4>
+<section id="themes" class="level4" data-number="15.2.8.3">
+<h4 data-number="15.2.8.3" class="anchored" data-anchor-id="themes"><span class="header-section-number">15.2.8.3</span> Themes</h4>
 <p>If you don’t like how the plot looks, <code>ggplot2::</code> has custom themes you can add to the plot to change it. These functions usually are formatted as <code>theme_*()</code>, where the <code>*</code> indicates different possibilities. I personally like how <code>theme_bw()</code> looks. Change the theme of <code>gg_9</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>gg_9 <span class="sc">+</span> <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1101,8 +1040,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Additionally, you can change certain part of the theme using the <code>theme()</code>. I encourage you to look at what are other possibilities.</p>
 </section>
 </section>
-<section id="saving-plot" class="level3" data-number="24.2.9">
-<h3 data-number="24.2.9" class="anchored" data-anchor-id="saving-plot"><span class="header-section-number">24.2.9</span> Saving plot</h3>
+<section id="saving-plot" class="level3" data-number="15.2.9">
+<h3 data-number="15.2.9" class="anchored" data-anchor-id="saving-plot"><span class="header-section-number">15.2.9</span> Saving plot</h3>
 <p>If you want to save the plot, use the <code>ggsave()</code>. Read the help documentation for the functions capabilities.</p>
 
 
@@ -1111,216 +1050,242 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  });
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
     }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
     }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
     }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      return note.innerHTML;
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
     });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
         }
       }
     }
-    stripColumnClz(note)
-    const typesetMath = (el) => {
-      if (window.MathJax) {
-        // MathJax Typeset
-        window.MathJax.typeset([el]);
-      } else if (window.katex) {
-        // KaTeX Render
-        var mathElements = el.getElementsByClassName("math");
-        var macros = [];
-        for (var i = 0; i < mathElements.length; i++) {
-          var texText = mathElements[i].firstChild;
-          if (mathElements[i].tagName == "SPAN") {
-            window.katex.render(texText.data, mathElements[i], {
-              displayMode: mathElements[i].classList.contains('display'),
-              throwOnError: false,
-              macros: macros,
-              fleqn: false
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
             });
           }
-        }
-      }
-    }
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        typesetMath(container);
-        return container.innerHTML
-      } else {
-        typesetMath(note);
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      typesetMath(note);
-      return note.innerHTML;
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1328,194 +1293,170 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./data_summary.html" class="pagination-link  aria-label=" &lt;span="" summarization&lt;="" span&gt;"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Data Summarization</span></span>
+      <a href="./data_summary.html" class="pagination-link" aria-label="Data Summarization">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Summarization</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./reporting.html" class="pagination-link" aria-label="Reporting Data">
-        <span class="nav-page-text">Reporting Data</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./control_flow.html" class="pagination-link" aria-label="Control Flow">
+        <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control Flow</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
