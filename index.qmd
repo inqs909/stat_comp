@@ -9,10 +9,6 @@ This book is a work in progress and will contain several grammatical errors and 
 This work is published under a [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/) license. 
 
 
-## Preface
-
-This is a book created to be used for a statistical computing course at the undergraduate level.
-
 ### Installing R
 
 [R](https://www.r-project.org/) is an open-source programming language used to conduct statistical analysis.
@@ -49,7 +45,7 @@ install.packages("tidyverse")
 
 |Topic | Description |
 |:-|:-|
-
+| Probability and Statistics | A review of different topics related to probability theory and statistics. |
 |Monte Carlo Methods | Explore different algorithms to generate random variables. |
 |Randomizations | Learn how to implement different permutation tests. |
 |Bootstrapping | Conduct different bootstrapping techniques to construct confidence intervals. |

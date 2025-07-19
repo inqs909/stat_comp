@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>16&nbsp; Control Flow – Statistical Computing</title>
+<title>17&nbsp; Control Flow – Statistical Computing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -152,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./control_flow.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control Flow</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./control_flow.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control Flow</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -203,10 +203,16 @@ window.Quarto = {
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">preface.html</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./monte_carlo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Monte Carlo Methods</span></a>
+            <a href="./probstats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability and Statistics Review</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -221,25 +227,42 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./monte_carlo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monte Carlo Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./mc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Monte Carlo Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monte Carlo Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mcmc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Markov Chain Monte Carlo Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Markov Chain Monte Carlo Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mc_int.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -248,29 +271,6 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./permutations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Randomizations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./perm_hyp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Permutation Tests</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./perm_reg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Permutation Regression</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./bootstrapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bootstrapping</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -278,22 +278,22 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./parametric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parametric Bootrapping</span></span></a>
+  <a href="./perm_hyp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Permutation Tests</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nonparametric Boostrapping</span></span></a>
+  <a href="./perm_reg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Permutation Regression</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulations-based Analysis</span></a>
+            <a href="./bootstrapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Boostrap Method</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -301,20 +301,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></span></a>
+  <a href="./parametric.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parametric Bootstrapping</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mc_sim_studies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monte Carlo Methods for Generalized/Linear Models</span></span></a>
+  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nonparametric Bootstrapping</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./simulations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation-based Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_reg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Monte Carlo Methods for Regression Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mc_power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Monte Carlo Power Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Monte Carlo Power Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -323,51 +346,51 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Programming</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Basic R Programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Basic R Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Summarization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Summarization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Graphics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./control_flow.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control Flow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control Flow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./functional.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Functional Programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Functional Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./scripting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Scripting and Piping in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Scripting and Piping in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Further Resources</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Further Resources</span></span></a>
   </div>
 </li>
       </ul>
@@ -382,28 +405,28 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#indexing" id="toc-indexing" class="nav-link active" data-scroll-target="#indexing"><span class="header-section-number">16.1</span> Indexing</a>
+  <li><a href="#indexing" id="toc-indexing" class="nav-link active" data-scroll-target="#indexing"><span class="header-section-number">17.1</span> Indexing</a>
   <ul class="collapse">
-  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">16.1.1</span> Vectors</a></li>
-  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">16.1.2</span> Matrices</a></li>
-  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="header-section-number">16.1.3</span> Data Frames</a></li>
-  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">16.1.4</span> Lists</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">17.1.1</span> Vectors</a></li>
+  <li><a href="#matrices" id="toc-matrices" class="nav-link" data-scroll-target="#matrices"><span class="header-section-number">17.1.2</span> Matrices</a></li>
+  <li><a href="#data-frames" id="toc-data-frames" class="nav-link" data-scroll-target="#data-frames"><span class="header-section-number">17.1.3</span> Data Frames</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">17.1.4</span> Lists</a></li>
   </ul></li>
-  <li><a href="#ifelse-statements" id="toc-ifelse-statements" class="nav-link" data-scroll-target="#ifelse-statements"><span class="header-section-number">16.2</span> If/Else Statements</a>
+  <li><a href="#ifelse-statements" id="toc-ifelse-statements" class="nav-link" data-scroll-target="#ifelse-statements"><span class="header-section-number">17.2</span> If/Else Statements</a>
   <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">16.2.1</span> Example</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example"><span class="header-section-number">17.2.1</span> Example</a></li>
   </ul></li>
-  <li><a href="#for-loops" id="toc-for-loops" class="nav-link" data-scroll-target="#for-loops"><span class="header-section-number">16.3</span> <code>for</code> loops</a>
+  <li><a href="#for-loops" id="toc-for-loops" class="nav-link" data-scroll-target="#for-loops"><span class="header-section-number">17.3</span> <code>for</code> loops</a>
   <ul class="collapse">
-  <li><a href="#basic-for-loop" id="toc-basic-for-loop" class="nav-link" data-scroll-target="#basic-for-loop"><span class="header-section-number">16.3.1</span> Basic <code>for</code> loop</a></li>
-  <li><a href="#nested-for-loops" id="toc-nested-for-loops" class="nav-link" data-scroll-target="#nested-for-loops"><span class="header-section-number">16.3.2</span> Nested <code>for</code> loops</a></li>
+  <li><a href="#basic-for-loop" id="toc-basic-for-loop" class="nav-link" data-scroll-target="#basic-for-loop"><span class="header-section-number">17.3.1</span> Basic <code>for</code> loop</a></li>
+  <li><a href="#nested-for-loops" id="toc-nested-for-loops" class="nav-link" data-scroll-target="#nested-for-loops"><span class="header-section-number">17.3.2</span> Nested <code>for</code> loops</a></li>
   </ul></li>
-  <li><a href="#break" id="toc-break" class="nav-link" data-scroll-target="#break"><span class="header-section-number">16.4</span> <code>break</code></a></li>
-  <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next"><span class="header-section-number">16.5</span> <code>next</code></a></li>
-  <li><a href="#while-loop" id="toc-while-loop" class="nav-link" data-scroll-target="#while-loop"><span class="header-section-number">16.6</span> <code>while</code> loop</a>
+  <li><a href="#break" id="toc-break" class="nav-link" data-scroll-target="#break"><span class="header-section-number">17.4</span> <code>break</code></a></li>
+  <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next"><span class="header-section-number">17.5</span> <code>next</code></a></li>
+  <li><a href="#while-loop" id="toc-while-loop" class="nav-link" data-scroll-target="#while-loop"><span class="header-section-number">17.6</span> <code>while</code> loop</a>
   <ul class="collapse">
-  <li><a href="#basic-while-loops" id="toc-basic-while-loops" class="nav-link" data-scroll-target="#basic-while-loops"><span class="header-section-number">16.6.1</span> Basic <code>while</code> loops</a></li>
-  <li><a href="#infinite-while-loops" id="toc-infinite-while-loops" class="nav-link" data-scroll-target="#infinite-while-loops"><span class="header-section-number">16.6.2</span> Infinite <code>while</code> loops</a></li>
+  <li><a href="#basic-while-loops" id="toc-basic-while-loops" class="nav-link" data-scroll-target="#basic-while-loops"><span class="header-section-number">17.6.1</span> Basic <code>while</code> loops</a></li>
+  <li><a href="#infinite-while-loops" id="toc-infinite-while-loops" class="nav-link" data-scroll-target="#infinite-while-loops"><span class="header-section-number">17.6.2</span> Infinite <code>while</code> loops</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -411,9 +434,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./control_flow.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control Flow</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./control_flow.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control Flow</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control Flow</span></h1>
+<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control Flow</span></h1>
 </div>
 
 
@@ -430,11 +453,11 @@ window.Quarto = {
 </header>
 
 
-<section id="indexing" class="level2" data-number="16.1">
-<h2 data-number="16.1" class="anchored" data-anchor-id="indexing"><span class="header-section-number">16.1</span> Indexing</h2>
-<section id="vectors" class="level3" data-number="16.1.1">
-<h3 data-number="16.1.1" class="anchored" data-anchor-id="vectors"><span class="header-section-number">16.1.1</span> Vectors</h3>
-<p>In the <a href="basics.html#sec-r-objects" class="quarto-xref"><span>Section 13.5</span></a>, we discussed about different types of R objects. For example, a vector can be a certain data type with a set number of elements. Here we construct a vector called <code>x</code> increasing from -5 to 5 by one unit:</p>
+<section id="indexing" class="level2" data-number="17.1">
+<h2 data-number="17.1" class="anchored" data-anchor-id="indexing"><span class="header-section-number">17.1</span> Indexing</h2>
+<section id="vectors" class="level3" data-number="17.1.1">
+<h3 data-number="17.1.1" class="anchored" data-anchor-id="vectors"><span class="header-section-number">17.1.1</span> Vectors</h3>
+<p>In the <a href="basics.html#sec-r-objects" class="quarto-xref"><span>Section 14.5</span></a>, we discussed about different types of R objects. For example, a vector can be a certain data type with a set number of elements. Here we construct a vector called <code>x</code> increasing from -5 to 5 by one unit:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="sc">-</span><span class="dv">5</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -461,8 +484,8 @@ window.Quarto = {
 </div>
 <p>Notice how the second line uses the <code>c()</code>. This is necessary when we want to specify non-contiguous elements. Now let’s see how we can index a matrix</p>
 </section>
-<section id="matrices" class="level3" data-number="16.1.2">
-<h3 data-number="16.1.2" class="anchored" data-anchor-id="matrices"><span class="header-section-number">16.1.2</span> Matrices</h3>
+<section id="matrices" class="level3" data-number="17.1.2">
+<h3 data-number="17.1.2" class="anchored" data-anchor-id="matrices"><span class="header-section-number">17.1.2</span> Matrices</h3>
 <p>A matrix can be indexed the same way as a vector using the <code>[]</code> brackets. However, since the matrix is a 2-dimensional objects, we will need to include a comma to represent the different dimensions: <code>[,]</code>. The first element indexes the row and the second element indexes the columns. To begin, we create the following <span class="math inline">\(4 \times 3\)</span> matrix:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="at">nrow =</span> <span class="dv">4</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -493,8 +516,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="data-frames" class="level3" data-number="16.1.3">
-<h3 data-number="16.1.3" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">16.1.3</span> Data Frames</h3>
+<section id="data-frames" class="level3" data-number="17.1.3">
+<h3 data-number="17.1.3" class="anchored" data-anchor-id="data-frames"><span class="header-section-number">17.1.3</span> Data Frames</h3>
 <p>There are several ways to index a data frame, since it is in a matrix format, you can index it the same way as a matrix. Here are a couple of examples using the <code>mtcars</code> data frame.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>mtcars[,<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -514,11 +537,11 @@ Mazda RX4 Wag  21   6  160 110  3.9 2.875 17.02  0  1    4    4</code></pre>
 <pre><code> [1] 6 6 4 6 8 6 8 4 4 6 6 8 8 8 8 8 8 4 4 4 4 8 8 8 8 4 4 4 8 6 8 4</code></pre>
 </div>
 </div>
-<p>Lastly, a data frame can be indexed to a specific variable using the <code>$</code> notation as described in <a href="basics.html#sec-basic-data-frames" class="quarto-xref"><span>Section 13.5.5</span></a>.</p>
+<p>Lastly, a data frame can be indexed to a specific variable using the <code>$</code> notation as described in <a href="basics.html#sec-basic-data-frames" class="quarto-xref"><span>Section 14.5.5</span></a>.</p>
 </section>
-<section id="lists" class="level3" data-number="16.1.4">
-<h3 data-number="16.1.4" class="anchored" data-anchor-id="lists"><span class="header-section-number">16.1.4</span> Lists</h3>
-<p>As described in <a href="basics.html#sec-basics-lists" class="quarto-xref"><span>Section 13.5.6</span></a>, lists contain elements holding different R objects. To index a specific element of a list, you will use <code>[[]]</code> double brackets. Below is a toy list:</p>
+<section id="lists" class="level3" data-number="17.1.4">
+<h3 data-number="17.1.4" class="anchored" data-anchor-id="lists"><span class="header-section-number">17.1.4</span> Lists</h3>
+<p>As described in <a href="basics.html#sec-basics-lists" class="quarto-xref"><span>Section 14.5.6</span></a>, lists contain elements holding different R objects. To index a specific element of a list, you will use <code>[[]]</code> double brackets. Below is a toy list:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>toy_list <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">mtcars =</span> mtcars,</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                 <span class="at">vector =</span> <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">4</span>),</span>
@@ -568,8 +591,8 @@ Mazda RX4 Wag  21   6  160 110  3.9 2.875 17.02  0  1    4    4</code></pre>
 </div>
 </section>
 </section>
-<section id="ifelse-statements" class="level2" data-number="16.2">
-<h2 data-number="16.2" class="anchored" data-anchor-id="ifelse-statements"><span class="header-section-number">16.2</span> If/Else Statements</h2>
+<section id="ifelse-statements" class="level2" data-number="17.2">
+<h2 data-number="17.2" class="anchored" data-anchor-id="ifelse-statements"><span class="header-section-number">17.2</span> If/Else Statements</h2>
 <p>In R, there are control flow functions that will dictate how a program will be executed. The first set of functions we will talk about are <code>if</code> and <code>else</code> statements. First, the <code>if</code> statement will evaluate a task, If the conditions is satisfied, yields <code>TRUE</code>, then it will conduct a certain task, if it fails, yields <code>FALSE</code>, the <code>else</code> statement will guide it to a different task. Below is a general format:</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -590,8 +613,8 @@ Important Concept
 </div>
 </div>
 </div>
-<section id="example" class="level3" data-number="16.2.1">
-<h3 data-number="16.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">16.2.1</span> Example</h3>
+<section id="example" class="level3" data-number="17.2.1">
+<h3 data-number="17.2.1" class="anchored" data-anchor-id="example"><span class="header-section-number">17.2.1</span> Example</h3>
 <p>Below is an example where we generate <code>x</code> from a standard normal distribution and print the statement ‘positive’ or ‘non-positive’ based on the condition <code>x &gt; 0</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>)</span>
@@ -616,7 +639,7 @@ Important Concept
 <span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"Negative"</span>)</span>
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "Negative"</code></pre>
+<pre><code>[1] "Positive"</code></pre>
 </div>
 </div>
 <p>Above, we add the <code>if</code> statement with condition <code>(x &lt; 0)</code> indicating if the number is negative. Lastly, if <code>x</code> is ever <span class="math inline">\(0\)</span>, we will want R to let us know it is <span class="math inline">\(0\)</span>. We can achieve this by adding one last <code>else</code> statement:</p>
@@ -636,8 +659,8 @@ Important Concept
 </div>
 </section>
 </section>
-<section id="for-loops" class="level2" data-number="16.3">
-<h2 data-number="16.3" class="anchored" data-anchor-id="for-loops"><span class="header-section-number">16.3</span> <code>for</code> loops</h2>
+<section id="for-loops" class="level2" data-number="17.3">
+<h2 data-number="17.3" class="anchored" data-anchor-id="for-loops"><span class="header-section-number">17.3</span> <code>for</code> loops</h2>
 <p>A for <code>loop</code> is a way to repeat a task a certain amount of times. Every time a loop repeats a task, we state it is an iteration of the loop. For each iteration, we may change the inputs by a certain way, either from an indexed vector, and repeat the task. The general anatomy of a loop looks like:</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -658,8 +681,8 @@ Important Concept
 </div>
 <p>The <code>for</code> statement indicates that you will repeat a task inside the brackets. The <code>i</code> in the parenthesis controls how the task will be completed. The <code>in</code> statement tells R where <code>i</code> can look for the values, and <code>vectorr</code> is a vector R object that contains the values <code>i</code> can be. It also controls how many times the task will be repeated based on the length of the vector.</p>
 <p>Learning about a loop is quite challenging, my recommendation is to read the section below and break the example code so you can understand how a <code>for</code> loop works.</p>
-<section id="basic-for-loop" class="level3" data-number="16.3.1">
-<h3 data-number="16.3.1" class="anchored" data-anchor-id="basic-for-loop"><span class="header-section-number">16.3.1</span> Basic <code>for</code> loop</h3>
+<section id="basic-for-loop" class="level3" data-number="17.3.1">
+<h3 data-number="17.3.1" class="anchored" data-anchor-id="basic-for-loop"><span class="header-section-number">17.3.1</span> Basic <code>for</code> loop</h3>
 <p>Let’s say we want R to print one to five separately. We can achieve this by repeating the <code>print()</code> 5 times.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="dv">1</span>); <span class="fu">print</span>(<span class="dv">2</span>); <span class="fu">print</span>(<span class="dv">3</span>); <span class="fu">print</span>(<span class="dv">4</span>); <span class="fu">print</span>(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -736,8 +759,8 @@ Important Concept
 </div>
 <p>This is because <code>letters_10</code> are the values that we want to print and <code>i</code> takes on the value of <code>letters_10</code> each time.</p>
 </section>
-<section id="nested-for-loops" class="level3" data-number="16.3.2">
-<h3 data-number="16.3.2" class="anchored" data-anchor-id="nested-for-loops"><span class="header-section-number">16.3.2</span> Nested <code>for</code> loops</h3>
+<section id="nested-for-loops" class="level3" data-number="17.3.2">
+<h3 data-number="17.3.2" class="anchored" data-anchor-id="nested-for-loops"><span class="header-section-number">17.3.2</span> Nested <code>for</code> loops</h3>
 <p>A nested <code>for</code> loop is a loop that contain a loop within. Below is an example of 3 <code>for</code> loops nested within each other. Below is a general example:</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -760,25 +783,79 @@ Important Concept
 </div>
 </div>
 </div>
-<p>As an example, we will use the <code>greekLetter::</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> and use the <code>greek_vector</code> vector to obtain greek letters in R. Lastly, create a vector called <code>greek_10</code>.</p>
+<p>As an example, we will use the <code>greekLetter</code><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> package and use the <code>print_greeks()</code> function to obtain greek letters in R. Lastly, create a vector called <code>greek_10</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(greekLetters)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>greek_10 <span class="ot">&lt;-</span> greek_vector[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>greek_10 <span class="ot">&lt;-</span> <span class="fu">print_greeks</span>()[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                 alpha                   beta                  gamma 
+                   "α"                    "β"                    "γ" 
+                 delta                epsilon                   zeta 
+                   "δ"                    "ε"                    "ζ" 
+                   eta                  theta                   iota 
+                   "η"                    "θ"                    "ι" 
+                 kappa                 lambda                     mu 
+                   "κ"                    "λ"                    "μ" 
+                    nu                     xi                omicron 
+                   "ν"                    "ξ"                    "ο" 
+                    pi                    rho                  sigma 
+                   "π"                    "ρ"                    "σ" 
+                   tau                upsilon                    phi 
+                   "τ"                    "υ"                    "φ" 
+                   chi                    psi                  omega 
+                   "χ"                    "ψ"                    "ω" 
+                 Alpha                   Beta                  Gamma 
+                   "Α"                    "Β"                    "Γ" 
+                 Delta                Epsilon                   Zeta 
+                   "Δ"                    "Ε"                    "Ζ" 
+                   Eta                  Theta                   Iota 
+                   "Η"                    "Θ"                    "Ι" 
+                 Kappa                 Lambda                     Mu 
+                   "Κ"                    "Λ"                    "Μ" 
+                    Nu                     Xi                Omicron 
+                   "Ν"                    "Ξ"                    "Ο" 
+                    Pi                    Rho                  Sigma 
+                   "Π"                    "Ρ"                    "Σ" 
+                   Tau                Upsilon                    Phi 
+                   "Τ"                    "Υ"                    "Φ" 
+                   Chi                    Psi                  Omega 
+                   "Χ"                    "Ψ"                    "Ω" 
+              infinity         leftrightarrow                 forall 
+                   "∞"                    "⇔"                    "∀" 
+                 exist               notexist               emptyset 
+                   "∃"                    "∄"                    "∅" 
+             elementof           notelementof           proportional 
+                   "∈"                    "∉"                    "∝" 
+   asymptoticallyEqual notasymptoticallyEqual            approxEqual 
+                   "≃"                    "≄"                    "≅" 
+           almostEqual                    leq                    geq 
+                   "≈"                    "≤"                    "≥" 
+              muchless            muchgreater              leftarrow 
+                   "≪"                    "≫"                    "⇐" 
+            rightarrow                  equal               notEqual 
+                   "⇒"                   "＝"                    "≠" 
+              integral         doubleintegral         tripleintegral 
+                   "∫"                    "∬"                    "∭" 
+            logicalAnd              logicalOr           intersection 
+                   "∧"                    "∨"                    "∩" 
+                 union 
+                   "∪" </code></pre>
+</div>
 </div>
 <p>For this example, we want R to print “a” and “<span class="math inline">\(\alpha\)</span>” together as demonstrated below<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(letters_10[<span class="dv">1</span>], greek_10[<span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(letters_10[<span class="dv">1</span>], greek_10[<span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "aα"</code></pre>
 </div>
 </div>
 <p>Now let’s repeat this process to print all possible combinations of the first 3 letters and 3 greek letters:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste0</span>(letters_10[i], greek_10[ii]))</span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (ii <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>){</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="fu">paste0</span>(letters_10[i], greek_10[ii]))</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "aα"
 [1] "aβ"
@@ -793,8 +870,8 @@ Important Concept
 </div>
 </section>
 </section>
-<section id="break" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="break"><span class="header-section-number">16.4</span> <code>break</code></h2>
+<section id="break" class="level2" data-number="17.4">
+<h2 data-number="17.4" class="anchored" data-anchor-id="break"><span class="header-section-number">17.4</span> <code>break</code></h2>
 <p>A <code>break</code> statement is used to stop a loop midway if a certain condition is met. A general setup of <code>break</code> statement goes as follows:</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -807,46 +884,46 @@ Important Concept
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> vector){</span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (condition) {<span class="cf">break</span>}</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>    task</span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> vector){</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (condition) {<span class="cf">break</span>}</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>    task</span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <p>As you can see there is an <code>if</code> statement in the loop. This is used to tell R when to break the loop. If the <code>if</code> statement was not there, then the loop will break without iterating.</p>
 <p>To demonstrate the break statement, we will simulate from a <span class="math inline">\(N(1,1)\)</span> until we have 30 positive numbers or we simulate a negative number.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="at">length =</span> <span class="dv">30</span>)</span>
-<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)){</span>
-<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (y<span class="sc">&lt;</span><span class="dv">0</span>) {</span>
-<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
-<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="ot">&lt;-</span> y</span>
-<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="at">length =</span> <span class="dv">30</span>)</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)){</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (y<span class="sc">&lt;</span><span class="dv">0</span>) {</span>
+<span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span></span>
+<span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="ot">&lt;-</span> y</span>
+<span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb65-12"><a href="#cb65-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.9773483 1.7917295 1.2907964 2.6436599 0.8576497 2.0094081 2.2106120
- [8] 1.5479097        NA        NA        NA        NA        NA        NA
-[15]        NA        NA        NA        NA        NA        NA        NA
-[22]        NA        NA        NA        NA        NA        NA        NA
-[29]        NA        NA</code></pre>
+<pre><code> [1] 3.009607011 1.747037518 0.009051793 2.639894288 0.031970168 0.806483766
+ [7] 1.179765100 0.988156031          NA          NA          NA          NA
+[13]          NA          NA          NA          NA          NA          NA
+[19]          NA          NA          NA          NA          NA          NA
+[25]          NA          NA          NA          NA          NA          NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.1423665</code></pre>
+<pre><code>[1] -0.8466751</code></pre>
 </div>
 </div>
 <p>Notice that the vector does not get filled up all the way, that is because the loop will break once a negative number is simulated</p>
 </section>
-<section id="next" class="level2" data-number="16.5">
-<h2 data-number="16.5" class="anchored" data-anchor-id="next"><span class="header-section-number">16.5</span> <code>next</code></h2>
+<section id="next" class="level2" data-number="17.5">
+<h2 data-number="17.5" class="anchored" data-anchor-id="next"><span class="header-section-number">17.5</span> <code>next</code></h2>
 <p>Similar to the <code>break</code> statement, the <code>next</code> statement is used in loops that will tell R to move on to the next iteration if a certain condition is met.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -859,43 +936,43 @@ Important Note
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> vector){</span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (condition) {</span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">next</span></span>
-<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>    task</span>
-<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> vector){</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (condition) {</span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">next</span></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>    task</span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <p>The main difference here is that a <code>next</code> statement is used instead of a <code>break</code> statement.</p>
 <p>Going back to simulating positive numbers, we will use the same setup but change it to a <code>next</code> statement.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="at">length =</span> <span class="dv">30</span>)</span>
-<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)){</span>
-<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (y<span class="sc">&lt;</span><span class="dv">0</span>) {</span>
-<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">next</span></span>
-<span id="cb69-7"><a href="#cb69-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb69-8"><a href="#cb69-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
-<span id="cb69-9"><a href="#cb69-9" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="ot">&lt;-</span> y</span>
-<span id="cb69-10"><a href="#cb69-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb69-11"><a href="#cb69-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb69-12"><a href="#cb69-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>,<span class="at">length =</span> <span class="dv">30</span>)</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(x)){</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (y<span class="sc">&lt;</span><span class="dv">0</span>) {</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">next</span></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> {</span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>    x[i] <span class="ot">&lt;-</span> y</span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.91270459 3.08197264 0.72089222 0.18219414 0.23886831 1.36808335
- [7] 3.40865796 0.27035560         NA         NA 1.56910622 1.27601839
-[13] 1.93305823 0.77069335 1.41109492 1.97015699 1.51544717 1.24035773
-[19]         NA         NA 0.05664593 1.96861889 1.14983838 1.10942886
-[25] 1.16644878 0.29784533 0.48227478 1.51119269 1.30830747 1.39608537</code></pre>
+<pre><code> [1]         NA 0.08434672 0.19266022 0.93514835 0.37863155 3.05972163
+ [7] 0.67965939         NA 1.98519534 1.32500968 2.27779096         NA
+[13] 0.62074909 0.81493670         NA 2.84606579         NA         NA
+[19] 0.80236841 1.55437266 1.33713662         NA 2.55112123 0.92611312
+[25] 0.13670821 0.10804522 1.71180908         NA 0.28771324         NA</code></pre>
 </div>
 </div>
 <p>As you can see, the vector contains missing values, these were the iterations that a negative number was simulated.</p>
 </section>
-<section id="while-loop" class="level2" data-number="16.6">
-<h2 data-number="16.6" class="anchored" data-anchor-id="while-loop"><span class="header-section-number">16.6</span> <code>while</code> loop</h2>
+<section id="while-loop" class="level2" data-number="17.6">
+<h2 data-number="17.6" class="anchored" data-anchor-id="while-loop"><span class="header-section-number">17.6</span> <code>while</code> loop</h2>
 <p>The last loop that we will discuss is a while loop. The while loop is used to keep a loop running until a certain condition is met. To construct a while loop, we will use the <code>while</code> statement with a condition attached to it. In general, a while loop will have the following format:</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -908,78 +985,78 @@ Important Concept
 </div>
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (condition) {</span>
-<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>  task</span>
-<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a>  update condition</span>
-<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (condition) {</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  task</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>  update condition</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 <p>Above, we see that the <code>while</code> statement is used followed by a condition. Then the loop will complete its task and update the condition. If the condition yields a <code>FALSE</code> value, then the loop will stop. Otherwise, it will continue.</p>
-<section id="basic-while-loops" class="level3" data-number="16.6.1">
-<h3 data-number="16.6.1" class="anchored" data-anchor-id="basic-while-loops"><span class="header-section-number">16.6.1</span> Basic <code>while</code> loops</h3>
+<section id="basic-while-loops" class="level3" data-number="17.6.1">
+<h3 data-number="17.6.1" class="anchored" data-anchor-id="basic-while-loops"><span class="header-section-number">17.6.1</span> Basic <code>while</code> loops</h3>
 <p>To implement a basic <code>while</code> loop, we will work on the previous example of simulating positive numbers. We want to simulate 30 positive numbers from <span class="math inline">\(N(0,1)\)</span> until we have 30 values. Here, our condition is that we need to have 30 numbers. Therefore we can use the following code to simulate the values:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>size <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (size <span class="sc">&lt;</span> <span class="dv">30</span>){</span>
-<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>) </span>
-<span id="cb72-5"><a href="#cb72-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (y <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb72-6"><a href="#cb72-6" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">c</span>(x, y)</span>
-<span id="cb72-7"><a href="#cb72-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb72-8"><a href="#cb72-8" aria-hidden="true" tabindex="-1"></a>  size <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb72-9"><a href="#cb72-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb72-10"><a href="#cb72-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>size <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (size <span class="sc">&lt;</span> <span class="dv">30</span>){</span>
+<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1</span>) </span>
+<span id="cb73-5"><a href="#cb73-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (y <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb73-6"><a href="#cb73-6" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">c</span>(x, y)</span>
+<span id="cb73-7"><a href="#cb73-7" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb73-8"><a href="#cb73-8" aria-hidden="true" tabindex="-1"></a>  size <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb73-9"><a href="#cb73-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb73-10"><a href="#cb73-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(size)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 30</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 0.005245146 0.280625589 0.526876606 0.822030249 2.246205824 1.952491935
- [7] 0.670100699 2.311234135 0.688772123 0.320199750 1.397227140 0.830938390
-[13] 0.178526953 0.478543903 0.329451783 0.170460111 0.838914598 0.532007459
-[19] 1.308559454 1.807544365 0.102020257 0.556702144 0.914246544 1.661145724
-[25] 0.128944880 0.479945924 0.034947857 0.153277439 0.011630151 0.856472034</code></pre>
+<pre><code> [1] 1.51226883 0.94128412 0.42442648 1.19819679 0.61146695 0.65229603
+ [7] 0.26982918 1.21059288 0.24266199 0.72237650 1.17817474 0.24697971
+[13] 1.05914149 0.06194373 0.26593369 0.11557476 0.73004580 1.08914004
+[19] 0.25677075 0.40205362 0.60485605 0.31843602 0.80658309 0.04237526
+[25] 0.38548454 1.13262097 0.30707754 0.38771702 0.79045747 0.04956204</code></pre>
 </div>
 </div>
 <p>Notice that we do not use an <code>else</code> statement. This is because we do not need R to complete a task if the condition fails.</p>
 </section>
-<section id="infinite-while-loops" class="level3" data-number="16.6.2">
-<h3 data-number="16.6.2" class="anchored" data-anchor-id="infinite-while-loops"><span class="header-section-number">16.6.2</span> Infinite <code>while</code> loops</h3>
+<section id="infinite-while-loops" class="level3" data-number="17.6.2">
+<h3 data-number="17.6.2" class="anchored" data-anchor-id="infinite-while-loops"><span class="header-section-number">17.6.2</span> Infinite <code>while</code> loops</h3>
 <p>With while loops, we must be weary about potential infinite loops. This occurs when the condition will never yield a <code>FALSE</code> value. Therfore, R will never stop the loop because it does not know when to do this.</p>
 <p>For example, let’s say we are interest if <span class="math inline">\(y=sin(x)\)</span> will converge to a certain value. As you know it will not converge to a certain value; however, we can construct a while loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span>) {</span>
-<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
-<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">sin</span>(x) <span class="sc">-</span> <span class="fu">sin</span>(old_x))</span>
-<span id="cb76-7"><a href="#cb76-7" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb76-8"><a href="#cb76-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span>
-<span id="cb76-9"><a href="#cb76-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span>) {</span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
+<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">sin</span>(x) <span class="sc">-</span> <span class="fu">sin</span>(old_x))</span>
+<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span>
+<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>My condition above is to see if the absolute difference between sequential values is smaller than <span class="math inline">\(10^{-20}\)</span>. As you may know, the absolute difference will never become that small. Therefore, the loop will continue on without stopping.</p>
 <p>To prevent an infinite while loop, we can add a counter to the condition statement. This counter will also need to be true for the loop to continue. Therefore, we can arbitrarily stop it when the loop has iterated a certain amount of times. We just need to make sure to add one to the counter every time it iterates it. Below is the code that adds a counter to the while loop:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>counter <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span> <span class="sc">&amp;</span> counter <span class="sc">&lt;</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">3</span>) {</span>
-<span id="cb77-5"><a href="#cb77-5" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
-<span id="cb77-6"><a href="#cb77-6" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb77-7"><a href="#cb77-7" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">sin</span>(x) <span class="sc">-</span> <span class="fu">sin</span>(old_x))</span>
-<span id="cb77-8"><a href="#cb77-8" aria-hidden="true" tabindex="-1"></a>  counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb77-9"><a href="#cb77-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb77-10"><a href="#cb77-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>counter <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>diff <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (diff <span class="sc">&gt;</span> <span class="fl">1e-20</span> <span class="sc">&amp;</span> counter <span class="sc">&lt;</span> <span class="dv">10</span><span class="sc">^</span><span class="dv">3</span>) {</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a>  old_x <span class="ot">&lt;-</span> x</span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb78-7"><a href="#cb78-7" aria-hidden="true" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> <span class="fu">abs</span>(<span class="fu">sin</span>(x) <span class="sc">-</span> <span class="fu">sin</span>(old_x))</span>
+<span id="cb78-8"><a href="#cb78-8" aria-hidden="true" tabindex="-1"></a>  counter <span class="ot">&lt;-</span> counter <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb78-9"><a href="#cb78-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb78-10"><a href="#cb78-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1001</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diff)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.09311106</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(counter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(counter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1000</code></pre>
 </div>
@@ -1400,12 +1477,12 @@ Important Concept
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./plot.html" class="pagination-link" aria-label="Graphics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Graphics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./functional.html" class="pagination-link" aria-label="Functional Programming">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Functional Programming</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Functional Programming</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -17,10 +17,14 @@ book:
 
   chapters:
     - index.qmd
-    - part: monte_carlo.qmd
-      chapters: 
+    - preface.qmd
+    - part: probstats.qmd
+      chapters:
         - rv.qmd
         - models.qmd
+        - stats.qmd
+    - part: monte_carlo.qmd
+      chapters: 
         - mc.qmd
         - mcmc.qmd
         - mc_int.qmd
@@ -35,7 +39,7 @@ book:
     - part: simulations.qmd
       chapters:
         - mc_testing.qmd
-        - mc_sim_studies.qmd
+        - mc_reg.qmd
         - mc_power.qmd
     - part: r.qmd
       chapters: 

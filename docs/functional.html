@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>17&nbsp; Functional Programming – Statistical Computing</title>
+<title>18&nbsp; Functional Programming – Statistical Computing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -152,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./functional.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Functional Programming</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./functional.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Functional Programming</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -203,10 +203,16 @@ window.Quarto = {
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">preface.html</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./monte_carlo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Monte Carlo Methods</span></a>
+            <a href="./probstats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Probability and Statistics Review</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -221,25 +227,42 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./models.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Models</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Probability Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Statistics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./monte_carlo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monte Carlo Methods</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./mc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Monte Carlo Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Monte Carlo Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mcmc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Markov Chain Monte Carlo Methods</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Markov Chain Monte Carlo Methods</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mc_int.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Monte Carlo Integration</span></span></a>
   </div>
 </li>
       </ul>
@@ -248,29 +271,6 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./permutations.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Randomizations</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./perm_hyp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Permutation Tests</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./perm_reg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Permutation Regression</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="./bootstrapping.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Bootstrapping</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -278,22 +278,22 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./parametric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Parametric Bootrapping</span></span></a>
+  <a href="./perm_hyp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Permutation Tests</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nonparametric Boostrapping</span></span></a>
+  <a href="./perm_reg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Permutation Regression</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./simulations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Simulations-based Analysis</span></a>
+            <a href="./bootstrapping.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Boostrap Method</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -301,20 +301,43 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></span></a>
+  <a href="./parametric.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Parametric Bootstrapping</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./mc_sim_studies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monte Carlo Methods for Generalized/Linear Models</span></span></a>
+  <a href="./nonparametric.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nonparametric Bootstrapping</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./simulations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Simulation-based Analysis</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_testing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Monte Carlo Hypothesis Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./mc_reg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Monte Carlo Methods for Regression Models</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./mc_power.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Monte Carlo Power Analysis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Monte Carlo Power Analysis</span></span></a>
   </div>
 </li>
       </ul>
@@ -323,51 +346,51 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="./r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Programming</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Basic R Programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Basic R Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./data_summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Data Summarization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Data Summarization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Graphics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Graphics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./control_flow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control Flow</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control Flow</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./functional.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Functional Programming</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Functional Programming</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./scripting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Scripting and Piping in R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Scripting and Piping in R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./resources.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Further Resources</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Further Resources</span></span></a>
   </div>
 </li>
       </ul>
@@ -382,28 +405,28 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#functions" id="toc-functions" class="nav-link active" data-scroll-target="#functions"><span class="header-section-number">17.1</span> Functions</a>
+  <li><a href="#functions" id="toc-functions" class="nav-link active" data-scroll-target="#functions"><span class="header-section-number">18.1</span> Functions</a>
   <ul class="collapse">
-  <li><a href="#built-in-functions" id="toc-built-in-functions" class="nav-link" data-scroll-target="#built-in-functions"><span class="header-section-number">17.1.1</span> Built-in Functions</a></li>
-  <li><a href="#generic-functions" id="toc-generic-functions" class="nav-link" data-scroll-target="#generic-functions"><span class="header-section-number">17.1.2</span> Generic Functions</a></li>
-  <li><a href="#user-built-functions" id="toc-user-built-functions" class="nav-link" data-scroll-target="#user-built-functions"><span class="header-section-number">17.1.3</span> User-built Functions</a></li>
+  <li><a href="#built-in-functions" id="toc-built-in-functions" class="nav-link" data-scroll-target="#built-in-functions"><span class="header-section-number">18.1.1</span> Built-in Functions</a></li>
+  <li><a href="#generic-functions" id="toc-generic-functions" class="nav-link" data-scroll-target="#generic-functions"><span class="header-section-number">18.1.2</span> Generic Functions</a></li>
+  <li><a href="#user-built-functions" id="toc-user-built-functions" class="nav-link" data-scroll-target="#user-built-functions"><span class="header-section-number">18.1.3</span> User-built Functions</a></li>
   </ul></li>
-  <li><a href="#apply-functions" id="toc-apply-functions" class="nav-link" data-scroll-target="#apply-functions"><span class="header-section-number">17.2</span> *apply Functions</a>
+  <li><a href="#apply-functions" id="toc-apply-functions" class="nav-link" data-scroll-target="#apply-functions"><span class="header-section-number">18.2</span> *apply Functions</a>
   <ul class="collapse">
-  <li><a href="#apply" id="toc-apply" class="nav-link" data-scroll-target="#apply"><span class="header-section-number">17.2.1</span> <code>apply()</code></a></li>
-  <li><a href="#lapply" id="toc-lapply" class="nav-link" data-scroll-target="#lapply"><span class="header-section-number">17.2.2</span> <code>lapply()</code></a></li>
-  <li><a href="#sapply" id="toc-sapply" class="nav-link" data-scroll-target="#sapply"><span class="header-section-number">17.2.3</span> <code>sapply()</code></a></li>
+  <li><a href="#apply" id="toc-apply" class="nav-link" data-scroll-target="#apply"><span class="header-section-number">18.2.1</span> <code>apply()</code></a></li>
+  <li><a href="#lapply" id="toc-lapply" class="nav-link" data-scroll-target="#lapply"><span class="header-section-number">18.2.2</span> <code>lapply()</code></a></li>
+  <li><a href="#sapply" id="toc-sapply" class="nav-link" data-scroll-target="#sapply"><span class="header-section-number">18.2.3</span> <code>sapply()</code></a></li>
   </ul></li>
-  <li><a href="#anonymous-functions" id="toc-anonymous-functions" class="nav-link" data-scroll-target="#anonymous-functions"><span class="header-section-number">17.3</span> Anonymous Functions</a></li>
+  <li><a href="#anonymous-functions" id="toc-anonymous-functions" class="nav-link" data-scroll-target="#anonymous-functions"><span class="header-section-number">18.3</span> Anonymous Functions</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./functional.html"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Functional Programming</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./r.html">R Programming</a></li><li class="breadcrumb-item"><a href="./functional.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Functional Programming</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Functional Programming</span></h1>
+<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Functional Programming</span></h1>
 </div>
 
 
@@ -420,11 +443,11 @@ window.Quarto = {
 </header>
 
 
-<section id="functions" class="level2" data-number="17.1">
-<h2 data-number="17.1" class="anchored" data-anchor-id="functions"><span class="header-section-number">17.1</span> Functions</h2>
+<section id="functions" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="functions"><span class="header-section-number">18.1</span> Functions</h2>
 <p>The functionality in R is what makes it completely powerful compared to other statistical software. There are several pre-built functions, and you can extend R’s functionality further with the use of R Packages.</p>
-<section id="built-in-functions" class="level3" data-number="17.1.1">
-<h3 data-number="17.1.1" class="anchored" data-anchor-id="built-in-functions"><span class="header-section-number">17.1.1</span> Built-in Functions</h3>
+<section id="built-in-functions" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="built-in-functions"><span class="header-section-number">18.1.1</span> Built-in Functions</h3>
 <p>There are several available functions in R to conduct specific statistical methods. The table below provides a set of commonly used functions:</p>
 <table class="caption-top table">
 <thead>
@@ -509,16 +532,16 @@ window.Quarto = {
 </table>
 <p>To obtain the help documentation of each function, use the <code>?</code> operator and function name in the console pane.</p>
 </section>
-<section id="generic-functions" class="level3" data-number="17.1.2">
-<h3 data-number="17.1.2" class="anchored" data-anchor-id="generic-functions"><span class="header-section-number">17.1.2</span> Generic Functions</h3>
+<section id="generic-functions" class="level3" data-number="18.1.2">
+<h3 data-number="18.1.2" class="anchored" data-anchor-id="generic-functions"><span class="header-section-number">18.1.2</span> Generic Functions</h3>
 <p>Commonly used functions, such as <code>summary()</code> and <code>plot()</code> functions, are considered generic functions where their functionality is determined by the class of an R object. For example, the <code>summary()</code> function is a generic function for several types of functions: <code>summary.aov()</code>, <code>summary.lm()</code>, <code>summary.glm()</code>, and many more. Therefore, the appropriate function is needed depending the type of R object. This is where generic functions come in. We can use a generic function, ie <code>summary()</code>, to read the type of object and then apply to correct procedure to the object.</p>
 </section>
-<section id="user-built-functions" class="level3" data-number="17.1.3">
-<h3 data-number="17.1.3" class="anchored" data-anchor-id="user-built-functions"><span class="header-section-number">17.1.3</span> User-built Functions</h3>
+<section id="user-built-functions" class="level3" data-number="18.1.3">
+<h3 data-number="18.1.3" class="anchored" data-anchor-id="user-built-functions"><span class="header-section-number">18.1.3</span> User-built Functions</h3>
 <p>While R has many capable functions that can be used to analyze your data, you may need to create a custom function for specific needs. For example, if you find yourself writing the same to repeat a task, you can wrap the code into a user-built function and use it for analysis.</p>
 <p>To create a user-built function, you will using the <code>function()</code> to create an R object that is a function. To use the function Inside the <code>funtion()</code> parentheses, write the arguments that need to specified for your function. These are arguments you choose for the function.</p>
-<section id="anatomy" class="level4" data-number="17.1.3.1">
-<h4 data-number="17.1.3.1" class="anchored" data-anchor-id="anatomy"><span class="header-section-number">17.1.3.1</span> Anatomy</h4>
+<section id="anatomy" class="level4" data-number="18.1.3.1">
+<h4 data-number="18.1.3.1" class="anchored" data-anchor-id="anatomy"><span class="header-section-number">18.1.3.1</span> Anatomy</h4>
 <p>In general function we construct a function with the following anatomy:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>name_of_function <span class="ot">&lt;-</span> <span class="cf">function</span>(data_1, <span class="at">data_2 =</span> <span class="cn">NULL</span>, </span>
@@ -532,8 +555,8 @@ window.Quarto = {
 </div>
 <p>Here, we are creating an R function called <code>name_of_function</code> that will take the following arguments: <code>data_1</code>, <code>data_2</code>, <code>argument_1</code>, <code>argument_2</code>, <code>argument_3</code>, and <code>...</code>. From this function, it requires us to supply data for <code>data_1</code> and <code>argument_1</code>. Arguments <code>data_2</code> and <code>argument_3</code> are not required, but can be utilized in the function if necessary. Argument <code>argument_2</code> is also required for the function, but it it has a default setting (in this case <code>TRUE</code>) if it is not specified. Lastly, the <code>...</code> argument allows you to pass other arguments to R built in functions if they are present. For example, we may use the <code>plot()</code> to create graphics and want to manipulate the output plot further, but do not want to specify the arguments in the user-based function. In the function itself, we will complete the necessary tasks and then use the <code>return()</code> to return the output.</p>
 </section>
-<section id="example" class="level4" data-number="17.1.3.2">
-<h4 data-number="17.1.3.2" class="anchored" data-anchor-id="example"><span class="header-section-number">17.1.3.2</span> Example</h4>
+<section id="example" class="level4" data-number="18.1.3.2">
+<h4 data-number="18.1.3.2" class="anchored" data-anchor-id="example"><span class="header-section-number">18.1.3.2</span> Example</h4>
 <p>To begin, let’s create a function that squares any value:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x_square <span class="ot">&lt;-</span> <span class="cf">function</span>(x){x<span class="sc">^</span><span class="dv">2</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -598,11 +621,11 @@ window.Quarto = {
 </section>
 </section>
 </section>
-<section id="apply-functions" class="level2" data-number="17.2">
-<h2 data-number="17.2" class="anchored" data-anchor-id="apply-functions"><span class="header-section-number">17.2</span> *apply Functions</h2>
+<section id="apply-functions" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="apply-functions"><span class="header-section-number">18.2</span> *apply Functions</h2>
 <p>*apply functions are used to iterate a function through a set of elements in a vector, matrix, or list. This will then return a vector or list depending on what is requested.</p>
-<section id="apply" class="level3" data-number="17.2.1">
-<h3 data-number="17.2.1" class="anchored" data-anchor-id="apply"><span class="header-section-number">17.2.1</span> <code>apply()</code></h3>
+<section id="apply" class="level3" data-number="18.2.1">
+<h3 data-number="18.2.1" class="anchored" data-anchor-id="apply"><span class="header-section-number">18.2.1</span> <code>apply()</code></h3>
 <p>The <code>apply()</code> function is used to apply a function to the margins of an array or matrix. It will iterate between the elements, apply a function to the data, and return a vector, array or list if necessary. To use the <code>apply()</code> function, you will need to specify three arguments, <code>X</code> or the array, <code>MARGIN</code> which margin to apply the function on, and <code>FUN</code> the function.</p>
 <p>Below we calculate the row means and column means using the apply function for a <span class="math inline">\(5 \times 4\)</span> matrix containing the elements 1 through 20:</p>
 <div class="cell">
@@ -620,17 +643,17 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="lapply" class="level3" data-number="17.2.2">
-<h3 data-number="17.2.2" class="anchored" data-anchor-id="lapply"><span class="header-section-number">17.2.2</span> <code>lapply()</code></h3>
+<section id="lapply" class="level3" data-number="18.2.2">
+<h3 data-number="18.2.2" class="anchored" data-anchor-id="lapply"><span class="header-section-number">18.2.2</span> <code>lapply()</code></h3>
 <p>The <code>lapply()</code> function is used to apply a function to all elements in a vector or list. The <code>lapply()</code> function will then return a list as the output.</p>
 </section>
-<section id="sapply" class="level3" data-number="17.2.3">
-<h3 data-number="17.2.3" class="anchored" data-anchor-id="sapply"><span class="header-section-number">17.2.3</span> <code>sapply()</code></h3>
+<section id="sapply" class="level3" data-number="18.2.3">
+<h3 data-number="18.2.3" class="anchored" data-anchor-id="sapply"><span class="header-section-number">18.2.3</span> <code>sapply()</code></h3>
 <p>The <code>sapply()</code> function is used to apply a function to all elements in a vector or list. Afterwards, the <code>sapply()</code> will return a “simplified” version of the list format. This could be a vector, matrix, or array.</p>
 </section>
 </section>
-<section id="anonymous-functions" class="level2" data-number="17.3">
-<h2 data-number="17.3" class="anchored" data-anchor-id="anonymous-functions"><span class="header-section-number">17.3</span> Anonymous Functions</h2>
+<section id="anonymous-functions" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="anonymous-functions"><span class="header-section-number">18.3</span> Anonymous Functions</h2>
 <p>Anonymous functions are functions that R temporarily creates to conduct a task. They are commonly used in the *apply functions, piping or within functions. To create an anonymous function, we use the <code>function()</code> to create a function .</p>
 <p>For example, let <code>x</code> be a vector with the values 1 through 15. Let’s say we want to apply the function <span class="math inline">\(f(x) = x^2+\ln(x) + e^x/x!\)</span>. We can evaluate the function as the expression in the function:</p>
 <div class="cell">
@@ -1074,12 +1097,12 @@ window.Quarto = {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./control_flow.html" class="pagination-link" aria-label="Control Flow">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Control Flow</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Control Flow</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./scripting.html" class="pagination-link" aria-label="Scripting and Piping in R">
-        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Scripting and Piping in R</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Scripting and Piping in R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,6 +1,4 @@
----
-title: "Control Flow"
----
+# Control Flow
 
 ## Indexing
 
@@ -258,11 +256,11 @@ for (i in vector_1) {
 :::
 
 
-As an example, we will use the `greekLetter::`^[`install.packages(greekLetters)`] and use the `greek_vector` vector to obtain greek letters in R. Lastly, create a vector called `greek_10`.
+As an example, we will use the `greekLetter`^[`install.packages(greekLetters)`] package and use the `print_greeks()` function to obtain greek letters in R. Lastly, create a vector called `greek_10`.
 
 ```{r}
 library(greekLetters)
-greek_10 <- greek_vector[1:10]
+greek_10 <- print_greeks()[1:10]
 ```
 
 
